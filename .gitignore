@@ -3,5 +3,6 @@ tmp/
 .worktrees/
 source/*.pdf
 node_modules/
+*.traineddata
 test-results/
 playwright-report/
