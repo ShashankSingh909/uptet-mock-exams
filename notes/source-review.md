@@ -8,8 +8,11 @@ Visual checks against rendered PDF pages confirmed:
 
 - Paper 1 question 1 and its four age-range options match the JSON.
 - Paper 2 question 1 and its four developmental-stage options match the JSON.
-- Both PDFs contain questions 145-150 on page 19.
-- Both PDFs contain answer explanations through question 150 on page 25.
+- The user-supplied Papers 3, 4, and 5 have SHA-256 hashes identical to the
+  Paper 3, 4, and 5 PDFs beside the authoritative structured JSON sources.
+- Papers 3, 4, and 5 each contain 25 PDF pages and 150 structured questions.
+- All five PDFs contain questions 145-150 near the end of the question section.
+- All five PDFs contain answer explanations through question 150 on page 25.
 - Titles, section order, duration, question count, answer labels, and
   explanations agree with the source JSON.
 

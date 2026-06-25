@@ -108,13 +108,17 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     await page.goto(`${baseUrl}/index.html`);
     assert.equal(await page.locator('a[href="paper1.html"]').count(), 1);
     assert.equal(await page.locator('a[href="paper2.html"]').count(), 1);
-    await page.goto(`${baseUrl}/paper2.html`);
+    assert.equal(await page.locator('a[href="paper3.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="paper4.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="paper5.html"]').count(), 1);
+    await page.goto(`${baseUrl}/paper5.html`);
     const dimensions = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
       innerWidth,
     }));
     assert.ok(dimensions.scrollWidth <= dimensions.innerWidth);
     assert.equal(await page.locator(".option-row").count(), 4);
+    assert.match(await page.locator(".paper-label").innerText(), /5/);
   } finally {
     await context.close();
     await browser.close();

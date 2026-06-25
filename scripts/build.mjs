@@ -15,7 +15,13 @@ const browserCore = coreSource.replace(/^export\s+/gm, "");
 const indexHtml = indexTemplate.replace("{{CSS}}", css);
 await writeFile(path.join(root, "index.html"), indexHtml, "utf8");
 
-for (const paperName of ["paper1", "paper2"]) {
+for (const paperName of [
+  "paper1",
+  "paper2",
+  "paper3",
+  "paper4",
+  "paper5",
+]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),
   );

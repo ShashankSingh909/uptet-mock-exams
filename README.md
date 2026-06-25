@@ -1,18 +1,19 @@
 # UPTET Mock Exams
 
-Two mobile-first UPTET Paper 2 practice exams built from the supplied mock
+Five mobile-first UPTET Paper 2 practice exams built from the supplied mock
 papers.
 
 ## Use Online
 
 Open [UPTET Mock Exams](https://shashanksingh909.github.io/uptet-mock-exams/),
-choose Paper 1 or Paper 2, and begin the exam.
+choose Paper 1 through Paper 5, and begin the exam.
 Opening a paper starts its 2 hour 30 minute timer.
 
 ## Use Offline
 
-Download `paper1.html` or `paper2.html` and open the file in a modern browser.
-Each paper is self-contained and does not require internet access.
+Download any file from `paper1.html` through `paper5.html` and open it in a
+modern browser. Each paper is self-contained and does not require internet
+access.
 
 ## Exam Behavior
 
@@ -35,5 +36,5 @@ pnpm build
 pnpm test
 ```
 
-The generated `index.html`, `paper1.html`, and `paper2.html` are the published
-artifacts.
+The generated `index.html` and `paper1.html` through `paper5.html` are the
+published artifacts.

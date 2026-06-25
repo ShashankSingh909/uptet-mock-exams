@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
-for (const paper of ["paper1", "paper2"]) {
+for (const paper of ["paper1", "paper2", "paper3", "paper4", "paper5"]) {
   test(`${paper} contains 150 complete questions`, async () => {
     const data = JSON.parse(
       await readFile(new URL(`../data/${paper}.json`, import.meta.url), "utf8"),
@@ -43,4 +43,23 @@ test("paper2 retains representative PDF source text", async () => {
   assert.match(data.questions[0].text, /जन्म से 2 वर्ष/);
   assert.match(data.questions[99].explanation, /मुहम्मद बिन तुगलक/);
   assert.match(data.questions[149].explanation, /सरदार वल्लभभाई पटेल/);
+});
+
+test("papers 3-5 retain representative PDF source text", async () => {
+  const paper3 = JSON.parse(
+    await readFile(new URL("../data/paper3.json", import.meta.url), "utf8"),
+  );
+  const paper4 = JSON.parse(
+    await readFile(new URL("../data/paper4.json", import.meta.url), "utf8"),
+  );
+  const paper5 = JSON.parse(
+    await readFile(new URL("../data/paper5.json", import.meta.url), "utf8"),
+  );
+
+  assert.match(paper3.questions[0].text, /पूर्व-संक्रियात्मक अवस्था/);
+  assert.match(paper3.questions[149].text, /श्वेत क्रांति/);
+  assert.match(paper4.questions[0].text, /वस्तु-स्थायित्व/);
+  assert.match(paper4.questions[149].text, /रिज़र्व बैंक/);
+  assert.match(paper5.questions[0].text, /एक ही पक्ष/);
+  assert.match(paper5.questions[149].text, /मूल्य-शिक्षा/);
 });

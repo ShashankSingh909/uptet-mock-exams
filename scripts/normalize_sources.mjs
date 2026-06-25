@@ -5,7 +5,13 @@ const root = path.resolve(import.meta.dirname, "..");
 const labels = ["अ", "ब", "स", "द"];
 const ids = ["a", "b", "c", "d"];
 
-for (const paperName of ["paper1", "paper2"]) {
+for (const paperName of [
+  "paper1",
+  "paper2",
+  "paper3",
+  "paper4",
+  "paper5",
+]) {
   const source = JSON.parse(
     await readFile(path.join(root, "source", `${paperName}.json`), "utf8"),
   );
