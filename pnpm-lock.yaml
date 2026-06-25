@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      playwright-core:
+        specifier: ^1.61.1
+        version: 1.61.1
       tesseract.js:
         specifier: ^7.0.0
         version: 7.0.0
@@ -34,6 +37,11 @@ packages:
 
   opencollective-postinstall@2.0.3:
     resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
+    hasBin: true
+
+  playwright-core@1.61.1:
+    resolution: {integrity: sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==}
+    engines: {node: '>=18'}
     hasBin: true
 
   regenerator-runtime@0.13.11:
@@ -73,6 +81,8 @@ snapshots:
       whatwg-url: 5.0.0
 
   opencollective-postinstall@2.0.3: {}
+
+  playwright-core@1.61.1: {}
 
   regenerator-runtime@0.13.11: {}
 
