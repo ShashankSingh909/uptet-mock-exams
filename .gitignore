@@ -1,6 +1,7 @@
 tmp/
 .superpowers/
 .worktrees/
+source/*.pdf
 node_modules/
 test-results/
 playwright-report/
