@@ -5,7 +5,8 @@ papers.
 
 ## Use Online
 
-Open the GitHub Pages site, choose Paper 1 or Paper 2, and begin the exam.
+Open [UPTET Mock Exams](https://shashanksingh909.github.io/uptet-mock-exams/),
+choose Paper 1 or Paper 2, and begin the exam.
 Opening a paper starts its 2 hour 30 minute timer.
 
 ## Use Offline
