@@ -13,6 +13,7 @@
   let timerId = null;
   let storageAvailable = true;
   let state = { active: null, latest: null };
+  let reviewFilter = "all";
 
   homeLink.addEventListener("click", () => {
     window.location.href = "index.html";
@@ -71,6 +72,33 @@
     return question.options.find((option) => option.id === id);
   }
 
+  function reviewStatus(question, latest) {
+    const selectedId = latest.answers[question.number];
+    if (!selectedId) return "unanswered";
+    return selectedId === question.answer ? "correct" : "incorrect";
+  }
+
+  function reviewStatusLabel(status) {
+    return {
+      correct: "सही",
+      incorrect: "गलत",
+      unanswered: "अनुत्तरित",
+    }[status];
+  }
+
+  function reviewOptionClasses(question, option, selectedId) {
+    return [
+      "review-option",
+      option.id === question.answer ? "correct-option" : "",
+      selectedId === option.id ? "selected-option" : "",
+      selectedId === option.id && selectedId !== question.answer
+        ? "incorrect-option"
+        : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+  }
+
   function statusFor(number) {
     const answered = Boolean(state.active.answers[number]);
     const reviewed = state.active.review.includes(number);
@@ -106,6 +134,7 @@
     clearInterval(timerId);
     latestTop.hidden = !state.latest;
     latestTop.onclick = () => {
+      reviewFilter = "all";
       mode = "review";
       render();
     };
@@ -167,7 +196,7 @@
         </fieldset>
       </section>
       <div class="submit-row">
-        <button id="submit-exam-live" type="button" ${canSubmit ? "" : "disabled"}>परीक्षा जमा करें${canSubmit ? "" : ` (${remainingCount} शेष)`}</button>
+        <button id="submit-exam-live" type="button" ${canSubmit ? "" : "disabled"}>परीक्षा जमा करें${remainingCount ? ` (${remainingCount} अनुत्तरित)` : ""}</button>
       </div>
       <nav class="bottom-actions" aria-label="प्रश्न नेविगेशन">
         <button id="previous-question" class="secondary" type="button" ${current.number === 1 ? "disabled" : ""}>पिछला</button>
@@ -243,7 +272,7 @@
 
     document.getElementById("submit-exam-live").onclick = () => {
       if (!canManualSubmit(state.active, paper.questions.length)) return;
-      if (!window.confirm("सभी उत्तर जमा करें? जमा करने के बाद उत्तर बदले नहीं जा सकते।")) {
+      if (!window.confirm("परीक्षा अभी जमा करें? बचे हुए प्रश्न अनुत्तरित में दिखेंगे और जमा करने के बाद उत्तर बदले नहीं जा सकेंगे।")) {
         return;
       }
       state = {
@@ -267,6 +296,7 @@
     const latest = state.latest;
     latestTop.hidden = false;
     latestTop.onclick = () => {
+      reviewFilter = "all";
       mode = "review";
       render();
     };
@@ -279,9 +309,9 @@
           <div>${latest.stats.percentage}% • उपयोग किया समय ${formatDuration(latest.timeUsedSeconds)}</div>
         </div>
         <div class="result-stats">
-          <div class="result-stat"><span class="stat-label">सही</span><strong>${latest.stats.correct}</strong></div>
-          <div class="result-stat"><span class="stat-label">गलत</span><strong>${latest.stats.incorrect}</strong></div>
-          <div class="result-stat"><span class="stat-label">अनुत्तरित</span><strong>${latest.stats.unanswered}</strong></div>
+          <div class="result-stat" data-stat="correct"><span class="stat-label">सही</span><strong>${latest.stats.correct}</strong></div>
+          <div class="result-stat" data-stat="incorrect"><span class="stat-label">गलत</span><strong>${latest.stats.incorrect}</strong></div>
+          <div class="result-stat" data-stat="unanswered"><span class="stat-label">अनुत्तरित</span><strong>${latest.stats.unanswered}</strong></div>
         </div>
         <div class="result-actions">
           <button id="review-answers" class="primary" type="button">उत्तर और व्याख्या देखें</button>
@@ -291,6 +321,7 @@
       </section>`;
 
     document.getElementById("review-answers").onclick = () => {
+      reviewFilter = "all";
       mode = "review";
       render();
     };
@@ -317,39 +348,84 @@
     document.body.dataset.answerMode = "revealed";
     const latest = state.latest;
     latestTop.hidden = true;
+    const tabs = [
+      { id: "all", label: "सभी", count: latest.stats.total },
+      { id: "correct", label: "सही", count: latest.stats.correct },
+      { id: "incorrect", label: "गलत", count: latest.stats.incorrect },
+      { id: "unanswered", label: "अनुत्तरित", count: latest.stats.unanswered },
+    ];
+    if (!tabs.some((tab) => tab.id === reviewFilter)) {
+      reviewFilter = "all";
+    }
+    const filteredQuestions = paper.questions.filter(
+      (question) =>
+        reviewFilter === "all" || reviewStatus(question, latest) === reviewFilter,
+    );
+    const activeTab = tabs.find((tab) => tab.id === reviewFilter);
 
     root.innerHTML = `
       <section class="review-view">
         <div class="review-toolbar">
-          <div><strong>नवीनतम प्रयास की समीक्षा</strong><br><span class="stat-label">स्कोर ${latest.stats.score}/${latest.stats.total}</span></div>
+          <div><strong>नवीनतम प्रयास की समीक्षा</strong><br><span class="stat-label">स्कोर ${latest.stats.score}/${latest.stats.total} • ${activeTab.label} ${activeTab.count}</span></div>
           <button id="back-to-result" class="secondary" type="button">परिणाम पर लौटें</button>
         </div>
+        <div class="review-tabs" role="tablist" aria-label="उत्तर श्रेणी">
+          ${tabs
+            .map(
+              (tab) => `
+                <button class="review-tab ${tab.id === reviewFilter ? "active" : ""}" type="button" role="tab" aria-selected="${tab.id === reviewFilter ? "true" : "false"}" data-review-filter="${tab.id}">
+                  ${tab.label} <span>${tab.count}</span>
+                </button>`,
+            )
+            .join("")}
+        </div>
         <div class="review-list">
-          ${paper.questions
+          ${filteredQuestions.length
+            ? filteredQuestions
             .map((question) => {
               const selectedId = latest.answers[question.number];
-              const status = !selectedId
-                ? "unanswered"
-                : selectedId === question.answer
-                  ? "correct"
-                  : "incorrect";
-              const selectedText = selectedId
-                ? `${optionById(question, selectedId).label}. ${optionById(question, selectedId).text}`
+              const selected = selectedId ? optionById(question, selectedId) : null;
+              const status = reviewStatus(question, latest);
+              const selectedText = selected
+                ? `${selected.label}. ${selected.text}`
                 : "उत्तर नहीं दिया";
               const correct = optionById(question, question.answer);
               return `
-                <article class="review-card ${status}">
-                  <h3>प्रश्न ${question.number} • ${status === "correct" ? "सही" : status === "incorrect" ? "गलत" : "अनुत्तरित"}</h3>
-                  <div>${question.text}</div>
+                <article class="review-card ${status}" data-review-card-status="${status}">
+                  <h3>प्रश्न ${question.number} • ${reviewStatusLabel(status)}</h3>
+                  ${question.passage ? `<div class="passage">${question.passage}</div>` : ""}
+                  <div class="review-question-text">${question.text}</div>
+                  <ul class="review-options">
+                    ${question.options
+                      .map(
+                        (option) => `
+                          <li class="${reviewOptionClasses(question, option, selectedId)}">
+                            <span class="option-label" aria-hidden="true">${option.label}</span>
+                            <span class="option-text">${option.text}</span>
+                            <span class="review-option-badges">
+                              ${option.id === question.answer ? '<span class="review-badge correct-badge">सही उत्तर</span>' : ""}
+                              ${selectedId === option.id ? '<span class="review-badge selected-badge">आपका चयन</span>' : ""}
+                            </span>
+                          </li>`,
+                      )
+                      .join("")}
+                  </ul>
                   <p class="answer-line"><strong>आपका उत्तर:</strong> ${selectedText}</p>
                   <p class="answer-line"><strong>सही उत्तर:</strong> ${correct.label}. ${correct.text}</p>
                   <div class="answer-explanation"><strong>व्याख्या:</strong> ${question.explanation}</div>
                 </article>`;
             })
-            .join("")}
+            .join("")
+            : `<div class="empty-review">इस श्रेणी में कोई प्रश्न नहीं है।</div>`}
         </div>
       </section>`;
 
+    root.querySelectorAll("[data-review-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        reviewFilter = button.dataset.reviewFilter;
+        renderReview();
+      });
+    });
     document.getElementById("back-to-result").onclick = () => {
       mode = "result";
       render();

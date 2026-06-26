@@ -56,7 +56,7 @@ test("mobile exam persists, navigates, times out, reviews, and resets", async ()
     assert.match(await page.locator("#timer").innerText(), /^02:29|^02:30/);
     assert.equal(await page.locator(".answered .stat-number").innerText(), "0");
     assert.equal(await page.locator(".answer-explanation").count(), 0);
-    assert.equal(await page.locator("#submit-exam-live").isDisabled(), true);
+    assert.equal(await page.locator("#submit-exam-live").isDisabled(), false);
 
     await page.locator(".option-row").first().click();
     assert.equal(await page.locator(".answered .stat-number").innerText(), "1");
@@ -86,6 +86,67 @@ test("mobile exam persists, navigates, times out, reviews, and resets", async ()
     await page.getByRole("button", { name: "नया प्रयास शुरू करें" }).click();
     assert.equal(await page.locator(".question-meta h2").innerText(), "प्रश्न 1");
     assert.equal(await page.getByRole("button", { name: "नवीनतम समीक्षा" }).isVisible(), true);
+  } finally {
+    await context.close();
+    await browser.close();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
+test("manual submit accepts unfinished attempts and filters review tabs", async () => {
+  const { server, baseUrl } = await startServer();
+  const browser = await chromium.launch({
+    executablePath: chromePath,
+    headless: true,
+  });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+
+  try {
+    await page.goto(`${baseUrl}/paper1.html`);
+    await page.evaluate(() => {
+      const encoded = document.getElementById("paper-data").textContent.trim();
+      const bytes = Uint8Array.from(atob(encoded), (character) =>
+        character.charCodeAt(0),
+      );
+      const paper = JSON.parse(new TextDecoder().decode(bytes));
+      const first = paper.questions[0];
+      const second = paper.questions[1];
+      const wrongSecond = second.options.find(
+        (option) => option.id !== second.answer,
+      ).id;
+      const key = "uptet-exam:paper1:v1";
+      const state = JSON.parse(localStorage.getItem(key));
+      state.active.answers = {
+        [first.number]: first.answer,
+        [second.number]: wrongSecond,
+      };
+      localStorage.setItem(key, JSON.stringify(state));
+    });
+    await page.reload();
+
+    assert.equal(await page.locator("#submit-exam-live").isDisabled(), false);
+    page.once("dialog", (dialog) => dialog.accept());
+    await page.locator("#submit-exam-live").click();
+    assert.equal(await page.locator('[data-stat="correct"] strong').innerText(), "1");
+    assert.equal(await page.locator('[data-stat="incorrect"] strong').innerText(), "1");
+    assert.equal(await page.locator('[data-stat="unanswered"] strong').innerText(), "148");
+
+    await page.locator("#review-answers").click();
+    await page.locator('[data-review-filter="correct"]').click();
+    assert.equal(await page.locator(".review-card").count(), 1);
+    assert.equal(await page.locator(".review-card.correct").count(), 1);
+    assert.equal(await page.locator(".review-card .review-option").count(), 4);
+    assert.equal(await page.locator(".answer-explanation").count(), 1);
+
+    await page.locator('[data-review-filter="incorrect"]').click();
+    assert.equal(await page.locator(".review-card").count(), 1);
+    assert.equal(await page.locator(".review-card.incorrect").count(), 1);
+    assert.equal(await page.locator(".review-card .review-option").count(), 4);
+
+    await page.locator('[data-review-filter="unanswered"]').click();
+    assert.equal(await page.locator(".review-card").count(), 148);
+    assert.equal(await page.locator(".review-card.unanswered").count(), 148);
   } finally {
     await context.close();
     await browser.close();

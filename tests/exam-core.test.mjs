@@ -36,13 +36,31 @@ test("answer selection is immutable and indexed by question number", () => {
   assert.deepEqual(updated.answers, { 2: "b" });
 });
 
-test("manual submit is blocked until every question is answered", () => {
+test("manual submit is available before every question is answered", () => {
   let attempt = createAttempt(1_000, questions.length);
+  assert.equal(canManualSubmit(attempt, questions.length), true);
   attempt = selectAnswer(attempt, 1, "a");
+  assert.equal(canManualSubmit(attempt, questions.length), true);
   attempt = selectAnswer(attempt, 2, "b");
-  assert.equal(canManualSubmit(attempt, questions.length), false);
+  assert.equal(canManualSubmit(attempt, questions.length), true);
   attempt = selectAnswer(attempt, 3, "c");
   assert.equal(canManualSubmit(attempt, questions.length), true);
+});
+
+test("manual completion counts unanswered questions when submitted early", () => {
+  let attempt = createAttempt(1_000, questions.length);
+  attempt = selectAnswer(attempt, 1, "a");
+  attempt = selectAnswer(attempt, 2, "d");
+
+  const completed = completeAttempt(attempt, questions, 11_000, "manual");
+  assert.deepEqual(completed.stats, {
+    correct: 1,
+    incorrect: 1,
+    unanswered: 1,
+    score: 1,
+    total: 3,
+    percentage: 33.33,
+  });
 });
 
 test("manual completion scores correct, incorrect, and unanswered", () => {

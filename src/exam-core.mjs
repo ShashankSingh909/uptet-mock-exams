@@ -52,18 +52,14 @@ export function toggleReview(attempt, questionNumber) {
   return { ...attempt, review: [...review].sort((a, b) => a - b) };
 }
 
-export function canManualSubmit(attempt, questionCount = attempt.questionCount) {
-  return Object.keys(attempt.answers).length === questionCount;
+export function canManualSubmit(attempt) {
+  return attempt?.status === "active";
 }
 
 export function completeAttempt(attempt, questions, now, reason) {
   if (!["manual", "timeout"].includes(reason)) {
     throw new Error(`Invalid submission reason: ${reason}`);
   }
-  if (reason === "manual" && !canManualSubmit(attempt, questions.length)) {
-    throw new Error("All questions must be answered before manual submission.");
-  }
-
   let correct = 0;
   let incorrect = 0;
   let unanswered = 0;
