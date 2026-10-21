@@ -735,9 +735,14 @@ dialog::backdrop {
   text-align: center;
 }
 
-.selector-heading h1 {
+.selector-heading h1,
+.selector-heading h2 {
   margin-bottom: 8px;
   color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
 }
 
 .paper-grid {
