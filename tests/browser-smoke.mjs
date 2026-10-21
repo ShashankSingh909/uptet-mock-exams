@@ -6,7 +6,9 @@ import path from "node:path";
 import { chromium } from "playwright-core";
 
 const root = path.resolve(import.meta.dirname, "..");
-const chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+const chromePath =
+  process.env.CHROME_PATH ??
+  "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
@@ -172,6 +174,8 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     assert.equal(await page.locator('a[href="paper3.html"]').count(), 1);
     assert.equal(await page.locator('a[href="paper4.html"]').count(), 1);
     assert.equal(await page.locator('a[href="paper5.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="cdp1.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="cdp2.html"]').count(), 1);
     await page.goto(`${baseUrl}/paper5.html`);
     const dimensions = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
@@ -186,3 +190,51 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     await new Promise((resolve) => server.close(resolve));
   }
 });
+
+for (const paperId of ["cdp1", "cdp2"]) {
+  test(`${paperId} scores a fully answered attempt and shows its review`, async () => {
+    const { server, baseUrl } = await startServer();
+    const browser = await chromium.launch({
+      executablePath: chromePath,
+      headless: true,
+    });
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const page = await context.newPage();
+
+    try {
+      await page.goto(`${baseUrl}/index.html`);
+      await page.locator(`a[href="${paperId}.html"]`).click();
+      assert.match(await page.locator(".paper-label").innerText(), /CDP/);
+      assert.equal(await page.locator(".option-row").count(), 4);
+
+      await page.evaluate((id) => {
+        const encoded = document.getElementById("paper-data").textContent.trim();
+        const bytes = Uint8Array.from(atob(encoded), (character) =>
+          character.charCodeAt(0),
+        );
+        const paper = JSON.parse(new TextDecoder().decode(bytes));
+        const key = `uptet-exam:${id}:v1`;
+        const state = JSON.parse(localStorage.getItem(key));
+        state.active.answers = Object.fromEntries(
+          paper.questions.map((question) => [question.number, question.answer]),
+        );
+        localStorage.setItem(key, JSON.stringify(state));
+      }, paperId);
+      await page.reload();
+      assert.equal(await page.locator(".answered .stat-number").innerText(), "150");
+
+      page.once("dialog", (dialog) => dialog.accept());
+      await page.locator("#submit-exam-live").click();
+      assert.equal(await page.locator('[data-stat="correct"] strong').innerText(), "150");
+      assert.equal(await page.locator('[data-stat="incorrect"] strong').innerText(), "0");
+
+      await page.locator("#review-answers").click();
+      assert.equal(await page.locator(".review-card").count(), 150);
+      assert.equal(await page.locator(".answer-explanation").count(), 150);
+    } finally {
+      await context.close();
+      await browser.close();
+      await new Promise((resolve) => server.close(resolve));
+    }
+  });
+}

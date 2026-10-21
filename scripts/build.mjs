@@ -21,6 +21,8 @@ for (const paperName of [
   "paper3",
   "paper4",
   "paper5",
+  "cdp1",
+  "cdp2",
 ]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),
@@ -29,7 +31,10 @@ for (const paperName of [
     throw new Error(`${paperName} does not contain 150 questions`);
   }
   const encoded = Buffer.from(JSON.stringify(data), "utf8").toString("base64");
-  const shortTitle = `मॉक पेपर ${data.paperNumber}`;
+  const shortTitle =
+    typeof data.paperNumber === "number"
+      ? `मॉक पेपर ${data.paperNumber}`
+      : data.paperNumber;
   const html = paperTemplate
     .replace("{{TITLE}}", data.title)
     .replace("{{SHORT_TITLE}}", shortTitle)

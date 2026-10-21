@@ -2,7 +2,15 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
-for (const paper of ["paper1", "paper2", "paper3", "paper4", "paper5"]) {
+for (const paper of [
+  "paper1",
+  "paper2",
+  "paper3",
+  "paper4",
+  "paper5",
+  "cdp1",
+  "cdp2",
+]) {
   test(`${paper} contains 150 complete questions`, async () => {
     const data = JSON.parse(
       await readFile(new URL(`../data/${paper}.json`, import.meta.url), "utf8"),
@@ -62,4 +70,18 @@ test("papers 3-5 retain representative PDF source text", async () => {
   assert.match(paper4.questions[149].text, /रिज़र्व बैंक/);
   assert.match(paper5.questions[0].text, /एक ही पक्ष/);
   assert.match(paper5.questions[149].text, /मूल्य-शिक्षा/);
+});
+
+test("CDP papers retain representative question bank text", async () => {
+  const cdp1 = JSON.parse(
+    await readFile(new URL("../data/cdp1.json", import.meta.url), "utf8"),
+  );
+  const cdp2 = JSON.parse(
+    await readFile(new URL("../data/cdp2.json", import.meta.url), "utf8"),
+  );
+
+  assert.match(cdp1.questions[0].text, /सही नहीं/);
+  assert.equal(cdp1.questions[0].answer, "c");
+  assert.match(cdp2.questions[0].text, /Growth spurt/);
+  assert.equal(cdp2.questions[0].answer, "b");
 });
