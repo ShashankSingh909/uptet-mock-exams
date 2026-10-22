@@ -10,6 +10,9 @@ for (const paper of [
   "paper5",
   "cdp1",
   "cdp2",
+  "hindi1",
+  "hindi2",
+  "sanskrit1",
 ]) {
   test(`${paper} contains 150 complete questions`, async () => {
     const data = JSON.parse(
@@ -84,4 +87,21 @@ test("CDP papers retain representative question bank text", async () => {
   assert.equal(cdp1.questions[0].answer, "c");
   assert.match(cdp2.questions[0].text, /Growth spurt/);
   assert.equal(cdp2.questions[0].answer, "b");
+});
+
+test("language papers retain representative question bank text", async () => {
+  const [hindi1, hindi2, sanskrit1] = await Promise.all(
+    ["hindi1", "hindi2", "sanskrit1"].map(async (paper) =>
+      JSON.parse(
+        await readFile(new URL(`../data/${paper}.json`, import.meta.url), "utf8"),
+      ),
+    ),
+  );
+
+  assert.match(hindi1.questions[0].passage, /सर्वांगीण विकास/);
+  assert.equal(hindi1.questions[0].answer, "c");
+  assert.match(hindi2.questions[0].text, /मूल नाम/);
+  assert.match(hindi2.questions[28].text, /शुद्ध वर्तनी/);
+  assert.match(sanskrit1.questions[134].passage, /संस्कृतभाषा/);
+  assert.equal(sanskrit1.questions[149].answer, "a");
 });

@@ -23,6 +23,9 @@ for (const paperName of [
   "paper5",
   "cdp1",
   "cdp2",
+  "hindi1",
+  "hindi2",
+  "sanskrit1",
 ]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),

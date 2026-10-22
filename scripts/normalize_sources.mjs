@@ -13,6 +13,9 @@ for (const paperName of [
   "paper5",
   "cdp1",
   "cdp2",
+  "hindi1",
+  "hindi2",
+  "sanskrit1",
 ]) {
   const source = JSON.parse(
     await readFile(path.join(root, "source", `${paperName}.json`), "utf8"),
@@ -48,7 +51,7 @@ for (const paperName of [
         section: section.name,
         sectionInfo: section.info,
         text: record.q,
-        passage: usesPassage ? activePassage : "",
+        passage: usesPassage ? activePassage : (record.passage ?? ""),
         options: record.options.map((text, index) => ({
           id: ids[index],
           label: labels[index],
