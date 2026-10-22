@@ -179,6 +179,7 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     assert.equal(await page.locator('a[href="hindi1.html"]').count(), 1);
     assert.equal(await page.locator('a[href="hindi2.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sanskrit1.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sst1.html"]').count(), 1);
     await page.goto(`${baseUrl}/paper5.html`);
     const dimensions = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
@@ -194,7 +195,14 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
   }
 });
 
-for (const paperId of ["cdp1", "cdp2", "hindi1", "hindi2", "sanskrit1"]) {
+for (const paperId of [
+  "cdp1",
+  "cdp2",
+  "hindi1",
+  "hindi2",
+  "sanskrit1",
+  "sst1",
+]) {
   test(`${paperId} scores a fully answered attempt and shows its review`, async () => {
     const { server, baseUrl } = await startServer();
     const browser = await chromium.launch({
@@ -209,7 +217,7 @@ for (const paperId of ["cdp1", "cdp2", "hindi1", "hindi2", "sanskrit1"]) {
       await page.locator(`a[href="${paperId}.html"]`).click();
       assert.match(
         await page.locator(".paper-label").innerText(),
-        /CDP|Hindi|Sanskrit/,
+        /CDP|Hindi|Sanskrit|SST/,
       );
       assert.equal(await page.locator(".option-row").count(), 4);
 

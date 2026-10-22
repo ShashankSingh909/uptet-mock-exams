@@ -13,6 +13,7 @@ for (const paper of [
   "hindi1",
   "hindi2",
   "sanskrit1",
+  "sst1",
 ]) {
   test(`${paper} contains 150 complete questions`, async () => {
     const data = JSON.parse(
@@ -104,4 +105,14 @@ test("language papers retain representative question bank text", async () => {
   assert.match(hindi2.questions[28].text, /शुद्ध वर्तनी/);
   assert.match(sanskrit1.questions[134].passage, /संस्कृतभाषा/);
   assert.equal(sanskrit1.questions[149].answer, "a");
+});
+
+test("SST papers retain representative question bank text", async () => {
+  const sst1 = JSON.parse(
+    await readFile(new URL("../data/sst1.json", import.meta.url), "utf8"),
+  );
+
+  assert.match(sst1.questions[0].text, /समाहर्ता/);
+  assert.equal(sst1.questions[0].answer, "b");
+  assert.match(sst1.questions[149].text, /दृष्टिबाधित/);
 });
