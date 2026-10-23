@@ -180,6 +180,10 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     assert.equal(await page.locator('a[href="hindi2.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sanskrit1.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sst1.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sst2.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sst3.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sst4.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sst5.html"]').count(), 1);
     await page.goto(`${baseUrl}/paper5.html`);
     const dimensions = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
@@ -202,6 +206,10 @@ for (const paperId of [
   "hindi2",
   "sanskrit1",
   "sst1",
+  "sst2",
+  "sst3",
+  "sst4",
+  "sst5",
 ]) {
   test(`${paperId} scores a fully answered attempt and shows its review`, async () => {
     const { server, baseUrl } = await startServer();

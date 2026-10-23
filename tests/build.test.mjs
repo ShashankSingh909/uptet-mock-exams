@@ -15,6 +15,10 @@ for (const file of [
   "hindi2.html",
   "sanskrit1.html",
   "sst1.html",
+  "sst2.html",
+  "sst3.html",
+  "sst4.html",
+  "sst5.html",
 ]) {
   test(`${file} is self-contained`, async () => {
     const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
@@ -37,6 +41,10 @@ for (const file of [
   "hindi2.html",
   "sanskrit1.html",
   "sst1.html",
+  "sst2.html",
+  "sst3.html",
+  "sst4.html",
+  "sst5.html",
 ]) {
   test(`${file} embeds a locked 150-question exam`, async () => {
     const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
@@ -66,4 +74,8 @@ test("the selector does not contain exam state initialization", async () => {
   assert.match(html, /hindi2\.html/);
   assert.match(html, /sanskrit1\.html/);
   assert.match(html, /sst1\.html/);
+  assert.match(html, /sst2\.html/);
+  assert.match(html, /sst3\.html/);
+  assert.match(html, /sst4\.html/);
+  assert.match(html, /sst5\.html/);
 });
