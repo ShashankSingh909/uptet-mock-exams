@@ -28,19 +28,22 @@ for (const paperName of [
   "sanskrit1",
   "sst1",
   "sst2",
-  "sst3",
-  "sst4",
   "sst5",
   "sst3-part1",
   "sst3-part2",
   "sst3-part3",
   "sst3-part4",
   "sst3-part5",
+  "sst4-part1",
+  "sst4-part2",
+  "sst4-part3",
+  "sst4-part4",
+  "sst4-part5",
 ]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),
   );
-  const expectedCount = paperName.startsWith("sst3-part") ? 30 : 150;
+  const expectedCount = paperName.includes("-part") ? 30 : 150;
   if (data.questions.length !== expectedCount) {
     throw new Error(`${paperName} does not contain ${expectedCount} questions`);
   }

@@ -16,14 +16,17 @@ for (const file of [
   "sanskrit1.html",
   "sst1.html",
   "sst2.html",
-  "sst3.html",
-  "sst4.html",
   "sst5.html",
   "sst3-part1.html",
   "sst3-part2.html",
   "sst3-part3.html",
   "sst3-part4.html",
   "sst3-part5.html",
+  "sst4-part1.html",
+  "sst4-part2.html",
+  "sst4-part3.html",
+  "sst4-part4.html",
+  "sst4-part5.html",
 ]) {
   test(`${file} is self-contained`, async () => {
     const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
@@ -47,8 +50,6 @@ for (const file of [
   "sanskrit1.html",
   "sst1.html",
   "sst2.html",
-  "sst3.html",
-  "sst4.html",
   "sst5.html",
 ]) {
   test(`${file} embeds a locked 150-question exam`, async () => {
@@ -62,12 +63,12 @@ for (const file of [
   });
 }
 
-for (let part = 1; part <= 5; part += 1) {
-  test(`sst3-part${part}.html embeds a locked 30-question exam`, async () => {
-    const html = await readFile(
-      new URL(`../sst3-part${part}.html`, import.meta.url),
-      "utf8",
-    );
+for (const file of [1, 2, 3, 4, 5].flatMap((part) => [
+  `sst3-part${part}.html`,
+  `sst4-part${part}.html`,
+])) {
+  test(`${file} embeds a locked 30-question exam`, async () => {
+    const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
     assert.match(html, /data-answer-mode="locked"/);
     assert.match(html, /data-question-count="30"/);
     assert.doesNotMatch(html, /class="correct-answer"/);
@@ -93,10 +94,11 @@ test("the selector does not contain exam state initialization", async () => {
   assert.match(html, /sanskrit1\.html/);
   assert.match(html, /sst1\.html/);
   assert.match(html, /sst2\.html/);
-  assert.match(html, /sst3\.html/);
-  assert.match(html, /sst4\.html/);
+  assert.doesNotMatch(html, /href="sst3\.html"/);
+  assert.doesNotMatch(html, /href="sst4\.html"/);
   assert.match(html, /sst5\.html/);
   for (let part = 1; part <= 5; part += 1) {
     assert.match(html, new RegExp(`sst3-part${part}\\.html`));
+    assert.match(html, new RegExp(`sst4-part${part}\\.html`));
   }
 });
