@@ -20,7 +20,6 @@ for (const paperName of [
   "sst2",
   "sst3",
   "sst4",
-  "sst5",
 ]) {
   const source = JSON.parse(
     await readFile(path.join(root, "source", `${paperName}.json`), "utf8"),

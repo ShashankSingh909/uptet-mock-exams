@@ -16,7 +16,6 @@ for (const file of [
   "sanskrit1.html",
   "sst1.html",
   "sst2.html",
-  "sst5.html",
   "sst3-part1.html",
   "sst3-part2.html",
   "sst3-part3.html",
@@ -50,7 +49,6 @@ for (const file of [
   "sanskrit1.html",
   "sst1.html",
   "sst2.html",
-  "sst5.html",
 ]) {
   test(`${file} embeds a locked 150-question exam`, async () => {
     const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
@@ -96,7 +94,7 @@ test("the selector does not contain exam state initialization", async () => {
   assert.match(html, /sst2\.html/);
   assert.doesNotMatch(html, /href="sst3\.html"/);
   assert.doesNotMatch(html, /href="sst4\.html"/);
-  assert.match(html, /sst5\.html/);
+  assert.doesNotMatch(html, /href="sst5\.html"/);
   for (let part = 1; part <= 5; part += 1) {
     assert.match(html, new RegExp(`sst3-part${part}\\.html`));
     assert.match(html, new RegExp(`sst4-part${part}\\.html`));
