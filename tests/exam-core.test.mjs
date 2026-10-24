@@ -23,6 +23,23 @@ test("a new attempt starts with exactly 9000 seconds", () => {
   assert.equal(remainingSeconds(attempt, 1_000), 9000);
 });
 
+test("an attempt can carry a shorter paper duration", () => {
+  const attempt = createAttempt(1_000, 30, 1800);
+  assert.equal(remainingSeconds(attempt, 1_000), 1800);
+  const state = resolveExpiredAttempt(
+    { active: attempt, latest: null },
+    questions,
+    1_000 + 1800 * 1000,
+  );
+  assert.equal(state.latest.reason, "timeout");
+  assert.equal(state.latest.timeUsedSeconds, 1800);
+});
+
+test("attempts saved without a duration keep the 9000-second timer", () => {
+  const { durationSeconds, ...legacy } = createAttempt(1_000, 150);
+  assert.equal(remainingSeconds(legacy, 1_000), 9000);
+});
+
 test("reopening uses the original start timestamp", () => {
   const attempt = createAttempt(1_000, questions.length);
   assert.equal(remainingSeconds(attempt, 61_000), 8940);

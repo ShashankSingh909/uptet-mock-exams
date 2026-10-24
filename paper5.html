@@ -858,21 +858,30 @@ dialog::backdrop {
     <script>const DURATION_SECONDS = 9000;
 const STATE_VERSION = 1;
 
-function createAttempt(now, questionCount = 150) {
+function createAttempt(
+  now,
+  questionCount = 150,
+  durationSeconds = DURATION_SECONDS,
+) {
   return {
     version: STATE_VERSION,
     status: "active",
     startedAt: now,
     questionCount,
+    durationSeconds,
     currentQuestion: 1,
     answers: {},
     review: [],
   };
 }
 
+function attemptDuration(attempt) {
+  return attempt.durationSeconds ?? DURATION_SECONDS;
+}
+
 function remainingSeconds(attempt, now) {
   const elapsedSeconds = Math.floor((now - attempt.startedAt) / 1000);
-  return Math.max(0, DURATION_SECONDS - elapsedSeconds);
+  return Math.max(0, attemptDuration(attempt) - elapsedSeconds);
 }
 
 function selectAnswer(attempt, questionNumber, answer) {
@@ -939,7 +948,7 @@ function completeAttempt(attempt, questions, now, reason) {
     submittedAt: now,
     reason,
     timeUsedSeconds: Math.min(
-      DURATION_SECONDS,
+      attemptDuration(attempt),
       Math.max(0, Math.floor((now - attempt.startedAt) / 1000)),
     ),
     stats: {
@@ -961,9 +970,14 @@ function resolveExpiredAttempt(state, questions, now) {
   return { active: null, latest };
 }
 
-function startNewAttempt(state, now, questionCount = 150) {
+function startNewAttempt(
+  state,
+  now,
+  questionCount = 150,
+  durationSeconds = DURATION_SECONDS,
+) {
   return {
-    active: createAttempt(now, questionCount),
+    active: createAttempt(now, questionCount, durationSeconds),
     latest: state.latest ?? null,
   };
 }
@@ -1038,7 +1052,12 @@ function sanitizeState(value, questionCount = 150) {
   function ensureAttempt() {
     state = resolveExpiredAttempt(state, paper.questions, Date.now());
     if (!state.active && !state.latest) {
-      state = startNewAttempt(state, Date.now(), paper.questions.length);
+      state = startNewAttempt(
+        state,
+        Date.now(),
+        paper.questions.length,
+        paper.durationSeconds,
+      );
     }
     persist();
     mode = state.active ? "active" : "result";
@@ -1168,7 +1187,7 @@ function sanitizeState(value, questionCount = 150) {
       <section class="question-area">
         <div class="question-meta">
           <h2>प्रश्न ${current.number}</h2>
-          <span>150 में से ${current.number}</span>
+          <span>${paper.questions.length} में से ${current.number}</span>
         </div>
         ${current.passage ? `<div class="passage">${current.passage}</div>` : ""}
         <p class="question-text">${current.text}</p>
@@ -1327,7 +1346,12 @@ function sanitizeState(value, questionCount = 150) {
       ) {
         return;
       }
-      state = startNewAttempt(state, Date.now(), paper.questions.length);
+      state = startNewAttempt(
+        state,
+        Date.now(),
+        paper.questions.length,
+        paper.durationSeconds,
+      );
       persist();
       mode = "active";
       render();

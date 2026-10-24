@@ -3,12 +3,13 @@
 Five mobile-first UPTET Paper 2 practice exams built from the supplied mock
 papers, plus Special UPTET 2026 practice sets: two Child Development &
 Pedagogy (CDP 1, CDP 2), two Hindi (Hindi 1, Hindi 2), one Sanskrit
-(Sanskrit 1), and five Social Studies (SST 1–5).
+(Sanskrit 1), and five Social Studies (SST 1–5). SST 3 is also split into five
+30-question, 30-minute tests (SST 3 — टेस्ट 1 to 5).
 
 ## Use Online
 
 Open [UPTET Mock Exams](https://shashanksingh909.github.io/uptet-mock-exams/),
-choose any paper (Paper 1–5, CDP 1–2, Hindi 1–2, Sanskrit 1, SST 1–5), and begin
+choose any paper (Paper 1–5, CDP 1–2, Hindi 1–2, Sanskrit 1, SST 1–5, SST 3 टेस्ट 1–5), and begin
 the exam.
 Opening a paper starts its 2 hour 30 minute timer.
 
@@ -23,9 +24,11 @@ access.
 
 ## Exam Behavior
 
-- 150 questions and four options per paper
+- 150 questions (2 hours 30 minutes) per full paper, 30 questions (30 minutes)
+  per SST 3 test, four options each
 - progress and original start time persist after closing or reloading
-- manual submission unlocks only after all 150 questions are answered
+- manual submission is available at any time; unanswered questions count as
+  unanswered
 - time expiry submits automatically
 - answers and explanations remain hidden until submission
 - only the latest completed attempt is retained for review

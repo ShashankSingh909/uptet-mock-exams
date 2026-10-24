@@ -85,3 +85,35 @@ for (const paperName of [
     "utf8",
   );
 }
+
+// Short practice tests: SST 3 split into five 30-question parts, one minute
+// per question as in the full paper.
+const partSize = 30;
+const sst3 = JSON.parse(
+  await readFile(path.join(root, "data", "sst3.json"), "utf8"),
+);
+for (let part = 1; part <= sst3.questions.length / partSize; part += 1) {
+  const start = (part - 1) * partSize;
+  const questions = sst3.questions
+    .slice(start, start + partSize)
+    .map((question, index) => ({
+      ...question,
+      number: index + 1,
+      section: question.section.replace(/\s*\(प्र\.[^)]*\)/, ""),
+    }));
+  const range = `मूल प्रश्न ${start + 1}–${start + partSize}`;
+  const normalized = {
+    id: `sst3-part${part}`,
+    paperNumber: `SST 3 — टेस्ट ${part}`,
+    title: `${sst3.title} — टेस्ट ${part} (${range})`,
+    subtitle: `${sst3.subtitle} • टेस्ट ${part}: 30 प्रश्न, 30 अंक, 30 मिनट`,
+    instructions: sst3.instructions.replace("150", "30"),
+    durationSeconds: partSize * 60,
+    questions,
+  };
+  await writeFile(
+    path.join(root, "data", `sst3-part${part}.json`),
+    `${JSON.stringify(normalized, null, 2)}\n`,
+    "utf8",
+  );
+}
