@@ -17,7 +17,6 @@ for (const paper of [
   "sst2",
   "sst3",
   "sst4",
-  "sst5",
 ]) {
   test(`${paper} contains 150 complete questions`, async () => {
     const data = JSON.parse(
@@ -120,8 +119,8 @@ test("SST papers retain representative question bank text", async () => {
   assert.equal(sst1.questions[0].answer, "b");
   assert.match(sst1.questions[149].text, /दृष्टिबाधित/);
 
-  const [sst2, sst3, sst4, sst5] = await Promise.all(
-    ["sst2", "sst3", "sst4", "sst5"].map(async (paper) =>
+  const [sst2, sst3, sst4] = await Promise.all(
+    ["sst2", "sst3", "sst4"].map(async (paper) =>
       JSON.parse(
         await readFile(new URL(`../data/${paper}.json`, import.meta.url), "utf8"),
       ),
@@ -131,8 +130,6 @@ test("SST papers retain representative question bank text", async () => {
   assert.equal(sst2.questions[0].answer, "c");
   assert.match(sst3.questions[0].text, /दयाराम साहनी/);
   assert.match(sst4.questions[149].text, /ऑपरेशन फ़्लड/);
-  assert.match(sst5.questions[149].text, /रेलवे आर्च पुल/);
-  assert.doesNotMatch(sst5.questions[0].explanation, /^इतिहास/);
 });
 
 for (const paperName of ["sst3", "sst4"]) {

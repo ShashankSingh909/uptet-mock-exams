@@ -183,7 +183,7 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     assert.equal(await page.locator('a[href="sst2.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sst3.html"]').count(), 0);
     assert.equal(await page.locator('a[href="sst4.html"]').count(), 0);
-    assert.equal(await page.locator('a[href="sst5.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sst5.html"]').count(), 0);
     assert.equal(await page.locator('a[href^="sst3-part"]').count(), 5);
     assert.equal(await page.locator('a[href^="sst4-part"]').count(), 5);
     await page.goto(`${baseUrl}/paper5.html`);
@@ -209,7 +209,6 @@ for (const paperId of [
   "sanskrit1",
   "sst1",
   "sst2",
-  "sst5",
   "sst3-part1",
   "sst3-part5",
   "sst4-part1",
