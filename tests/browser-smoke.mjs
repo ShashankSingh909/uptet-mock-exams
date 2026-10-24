@@ -184,6 +184,7 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     assert.equal(await page.locator('a[href="sst3.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sst4.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sst5.html"]').count(), 1);
+    assert.equal(await page.locator('a[href^="sst3-part"]').count(), 5);
     await page.goto(`${baseUrl}/paper5.html`);
     const dimensions = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
@@ -210,6 +211,8 @@ for (const paperId of [
   "sst3",
   "sst4",
   "sst5",
+  "sst3-part1",
+  "sst3-part5",
 ]) {
   test(`${paperId} scores a fully answered attempt and shows its review`, async () => {
     const { server, baseUrl } = await startServer();
@@ -228,6 +231,12 @@ for (const paperId of [
         /CDP|Hindi|Sanskrit|SST/,
       );
       assert.equal(await page.locator(".option-row").count(), 4);
+      const count = paperId.startsWith("sst3-part") ? "30" : "150";
+      assert.match(
+        await page.locator("#timer").innerText(),
+        count === "30" ? /^00:(29|30)/ : /^02:(29|30)/,
+      );
+      assert.match(await page.locator(".question-meta").innerText(), new RegExp(`${count} में से 1`));
 
       await page.evaluate((id) => {
         const encoded = document.getElementById("paper-data").textContent.trim();
@@ -243,16 +252,16 @@ for (const paperId of [
         localStorage.setItem(key, JSON.stringify(state));
       }, paperId);
       await page.reload();
-      assert.equal(await page.locator(".answered .stat-number").innerText(), "150");
+      assert.equal(await page.locator(".answered .stat-number").innerText(), count);
 
       page.once("dialog", (dialog) => dialog.accept());
       await page.locator("#submit-exam-live").click();
-      assert.equal(await page.locator('[data-stat="correct"] strong').innerText(), "150");
+      assert.equal(await page.locator('[data-stat="correct"] strong').innerText(), count);
       assert.equal(await page.locator('[data-stat="incorrect"] strong').innerText(), "0");
 
       await page.locator("#review-answers").click();
-      assert.equal(await page.locator(".review-card").count(), 150);
-      assert.equal(await page.locator(".answer-explanation").count(), 150);
+      assert.equal(await page.locator(".review-card").count(), Number(count));
+      assert.equal(await page.locator(".answer-explanation").count(), Number(count));
     } finally {
       await context.close();
       await browser.close();

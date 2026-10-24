@@ -47,7 +47,12 @@
   function ensureAttempt() {
     state = resolveExpiredAttempt(state, paper.questions, Date.now());
     if (!state.active && !state.latest) {
-      state = startNewAttempt(state, Date.now(), paper.questions.length);
+      state = startNewAttempt(
+        state,
+        Date.now(),
+        paper.questions.length,
+        paper.durationSeconds,
+      );
     }
     persist();
     mode = state.active ? "active" : "result";
@@ -177,7 +182,7 @@
       <section class="question-area">
         <div class="question-meta">
           <h2>प्रश्न ${current.number}</h2>
-          <span>150 में से ${current.number}</span>
+          <span>${paper.questions.length} में से ${current.number}</span>
         </div>
         ${current.passage ? `<div class="passage">${current.passage}</div>` : ""}
         <p class="question-text">${current.text}</p>
@@ -336,7 +341,12 @@
       ) {
         return;
       }
-      state = startNewAttempt(state, Date.now(), paper.questions.length);
+      state = startNewAttempt(
+        state,
+        Date.now(),
+        paper.questions.length,
+        paper.durationSeconds,
+      );
       persist();
       mode = "active";
       render();

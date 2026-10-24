@@ -1,21 +1,30 @@
 export const DURATION_SECONDS = 9000;
 export const STATE_VERSION = 1;
 
-export function createAttempt(now, questionCount = 150) {
+export function createAttempt(
+  now,
+  questionCount = 150,
+  durationSeconds = DURATION_SECONDS,
+) {
   return {
     version: STATE_VERSION,
     status: "active",
     startedAt: now,
     questionCount,
+    durationSeconds,
     currentQuestion: 1,
     answers: {},
     review: [],
   };
 }
 
+export function attemptDuration(attempt) {
+  return attempt.durationSeconds ?? DURATION_SECONDS;
+}
+
 export function remainingSeconds(attempt, now) {
   const elapsedSeconds = Math.floor((now - attempt.startedAt) / 1000);
-  return Math.max(0, DURATION_SECONDS - elapsedSeconds);
+  return Math.max(0, attemptDuration(attempt) - elapsedSeconds);
 }
 
 export function selectAnswer(attempt, questionNumber, answer) {
@@ -82,7 +91,7 @@ export function completeAttempt(attempt, questions, now, reason) {
     submittedAt: now,
     reason,
     timeUsedSeconds: Math.min(
-      DURATION_SECONDS,
+      attemptDuration(attempt),
       Math.max(0, Math.floor((now - attempt.startedAt) / 1000)),
     ),
     stats: {
@@ -104,9 +113,14 @@ export function resolveExpiredAttempt(state, questions, now) {
   return { active: null, latest };
 }
 
-export function startNewAttempt(state, now, questionCount = 150) {
+export function startNewAttempt(
+  state,
+  now,
+  questionCount = 150,
+  durationSeconds = DURATION_SECONDS,
+) {
   return {
-    active: createAttempt(now, questionCount),
+    active: createAttempt(now, questionCount, durationSeconds),
     latest: state.latest ?? null,
   };
 }

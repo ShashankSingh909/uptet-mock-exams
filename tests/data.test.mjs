@@ -134,3 +134,46 @@ test("SST papers retain representative question bank text", async () => {
   assert.match(sst5.questions[149].text, /रेलवे आर्च पुल/);
   assert.doesNotMatch(sst5.questions[0].explanation, /^इतिहास/);
 });
+
+test("SST 3 splits into five 30-question, 30-minute tests", async () => {
+  const sst3 = JSON.parse(
+    await readFile(new URL("../data/sst3.json", import.meta.url), "utf8"),
+  );
+  const parts = await Promise.all(
+    [1, 2, 3, 4, 5].map(async (part) =>
+      JSON.parse(
+        await readFile(
+          new URL(`../data/sst3-part${part}.json`, import.meta.url),
+          "utf8",
+        ),
+      ),
+    ),
+  );
+
+  for (const part of parts) {
+    assert.equal(part.durationSeconds, 1800);
+    assert.deepEqual(
+      part.questions.map((question) => question.number),
+      Array.from({ length: 30 }, (_, index) => index + 1),
+    );
+    for (const question of part.questions) {
+      assert.equal(question.options.length, 4);
+      assert.match(question.answer, /^[abcd]$/);
+      assert.doesNotMatch(question.section, /\(प्र\./);
+    }
+  }
+  assert.deepEqual(
+    parts.flatMap((part) =>
+      part.questions.map(({ text, answer, explanation }) => ({
+        text,
+        answer,
+        explanation,
+      })),
+    ),
+    sst3.questions.map(({ text, answer, explanation }) => ({
+      text,
+      answer,
+      explanation,
+    })),
+  );
+});

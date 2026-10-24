@@ -19,6 +19,11 @@ for (const file of [
   "sst3.html",
   "sst4.html",
   "sst5.html",
+  "sst3-part1.html",
+  "sst3-part2.html",
+  "sst3-part3.html",
+  "sst3-part4.html",
+  "sst3-part5.html",
 ]) {
   test(`${file} is self-contained`, async () => {
     const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
@@ -57,6 +62,19 @@ for (const file of [
   });
 }
 
+for (let part = 1; part <= 5; part += 1) {
+  test(`sst3-part${part}.html embeds a locked 30-question exam`, async () => {
+    const html = await readFile(
+      new URL(`../sst3-part${part}.html`, import.meta.url),
+      "utf8",
+    );
+    assert.match(html, /data-answer-mode="locked"/);
+    assert.match(html, /data-question-count="30"/);
+    assert.doesNotMatch(html, /class="correct-answer"/);
+    assert.doesNotMatch(html, /class="explanation"/);
+  });
+}
+
 test("the selector does not contain exam state initialization", async () => {
   const html = await readFile(
     new URL("../index.html", import.meta.url),
@@ -78,4 +96,7 @@ test("the selector does not contain exam state initialization", async () => {
   assert.match(html, /sst3\.html/);
   assert.match(html, /sst4\.html/);
   assert.match(html, /sst5\.html/);
+  for (let part = 1; part <= 5; part += 1) {
+    assert.match(html, new RegExp(`sst3-part${part}\\.html`));
+  }
 });

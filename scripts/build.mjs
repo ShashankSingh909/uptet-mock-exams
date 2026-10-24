@@ -31,12 +31,18 @@ for (const paperName of [
   "sst3",
   "sst4",
   "sst5",
+  "sst3-part1",
+  "sst3-part2",
+  "sst3-part3",
+  "sst3-part4",
+  "sst3-part5",
 ]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),
   );
-  if (data.questions.length !== 150) {
-    throw new Error(`${paperName} does not contain 150 questions`);
+  const expectedCount = paperName.startsWith("sst3-part") ? 30 : 150;
+  if (data.questions.length !== expectedCount) {
+    throw new Error(`${paperName} does not contain ${expectedCount} questions`);
   }
   const encoded = Buffer.from(JSON.stringify(data), "utf8").toString("base64");
   const shortTitle =
@@ -47,6 +53,7 @@ for (const paperName of [
     .replace("{{TITLE}}", data.title)
     .replace("{{SHORT_TITLE}}", shortTitle)
     .replace("{{CSS}}", css)
+    .replace("{{COUNT}}", String(data.questions.length))
     .replace("{{DATA}}", encoded)
     .replace("{{CORE}}", browserCore)
     .replace("{{UI}}", uiSource);
