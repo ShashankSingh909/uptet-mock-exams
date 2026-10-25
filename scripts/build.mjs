@@ -38,11 +38,13 @@ for (const paperName of [
   "sst4-part3",
   "sst4-part4",
   "sst4-part5",
+  "sst-current",
 ]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),
   );
-  const expectedCount = paperName.includes("-part") ? 30 : 150;
+  // One minute per question: 150 for a full paper, 30 for a 30-mark test.
+  const expectedCount = data.durationSeconds / 60;
   if (data.questions.length !== expectedCount) {
     throw new Error(`${paperName} does not contain ${expectedCount} questions`);
   }

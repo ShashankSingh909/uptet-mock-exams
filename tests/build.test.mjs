@@ -26,6 +26,7 @@ for (const file of [
   "sst4-part3.html",
   "sst4-part4.html",
   "sst4-part5.html",
+  "sst-current.html",
 ]) {
   test(`${file} is self-contained`, async () => {
     const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
@@ -61,10 +62,13 @@ for (const file of [
   });
 }
 
-for (const file of [1, 2, 3, 4, 5].flatMap((part) => [
-  `sst3-part${part}.html`,
-  `sst4-part${part}.html`,
-])) {
+for (const file of [
+  ...[1, 2, 3, 4, 5].flatMap((part) => [
+    `sst3-part${part}.html`,
+    `sst4-part${part}.html`,
+  ]),
+  "sst-current.html",
+]) {
   test(`${file} embeds a locked 30-question exam`, async () => {
     const html = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
     assert.match(html, /data-answer-mode="locked"/);
@@ -95,6 +99,7 @@ test("the selector does not contain exam state initialization", async () => {
   assert.doesNotMatch(html, /href="sst3\.html"/);
   assert.doesNotMatch(html, /href="sst4\.html"/);
   assert.doesNotMatch(html, /href="sst5\.html"/);
+  assert.match(html, /sst-current\.html/);
   for (let part = 1; part <= 5; part += 1) {
     assert.match(html, new RegExp(`sst3-part${part}\\.html`));
     assert.match(html, new RegExp(`sst4-part${part}\\.html`));

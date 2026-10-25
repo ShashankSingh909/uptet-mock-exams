@@ -20,6 +20,7 @@ for (const paperName of [
   "sst2",
   "sst3",
   "sst4",
+  "sst-current",
 ]) {
   const source = JSON.parse(
     await readFile(path.join(root, "source", `${paperName}.json`), "utf8"),
@@ -73,7 +74,7 @@ for (const paperName of [
     title: source.title,
     subtitle: source.subtitle,
     instructions: source.instructions,
-    durationSeconds: 9000,
+    durationSeconds: source.duration_seconds ?? 9000,
     questions,
   };
 
