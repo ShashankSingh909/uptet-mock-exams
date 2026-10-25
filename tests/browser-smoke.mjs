@@ -186,6 +186,7 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     assert.equal(await page.locator('a[href="sst5.html"]').count(), 0);
     assert.equal(await page.locator('a[href^="sst3-part"]').count(), 5);
     assert.equal(await page.locator('a[href^="sst4-part"]').count(), 5);
+    assert.equal(await page.locator('a[href="sst-current.html"]').count(), 1);
     await page.goto(`${baseUrl}/paper5.html`);
     const dimensions = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
@@ -213,6 +214,7 @@ for (const paperId of [
   "sst3-part5",
   "sst4-part1",
   "sst4-part5",
+  "sst-current",
 ]) {
   test(`${paperId} scores a fully answered attempt and shows its review`, async () => {
     const { server, baseUrl } = await startServer();
@@ -231,7 +233,7 @@ for (const paperId of [
         /CDP|Hindi|Sanskrit|SST/,
       );
       assert.equal(await page.locator(".option-row").count(), 4);
-      const count = paperId.includes("-part") ? "30" : "150";
+      const count = /-part|current/.test(paperId) ? "30" : "150";
       assert.match(
         await page.locator("#timer").innerText(),
         count === "30" ? /^00:(29|30)/ : /^02:(29|30)/,

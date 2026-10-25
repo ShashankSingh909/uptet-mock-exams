@@ -176,3 +176,25 @@ for (const paperName of ["sst3", "sst4"]) {
     );
   });
 }
+
+test("UP current affairs test has 30 questions and a 30-minute timer", async () => {
+  const paper = JSON.parse(
+    await readFile(new URL("../data/sst-current.json", import.meta.url), "utf8"),
+  );
+
+  assert.equal(paper.durationSeconds, 1800);
+  assert.deepEqual(
+    paper.questions.map((question) => question.number),
+    Array.from({ length: 30 }, (_, index) => index + 1),
+  );
+  for (const question of paper.questions) {
+    assert.equal(question.options.length, 4);
+    assert.match(question.answer, /^[abcd]$/);
+    assert.ok(question.explanation.trim().length > 10);
+  }
+  assert.match(paper.questions[0].text, /पहले मुख्यमंत्री/);
+  assert.equal(paper.questions[0].answer, "c");
+  assert.match(paper.questions[29].text, /रेलवे आर्च पुल/);
+  assert.equal(paper.questions[29].answer, "a");
+  assert.match(paper.instructions, /सभी 30 प्रश्न/);
+});
