@@ -16,6 +16,8 @@ for (const paperName of [
   "hindi1",
   "hindi2",
   "sanskrit1",
+  "sanskrit2",
+  "sanskrit2-extra",
   "sst1",
   "sst2",
   "sst3",

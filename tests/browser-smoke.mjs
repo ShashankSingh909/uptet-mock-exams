@@ -179,6 +179,8 @@ test("selector and desktop exam fit without horizontal overflow", async () => {
     assert.equal(await page.locator('a[href="hindi1.html"]').count(), 1);
     assert.equal(await page.locator('a[href="hindi2.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sanskrit1.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sanskrit2.html"]').count(), 1);
+    assert.equal(await page.locator('a[href="sanskrit2-extra.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sst1.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sst2.html"]').count(), 1);
     assert.equal(await page.locator('a[href="sst3.html"]').count(), 0);
@@ -208,6 +210,8 @@ for (const paperId of [
   "hindi1",
   "hindi2",
   "sanskrit1",
+  "sanskrit2",
+  "sanskrit2-extra",
   "sst1",
   "sst2",
   "sst3-part1",
@@ -233,7 +237,7 @@ for (const paperId of [
         /CDP|Hindi|Sanskrit|SST/,
       );
       assert.equal(await page.locator(".option-row").count(), 4);
-      const count = /-part|current/.test(paperId) ? "30" : "150";
+      const count = /-part|current|extra/.test(paperId) ? "30" : "150";
       assert.match(
         await page.locator("#timer").innerText(),
         count === "30" ? /^00:(29|30)/ : /^02:(29|30)/,

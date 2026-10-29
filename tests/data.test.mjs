@@ -13,6 +13,7 @@ for (const paper of [
   "hindi1",
   "hindi2",
   "sanskrit1",
+  "sanskrit2",
   "sst1",
   "sst2",
   "sst3",
@@ -197,4 +198,34 @@ test("UP current affairs test has 30 questions and a 30-minute timer", async () 
   assert.match(paper.questions[29].text, /रेलवे आर्च पुल/);
   assert.equal(paper.questions[29].answer, "a");
   assert.match(paper.instructions, /सभी 30 प्रश्न/);
+});
+
+test("Sanskrit 2 keeps 150 questions and its extra 30-question test", async () => {
+  const [main, extra] = await Promise.all(
+    ["sanskrit2", "sanskrit2-extra"].map(async (paper) =>
+      JSON.parse(
+        await readFile(new URL(`../data/${paper}.json`, import.meta.url), "utf8"),
+      ),
+    ),
+  );
+
+  assert.equal(main.questions.length, 150);
+  assert.match(main.questions[0].text, /उन्नतः वृक्षः/);
+  assert.equal(main.questions[0].answer, "b");
+  assert.match(main.questions[27].passage, /स्वच्छता/);
+  assert.equal(main.questions[75].passage, "");
+  assert.match(main.questions[149].text, /धारयन्ति/);
+  assert.equal(
+    main.questions.filter((question) => question.passage).length,
+    15,
+  );
+
+  assert.equal(extra.durationSeconds, 1800);
+  assert.deepEqual(
+    extra.questions.map((question) => question.number),
+    Array.from({ length: 30 }, (_, index) => index + 1),
+  );
+  assert.match(extra.questions[0].text, /शुद्धः वायुः/);
+  assert.equal(extra.questions[29].answer, "a");
+  assert.match(extra.instructions, /सभी 30 प्रश्न/);
 });
