@@ -133,7 +133,7 @@ test("SST papers retain representative question bank text", async () => {
   assert.match(sst4.questions[149].text, /ऑपरेशन फ़्लड/);
 });
 
-for (const paperName of ["sst3", "sst4"]) {
+for (const paperName of ["sst1", "sst3", "sst4"]) {
   test(`${paperName} splits into five 30-question, 30-minute tests`, async () => {
     const full = JSON.parse(
       await readFile(new URL(`../data/${paperName}.json`, import.meta.url), "utf8"),
@@ -158,7 +158,7 @@ for (const paperName of ["sst3", "sst4"]) {
       for (const question of part.questions) {
         assert.equal(question.options.length, 4);
         assert.match(question.answer, /^[abcd]$/);
-        assert.doesNotMatch(question.section, /\(प्र\./);
+        assert.doesNotMatch(question.section, /\(प्र(\.|श्न)/);
       }
     }
     assert.deepEqual(
