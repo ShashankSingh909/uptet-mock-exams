@@ -3,21 +3,21 @@
 Five mobile-first UPTET Paper 2 practice exams built from the supplied mock
 papers, plus Special UPTET 2026 practice sets: two Child Development &
 Pedagogy (CDP 1, CDP 2), two Hindi (Hindi 1, Hindi 2), two Sanskrit
-(Sanskrit 1, Sanskrit 2, plus a 30-question Sanskrit 2 extra test), and Social Studies (SST 1 and 2 as full papers; SST 3 and SST 4
+(Sanskrit 1, Sanskrit 2, plus a 30-question Sanskrit 2 extra test), and Social Studies (SST 2 as a full paper; SST 1, SST 3 and SST 4
 each as five 30-question, 30-minute tests, टेस्ट 1 to 5), plus a 30-question
 UP and current affairs test (SST — उ.प्र. करेंट टेस्ट).
 
 ## Use Online
 
 Open [UPTET Mock Exams](https://shashanksingh909.github.io/uptet-mock-exams/),
-choose any paper (Paper 1–5, CDP 1–2, Hindi 1–2, Sanskrit 1–2, SST 1, 2, SST 3/4 टेस्ट 1–5), and begin
+choose any paper (Paper 1–5, CDP 1–2, Hindi 1–2, Sanskrit 1–2, SST 2, SST 1/3/4 टेस्ट 1–5), and begin
 the exam.
 Opening a paper starts its 2 hour 30 minute timer.
 
 ## Use Offline
 
 Download any generated paper file (`paper1.html` through `paper5.html`,
-`cdp1.html`, `cdp2.html`, `hindi1.html`, `hindi2.html`, `sanskrit1.html`, `sanskrit2.html`, `sanskrit2-extra.html`, `sst1.html`, `sst2.html`, or `sst3-part1.html` … `sst4-part5.html`, or
+`cdp1.html`, `cdp2.html`, `hindi1.html`, `hindi2.html`, `sanskrit1.html`, `sanskrit2.html`, `sanskrit2-extra.html`, `sst2.html`, `sst1-part1.html` … `sst1-part5.html`, `sst3-part1.html` … `sst4-part5.html`, or
 `sst-current.html`)
 and open it in a
 modern browser. Each paper is self-contained and does not require internet

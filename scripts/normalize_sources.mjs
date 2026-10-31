@@ -88,10 +88,11 @@ for (const paperName of [
   );
 }
 
-// Short practice tests: SST 3 and SST 4 split into five 30-question parts,
+// Short practice tests: SST 1, SST 3 and SST 4 split into five 30-question parts,
 // one minute per question as in the full paper. Only the parts are published.
 const partSize = 30;
 for (const [paperName, label] of [
+  ["sst1", "SST 1"],
   ["sst3", "SST 3"],
   ["sst4", "SST 4"],
 ]) {
@@ -105,7 +106,7 @@ for (const [paperName, label] of [
       .map((question, index) => ({
         ...question,
         number: index + 1,
-        section: question.section.replace(/\s*\(प्र\.[^)]*\)/, ""),
+        section: question.section.replace(/\s*\(प्र(?:\.|श्न)[^)]*\)/, ""),
       }));
     const range = `मूल प्रश्न ${start + 1}–${start + partSize}`;
     const normalized = {

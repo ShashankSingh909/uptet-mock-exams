@@ -28,7 +28,6 @@ for (const paperName of [
   "sanskrit1",
   "sanskrit2",
   "sanskrit2-extra",
-  "sst1",
   "sst2",
   "sst3-part1",
   "sst3-part2",
@@ -41,6 +40,11 @@ for (const paperName of [
   "sst4-part4",
   "sst4-part5",
   "sst-current",
+  "sst1-part1",
+  "sst1-part2",
+  "sst1-part3",
+  "sst1-part4",
+  "sst1-part5",
 ]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),

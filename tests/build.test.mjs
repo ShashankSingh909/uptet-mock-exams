@@ -15,7 +15,6 @@ for (const file of [
   "hindi2.html",
   "sanskrit1.html",
   "sanskrit2.html",
-  "sst1.html",
   "sst2.html",
   "sst3-part1.html",
   "sst3-part2.html",
@@ -28,6 +27,11 @@ for (const file of [
   "sst4-part4.html",
   "sst4-part5.html",
   "sst-current.html",
+  "sst1-part1.html",
+  "sst1-part2.html",
+  "sst1-part3.html",
+  "sst1-part4.html",
+  "sst1-part5.html",
   "sanskrit2-extra.html",
 ]) {
   test(`${file} is self-contained`, async () => {
@@ -51,7 +55,6 @@ for (const file of [
   "hindi2.html",
   "sanskrit1.html",
   "sanskrit2.html",
-  "sst1.html",
   "sst2.html",
 ]) {
   test(`${file} embeds a locked 150-question exam`, async () => {
@@ -67,6 +70,7 @@ for (const file of [
 
 for (const file of [
   ...[1, 2, 3, 4, 5].flatMap((part) => [
+    `sst1-part${part}.html`,
     `sst3-part${part}.html`,
     `sst4-part${part}.html`,
   ]),
@@ -100,13 +104,14 @@ test("the selector does not contain exam state initialization", async () => {
   assert.match(html, /sanskrit1\.html/);
   assert.match(html, /sanskrit2\.html/);
   assert.match(html, /sanskrit2-extra\.html/);
-  assert.match(html, /sst1\.html/);
+  assert.doesNotMatch(html, /href="sst1\.html"/);
   assert.match(html, /sst2\.html/);
   assert.doesNotMatch(html, /href="sst3\.html"/);
   assert.doesNotMatch(html, /href="sst4\.html"/);
   assert.doesNotMatch(html, /href="sst5\.html"/);
   assert.match(html, /sst-current\.html/);
   for (let part = 1; part <= 5; part += 1) {
+    assert.match(html, new RegExp(`sst1-part${part}\\.html`));
     assert.match(html, new RegExp(`sst3-part${part}\\.html`));
     assert.match(html, new RegExp(`sst4-part${part}\\.html`));
   }
