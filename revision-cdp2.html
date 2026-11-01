@@ -1,0 +1,2096 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>विशेष UPTET 2026 — बाल विकास एवं शिक्षाशास्त्र (CDP) — सेट 2 — रिवीज़न</title>
+    <style>:root {
+  color-scheme: light;
+  --teal-950: #073b3d;
+  --teal-800: #075f63;
+  --teal-700: #08777a;
+  --blue-700: #0b57d0;
+  --blue-100: #e9f1ff;
+  --amber-700: #b85d00;
+  --amber-100: #fff2dd;
+  --violet-700: #673ab7;
+  --violet-100: #f0eaff;
+  --green-700: #117a45;
+  --green-100: #e8f6ee;
+  --red-700: #b3261e;
+  --red-100: #fce8e6;
+  --ink: #172026;
+  --muted: #5e6b73;
+  --line: #d6dde1;
+  --surface: #ffffff;
+  --canvas: #f4f7f8;
+  --focus: #ffbf47;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(7, 59, 61, 0.09);
+  font-family: "Noto Sans Devanagari", "Nirmala UI", Mangal, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible + span,
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 16px;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: 0 2px 10px rgba(7, 59, 61, 0.2);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 4.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.topbar .paper-label {
+  margin: 2px 0 0;
+  color: #d9f3f1;
+  font-size: 0.78rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar button {
+  padding: 8px 11px;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: transparent;
+  font-size: 0.86rem;
+}
+
+.exam-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.timer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.timer-main {
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-label,
+.stat-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.timer {
+  margin-top: 2px;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.timer.urgent {
+  color: var(--red-700);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.status-item {
+  min-width: 0;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.status-item + .status-item {
+  border-left: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.answered .stat-number {
+  color: var(--green-700);
+}
+
+.remaining .stat-number {
+  color: var(--amber-700);
+}
+
+.reviewed .stat-number {
+  color: var(--violet-700);
+}
+
+.section-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #edf6f5;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nearby-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.nearby-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(38px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.number-button,
+.palette-button {
+  position: relative;
+  min-width: 42px;
+  border-color: #bdc8ce;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+}
+
+.number-button.current {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.number-button.answered:not(.current),
+.palette-button.answered:not(.current) {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.number-button.review:not(.current),
+.palette-button.review:not(.current) {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.number-button.answered.review:not(.current),
+.palette-button.answered.review:not(.current) {
+  box-shadow: inset 0 -5px 0 var(--violet-700);
+}
+
+.nearby-nav > button,
+.open-palette {
+  padding: 7px 10px;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+  font-weight: 700;
+}
+
+.question-area {
+  padding: 18px 16px 120px;
+  background: var(--surface);
+}
+
+.question-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-meta h2 {
+  margin: 0;
+  color: var(--blue-700);
+  font-size: 1.35rem;
+}
+
+.question-meta span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.passage {
+  margin: 18px 0;
+  padding: 14px;
+  border-left: 4px solid var(--teal-700);
+  background: #f6fbfa;
+  white-space: pre-line;
+}
+
+.question-text {
+  margin: 22px 0;
+  font-size: clamp(1.08rem, 4.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1.5px solid #c8d1d6;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--blue-700);
+}
+
+.option-row.selected {
+  border-color: var(--blue-700);
+  background: var(--blue-100);
+  box-shadow: inset 4px 0 0 var(--blue-700);
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.option-label {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #7a8991;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.selected .option-label {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.option-text {
+  line-height: 1.55;
+}
+
+.bottom-actions {
+  position: fixed;
+  z-index: 18;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  gap: 10px;
+  padding: 10px max(14px, calc((100vw - 1090px) / 2));
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -5px 18px rgba(21, 31, 36, 0.08);
+}
+
+.bottom-actions button {
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+}
+
+.primary {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.review-action {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 128px;
+  background: var(--surface);
+}
+
+#submit-exam {
+  width: min(100%, 440px);
+  border-color: var(--red-700);
+  color: #fff;
+  background: var(--red-700);
+  font-weight: 800;
+}
+
+.message {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid #e4bb72;
+  border-radius: var(--radius);
+  background: #fff8e8;
+}
+
+dialog {
+  width: min(92vw, 680px);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(4, 29, 31, 0.62);
+}
+
+.dialog-header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dialog-close {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend span::before {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  content: "";
+}
+
+.legend .lg-answered {
+  color: var(--green-700);
+}
+
+.legend .lg-review {
+  color: var(--violet-700);
+}
+
+.legend .lg-current {
+  color: var(--blue-700);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 4px 16px 20px;
+}
+
+.result-view,
+.review-view,
+.storage-error {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 26px 16px 50px;
+}
+
+.result-hero {
+  padding: 24px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--teal-800);
+  text-align: center;
+}
+
+.score {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: clamp(3rem, 16vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.result-stat {
+  padding: 14px 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.result-stat strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.result-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.result-actions button,
+.review-toolbar button {
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.review-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: var(--canvas);
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-tabs {
+  position: sticky;
+  z-index: 9;
+  top: 118px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 8px 0 10px;
+  background: var(--canvas);
+}
+
+.review-tab {
+  padding: 9px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-950);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-tab span {
+  display: inline-flex;
+  min-width: 24px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #eef4f5;
+}
+
+.review-tab.active {
+  border-color: var(--teal-700);
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.review-tab.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.review-card.correct {
+  border-left: 5px solid var(--green-700);
+}
+
+.review-card.incorrect {
+  border-left: 5px solid var(--red-700);
+}
+
+.review-card.unanswered {
+  border-left: 5px solid var(--amber-700);
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-question-text {
+  margin-bottom: 12px;
+}
+
+.review-options {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.review-option.correct-option {
+  border-color: rgba(21, 128, 61, 0.45);
+  background: #f0fdf4;
+}
+
+.review-option.incorrect-option {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: #fef2f2;
+}
+
+.review-option-badges {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-badge {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correct-badge {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.selected-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.empty-review {
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.answer-line {
+  margin: 8px 0;
+}
+
+.answer-line strong {
+  color: var(--teal-950);
+}
+
+.answer-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f1f6f7;
+}
+
+.selector {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 36px 18px 60px;
+}
+
+.selector-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.selector-heading h1,
+.selector-heading h2 {
+  margin-bottom: 8px;
+  color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
+}
+
+.paper-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.paper-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.paper-card h2 {
+  margin: 0 0 8px;
+}
+
+.paper-card p {
+  color: var(--muted);
+}
+
+.paper-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--blue-700);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.warning-note {
+  margin: 0 0 22px;
+  padding: 14px;
+  border-left: 4px solid var(--amber-700);
+  background: var(--amber-100);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .timer-panel {
+    grid-template-columns: minmax(240px, 0.8fr) 1.4fr;
+    align-items: stretch;
+  }
+
+  .status-grid {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .question-area {
+    padding-inline: clamp(28px, 6vw, 74px);
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .nearby-numbers {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-actions {
+    grid-template-columns: 180px 220px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+  </head>
+  <body data-mode="revision" data-question-count="150">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">CDP 2</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>विशेष UPTET 2026 — बाल विकास एवं शिक्षाशास्त्र (CDP) — सेट 2</h2>
+        <p>उच्च प्राथमिक स्तर (कक्षा 6–8) • 150 संभावित प्रश्न • जुलाई 2026 पेपर-2 के CDP विश्लेषण पर आधारित</p>
+        <p class="revision-note">150 प्रश्न • केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–150)</summary>
+        
+        <div class="jump-group">
+          <p>भाग A — किशोरावस्था का विकास</p>
+          <div class="jump-numbers"><a href="#q-1">1</a><a href="#q-2">2</a><a href="#q-3">3</a><a href="#q-4">4</a><a href="#q-5">5</a><a href="#q-6">6</a><a href="#q-7">7</a><a href="#q-8">8</a><a href="#q-9">9</a><a href="#q-10">10</a><a href="#q-11">11</a><a href="#q-12">12</a><a href="#q-13">13</a><a href="#q-14">14</a><a href="#q-15">15</a><a href="#q-16">16</a><a href="#q-17">17</a><a href="#q-18">18</a><a href="#q-19">19</a><a href="#q-20">20</a><a href="#q-21">21</a><a href="#q-22">22</a><a href="#q-23">23</a><a href="#q-24">24</a><a href="#q-25">25</a><a href="#q-26">26</a><a href="#q-27">27</a><a href="#q-28">28</a><a href="#q-29">29</a><a href="#q-30">30</a><a href="#q-31">31</a><a href="#q-32">32</a><a href="#q-33">33</a><a href="#q-34">34</a><a href="#q-35">35</a><a href="#q-36">36</a><a href="#q-37">37</a><a href="#q-38">38</a><a href="#q-39">39</a><a href="#q-40">40</a></div>
+        </div>
+        <div class="jump-group">
+          <p>भाग B — अधिगम सिद्धांतों का अनुप्रयोग</p>
+          <div class="jump-numbers"><a href="#q-41">41</a><a href="#q-42">42</a><a href="#q-43">43</a><a href="#q-44">44</a><a href="#q-45">45</a><a href="#q-46">46</a><a href="#q-47">47</a><a href="#q-48">48</a><a href="#q-49">49</a><a href="#q-50">50</a><a href="#q-51">51</a><a href="#q-52">52</a><a href="#q-53">53</a><a href="#q-54">54</a><a href="#q-55">55</a><a href="#q-56">56</a><a href="#q-57">57</a><a href="#q-58">58</a><a href="#q-59">59</a><a href="#q-60">60</a><a href="#q-61">61</a><a href="#q-62">62</a><a href="#q-63">63</a><a href="#q-64">64</a><a href="#q-65">65</a><a href="#q-66">66</a><a href="#q-67">67</a><a href="#q-68">68</a><a href="#q-69">69</a><a href="#q-70">70</a><a href="#q-71">71</a><a href="#q-72">72</a><a href="#q-73">73</a><a href="#q-74">74</a><a href="#q-75">75</a></div>
+        </div>
+        <div class="jump-group">
+          <p>भाग C — समावेशी शिक्षा</p>
+          <div class="jump-numbers"><a href="#q-76">76</a><a href="#q-77">77</a><a href="#q-78">78</a><a href="#q-79">79</a><a href="#q-80">80</a><a href="#q-81">81</a><a href="#q-82">82</a><a href="#q-83">83</a><a href="#q-84">84</a><a href="#q-85">85</a><a href="#q-86">86</a><a href="#q-87">87</a><a href="#q-88">88</a><a href="#q-89">89</a><a href="#q-90">90</a><a href="#q-91">91</a><a href="#q-92">92</a><a href="#q-93">93</a><a href="#q-94">94</a><a href="#q-95">95</a><a href="#q-96">96</a><a href="#q-97">97</a><a href="#q-98">98</a><a href="#q-99">99</a><a href="#q-100">100</a><a href="#q-101">101</a><a href="#q-102">102</a><a href="#q-103">103</a><a href="#q-104">104</a><a href="#q-105">105</a></div>
+        </div>
+        <div class="jump-group">
+          <p>भाग D — शिक्षण विधियाँ एवं आकलन</p>
+          <div class="jump-numbers"><a href="#q-106">106</a><a href="#q-107">107</a><a href="#q-108">108</a><a href="#q-109">109</a><a href="#q-110">110</a><a href="#q-111">111</a><a href="#q-112">112</a><a href="#q-113">113</a><a href="#q-114">114</a><a href="#q-115">115</a><a href="#q-116">116</a><a href="#q-117">117</a><a href="#q-118">118</a><a href="#q-119">119</a><a href="#q-120">120</a><a href="#q-121">121</a><a href="#q-122">122</a><a href="#q-123">123</a><a href="#q-124">124</a><a href="#q-125">125</a><a href="#q-126">126</a><a href="#q-127">127</a><a href="#q-128">128</a><a href="#q-129">129</a><a href="#q-130">130</a><a href="#q-131">131</a><a href="#q-132">132</a><a href="#q-133">133</a><a href="#q-134">134</a><a href="#q-135">135</a></div>
+        </div>
+        <div class="jump-group">
+          <p>भाग E — वंशानुक्रम-वातावरण एवं अभिप्रेरणा</p>
+          <div class="jump-numbers"><a href="#q-136">136</a><a href="#q-137">137</a><a href="#q-138">138</a><a href="#q-139">139</a><a href="#q-140">140</a><a href="#q-141">141</a><a href="#q-142">142</a><a href="#q-143">143</a><a href="#q-144">144</a><a href="#q-145">145</a><a href="#q-146">146</a><a href="#q-147">147</a><a href="#q-148">148</a><a href="#q-149">149</a><a href="#q-150">150</a></div>
+        </div>
+      </details>
+      
+      <section class="revision-section">
+        <h2 class="revision-section-title">भाग A — किशोरावस्था का विकास</h2>
+        
+        <article class="revision-card" id="q-1">
+          
+          <h3>प्रश्न 1</h3>
+          <div class="revision-question-text">किशोरावस्था में तीव्र शारीरिक वृद्धि (Growth spurt) का मुख्य कारण है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) हार्मोनल परिवर्तन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> यौवनारंभ के हार्मोन तेज़ वृद्धि के लिए उत्तरदायी हैं।</div>
+        </article>
+        <article class="revision-card" id="q-2">
+          
+          <h3>प्रश्न 2</h3>
+          <div class="revision-question-text">किशोर को लगता है कि कक्षा में सब लोग उसी को देख रहे हैं और उसकी हर गलती पर ध्यान दे रहे हैं। यह किसे दर्शाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) काल्पनिक दर्शक (Imaginary audience)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> काल्पनिक दर्शक – किशोर अहंकेंद्रिता का लक्षण (डेविड एलकाइंड)।</div>
+        </article>
+        <article class="revision-card" id="q-3">
+          
+          <h3>प्रश्न 3</h3>
+          <div class="revision-question-text">"मुझे कुछ नहीं होगा, मैं दूसरों से अलग हूँ" सोचकर किशोर जोखिम भरे काम करता है। यह है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) व्यक्तिगत कल्पित कथा (Personal fable)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> व्यक्तिगत कल्पित कथा – "मैं अनोखा हूँ, मुझे कुछ नहीं होगा"।</div>
+        </article>
+        <article class="revision-card" id="q-4">
+          
+          <h3>प्रश्न 4</h3>
+          <div class="revision-question-text">किशोरों में आत्म-सम्मान बढ़ाने का सर्वोत्तम तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रयास की सराहना और सफलता के अवसर देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रयास की सराहना से आत्म-सम्मान व विकास मानसिकता बढ़ती है; तुलना हानिकारक।</div>
+        </article>
+        <article class="revision-card" id="q-5">
+          
+          <h3>प्रश्न 5</h3>
+          <div class="revision-question-text">किशोरों के साथ परामर्श में सबसे प्रभावी है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सहानुभूतिपूर्ण सुनना और गोपनीयता का सम्मान</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> किशोर परामर्श पहचान व आत्मसम्मान पर केंद्रित; सुनना व गोपनीयता विश्वास बनाते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-6">
+          
+          <h3>प्रश्न 6</h3>
+          <div class="revision-question-text">सहकर्मी दबाव (Peer pressure) का सकारात्मक उपयोग है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सहयोगी समूह कार्य जिसमें अच्छे व्यवहार के आदर्श साथी हों</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सकारात्मक आदर्श वाले समूह में सहकर्मी प्रभाव अच्छे व्यवहार को बढ़ाता है।</div>
+        </article>
+        <article class="revision-card" id="q-7">
+          
+          <h3>प्रश्न 7</h3>
+          <div class="revision-question-text">किशोरावस्था में पहचान की खोज में सहायता के लिए शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विकल्प चुनने और विविध भूमिकाएँ आज़माने के अवसर देने चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एरिक्सन: पहचान विकल्पों के अन्वेषण से बनती है।</div>
+        </article>
+        <article class="revision-card" id="q-8">
+          
+          <h3>प्रश्न 8</h3>
+          <div class="revision-question-text">एरिक्सन के अनुसार जो किशोर अपनी पहचान स्पष्ट नहीं बना पाते, उनमें क्या उत्पन्न होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) भूमिका भ्रम (Role confusion)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पहचान बनाम भूमिका भ्रम – एरिक्सन की पाँचवीं अवस्था।</div>
+        </article>
+        <article class="revision-card" id="q-9">
+          
+          <h3>प्रश्न 9</h3>
+          <div class="revision-question-text">किशोर समाज की कमियों की आलोचना करते हैं और आदर्श समाज की कल्पना करते हैं। यह किस क्षमता के कारण है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अमूर्त व परिकल्पनात्मक चिंतन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> औपचारिक संक्रियात्मक चिंतन से आदर्शवाद और "क्या होना चाहिए" की सोच आती है।</div>
+        </article>
+        <article class="revision-card" id="q-10">
+          
+          <h3>प्रश्न 10</h3>
+          <div class="revision-question-text">कक्षा 8 के किशोरों में बार-बार मूड बदलने पर शिक्षक की उचित प्रतिक्रिया है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सामान्य विकासात्मक परिवर्तन समझकर धैर्य और संवाद रखना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हार्मोनल परिवर्तन से मूड बदलना सामान्य है।</div>
+        </article>
+        <article class="revision-card" id="q-11">
+          
+          <h3>प्रश्न 11</h3>
+          <div class="revision-question-text">कक्षा में किशोरों में अमूर्त चिंतन का संकेत है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) "यदि ऐसा होता तो..." जैसे परिकल्पनात्मक प्रश्नों पर तर्क करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> परिकल्पनात्मक ("यदि...तो") तर्क अमूर्त चिंतन का संकेत है।</div>
+        </article>
+        <article class="revision-card" id="q-12">
+          
+          <h3>प्रश्न 12</h3>
+          <div class="revision-question-text">किशोरावस्था में मित्र-समूह का महत्व बढ़ जाता है क्योंकि—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सामाजिक स्वीकृति और पहचान की आवश्यकता बढ़ जाती है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> साथियों से स्वीकृति किशोर की पहचान का हिस्सा बनती है।</div>
+        </article>
+        <article class="revision-card" id="q-13">
+          
+          <h3>प्रश्न 13</h3>
+          <div class="revision-question-text">किशोर कहता है, "नियम मानने चाहिए क्योंकि इनसे समाज में व्यवस्था बनी रहती है।" कोहलबर्ग के अनुसार यह किस स्तर का तर्क है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) परंपरागत (कानून व व्यवस्था)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अवस्था 4 – कानून व व्यवस्था (परंपरागत स्तर)।</div>
+        </article>
+        <article class="revision-card" id="q-14">
+          
+          <h3>प्रश्न 14</h3>
+          <div class="revision-question-text">"नियम लोगों की भलाई के लिए बने हैं और आवश्यकता हो तो सहमति से बदले जा सकते हैं" – यह कोहलबर्ग के किस स्तर को दर्शाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) उत्तर-परंपरागत (सामाजिक अनुबंध)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अवस्था 5 – सामाजिक अनुबंध (उत्तर-परंपरागत)।</div>
+        </article>
+        <article class="revision-card" id="q-15">
+          
+          <h3>प्रश्न 15</h3>
+          <div class="revision-question-text">किशोर अपने शारीरिक परिवर्तनों को लेकर संकोच और भ्रम में हैं। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) वैज्ञानिक और संवेदनशील तरीके से सही जानकारी देनी चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वैज्ञानिक, संवेदनशील जानकारी (किशोर शिक्षा) भ्रम व संकोच दूर करती है।</div>
+        </article>
+        <article class="revision-card" id="q-16">
+          
+          <h3>प्रश्न 16</h3>
+          <div class="revision-question-text">किशोरों में जोखिम लेने का व्यवहार अधिक होने का एक कारण है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मस्तिष्क के तर्क व आत्म-नियंत्रण वाले भाग (प्रीफ्रंटल कॉर्टेक्स) का विकास देर से पूरा होना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भावनात्मक भाग पहले पकता है, नियंत्रण वाला प्रीफ्रंटल कॉर्टेक्स बाद में।</div>
+        </article>
+        <article class="revision-card" id="q-17">
+          
+          <h3>प्रश्न 17</h3>
+          <div class="revision-question-text">किशोरों के लिए जीवन कौशल शिक्षा का मुख्य उद्देश्य है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) निर्णय लेना, तनाव प्रबंधन, संप्रेषण जैसी क्षमताएँ विकसित करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> WHO के 10 जीवन कौशल – निर्णय, समस्या-समाधान, तनाव प्रबंधन, संप्रेषण आदि।</div>
+        </article>
+        <article class="revision-card" id="q-18">
+          
+          <h3>प्रश्न 18</h3>
+          <div class="revision-question-text">कक्षा 8 का छात्र एक परीक्षा में कम अंक आने पर कहता है, "मैं गणित में कभी अच्छा नहीं कर सकता।" शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) प्रयास व रणनीति पर ध्यान दिलाकर छोटे-छोटे सफल अनुभव देने चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विकास मानसिकता (Growth mindset): क्षमता प्रयास से बढ़ती है।</div>
+        </article>
+        <article class="revision-card" id="q-19">
+          
+          <h3>प्रश्न 19</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा कथन "संज्ञानात्मक विकृति" का उदाहरण <strong>नहीं</strong> है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) "इस बार तैयारी कम थी, अगली बार योजना बनाकर पढ़ूँगा।"</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> C एक यथार्थवादी, संतुलित सोच है; बाकी तीनों अति-सामान्यीकरण हैं।</div>
+        </article>
+        <article class="revision-card" id="q-20">
+          
+          <h3>प्रश्न 20</h3>
+          <div class="revision-question-text">किशोरों में आत्म-चेतना के अधिक बढ़ जाने का संभावित परिणाम है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कक्षा में बोलने में संकोच और सामाजिक अलगाव</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई 2026 का सीधा रूपांतर – आत्म-चेतना से संकोच व सामाजिक अलगाव।</div>
+        </article>
+        <article class="revision-card" id="q-21">
+          
+          <h3>प्रश्न 21</h3>
+          <div class="revision-question-text">किशोरों में तार्किक सोच विकसित होने का स्पष्ट संकेत है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) नियमों पर प्रश्न उठाना और उनका कारण जानना चाहना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई 2026 का रूपांतर – नियमों को चुनौती = तार्किक तर्क।</div>
+        </article>
+        <article class="revision-card" id="q-22">
+          
+          <h3>प्रश्न 22</h3>
+          <div class="revision-question-text">किशोरों में संवेगात्मक बुद्धि विकसित करने का उपयुक्त तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अपनी व दूसरों की भावनाएँ पहचानने व संभालने की गतिविधियाँ (रोल-प्ले, चर्चा)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> संवेगात्मक बुद्धि = भावनाओं की पहचान व प्रबंधन (गोलमैन)।</div>
+        </article>
+        <article class="revision-card" id="q-23">
+          
+          <h3>प्रश्न 23</h3>
+          <div class="revision-question-text">किशोरों की पहचान की खोज के लिए सबसे उपयुक्त गतिविधि है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) रुचि व व्यवसाय अन्वेषण, क्लब और परियोजनाएँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विविध अनुभव किशोर को अपनी रुचि व क्षमता पहचानने में मदद करते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-24">
+          
+          <h3>प्रश्न 24</h3>
+          <div class="revision-question-text">कक्षा 8 का किशोर शिक्षक की बातों पर तर्क-वितर्क करता है। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) तर्क का स्वागत करके सम्मानजनक चर्चा के नियम बनाने चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तर्क करना सामान्य संज्ञानात्मक विकास है; उसे सही दिशा देनी चाहिए।</div>
+        </article>
+        <article class="revision-card" id="q-25">
+          
+          <h3>प्रश्न 25</h3>
+          <div class="revision-question-text">किशोरावस्था में नींद और पोषण की कमी का सीखने पर प्रभाव—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ध्यान, स्मृति और मनोदशा पर नकारात्मक प्रभाव</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नींद व पोषण की कमी से ध्यान व स्मृति कमज़ोर होती है।</div>
+        </article>
+        <article class="revision-card" id="q-26">
+          
+          <h3>प्रश्न 26</h3>
+          <div class="revision-question-text">किशोर बालिकाओं की विद्यालय उपस्थिति बढ़ाने में सबसे सहायक है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सुरक्षित वातावरण, स्वच्छ शौचालय और मासिक धर्म स्वास्थ्य जागरूकता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सुरक्षा व स्वच्छता सुविधाएँ किशोर बालिकाओं के ड्रॉपआउट को घटाती हैं।</div>
+        </article>
+        <article class="revision-card" id="q-27">
+          
+          <h3>प्रश्न 27</h3>
+          <div class="revision-question-text">किशोरावस्था को "संक्रमण काल" कहा जाता है क्योंकि—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) इसमें बाल्यावस्था से प्रौढ़ावस्था की ओर परिवर्तन होता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> किशोरावस्था बचपन और प्रौढ़ावस्था के बीच का सेतु है।</div>
+        </article>
+        <article class="revision-card" id="q-28">
+          
+          <h3>प्रश्न 28</h3>
+          <div class="revision-question-text">किशोरों की स्वायत्तता की आवश्यकता का कक्षा में सम्मान कैसे करें?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विकल्प देकर, जैसे परियोजना का विषय स्वयं चुनने देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विकल्प देना स्वायत्तता का सम्मान है और आंतरिक प्रेरणा बढ़ाता है (जुलाई प्र. 18)।</div>
+        </article>
+        <article class="revision-card" id="q-29">
+          
+          <h3>प्रश्न 29</h3>
+          <div class="revision-question-text">किशोरों में धमकाने-सताने (Bullying) को रोकने का सबसे प्रभावी उपाय है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) विद्यालय-स्तरीय स्पष्ट नीति, जागरूकता, सहपाठी सहयोग और त्वरित हस्तक्षेप</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पूरे विद्यालय का तंत्र और सहपाठी सहयोग सबसे प्रभावी है।</div>
+        </article>
+        <article class="revision-card" id="q-30">
+          
+          <h3>प्रश्न 30</h3>
+          <div class="revision-question-text">किशोरावस्था में संज्ञानात्मक विकास का एक परिणाम है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अधिसंज्ञान (अपनी सोच के बारे में सोचना) में वृद्धि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> किशोर अपनी सोच की जाँच करने लगते हैं = अधिसंज्ञान।</div>
+        </article>
+        <article class="revision-card" id="q-31">
+          
+          <h3>प्रश्न 31</h3>
+          <div class="revision-question-text">परीक्षा के समय किशोरों में तनाव कम करने के लिए शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अध्ययन योजना, विश्राम तकनीक और यथार्थवादी लक्ष्य बनाना सिखाना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> योजना व विश्राम तकनीक तनाव कम करती हैं।</div>
+        </article>
+        <article class="revision-card" id="q-32">
+          
+          <h3>प्रश्न 32</h3>
+          <div class="revision-question-text">किशोरावस्था में सामाजिक विकास का प्रमुख लक्षण है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) समूह-निष्ठा और गहरी मित्रता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> किशोरावस्था में मित्रता गहरी होती है और समूह के प्रति निष्ठा बढ़ती है।</div>
+        </article>
+        <article class="revision-card" id="q-33">
+          
+          <h3>प्रश्न 33</h3>
+          <div class="revision-question-text">कक्षा 7 के कुछ किशोर मोबाइल गेमिंग में देर रात तक लगे रहते हैं। शिक्षक का सर्वोत्तम कदम—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) डिजिटल संतुलन व स्व-नियमन पर चर्चा और वैकल्पिक रुचियाँ विकसित करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्व-नियमन सिखाना प्रतिबंध से अधिक टिकाऊ है।</div>
+        </article>
+        <article class="revision-card" id="q-34">
+          
+          <h3>प्रश्न 34</h3>
+          <div class="revision-question-text">शारीरिक परिपक्वता अन्य साथियों से बहुत पहले या बहुत देर से होने का प्रभाव—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आत्म-छवि और सामाजिक समायोजन पर प्रभाव पड़ सकता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पहले या देर से परिपक्वता आत्म-छवि व साथियों से संबंध को प्रभावित करती है।</div>
+        </article>
+        <article class="revision-card" id="q-35">
+          
+          <h3>प्रश्न 35</h3>
+          <div class="revision-question-text">किशोरावस्था में "पहचान संकट" की अवधारणा किसने दी?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) एरिक एरिक्सन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एरिक एरिक्सन – "पहचान संकट (Identity crisis)"।</div>
+        </article>
+        <article class="revision-card" id="q-36">
+          
+          <h3>प्रश्न 36</h3>
+          <div class="revision-question-text">किशोरों के साथ प्रभावी संप्रेषण का तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सम्मानजनक, दो-तरफ़ा संवाद और ध्यान से सुनना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> किशोर सम्मान और सुने जाने पर सहयोग करते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-37">
+          
+          <h3>प्रश्न 37</h3>
+          <div class="revision-question-text">किशोरों में आत्म-चिंतन (Self-reflection) बढ़ाने का उपयुक्त तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) डायरी/अधिगम पत्रिका (Learning journal) लिखवाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लर्निंग जर्नल आत्म-चिंतन व अधिसंज्ञान बढ़ाता है।</div>
+        </article>
+        <article class="revision-card" id="q-38">
+          
+          <h3>प्रश्न 38</h3>
+          <div class="revision-question-text">किशोरों में नैतिक तर्क के विकास के लिए सबसे उपयुक्त गतिविधि है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नैतिक दुविधा वाली स्थितियों पर समूह चर्चा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कोहलबर्ग नैतिक दुविधाओं पर चर्चा को नैतिक तर्क का साधन मानते थे।</div>
+        </article>
+        <article class="revision-card" id="q-39">
+          
+          <h3>प्रश्न 39</h3>
+          <div class="revision-question-text">कक्षा में किशोर "लड़कियाँ गणित में कमज़ोर होती हैं" जैसी बातें करते हैं। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उदाहरणों व चर्चा से रूढ़ि को चुनौती देकर समान अवसर देने चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लैंगिक रूढ़ियों को तर्क व उदाहरण से चुनौती देना जेंडर-समावेशी कक्षा की पहचान है।</div>
+        </article>
+        <article class="revision-card" id="q-40">
+          
+          <h3>प्रश्न 40</h3>
+          <div class="revision-question-text">कक्षा 8 का किशोर आगे की पढ़ाई व करियर को लेकर भ्रमित है। सबसे उपयुक्त कदम है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) रुचि आकलन के साथ शैक्षिक-व्यावसायिक निर्देशन देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रुचि व क्षमता पर आधारित निर्देशन सबसे उपयुक्त है।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">भाग B — अधिगम सिद्धांतों का अनुप्रयोग</h2>
+        
+        <article class="revision-card" id="q-41">
+          
+          <h3>प्रश्न 41</h3>
+          <div class="revision-question-text">स्फूर्त अनुकूलन (क्रियाप्रसूत अनुबंधन) में व्यवहार मुख्यतः किससे नियंत्रित होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) व्यवहार के परिणाम (सुदृढ़ीकरण या दंड) से</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्किनर: व्यवहार उसके परिणाम से नियंत्रित होता है; व्यवहार ऐच्छिक होता है।</div>
+        </article>
+        <article class="revision-card" id="q-42">
+          
+          <h3>प्रश्न 42</h3>
+          <div class="revision-question-text">शास्त्रीय अनुकूलन मुख्यतः किस प्रकार की अनुक्रियाओं से संबंधित है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अनैच्छिक (प्रतिवर्ती व भावनात्मक) अनुक्रियाएँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पावलव: लार, डर जैसी अनैच्छिक अनुक्रियाएँ नए उद्दीपक से जुड़ती हैं।</div>
+        </article>
+        <article class="revision-card" id="q-43">
+          
+          <h3>प्रश्न 43</h3>
+          <div class="revision-question-text">सकारात्मक सुदृढ़ीकरण का उदाहरण है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अच्छा उत्तर देने पर प्रशंसा करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सकारात्मक = सुखद चीज़ जोड़ना; B नकारात्मक सुदृढ़ीकरण है; A, D दंड हैं।</div>
+        </article>
+        <article class="revision-card" id="q-44">
+          
+          <h3>प्रश्न 44</h3>
+          <div class="revision-question-text">दंड (Punishment) का व्यवहार पर प्रभाव है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अवांछित व्यवहार की आवृत्ति को कम करता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सुदृढ़ीकरण (धनात्मक या नकारात्मक) व्यवहार बढ़ाता है; दंड घटाता है।</div>
+        </article>
+        <article class="revision-card" id="q-45">
+          
+          <h3>प्रश्न 45</h3>
+          <div class="revision-question-text">आंशिक (कभी-कभी मिलने वाले) सुदृढ़ीकरण से सीखा गया व्यवहार—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विलुप्त होने के प्रति अधिक प्रतिरोधी होता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आंशिक सुदृढ़ीकरण = टिकाऊ; निरंतर सुदृढ़ीकरण = जल्दी बुझता (जुलाई प्र. 23)।</div>
+        </article>
+        <article class="revision-card" id="q-46">
+          
+          <h3>प्रश्न 46</h3>
+          <div class="revision-question-text">नया कौशल सिखाने के प्रारंभिक चरण में किस प्रकार का सुदृढ़ीकरण सबसे उपयुक्त है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) निरंतर (हर बार) सुदृढ़ीकरण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नया कौशल निरंतर सुदृढ़ीकरण से जल्दी सीखा जाता है; फिर आंशिक करें।</div>
+        </article>
+        <article class="revision-card" id="q-47">
+          
+          <h3>प्रश्न 47</h3>
+          <div class="revision-question-text">कक्षा 7 का छात्र केवल स्टिकर मिलने पर ही काम करता है। लंबे समय में शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) धीरे-धीरे बाह्य पुरस्कार कम करके आंतरिक अभिप्रेरणा (रुचि, स्वायत्तता) की ओर ले जाना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बाह्य पुरस्कार को क्रमशः हटाकर आंतरिक प्रेरणा विकसित करना चाहिए।</div>
+        </article>
+        <article class="revision-card" id="q-48">
+          
+          <h3>प्रश्न 48</h3>
+          <div class="revision-question-text">कक्षा में "टोकन अर्थव्यवस्था" (अच्छे व्यवहार पर टोकन, बाद में पुरस्कार) किस सिद्धांत पर आधारित है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) स्फूर्त अनुकूलन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> टोकन = द्वितीयक सुदृढ़क; स्किनर का स्फूर्त अनुकूलन।</div>
+        </article>
+        <article class="revision-card" id="q-49">
+          
+          <h3>प्रश्न 49</h3>
+          <div class="revision-question-text">कक्षा 6 का नया छात्र विद्यालय आने से डरता है। शास्त्रीय अनुकूलन के आधार पर सबसे अच्छा उपाय है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विद्यालय को सुखद अनुभवों (खेल, मित्रता, प्रशंसा) से जोड़ना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> डर के स्थान पर सुखद अनुभव जोड़ना = प्रति-अनुकूलन।</div>
+        </article>
+        <article class="revision-card" id="q-50">
+          
+          <h3>प्रश्न 50</h3>
+          <div class="revision-question-text">एक शिक्षक से डरने वाला बच्चा धीरे-धीरे सभी शिक्षकों से डरने लगता है। यह है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) उद्दीपक सामान्यीकरण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समान उद्दीपकों पर वही अनुक्रिया = सामान्यीकरण।</div>
+        </article>
+        <article class="revision-card" id="q-51">
+          
+          <h3>प्रश्न 51</h3>
+          <div class="revision-question-text">पियाजे के अनुसार औपचारिक संक्रियात्मक अवस्था का किशोर समस्या कैसे हल करता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) परिकल्पना बनाकर क्रमबद्ध ढंग से परीक्षण करके</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> परिकल्पनात्मक-निगमनात्मक तर्क = औपचारिक संक्रियात्मक अवस्था (11+ वर्ष)।</div>
+        </article>
+        <article class="revision-card" id="q-52">
+          
+          <h3>प्रश्न 52</h3>
+          <div class="revision-question-text">पियाजे के अनुसार बच्चे में संज्ञानात्मक असंतुलन (जिज्ञासा व सोचने की आवश्यकता) पैदा करने के लिए शिक्षक—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अपेक्षा से भिन्न परिणाम वाला प्रयोग या प्रश्न सामने रखता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> असंतुलन से बच्चा अपनी सोच बदलता है (साम्यीकरण)।</div>
+        </article>
+        <article class="revision-card" id="q-53">
+          
+          <h3>प्रश्न 53</h3>
+          <div class="revision-question-text">पियाजे के अनुसार सीखना है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) आत्मसात्करण व समायोजन द्वारा ज्ञान का सक्रिय निर्माण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पियाजे रचनावाद के जनक – बच्चा सक्रिय रूप से ज्ञान बनाता है।</div>
+        </article>
+        <article class="revision-card" id="q-54">
+          
+          <h3>प्रश्न 54</h3>
+          <div class="revision-question-text">वायगोत्स्की के अनुसार "समीपस्थ विकास के क्षेत्र (ZPD)" में शिक्षण का अर्थ है ऐसे कार्य देना जो—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अकेले न हो सकें, पर सहायता से हो जाएँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ZPD = अकेले क्या कर सकता है और सहायता से क्या – इनके बीच का क्षेत्र।</div>
+        </article>
+        <article class="revision-card" id="q-55">
+          
+          <h3>प्रश्न 55</h3>
+          <div class="revision-question-text">वायगोत्स्की के अनुसार संज्ञानात्मक विकास में भाषा की भूमिका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) भाषा सोचने का प्रमुख उपकरण है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वायगोत्स्की: भाषा सामाजिक उपकरण है जो सोच को आकार देता है।</div>
+        </article>
+        <article class="revision-card" id="q-56">
+          
+          <h3>प्रश्न 56</h3>
+          <div class="revision-question-text">वायगोत्स्की का कथन "सीखना विकास से पहले आता है" का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सामाजिक अंतःक्रिया व मार्गदर्शन से हुआ सीखना विकास को आगे बढ़ाता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 27 का रूपांतर – सामाजिक अंतःक्रिया विकास को आगे खींचती है।</div>
+        </article>
+        <article class="revision-card" id="q-57">
+          
+          <h3>प्रश्न 57</h3>
+          <div class="revision-question-text">पियाजे और वायगोत्स्की के विचारों में मुख्य अंतर है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पियाजे व्यक्तिगत खोज पर, वायगोत्स्की सामाजिक-सांस्कृतिक अंतःक्रिया पर बल देते हैं</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पियाजे = व्यक्तिगत रचनावाद; वायगोत्स्की = सामाजिक रचनावाद।</div>
+        </article>
+        <article class="revision-card" id="q-58">
+          
+          <h3>प्रश्न 58</h3>
+          <div class="revision-question-text">शिक्षक कक्षा 8 के बच्चों को समूह में मिलकर परियोजना करने देता है और अच्छे सहयोग पर अंक/प्रशंसा देता है। वह किसका प्रयोग कर रहा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सामाजिक रचनावाद और व्यवहारवाद का संयोजन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समूह में ज्ञान निर्माण = सामाजिक रचनावाद; अंक/प्रशंसा = व्यवहारवाद (जुलाई प्र. 4)।</div>
+        </article>
+        <article class="revision-card" id="q-59">
+          
+          <h3>प्रश्न 59</h3>
+          <div class="revision-question-text">सामाजिक रचनावाद का कक्षा में सबसे अच्छा रूप है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सहयोगी समूह कार्य और चर्चा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सहयोग व चर्चा से ज्ञान का सामाजिक निर्माण होता है।</div>
+        </article>
+        <article class="revision-card" id="q-60">
+          
+          <h3>प्रश्न 60</h3>
+          <div class="revision-question-text">बंडूरा के अनुसार अवलोकन से सीखने की प्रक्रिया के चरण हैं—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) ध्यान, धारण, पुनरुत्पादन, अभिप्रेरणा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बंडूरा के चार चरण; D वाललास के सृजनात्मक चिंतन के चरण हैं।</div>
+        </article>
+        <article class="revision-card" id="q-61">
+          
+          <h3>प्रश्न 61</h3>
+          <div class="revision-question-text">"आत्म-प्रभावकारिता (Self-efficacy)" की अवधारणा किससे जुड़ी है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अल्बर्ट बंडूरा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आत्म-प्रभावकारिता – बंडूरा (सामाजिक संज्ञानात्मक सिद्धांत)।</div>
+        </article>
+        <article class="revision-card" id="q-62">
+          
+          <h3>प्रश्न 62</h3>
+          <div class="revision-question-text">किशोर की आत्म-प्रभावकारिता ("मैं कर सकता हूँ" का विश्वास) बढ़ाने का सबसे प्रभावी स्रोत है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) स्वयं के सफल अनुभव (Mastery experiences)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बंडूरा के अनुसार स्वयं की सफलता सबसे प्रबल स्रोत है।</div>
+        </article>
+        <article class="revision-card" id="q-63">
+          
+          <h3>प्रश्न 63</h3>
+          <div class="revision-question-text">शिक्षक स्वयं समय पर आता है, विनम्र भाषा बोलता है और पुस्तक पढ़ते हुए दिखता है ताकि छात्र सीखें। यह किस प्रकार का अधिगम है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रतिरूपण (Modeling) / अवलोकनात्मक अधिगम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शिक्षक आदर्श (मॉडल) है; छात्र देखकर सीखते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-64">
+          
+          <h3>प्रश्न 64</h3>
+          <div class="revision-question-text">गेस्टाल्ट (अंतर्दृष्टि) अधिगम में समाधान कैसे मिलता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) समस्या की संपूर्ण संरचना समझ में आते ही अचानक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कोहलर: पूरी परिस्थिति के संबंध दिखते ही अचानक समाधान।</div>
+        </article>
+        <article class="revision-card" id="q-65">
+          
+          <h3>प्रश्न 65</h3>
+          <div class="revision-question-text">कक्षा में अंतर्दृष्टि अधिगम को बढ़ावा देने के लिए शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) समस्या के सभी तत्व सामने रखकर सोचने का समय देना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सभी तत्व दिखने और सोचने का समय मिलने पर अंतर्दृष्टि बनती है।</div>
+        </article>
+        <article class="revision-card" id="q-66">
+          
+          <h3>प्रश्न 66</h3>
+          <div class="revision-question-text">ब्रूनर के खोज अधिगम (Discovery learning) में—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बच्चे स्वयं सिद्धांत खोजते हैं, शिक्षक मार्गदर्शन करता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ब्रूनर – खोज अधिगम; शिक्षक सुविधादाता।</div>
+        </article>
+        <article class="revision-card" id="q-67">
+          
+          <h3>प्रश्न 67</h3>
+          <div class="revision-question-text">ब्रूनर के "सर्पिल पाठ्यक्रम (Spiral curriculum)" का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) एक ही अवधारणा को बढ़ती जटिलता के साथ बार-बार पढ़ाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सर्पिल पाठ्यक्रम: वही विचार हर कक्षा में गहराई के साथ लौटता है।</div>
+        </article>
+        <article class="revision-card" id="q-68">
+          
+          <h3>प्रश्न 68</h3>
+          <div class="revision-question-text">थार्नडाइक के "प्रभाव के नियम" का कक्षा में सही उपयोग है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सीखने का अनुभव संतोषजनक और सफलतापूर्ण बनाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> संतोषजनक परिणाम से सीख मजबूत होती है।</div>
+        </article>
+        <article class="revision-card" id="q-69">
+          
+          <h3>प्रश्न 69</h3>
+          <div class="revision-question-text">"अभ्यास के नियम" का सही अनुप्रयोग है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) समझकर, अंतराल देकर और विविध प्रश्नों से अभ्यास</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सार्थक व अंतराल युक्त अभ्यास स्थायी सीख देता है।</div>
+        </article>
+        <article class="revision-card" id="q-70">
+          
+          <h3>प्रश्न 70</h3>
+          <div class="revision-question-text">रचनावादी कक्षा में बच्चों की त्रुटियों को कैसे देखा जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बच्चे की सोच समझने के अवसर के रूप में</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त्रुटि बच्चे की सोच की खिड़की है।</div>
+        </article>
+        <article class="revision-card" id="q-71">
+          
+          <h3>प्रश्न 71</h3>
+          <div class="revision-question-text">अधिगम का अंतरण (नई परिस्थिति में उपयोग) बढ़ाने का सबसे अच्छा तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अवधारणा को विविध वास्तविक संदर्भों में लागू करवाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विविध संदर्भों में उपयोग = अवधारणात्मक समझ व अंतरण (जुलाई प्र. 12)।</div>
+        </article>
+        <article class="revision-card" id="q-72">
+          
+          <h3>प्रश्न 72</h3>
+          <div class="revision-question-text">कक्षा 7 के बच्चों की प्रगति कुछ समय से रुकी हुई है (अधिगम पठार)। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) शिक्षण विधि बदलनी, विश्राम देना, नई चुनौती व प्रतिपुष्टि देनी चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पठार के कारण (थकान, ऊब, विधि) दूर करना उपाय है।</div>
+        </article>
+        <article class="revision-card" id="q-73">
+          
+          <h3>प्रश्न 73</h3>
+          <div class="revision-question-text">व्यवहारवाद की एक प्रमुख सीमा है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) यह सोच, समझ जैसी आंतरिक मानसिक प्रक्रियाओं को कम महत्व देता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> व्यवहारवाद "ब्लैक बॉक्स" की तरह मन की अनदेखी करता है; बाकी विशेषताएँ हैं।</div>
+        </article>
+        <article class="revision-card" id="q-74">
+          
+          <h3>प्रश्न 74</h3>
+          <div class="revision-question-text">अल्पकालिक स्मृति की क्षमता सीमित होती है। इसलिए शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) जानकारी को छोटे-छोटे सार्थक खंडों (Chunking) में देना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> खंडीकरण (Chunking) से सीमित स्मृति का बेहतर उपयोग होता है।</div>
+        </article>
+        <article class="revision-card" id="q-75">
+          
+          <h3>प्रश्न 75</h3>
+          <div class="revision-question-text">छात्रों में अधिसंज्ञानात्मक (Metacognitive) कौशल बढ़ाने का तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) "मैंने यह कैसे हल किया? कहाँ अटका?" जैसे आत्म-प्रश्न पूछना सिखाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आत्म-प्रश्न = अपनी सोच की निगरानी = अधिसंज्ञान।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">भाग C — समावेशी शिक्षा</h2>
+        
+        <article class="revision-card" id="q-76">
+          
+          <h3>प्रश्न 76</h3>
+          <div class="revision-question-text">कक्षा 7 में वीडियो दिखाते समय एक श्रवण-बाधित किशोर के लिए सबसे उपयुक्त है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कैप्शन/उपशीर्षक वाला वीडियो और लिखित सारांश देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> श्रवण-बाधितों को दृश्य व लिखित सहायता सबसे अधिक लाभ देती है (जुलाई प्र. 1)।</div>
+        </article>
+        <article class="revision-card" id="q-77">
+          
+          <h3>प्रश्न 77</h3>
+          <div class="revision-question-text">कक्षा 8 का दृष्टिबाधित छात्र विज्ञान के प्रयोग में भाग ले सके, इसके लिए—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) स्पर्शनीय मॉडल, ऑडियो विवरण और साथी की सहायता देनी चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दृष्टिबाधितों के लिए स्पर्श व ध्वनि (जुलाई प्र. 15)।</div>
+        </article>
+        <article class="revision-card" id="q-78">
+          
+          <h3>प्रश्न 78</h3>
+          <div class="revision-question-text">समावेशी कक्षा में विशेष आवश्यकता वाले बच्चे का हर काम शिक्षक या साथी स्वयं कर देते हैं। इसका दीर्घकालिक परिणाम हो सकता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) निर्भरता और सीखी हुई असहायता (Learned helplessness)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अति-सहायता से निर्भरता (जुलाई प्र. 10); बच्चा मान लेता है कि वह स्वयं नहीं कर सकता।</div>
+        </article>
+        <article class="revision-card" id="q-79">
+          
+          <h3>प्रश्न 79</h3>
+          <div class="revision-question-text">समावेशी शिक्षा में "उचित समायोजन (Reasonable accommodation)" का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) आवश्यकता के अनुसार परिवर्तन, जैसे अतिरिक्त समय, रैंप, बड़े अक्षर वाली सामग्री</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> RPwD 2016 – आवश्यकता अनुसार सुविधा, अपेक्षाएँ कम करना नहीं।</div>
+        </article>
+        <article class="revision-card" id="q-80">
+          
+          <h3>प्रश्न 80</h3>
+          <div class="revision-question-text">सार्वभौमिक अधिगम अभिकल्प (UDL – Universal Design for Learning) का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शुरू से ही पाठ में प्रस्तुति, सहभागिता और अभिव्यक्ति के अनेक साधन रखना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> UDL: अनेक तरीके शुरू से ही योजना में, ताकि सभी सीख सकें।</div>
+        </article>
+        <article class="revision-card" id="q-81">
+          
+          <h3>प्रश्न 81</h3>
+          <div class="revision-question-text">किशोरों में अधिगम अक्षमता की शीघ्र पहचान का सबसे बड़ा लाभ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) समय पर उचित हस्तक्षेप करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 3 का रूपांतर – समय पर हस्तक्षेप।</div>
+        </article>
+        <article class="revision-card" id="q-82">
+          
+          <h3>प्रश्न 82</h3>
+          <div class="revision-question-text">कक्षा 7 का छात्र पढ़ते समय b-d, p-q में भ्रम करता है और शब्द छोड़ देता है, जबकि मौखिक रूप से उसकी समझ अच्छी है। संभावित कारण है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) डिस्लेक्सिया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अक्षर उलटना व पढ़ने में कठिनाई, पर सामान्य समझ = डिस्लेक्सिया।</div>
+        </article>
+        <article class="revision-card" id="q-83">
+          
+          <h3>प्रश्न 83</h3>
+          <div class="revision-question-text">डिस्लेक्सिया वाले छात्र के लिए सबसे उपयुक्त है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) बहु-संवेदी (देखना-सुनना-छूना) शिक्षण, ऑडियो पुस्तकें और अतिरिक्त समय</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बहु-संवेदी विधि डिस्लेक्सिया के लिए सिद्ध उपाय है; सार्वजनिक पठन से शर्म बढ़ती है।</div>
+        </article>
+        <article class="revision-card" id="q-84">
+          
+          <h3>प्रश्न 84</h3>
+          <div class="revision-question-text">कार्यात्मक व्यवहार मूल्यांकन (FBA) का पहला कदम है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) समस्या व्यवहार को स्पष्ट करके यह देखना कि वह कब, कहाँ और क्यों होता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> FBA = व्यवहार का कारण और पर्यावरणीय कारक खोजना (जुलाई प्र. 17)।</div>
+        </article>
+        <article class="revision-card" id="q-85">
+          
+          <h3>प्रश्न 85</h3>
+          <div class="revision-question-text">FBA से पता चला कि कक्षा 8 का छात्र कठिन कार्य से बचने के लिए कक्षा में शोर मचाता है। सबसे उपयुक्त हस्तक्षेप है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कार्य को छोटे चरणों में बाँटना और सही ढंग से मदद माँगना सिखाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बाहर भेजने से बच्चे का "बचने" का उद्देश्य पूरा होता है और व्यवहार बढ़ता है।</div>
+        </article>
+        <article class="revision-card" id="q-86">
+          
+          <h3>प्रश्न 86</h3>
+          <div class="revision-question-text">कक्षा में ADHD (ध्यान अभाव अतिसक्रियता विकार) वाले छात्र के लिए उपयुक्त है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) छोटे स्पष्ट निर्देश, कार्य का विभाजन, बीच-बीच में गतिविधि विराम और आगे बैठाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ADHD में छोटे कार्य, गति व संरचना मदद करते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-87">
+          
+          <h3>प्रश्न 87</h3>
+          <div class="revision-question-text">स्वलीनता (Autism) वाले छात्र के लिए कक्षा में सहायक है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पूर्वानुमेय दिनचर्या, चित्र वाली समय-सारणी और स्पष्ट निर्देश</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्वलीनता में पूर्वानुमेयता व दृश्य संकेत चिंता कम करते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-88">
+          
+          <h3>प्रश्न 88</h3>
+          <div class="revision-question-text">कक्षा 8 का एक प्रतिभाशाली छात्र काम जल्दी खत्म करके ऊब जाता है और कक्षा में बाधा डालता है। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) चुनौतीपूर्ण संवर्धन (Enrichment) कार्य और उच्च स्तरीय परियोजनाएँ देनी चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रतिभाशाली भी विशेष आवश्यकता वाले हैं; संवर्धन से उनकी ऊब दूर होती है।</div>
+        </article>
+        <article class="revision-card" id="q-89">
+          
+          <h3>प्रश्न 89</h3>
+          <div class="revision-question-text">समावेशन (Inclusion) और एकीकरण (Integration) में मुख्य अंतर है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) समावेशन में विद्यालय व्यवस्था बच्चे की आवश्यकता के अनुसार बदलती है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एकीकरण = बच्चा ढले; समावेशन = विद्यालय ढले।</div>
+        </article>
+        <article class="revision-card" id="q-90">
+          
+          <h3>प्रश्न 90</h3>
+          <div class="revision-question-text">अस्थि-बाधित (चलन में कठिनाई) छात्र के लिए विद्यालय को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) रैंप, सुलभ बैठक व्यवस्था और भूतल पर कक्षा की व्यवस्था करनी चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भौतिक बाधाएँ हटाना (सुगम्यता) सबसे पहली ज़रूरत है।</div>
+        </article>
+        <article class="revision-card" id="q-91">
+          
+          <h3>प्रश्न 91</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा सहायक तकनीक (Assistive technology) का उदाहरण है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्क्रीन रीडर, श्रवण यंत्र और बड़े अक्षर वाला सॉफ़्टवेयर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सहायक तकनीक दिव्यांग छात्रों को स्वतंत्र रूप से सीखने में मदद करती है।</div>
+        </article>
+        <article class="revision-card" id="q-92">
+          
+          <h3>प्रश्न 92</h3>
+          <div class="revision-question-text">समावेशी कक्षा में "साथी व्यवस्था (Buddy system)" से मुख्य रूप से क्या बढ़ता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सामाजिक एकीकरण और परस्पर सीख</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सहकर्मी सहयोग से सामाजिक एकीकरण (जुलाई प्र. 25)।</div>
+        </article>
+        <article class="revision-card" id="q-93">
+          
+          <h3>प्रश्न 93</h3>
+          <div class="revision-question-text">विशेष आवश्यकता वाले बच्चे की वैयक्तिक शिक्षा योजना (IEP) बनाने में कौन शामिल होते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) शिक्षक, विशेष शिक्षक, अभिभावक, विशेषज्ञ और जहाँ उचित हो, स्वयं छात्र</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> IEP एक टीम द्वारा बनती है और समय-समय पर समीक्षित होती है।</div>
+        </article>
+        <article class="revision-card" id="q-94">
+          
+          <h3>प्रश्न 94</h3>
+          <div class="revision-question-text">मंद गति से सीखने वाले छात्र के आकलन में उसकी प्रगति की तुलना किससे करनी चाहिए?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) उसके अपने पिछले स्तर से</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्व-संदर्भित (Ipsative) आकलन – अपनी पिछली प्रगति से तुलना।</div>
+        </article>
+        <article class="revision-card" id="q-95">
+          
+          <h3>प्रश्न 95</h3>
+          <div class="revision-question-text">कक्षा 6 में कुछ बच्चों की घरेलू भाषा विद्यालय की भाषा से अलग है। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) घरेलू भाषा को सेतु बनाकर बहुभाषी शिक्षण करना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> NEP 2020 व NCF घरेलू भाषा को सीखने का सेतु मानते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-96">
+          
+          <h3>प्रश्न 96</h3>
+          <div class="revision-question-text">आर्थिक रूप से कमज़ोर परिवार का छात्र घर के काम के कारण गृहकार्य पूरा नहीं कर पाता। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कारण समझकर विद्यालय में ही सहायता और लचीलापन देना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वंचित वर्ग का समावेशन: कारण समझकर सहायता।</div>
+        </article>
+        <article class="revision-card" id="q-97">
+          
+          <h3>प्रश्न 97</h3>
+          <div class="revision-question-text">समावेशी कक्षा में बच्चों पर "लेबल" (जैसे कमज़ोर, मंदबुद्धि) लगाने से बचना चाहिए क्योंकि—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) लेबल से कलंक, कम अपेक्षाएँ और आत्म-सम्मान में कमी आती है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लेबल से कलंक लगता है और शिक्षक की अपेक्षाएँ घटती हैं।</div>
+        </article>
+        <article class="revision-card" id="q-98">
+          
+          <h3>प्रश्न 98</h3>
+          <div class="revision-question-text">कक्षा 7 का एक छात्र हकलाता है और दूसरे छात्र हँसते हैं। शिक्षक का सर्वोत्तम कदम है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सम्मानजनक कक्षा नियम बनाना, उसे धैर्य से बोलने का अवसर देना और वाक् चिकित्सक से संपर्क कराना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सम्मानजनक वातावरण + विशेषज्ञ सहायता; वाक्य पूरा करना आत्मविश्वास घटाता है।</div>
+        </article>
+        <article class="revision-card" id="q-99">
+          
+          <h3>प्रश्न 99</h3>
+          <div class="revision-question-text">समावेशी आकलन का सही तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) बहुविध तरीके – मौखिक, प्रदर्शन, पोर्टफोलियो, अवलोकन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बहुविध आकलन से हर बच्चा अपनी सीख दिखा पाता है।</div>
+        </article>
+        <article class="revision-card" id="q-100">
+          
+          <h3>प्रश्न 100</h3>
+          <div class="revision-question-text">दिव्यांगजन अधिकार अधिनियम 2016 के अनुसार "समावेशी शिक्षा" का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) दिव्यांग और अन्य छात्र आवश्यक समायोजन के साथ साथ-साथ सीखें</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> RPwD 2016 (धारा 2) में समावेशी शिक्षा की यही परिभाषा है।</div>
+        </article>
+        <article class="revision-card" id="q-101">
+          
+          <h3>प्रश्न 101</h3>
+          <div class="revision-question-text">सामान्य कक्षा में विशेष शिक्षक (Special educator) की सबसे उपयुक्त भूमिका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सामान्य शिक्षक के साथ सह-शिक्षण, सामग्री का अनुकूलन और संसाधन सहायता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विशेष शिक्षक सामान्य कक्षा में सह-शिक्षक व संसाधन व्यक्ति है।</div>
+        </article>
+        <article class="revision-card" id="q-102">
+          
+          <h3>प्रश्न 102</h3>
+          <div class="revision-question-text">समावेशी कक्षा के शिक्षक की सबसे आवश्यक विशेषता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सकारात्मक दृष्टिकोण, धैर्य और लचीलापन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समावेशन की सफलता शिक्षक के दृष्टिकोण पर सबसे अधिक निर्भर है।</div>
+        </article>
+        <article class="revision-card" id="q-103">
+          
+          <h3>प्रश्न 103</h3>
+          <div class="revision-question-text">हल्की बौद्धिक दिव्यांगता वाले कक्षा 6 के छात्र के लिए सबसे उपयुक्त है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ठोस उदाहरण, कार्य को छोटे चरणों में बाँटना, दैनिक जीवन कौशल और बार-बार अभ्यास</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ठोस अनुभव व कार्य-विश्लेषण बौद्धिक दिव्यांगता में प्रभावी हैं।</div>
+        </article>
+        <article class="revision-card" id="q-104">
+          
+          <h3>प्रश्न 104</h3>
+          <div class="revision-question-text">"विविधता को संसाधन मानना" का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बच्चों के भिन्न अनुभव, भाषा और संस्कृति को शिक्षण में उपयोग करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विविधता कक्षा को समृद्ध बनाती है।</div>
+        </article>
+        <article class="revision-card" id="q-105">
+          
+          <h3>प्रश्न 105</h3>
+          <div class="revision-question-text">अल्पदृष्टि वाला कक्षा 8 का छात्र श्यामपट्ट पर लिखा ठीक से नहीं देख पाता। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आगे बैठाना, बड़े स्पष्ट अक्षरों में लिखना और मुद्रित/ऑडियो सामग्री देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अल्पदृष्टि में निकटता, बड़े अक्षर व वैकल्पिक सामग्री सहायक है।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">भाग D — शिक्षण विधियाँ एवं आकलन</h2>
+        
+        <article class="revision-card" id="q-106">
+          
+          <h3>प्रश्न 106</h3>
+          <div class="revision-question-text">कक्षा में शिक्षण की प्रभावशीलता सबसे अधिक तब बढ़ती है जब—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शिक्षण विधियाँ अधिगम उद्देश्यों के अनुरूप होती हैं</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 29 का रूपांतर – विधि और उद्देश्य का मेल।</div>
+        </article>
+        <article class="revision-card" id="q-107">
+          
+          <h3>प्रश्न 107</h3>
+          <div class="revision-question-text">छात्र की अवधारणात्मक समझ की जाँच का सबसे अच्छा तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) नई परिस्थिति में समस्या हल करवाना या "क्यों" समझाने को कहना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 12 – नए संदर्भ में लागू करना = अवधारणात्मक समझ।</div>
+        </article>
+        <article class="revision-card" id="q-108">
+          
+          <h3>प्रश्न 108</h3>
+          <div class="revision-question-text">"संदर्भित अधिगम (Contextual learning)" का सबसे अच्छा उदाहरण है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रतिशत को बाज़ार की छूट और बैंक ब्याज के उदाहरणों से पढ़ाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 11 – वास्तविक जीवन/समाज से जोड़ना = संदर्भित अधिगम।</div>
+        </article>
+        <article class="revision-card" id="q-109">
+          
+          <h3>प्रश्न 109</h3>
+          <div class="revision-question-text">जांच-आधारित अधिगम (Inquiry-based learning) का पहला चरण है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कोई प्रश्न या समस्या सामने रखना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 20 – जांच: प्रश्न → अनुमान → जांच → निष्कर्ष।</div>
+        </article>
+        <article class="revision-card" id="q-110">
+          
+          <h3>प्रश्न 110</h3>
+          <div class="revision-question-text">अनुभवात्मक अधिगम (Experiential learning) का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) करके, अनुभव करके और उस अनुभव पर चिंतन करके सीखना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कोल्ब का चक्र: अनुभव → चिंतन → अवधारणा → प्रयोग।</div>
+        </article>
+        <article class="revision-card" id="q-111">
+          
+          <h3>प्रश्न 111</h3>
+          <div class="revision-question-text">परियोजना-आधारित अधिगम (Project-based learning) की मुख्य विशेषता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वास्तविक समस्या पर लंबी अवधि का सहयोगी कार्य और अंत में कोई उत्पाद/प्रस्तुति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> परियोजना विधि (किलपैट्रिक) का आधुनिक रूप।</div>
+        </article>
+        <article class="revision-card" id="q-112">
+          
+          <h3>प्रश्न 112</h3>
+          <div class="revision-question-text">कक्षा 8 में "जल संरक्षण" पढ़ाने का सबसे प्रभावी तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विद्यालय व गाँव में पानी के उपयोग का सर्वेक्षण करके सुझाव देने की परियोजना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्थानीय सर्वेक्षण = अनुभवात्मक + संदर्भित + परियोजना अधिगम।</div>
+        </article>
+        <article class="revision-card" id="q-113">
+          
+          <h3>प्रश्न 113</h3>
+          <div class="revision-question-text">हिंदी व्याकरण में पहले सरल वाक्य और फिर संयुक्त व मिश्र वाक्य पढ़ाना किस शिक्षण सूत्र का पालन है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सरल से जटिल की ओर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सरल से जटिल की ओर। जुलाई में "ज्ञात से अज्ञात" आया; उलटे सूत्र (D) धोखा हैं।</div>
+        </article>
+        <article class="revision-card" id="q-114">
+          
+          <h3>प्रश्न 114</h3>
+          <div class="revision-question-text">उदाहरणों से नियम तक पहुँचना (विशिष्ट से सामान्य) किस विधि की विशेषता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आगमन विधि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आगमन = उदाहरण से नियम; निगमन = नियम से उदाहरण।</div>
+        </article>
+        <article class="revision-card" id="q-115">
+          
+          <h3>प्रश्न 115</h3>
+          <div class="revision-question-text">कक्षा 6 में बीजगणित की शुरुआत "मूर्त से अमूर्त" सूत्र के अनुसार कैसे करें?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) माचिस की तीलियों से बने पैटर्न से चर (variable) की अवधारणा समझाकर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ठोस पैटर्न से चर की अवधारणा (NCERT कक्षा 6 बीजगणित इसी तरह शुरू होता है)।</div>
+        </article>
+        <article class="revision-card" id="q-116">
+          
+          <h3>प्रश्न 116</h3>
+          <div class="revision-question-text">दक्षता-आधारित शिक्षा (Competency-based education) में सबसे अधिक बल होता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सीखे हुए ज्ञान को वास्तविक परिस्थितियों में लागू करने की क्षमता पर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> NEP 2020 दक्षता-आधारित शिक्षा पर बल देती है।</div>
+        </article>
+        <article class="revision-card" id="q-117">
+          
+          <h3>प्रश्न 117</h3>
+          <div class="revision-question-text">"अधिगम परिणाम (Learning outcomes)" से क्या तात्पर्य है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) हर कक्षा व विषय में बच्चों से अपेक्षित मापने योग्य दक्षताएँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> NCERT के अधिगम परिणाम हर कक्षा-विषय के लिए अपेक्षित दक्षताएँ बताते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-118">
+          
+          <h3>प्रश्न 118</h3>
+          <div class="revision-question-text">प्रश्न पूछने के बाद उत्तर के लिए "प्रतीक्षा समय (Wait time)" बढ़ाने का परिणाम होता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अधिक छात्रों द्वारा अधिक सोच-समझकर उत्तर देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अधिक प्रतीक्षा समय से उत्तरों की गुणवत्ता और सहभागिता दोनों बढ़ती हैं।</div>
+        </article>
+        <article class="revision-card" id="q-119">
+          
+          <h3>प्रश्न 119</h3>
+          <div class="revision-question-text">सहकारी अधिगम (Cooperative learning) के सफल होने की आवश्यक शर्त है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सकारात्मक परस्पर निर्भरता और हर सदस्य की व्यक्तिगत जिम्मेदारी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सहकारी अधिगम के दो स्तंभ: परस्पर निर्भरता व व्यक्तिगत जवाबदेही।</div>
+        </article>
+        <article class="revision-card" id="q-120">
+          
+          <h3>प्रश्न 120</h3>
+          <div class="revision-question-text">"फ़्लिप्ड कक्षा (Flipped classroom)" में—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) छात्र घर पर पाठ/वीडियो देखते हैं और कक्षा में चर्चा व अभ्यास होता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ़्लिप्ड = सामान्य कक्षा का उलटा; A पारंपरिक कक्षा है।</div>
+        </article>
+        <article class="revision-card" id="q-121">
+          
+          <h3>प्रश्न 121</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा रचनात्मक आकलन (Formative assessment) का उदाहरण है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कक्षा के अंत में "आज क्या सीखा" पर त्वरित प्रश्न (एग्ज़िट टिकट)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रचनात्मक आकलन शिक्षण के दौरान होता है; बाकी तीनों योगात्मक या चयन हेतु हैं।</div>
+        </article>
+        <article class="revision-card" id="q-122">
+          
+          <h3>प्रश्न 122</h3>
+          <div class="revision-question-text">छात्रों को दी गई प्रतिपुष्टि (Feedback) सबसे प्रभावी तब होती है जब वह—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विशिष्ट, समय पर और सुधार के सुझाव सहित हो</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विशिष्ट और समय पर मिली प्रतिपुष्टि सीखने में सबसे बड़ा सुधार लाती है।</div>
+        </article>
+        <article class="revision-card" id="q-123">
+          
+          <h3>प्रश्न 123</h3>
+          <div class="revision-question-text">आकलन में "रूब्रिक (Rubric)" क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मूल्यांकन के मानदंड और उनके स्तरों का स्पष्ट विवरण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रूब्रिक मूल्यांकन को पारदर्शी और निष्पक्ष बनाता है।</div>
+        </article>
+        <article class="revision-card" id="q-124">
+          
+          <h3>प्रश्न 124</h3>
+          <div class="revision-question-text">स्व-आकलन और सहपाठी आकलन का मुख्य लाभ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) छात्रों में अधिसंज्ञान और अपनी सीख की जिम्मेदारी बढ़ती है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्व/सहपाठी आकलन = NEP के 360-डिग्री प्रगति कार्ड का हिस्सा।</div>
+        </article>
+        <article class="revision-card" id="q-125">
+          
+          <h3>प्रश्न 125</h3>
+          <div class="revision-question-text">"अधिगम के रूप में आकलन (Assessment as learning)" का अर्थ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) छात्र स्वयं अपनी सीख पर नज़र रखते हैं और सुधार करते हैं</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अधिगम का आकलन (अंत में), अधिगम के लिए (दौरान), अधिगम के रूप में (स्वयं छात्र द्वारा)।</div>
+        </article>
+        <article class="revision-card" id="q-126">
+          
+          <h3>प्रश्न 126</h3>
+          <div class="revision-question-text">कक्षा 7 की परीक्षा से पता चला कि आधी कक्षा भिन्न के जोड़ में हरों को भी जोड़ देती है (1/2 + 1/3 = 2/5)। शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) त्रुटि का कारण समझकर भिन्न तरीके (चित्र/मॉडल) से दोबारा पढ़ाना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त्रुटि-विश्लेषण के बाद नई विधि से पुनः शिक्षण (निदानात्मक + उपचारात्मक)।</div>
+        </article>
+        <article class="revision-card" id="q-127">
+          
+          <h3>प्रश्न 127</h3>
+          <div class="revision-question-text">एक ही कक्षा में अलग-अलग स्तर के शिक्षार्थी हों तो शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) स्तर-आधारित समूह बनाकर विभेदित (अलग-अलग स्तर के) कार्य देने चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विभेदित शिक्षण व्यक्तिगत भिन्नता का उत्तर है।</div>
+        </article>
+        <article class="revision-card" id="q-128">
+          
+          <h3>प्रश्न 128</h3>
+          <div class="revision-question-text">पाठ-योजना बनाते समय सबसे पहला कदम है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अधिगम उद्देश्य/परिणाम तय करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पहले उद्देश्य, फिर विधि, सामग्री और आकलन।</div>
+        </article>
+        <article class="revision-card" id="q-129">
+          
+          <h3>प्रश्न 129</h3>
+          <div class="revision-question-text">ब्लूम के संशोधित वर्गीकरण के "सृजन (Create)" स्तर का प्रश्न है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) "अपने गाँव की स्वच्छता सुधारने की एक योजना बनाइए।"</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नया उत्पाद/योजना बनाना = सृजन (सर्वोच्च स्तर); बाकी स्मरण स्तर।</div>
+        </article>
+        <article class="revision-card" id="q-130">
+          
+          <h3>प्रश्न 130</h3>
+          <div class="revision-question-text">कक्षा में ICT (सूचना एवं संचार तकनीक) का सबसे प्रभावी उपयोग है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सिमुलेशन और इंटरैक्टिव गतिविधियों से अमूर्त अवधारणाएँ स्पष्ट करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ICT तब सहायक है जब वह अवधारणा को दृश्य व इंटरैक्टिव बनाए।</div>
+        </article>
+        <article class="revision-card" id="q-131">
+          
+          <h3>प्रश्न 131</h3>
+          <div class="revision-question-text">कक्षा 8 के कई छात्र मानते हैं कि "पौधे अपना भोजन मिट्टी से लेते हैं"। शिक्षक का सर्वोत्तम कदम है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पहले से बनी धारणा जानकर प्रयोग से संज्ञानात्मक संघर्ष पैदा करना और सही अवधारणा बनवाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वैकल्पिक अवधारणा → संज्ञानात्मक संघर्ष → अवधारणा परिवर्तन (पियाजे)।</div>
+        </article>
+        <article class="revision-card" id="q-132">
+          
+          <h3>प्रश्न 132</h3>
+          <div class="revision-question-text">किशोरों के लिए खेल-आधारित अधिगम का प्रभाव होता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सहभागिता, सहयोग और अवधारणाओं की समझ बढ़ती है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> खेल किशोरों में भी सहभागिता और समझ बढ़ाते हैं (NEP: खेल-एकीकृत शिक्षा)।</div>
+        </article>
+        <article class="revision-card" id="q-133">
+          
+          <h3>प्रश्न 133</h3>
+          <div class="revision-question-text">कक्षा प्रबंधन का सर्वोत्तम तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) छात्रों के साथ मिलकर स्पष्ट नियम बनाना और अच्छे व्यवहार की सराहना करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सहभागी नियम और सकारात्मक सुदृढ़ीकरण किशोरों में स्वायत्तता का सम्मान करते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-134">
+          
+          <h3>प्रश्न 134</h3>
+          <div class="revision-question-text">सामाजिक विज्ञान में कहानी-कथन (Storytelling) का लाभ है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) घटनाओं को संदर्भ और भावनात्मक जुड़ाव के साथ समझने व याद रखने में मदद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कहानी से घटनाओं का क्रम और कारण-परिणाम समझ आता है।</div>
+        </article>
+        <article class="revision-card" id="q-135">
+          
+          <h3>प्रश्न 135</h3>
+          <div class="revision-question-text">शिक्षक का "चिंतनशील अभ्यास (Reflective practice)" क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अपने शिक्षण का विश्लेषण करके उसमें लगातार सुधार करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कार्यरत शिक्षक के लिए महत्वपूर्ण: अपने शिक्षण पर चिंतन करके सुधार (क्रियात्मक अनुसंधान से जुड़ा)।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">भाग E — वंशानुक्रम-वातावरण एवं अभिप्रेरणा</h2>
+        
+        <article class="revision-card" id="q-136">
+          
+          <h3>प्रश्न 136</h3>
+          <div class="revision-question-text">वंशानुक्रम और वातावरण के संबंध का सबसे सही वर्णन है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वंशानुक्रम क्षमता की सीमा तय करता है और वातावरण उसे कितना विकसित करेगा यह तय करता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 28 – "पर्यावरण आनुवंशिक क्षमता को आकार देता है"।</div>
+        </article>
+        <article class="revision-card" id="q-137">
+          
+          <h3>प्रश्न 137</h3>
+          <div class="revision-question-text">संगीत में जन्मजात रुचि वाला कक्षा 7 का छात्र अभ्यास के अवसर न मिलने से आगे नहीं बढ़ पाया। यह किस बात को दर्शाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) क्षमता के विकास में वातावरण के अवसरों का महत्व</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जन्मजात क्षमता को अवसर (वातावरण) ही विकसित करता है।</div>
+        </article>
+        <article class="revision-card" id="q-138">
+          
+          <h3>प्रश्न 138</h3>
+          <div class="revision-question-text">विद्यालय का वातावरण किशोरों के विकास को सबसे अधिक तब बढ़ाता है जब वह—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सुरक्षित, प्रेरक और सीखने के अवसरों से समृद्ध हो</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सुरक्षित और समृद्ध वातावरण से संतुलित विकास होता है।</div>
+        </article>
+        <article class="revision-card" id="q-139">
+          
+          <h3>प्रश्न 139</h3>
+          <div class="revision-question-text">आत्म-निर्धारण सिद्धांत के अनुसार आंतरिक अभिप्रेरणा बढ़ाने वाली तीन आवश्यकताएँ हैं—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्वायत्तता, सक्षमता, संबद्धता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> डेसी व रायन: स्वायत्तता, सक्षमता, संबद्धता (जुलाई प्र. 18 – स्वायत्तता)।</div>
+        </article>
+        <article class="revision-card" id="q-140">
+          
+          <h3>प्रश्न 140</h3>
+          <div class="revision-question-text">किसी कार्य में पहले से रुचि रखने वाले छात्र को उसी कार्य के लिए बहुत अधिक बाह्य पुरस्कार देने का खतरा है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उसकी आंतरिक अभिप्रेरणा कम हो सकती है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अति-औचित्य प्रभाव: बाह्य पुरस्कार आंतरिक रुचि को घटा सकता है।</div>
+        </article>
+        <article class="revision-card" id="q-141">
+          
+          <h3>प्रश्न 141</h3>
+          <div class="revision-question-text">कक्षा 8 की छात्रा केवल तभी बेहतर लिखती है जब उसका काम सुबह की सभा में पढ़कर सुनाया जाता है। यह सबसे अच्छी तरह किसे दर्शाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) स्फूर्त अनुकूलन (सामाजिक सुदृढ़ीकरण)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जुलाई प्र. 16 का रूपांतर – सार्वजनिक प्रशंसा = सुदृढ़ीकरण = स्फूर्त अनुकूलन।</div>
+        </article>
+        <article class="revision-card" id="q-142">
+          
+          <h3>प्रश्न 142</h3>
+          <div class="revision-question-text">उच्च उपलब्धि अभिप्रेरणा वाले छात्र सामान्यतः कैसे कार्य चुनते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मध्यम कठिनाई वाले, यथार्थवादी चुनौतीपूर्ण कार्य</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मैक्लीलैंड/एटकिंसन: सफलता की संभावना वाले मध्यम-कठिन कार्य।</div>
+        </article>
+        <article class="revision-card" id="q-143">
+          
+          <h3>प्रश्न 143</h3>
+          <div class="revision-question-text">वाइनर के गुणारोपण सिद्धांत के अनुसार जो छात्र अपनी असफलता का कारण "प्रयास की कमी" मानता है, वह—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अगली बार अधिक प्रयास करने के लिए प्रेरित रहता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रयास नियंत्रण योग्य कारण है, इसलिए आशा बनी रहती है।</div>
+        </article>
+        <article class="revision-card" id="q-144">
+          
+          <h3>प्रश्न 144</h3>
+          <div class="revision-question-text">कक्षा 7 का छात्र कहता है, "मैं बुद्धिमान नहीं हूँ, इसलिए फेल हुआ।" शिक्षक को—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) असफलता को नियंत्रण योग्य कारणों (प्रयास, रणनीति) से जोड़ना सिखाना चाहिए</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गुणारोपण पुनर्प्रशिक्षण: "बुद्धि" से "प्रयास व रणनीति" की ओर।</div>
+        </article>
+        <article class="revision-card" id="q-145">
+          
+          <h3>प्रश्न 145</h3>
+          <div class="revision-question-text">कक्षा 6–8 के छात्रों में जिज्ञासा जगाने का सबसे अच्छा तरीका है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पहेली, विरोधाभासी तथ्य और "क्या होगा अगर..." जैसे प्रश्न रखना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जिज्ञासा अनिश्चितता और रहस्य से जागती है (पियाजे का असंतुलन)।</div>
+        </article>
+        <article class="revision-card" id="q-146">
+          
+          <h3>प्रश्न 146</h3>
+          <div class="revision-question-text">किशोरों में लक्ष्य-निर्धारण तब सबसे प्रभावी होता है जब लक्ष्य—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विशिष्ट, चुनौतीपूर्ण पर प्राप्य हों</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लॉक का लक्ष्य-निर्धारण: विशिष्ट व चुनौतीपूर्ण लक्ष्य बेहतर प्रदर्शन देते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-147">
+          
+          <h3>प्रश्न 147</h3>
+          <div class="revision-question-text">कक्षा में प्रतिस्पर्धा का अत्यधिक प्रयोग करने का परिणाम हो सकता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कमज़ोर छात्रों में चिंता और हतोत्साह</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अति-प्रतिस्पर्धा कमज़ोर छात्रों को हतोत्साहित करती है (जुलाई के कई विकल्पों में "प्रतिस्पर्धा" गलत उत्तर था)।</div>
+        </article>
+        <article class="revision-card" id="q-148">
+          
+          <h3>प्रश्न 148</h3>
+          <div class="revision-question-text">मास्लो के अनुसार सुबह भूखा आने वाला या असुरक्षित महसूस करने वाला छात्र—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) निचली आवश्यकताएँ पूरी हुए बिना सीखने पर ध्यान केंद्रित नहीं कर पाएगा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मास्लो: शारीरिक व सुरक्षा आवश्यकताएँ पहले; इसीलिए मध्याह्न भोजन जैसी योजनाएँ।</div>
+        </article>
+        <article class="revision-card" id="q-149">
+          
+          <h3>प्रश्न 149</h3>
+          <div class="revision-question-text">सहयोगी और शिक्षा को महत्व देने वाले परिवार का बच्चे पर प्रभाव होता है—</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) भाषा, अभिप्रेरणा और सीखने के अवसरों पर सकारात्मक प्रभाव</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> परिवार समाजीकरण की प्राथमिक संस्था है और सीखने का पहला वातावरण।</div>
+        </article>
+        <article class="revision-card" id="q-150">
+          
+          <h3>प्रश्न 150</h3>
+          <div class="revision-question-text">एक शिक्षक का मानना है, "हर बच्चा सीख सकता है, बस उसे सही अवसर और सही तरीका चाहिए।" यह किस दृष्टिकोण को दर्शाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बाल-केंद्रित और समावेशी दृष्टिकोण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विशेष TET का केंद्रीय विचार: हर बच्चा सीख सकता है = बाल-केंद्रित व समावेशी दृष्टिकोण।</div>
+        </article>
+      </section>
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>
