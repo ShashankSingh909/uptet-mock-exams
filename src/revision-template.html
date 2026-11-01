@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>{{TITLE}} — रिवीज़न</title>
+    <style>{{CSS}}</style>
+  </head>
+  <body data-mode="revision" data-question-count="{{COUNT}}">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">{{SHORT_TITLE}}</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>{{TITLE}}</h2>
+        <p>{{SUBTITLE}}</p>
+        <p class="revision-note">{{COUNT}} प्रश्न • केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–{{COUNT}})</summary>
+        {{JUMP}}
+      </details>
+      {{BODY}}
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>
