@@ -16,7 +16,7 @@ Opening a paper starts its 2 hour 30 minute timer.
 
 ## Revision
 
-The top of the selector lists revision pages for CDP 1, Hindi 1, Hindi 2,
+The top of the selector lists revision pages for CDP 1, CDP 2, Hindi 1, Hindi 2,
 Sanskrit 1, Sanskrit 2 and the Sanskrit 2 extra 30 questions
 (`revision-*.html`). Each shows every question with only its correct answer and
 व्याख्या, grouped by section, with a jump-to-question list and no timer. They

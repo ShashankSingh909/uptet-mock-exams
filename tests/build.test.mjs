@@ -119,6 +119,7 @@ test("the selector does not contain exam state initialization", async () => {
 
 const revisionPages = {
   cdp1: 150,
+  cdp2: 150,
   hindi1: 150,
   hindi2: 150,
   sanskrit1: 150,

@@ -162,6 +162,7 @@ function renderRevision(data) {
 
 for (const paperName of [
   "cdp1",
+  "cdp2",
   "hindi1",
   "hindi2",
   "sanskrit1",
