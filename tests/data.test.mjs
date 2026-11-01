@@ -237,6 +237,9 @@ test("social science chapter revision sets keep their questions in order", async
     civics: [76, /मौलिक कर्तव्य/],
     economics: [28, /मनरेगा/],
     upgk: [34, /चीफ़ ऑफ़ डिफ़ेंस स्टाफ़/],
+    pe: [106, /ड्रिल/],
+    pedagogy: [24, /स्थानीय बाज़ार/],
+    all: [750, /समाहर्ता/],
   };
   for (const [chapter, [count, firstText]] of Object.entries(expected)) {
     const data = JSON.parse(
@@ -254,4 +257,34 @@ test("social science chapter revision sets keep their questions in order", async
       assert.ok(question.explanation.trim().length > 10);
     }
   }
+});
+
+test("the all-topics revision set matches the chapter sets it contains", async () => {
+  const load = async (chapter) =>
+    JSON.parse(
+      await readFile(
+        new URL(`../data/sst-rev-${chapter}.json`, import.meta.url),
+        "utf8",
+      ),
+    );
+  const all = await load("all");
+  const pick = ({ text, answer, explanation }) => ({ text, answer, explanation });
+  let offset = 0;
+  for (const chapter of ["history", "geography"]) {
+    const part = await load(chapter);
+    assert.deepEqual(
+      all.questions.slice(offset, offset + part.questions.length).map(pick),
+      part.questions.map(pick),
+      chapter,
+    );
+    offset += part.questions.length;
+  }
+  const pe = await load("pe");
+  const peStart = all.questions.findIndex((question) =>
+    question.section.startsWith("शारीरिक शिक्षा"),
+  );
+  assert.deepEqual(
+    all.questions.slice(peStart, peStart + pe.questions.length).map(pick),
+    pe.questions.map(pick),
+  );
 });

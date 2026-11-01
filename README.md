@@ -19,7 +19,8 @@ Opening a paper starts its 2 hour 30 minute timer.
 The top of the selector lists revision pages for CDP 1, CDP 2, Hindi 1, Hindi 2,
 Sanskrit 1, Sanskrit 2 and the Sanskrit 2 extra 30 questions, plus social
 science chapters (इतिहास, भूगोल, नागरिक शास्त्र, समाज व अर्थव्यवस्था, उ.प्र. व
-करेंट अफ़ेयर्स) from `source/sst-rev-*.json` (`revision-*.html`). Each shows every question with only its correct answer and
+करेंट अफ़ेयर्स, शारीरिक शिक्षा व योग, शिक्षणशास्त्र, and all 750 questions on one
+page) from `source/sst-rev-*.json` (`revision-*.html`). Each shows every question with only its correct answer and
 व्याख्या, grouped by section, with a jump-to-question list and no timer. They
 are generated from the same `data/*.json` as the mock papers.
 
