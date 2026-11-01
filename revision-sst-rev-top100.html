@@ -1,0 +1,1842 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>सामाजिक विज्ञान — संगीत, गृह विज्ञान, पर्यावरण व कृषि: सर्वाधिक संभावित 100 प्रश्न — रिवीज़न</title>
+    <style>:root {
+  color-scheme: light;
+  --teal-950: #073b3d;
+  --teal-800: #075f63;
+  --teal-700: #08777a;
+  --blue-700: #0b57d0;
+  --blue-100: #e9f1ff;
+  --amber-700: #b85d00;
+  --amber-100: #fff2dd;
+  --violet-700: #673ab7;
+  --violet-100: #f0eaff;
+  --green-700: #117a45;
+  --green-100: #e8f6ee;
+  --red-700: #b3261e;
+  --red-100: #fce8e6;
+  --ink: #172026;
+  --muted: #5e6b73;
+  --line: #d6dde1;
+  --surface: #ffffff;
+  --canvas: #f4f7f8;
+  --focus: #ffbf47;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(7, 59, 61, 0.09);
+  font-family: "Noto Sans Devanagari", "Nirmala UI", Mangal, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible + span,
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 16px;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: 0 2px 10px rgba(7, 59, 61, 0.2);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 4.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.topbar .paper-label {
+  margin: 2px 0 0;
+  color: #d9f3f1;
+  font-size: 0.78rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar button {
+  padding: 8px 11px;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: transparent;
+  font-size: 0.86rem;
+}
+
+.exam-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.timer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.timer-main {
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-label,
+.stat-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.timer {
+  margin-top: 2px;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.timer.urgent {
+  color: var(--red-700);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.status-item {
+  min-width: 0;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.status-item + .status-item {
+  border-left: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.answered .stat-number {
+  color: var(--green-700);
+}
+
+.remaining .stat-number {
+  color: var(--amber-700);
+}
+
+.reviewed .stat-number {
+  color: var(--violet-700);
+}
+
+.section-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #edf6f5;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nearby-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.nearby-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(38px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.number-button,
+.palette-button {
+  position: relative;
+  min-width: 42px;
+  border-color: #bdc8ce;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+}
+
+.number-button.current {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.number-button.answered:not(.current),
+.palette-button.answered:not(.current) {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.number-button.review:not(.current),
+.palette-button.review:not(.current) {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.number-button.answered.review:not(.current),
+.palette-button.answered.review:not(.current) {
+  box-shadow: inset 0 -5px 0 var(--violet-700);
+}
+
+.nearby-nav > button,
+.open-palette {
+  padding: 7px 10px;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+  font-weight: 700;
+}
+
+.question-area {
+  padding: 18px 16px 120px;
+  background: var(--surface);
+}
+
+.question-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-meta h2 {
+  margin: 0;
+  color: var(--blue-700);
+  font-size: 1.35rem;
+}
+
+.question-meta span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.passage {
+  margin: 18px 0;
+  padding: 14px;
+  border-left: 4px solid var(--teal-700);
+  background: #f6fbfa;
+  white-space: pre-line;
+}
+
+.question-text {
+  margin: 22px 0;
+  font-size: clamp(1.08rem, 4.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1.5px solid #c8d1d6;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--blue-700);
+}
+
+.option-row.selected {
+  border-color: var(--blue-700);
+  background: var(--blue-100);
+  box-shadow: inset 4px 0 0 var(--blue-700);
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.option-label {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #7a8991;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.selected .option-label {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.option-text {
+  line-height: 1.55;
+}
+
+.bottom-actions {
+  position: fixed;
+  z-index: 18;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  gap: 10px;
+  padding: 10px max(14px, calc((100vw - 1090px) / 2));
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -5px 18px rgba(21, 31, 36, 0.08);
+}
+
+.bottom-actions button {
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+}
+
+.primary {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.review-action {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 128px;
+  background: var(--surface);
+}
+
+#submit-exam {
+  width: min(100%, 440px);
+  border-color: var(--red-700);
+  color: #fff;
+  background: var(--red-700);
+  font-weight: 800;
+}
+
+.message {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid #e4bb72;
+  border-radius: var(--radius);
+  background: #fff8e8;
+}
+
+dialog {
+  width: min(92vw, 680px);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(4, 29, 31, 0.62);
+}
+
+.dialog-header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dialog-close {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend span::before {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  content: "";
+}
+
+.legend .lg-answered {
+  color: var(--green-700);
+}
+
+.legend .lg-review {
+  color: var(--violet-700);
+}
+
+.legend .lg-current {
+  color: var(--blue-700);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 4px 16px 20px;
+}
+
+.result-view,
+.review-view,
+.storage-error {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 26px 16px 50px;
+}
+
+.result-hero {
+  padding: 24px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--teal-800);
+  text-align: center;
+}
+
+.score {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: clamp(3rem, 16vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.result-stat {
+  padding: 14px 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.result-stat strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.result-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.result-actions button,
+.review-toolbar button {
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.review-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: var(--canvas);
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-tabs {
+  position: sticky;
+  z-index: 9;
+  top: 118px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 8px 0 10px;
+  background: var(--canvas);
+}
+
+.review-tab {
+  padding: 9px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-950);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-tab span {
+  display: inline-flex;
+  min-width: 24px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #eef4f5;
+}
+
+.review-tab.active {
+  border-color: var(--teal-700);
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.review-tab.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.review-card.correct {
+  border-left: 5px solid var(--green-700);
+}
+
+.review-card.incorrect {
+  border-left: 5px solid var(--red-700);
+}
+
+.review-card.unanswered {
+  border-left: 5px solid var(--amber-700);
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-question-text {
+  margin-bottom: 12px;
+}
+
+.review-options {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.review-option.correct-option {
+  border-color: rgba(21, 128, 61, 0.45);
+  background: #f0fdf4;
+}
+
+.review-option.incorrect-option {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: #fef2f2;
+}
+
+.review-option-badges {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-badge {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correct-badge {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.selected-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.empty-review {
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.answer-line {
+  margin: 8px 0;
+}
+
+.answer-line strong {
+  color: var(--teal-950);
+}
+
+.answer-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f1f6f7;
+}
+
+.selector {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 36px 18px 60px;
+}
+
+.selector-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.selector-heading h1,
+.selector-heading h2 {
+  margin-bottom: 8px;
+  color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
+}
+
+.paper-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.paper-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.paper-card h2 {
+  margin: 0 0 8px;
+}
+
+.paper-card p {
+  color: var(--muted);
+}
+
+.paper-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--blue-700);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.warning-note {
+  margin: 0 0 22px;
+  padding: 14px;
+  border-left: 4px solid var(--amber-700);
+  background: var(--amber-100);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .timer-panel {
+    grid-template-columns: minmax(240px, 0.8fr) 1.4fr;
+    align-items: stretch;
+  }
+
+  .status-grid {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .question-area {
+    padding-inline: clamp(28px, 6vw, 74px);
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .nearby-numbers {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-actions {
+    grid-template-columns: 180px 220px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+  </head>
+  <body data-mode="revision" data-question-count="100">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">सामाजिक विज्ञान — संगीत, गृह विज्ञान, पर्यावरण व कृषि</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>सामाजिक विज्ञान — संगीत, गृह विज्ञान, पर्यावरण व कृषि: सर्वाधिक संभावित 100 प्रश्न</h2>
+        <p>चार विषयों के 278 प्रश्नों में से चुने गए 100 • उच्च प्राथमिक स्तर (कक्षा 6–8)</p>
+        <p class="revision-note">100 प्रश्न • केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–100)</summary>
+        
+        <div class="jump-group">
+          <p>संगीत — स्वर, सप्तक व स्वरलिपि</p>
+          <div class="jump-numbers"><a href="#q-1">1</a><a href="#q-2">2</a><a href="#q-3">3</a><a href="#q-4">4</a><a href="#q-5">5</a><a href="#q-6">6</a></div>
+        </div>
+        <div class="jump-group">
+          <p>संगीत — लय और ताल</p>
+          <div class="jump-numbers"><a href="#q-7">7</a><a href="#q-8">8</a><a href="#q-9">9</a><a href="#q-10">10</a><a href="#q-11">11</a></div>
+        </div>
+        <div class="jump-group">
+          <p>संगीत — राग और थाट</p>
+          <div class="jump-numbers"><a href="#q-12">12</a><a href="#q-13">13</a><a href="#q-14">14</a><a href="#q-15">15</a><a href="#q-16">16</a><a href="#q-17">17</a></div>
+        </div>
+        <div class="jump-group">
+          <p>गृह विज्ञान — पोषण</p>
+          <div class="jump-numbers"><a href="#q-18">18</a><a href="#q-19">19</a><a href="#q-20">20</a><a href="#q-21">21</a><a href="#q-22">22</a><a href="#q-23">23</a><a href="#q-24">24</a></div>
+        </div>
+        <div class="jump-group">
+          <p>गृह विज्ञान — स्वास्थ्य, स्वच्छता व रोग</p>
+          <div class="jump-numbers"><a href="#q-25">25</a><a href="#q-26">26</a><a href="#q-27">27</a><a href="#q-28">28</a><a href="#q-29">29</a><a href="#q-30">30</a><a href="#q-31">31</a></div>
+        </div>
+        <div class="jump-group">
+          <p>गृह विज्ञान — खाद्य संरक्षण</p>
+          <div class="jump-numbers"><a href="#q-32">32</a><a href="#q-33">33</a><a href="#q-34">34</a><a href="#q-35">35</a><a href="#q-36">36</a><a href="#q-37">37</a><a href="#q-38">38</a><a href="#q-39">39</a><a href="#q-40">40</a></div>
+        </div>
+        <div class="jump-group">
+          <p>गृह विज्ञान — सिलाई-कढ़ाई व गृह प्रबंध</p>
+          <div class="jump-numbers"><a href="#q-41">41</a><a href="#q-42">42</a><a href="#q-43">43</a><a href="#q-44">44</a><a href="#q-45">45</a></div>
+        </div>
+        <div class="jump-group">
+          <p>पर्यावरण व आपदा प्रबंधन — पारितंत्र</p>
+          <div class="jump-numbers"><a href="#q-46">46</a><a href="#q-47">47</a><a href="#q-48">48</a><a href="#q-49">49</a></div>
+        </div>
+        <div class="jump-group">
+          <p>पर्यावरण व आपदा प्रबंधन — प्रदूषण, जलवायु व ऊर्जा</p>
+          <div class="jump-numbers"><a href="#q-50">50</a><a href="#q-51">51</a><a href="#q-52">52</a><a href="#q-53">53</a><a href="#q-54">54</a><a href="#q-55">55</a></div>
+        </div>
+        <div class="jump-group">
+          <p>पर्यावरण व आपदा प्रबंधन — अपशिष्ट प्रबंधन</p>
+          <div class="jump-numbers"><a href="#q-56">56</a><a href="#q-57">57</a><a href="#q-58">58</a><a href="#q-59">59</a></div>
+        </div>
+        <div class="jump-group">
+          <p>पर्यावरण व आपदा प्रबंधन — जैव विविधता, संरक्षण व आंदोलन</p>
+          <div class="jump-numbers"><a href="#q-60">60</a><a href="#q-61">61</a><a href="#q-62">62</a><a href="#q-63">63</a><a href="#q-64">64</a><a href="#q-65">65</a><a href="#q-66">66</a></div>
+        </div>
+        <div class="jump-group">
+          <p>पर्यावरण व आपदा प्रबंधन — आपदा प्रबंधन</p>
+          <div class="jump-numbers"><a href="#q-67">67</a><a href="#q-68">68</a><a href="#q-69">69</a></div>
+        </div>
+        <div class="jump-group">
+          <p>कृषि व उद्यान विज्ञान — बीज और अंकुरण</p>
+          <div class="jump-numbers"><a href="#q-70">70</a><a href="#q-71">71</a><a href="#q-72">72</a><a href="#q-73">73</a><a href="#q-74">74</a><a href="#q-75">75</a><a href="#q-76">76</a><a href="#q-77">77</a></div>
+        </div>
+        <div class="jump-group">
+          <p>कृषि व उद्यान विज्ञान — उर्वरक व खाद</p>
+          <div class="jump-numbers"><a href="#q-78">78</a><a href="#q-79">79</a><a href="#q-80">80</a><a href="#q-81">81</a><a href="#q-82">82</a><a href="#q-83">83</a><a href="#q-84">84</a></div>
+        </div>
+        <div class="jump-group">
+          <p>कृषि व उद्यान विज्ञान — मिट्टी व मृदा संरक्षण</p>
+          <div class="jump-numbers"><a href="#q-85">85</a><a href="#q-86">86</a><a href="#q-87">87</a><a href="#q-88">88</a><a href="#q-89">89</a></div>
+        </div>
+        <div class="jump-group">
+          <p>कृषि व उद्यान विज्ञान — उद्यान विज्ञान व प्रवर्धन</p>
+          <div class="jump-numbers"><a href="#q-90">90</a><a href="#q-91">91</a><a href="#q-92">92</a><a href="#q-93">93</a><a href="#q-94">94</a><a href="#q-95">95</a><a href="#q-96">96</a><a href="#q-97">97</a></div>
+        </div>
+        <div class="jump-group">
+          <p>कृषि व उद्यान विज्ञान — फ़सलें व पशुपालन</p>
+          <div class="jump-numbers"><a href="#q-98">98</a><a href="#q-99">99</a><a href="#q-100">100</a></div>
+        </div>
+      </details>
+      
+      <section class="revision-section">
+        <h2 class="revision-section-title">संगीत — स्वर, सप्तक व स्वरलिपि</h2>
+        
+        <article class="revision-card" id="q-1">
+          
+          <h3>प्रश्न 1</h3>
+          <div class="revision-question-text">सप्तक के पहले स्वर 'सा' का पूरा नाम है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) षड्ज</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सा – षड्ज, रे – ऋषभ, ग – गांधार, म – मध्यम, प – पंचम, ध – धैवत, नि – निषाद।</div>
+        </article>
+        <article class="revision-card" id="q-2">
+          
+          <h3>प्रश्न 2</h3>
+          <div class="revision-question-text">हिंदुस्तानी संगीत में कितने स्वरों का कोमल रूप होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 4</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कोमल: रे, ग, ध, नि; तीव्र: केवल म; अचल: सा, प (जुलाई 2026)</div>
+        </article>
+        <article class="revision-card" id="q-3">
+          
+          <h3>प्रश्न 3</h3>
+          <div class="revision-question-text">भारतीय संगीत शास्त्र के अनुसार एक सप्तक में कुल कितनी श्रुतियाँ मानी गई हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 22</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 22 श्रुतियाँ, 12 स्वरस्थान</div>
+        </article>
+        <article class="revision-card" id="q-4">
+          
+          <h3>प्रश्न 4</h3>
+          <div class="revision-question-text">सामान्य (मध्य) सप्तक से नीचे के स्वरों वाला सप्तक क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मंद्र सप्तक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मंद्र सप्तक = स्वर के नीचे बिंदु</div>
+        </article>
+        <article class="revision-card" id="q-5">
+          
+          <h3>प्रश्न 5</h3>
+          <div class="revision-question-text">भातखंडे स्वरलिपि पद्धति में कोमल स्वर (जैसे कोमल रे) को कैसे दर्शाया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्वर के नीचे आड़ी रेखा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कोमल = नीचे आड़ी रेखा</div>
+        </article>
+        <article class="revision-card" id="q-6">
+          
+          <h3>प्रश्न 6</h3>
+          <div class="revision-question-text">भातखंडे स्वरलिपि में तीव्र मध्यम (तीव्र म) को कैसे दर्शाया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) स्वर के ऊपर खड़ी रेखा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तीव्र म = ऊपर खड़ी रेखा</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">संगीत — लय और ताल</h2>
+        
+        <article class="revision-card" id="q-7">
+          
+          <h3>प्रश्न 7</h3>
+          <div class="revision-question-text">लय के तीन मुख्य प्रकारों का धीमी से तेज़ गति की ओर सही क्रम कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विलंबित, मध्य, द्रुत</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विलंबित < मध्य < द्रुत</div>
+        </article>
+        <article class="revision-card" id="q-8">
+          
+          <h3>प्रश्न 8</h3>
+          <div class="revision-question-text">ताल की वह पहली मात्रा, जिस पर सबसे अधिक ज़ोर होता है और जहाँ गायक व तबला वादक मिलते हैं, क्या कहलाती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सम = पहली मात्रा (×); एक पूरा चक्र = आवर्तन</div>
+        </article>
+        <article class="revision-card" id="q-9">
+          
+          <h3>प्रश्न 9</h3>
+          <div class="revision-question-text">झपताल में कितनी मात्राएँ होती हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 10</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> झपताल 10 (2+3+2+3); तीनताल 16, एकताल 12, दादरा 6</div>
+        </article>
+        <article class="revision-card" id="q-10">
+          
+          <h3>प्रश्न 10</h3>
+          <div class="revision-question-text">लोक गीतों और भजनों में बहुत प्रचलित 'कहरवा' ताल में कितनी मात्राएँ होती हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 8</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कहरवा 8 मात्रा; दादरा 6 (जुलाई 2026)</div>
+        </article>
+        <article class="revision-card" id="q-11">
+          
+          <h3>प्रश्न 11</h3>
+          <div class="revision-question-text">रूपक ताल की सही विशेषता कौन सी है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 7 मात्राएँ, सम पर खाली</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रूपक 7 (3+2+2), सम पर खाली</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">संगीत — राग और थाट</h2>
+        
+        <article class="revision-card" id="q-12">
+          
+          <h3>प्रश्न 12</h3>
+          <div class="revision-question-text">'थाट' के बारे में कौन-सा कथन सही है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) थाट में सात स्वर क्रम से होते हैं और केवल आरोह होता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> थाट – सात स्वर क्रम से, केवल आरोह, गाया नहीं जाता, इससे राग उत्पन्न होते हैं; पं. विष्णु नारायण भातखंडे ने 10 थाट माने – बिलावल, कल्याण, खमाज, भैरव, पूर्वी, मारवा, काफ़ी, आसावरी, भैरवी, तोड़ी।</div>
+        </article>
+        <article class="revision-card" id="q-13">
+          
+          <h3>प्रश्न 13</h3>
+          <div class="revision-question-text">पं. विष्णु नारायण भातखंडे ने हिंदुस्तानी रागों को कितने थाटों में बाँटा?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 10</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 10 थाट: बिलावल, कल्याण, खमाज, भैरव, पूर्वी, मारवा, काफी, आसावरी, भैरवी, तोड़ी</div>
+        </article>
+        <article class="revision-card" id="q-14">
+          
+          <h3>प्रश्न 14</h3>
+          <div class="revision-question-text">राग भूपाली किस थाट से संबंधित है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कल्याण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भूपाली व यमन – कल्याण थाट; थाट का नाम उसके प्रमुख राग पर</div>
+        </article>
+        <article class="revision-card" id="q-15">
+          
+          <h3>प्रश्न 15</h3>
+          <div class="revision-question-text">किसी राग में सबसे अधिक प्रयोग होने वाला प्रमुख स्वर क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) वादी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वादी = राग का राजा; संवादी = मंत्री; विवादी = वर्जित सा स्वर</div>
+        </article>
+        <article class="revision-card" id="q-16">
+          
+          <h3>प्रश्न 16</h3>
+          <div class="revision-question-text">राग में स्वरों को नीचे से ऊपर की ओर (सा रे ग म प ध नि साँ) गाना क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आरोह</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आरोह = चढ़ता क्रम; अवरोह = उतरता क्रम</div>
+        </article>
+        <article class="revision-card" id="q-17">
+          
+          <h3>प्रश्न 17</h3>
+          <div class="revision-question-text">जिस राग में केवल पाँच स्वर प्रयुक्त होते हैं, उसकी जाति क्या कहलाती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) औडव</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> औडव 5, षाडव 6, संपूर्ण 7</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">गृह विज्ञान — पोषण</h2>
+        
+        <article class="revision-card" id="q-18">
+          
+          <h3>प्रश्न 18</h3>
+          <div class="revision-question-text">विटामिन A की कमी से कौन सा रोग होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रतौंधी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विटामिन A – रतौंधी; D – रिकेट्स; B₁ – बेरी-बेरी</div>
+        </article>
+        <article class="revision-card" id="q-19">
+          
+          <h3>प्रश्न 19</h3>
+          <div class="revision-question-text">मसूड़ों से खून आना किस विटामिन की कमी का लक्षण है (स्कर्वी)?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विटामिन C</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विटामिन C – स्कर्वी; खट्टे फल, आँवला</div>
+        </article>
+        <article class="revision-card" id="q-20">
+          
+          <h3>प्रश्न 20</h3>
+          <div class="revision-question-text">धूप के संपर्क में आने पर हमारी त्वचा में कौन सा विटामिन बनता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) विटामिन D</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विटामिन D; कमी से रिकेट्स</div>
+        </article>
+        <article class="revision-card" id="q-21">
+          
+          <h3>प्रश्न 21</h3>
+          <div class="revision-question-text">वसा में घुलनशील विटामिनों का सही समूह कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) A, D, E, K</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> A, D, E, K; B व C जल में घुलनशील</div>
+        </article>
+        <article class="revision-card" id="q-22">
+          
+          <h3>प्रश्न 22</h3>
+          <div class="revision-question-text">प्रोटीन की गंभीर कमी से बच्चों में होने वाला रोग, जिसमें पेट फूलता है और शरीर में सूजन आती है:</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) क्वाशियोरकॉर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्वाशियोरकॉर – प्रोटीन; मरास्मस – प्रोटीन व कैलोरी दोनों</div>
+        </article>
+        <article class="revision-card" id="q-23">
+          
+          <h3>प्रश्न 23</h3>
+          <div class="revision-question-text">बच्चे की लंबाई के अनुपात में बहुत कम वज़न होना, जो हाल के तीव्र कुपोषण को दर्शाता है, क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) दुबलापन (वेस्टिंग)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वेस्टिंग; स्टंटिंग = आयु के अनुसार कम लंबाई</div>
+        </article>
+        <article class="revision-card" id="q-24">
+          
+          <h3>प्रश्न 24</h3>
+          <div class="revision-question-text">आयोडीन की कमी (घेंघा) से बचाव के लिए भारत में किस खाद्य पदार्थ को आयोडीन युक्त किया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नमक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आयोडीन युक्त नमक</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">गृह विज्ञान — स्वास्थ्य, स्वच्छता व रोग</h2>
+        
+        <article class="revision-card" id="q-25">
+          
+          <h3>प्रश्न 25</h3>
+          <div class="revision-question-text">शरीर के ताप-नियमन (समस्थिति) तंत्र में वह भाग कौन सा है जो नियंत्रण केंद्र से संदेश पाकर प्रतिक्रिया करता है (जैसे पसीना निकालने वाली ग्रंथियाँ)?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) प्रभावक (इफ़ेक्टर)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रभावक; ग्राही परिवर्तन पहचानता है</div>
+        </article>
+        <article class="revision-card" id="q-26">
+          
+          <h3>प्रश्न 26</h3>
+          <div class="revision-question-text">मलेरिया का संक्रमण किसके काटने से होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मादा एनाफ़िलीज़</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मादा एनाफ़िलीज़; डेंगू – एडीज़</div>
+        </article>
+        <article class="revision-card" id="q-27">
+          
+          <h3>प्रश्न 27</h3>
+          <div class="revision-question-text">डेंगू रोग किस मच्छर के काटने से फैलता है, जो प्रायः दिन में काटता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) एडीज़</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एडीज़ एजिप्टी</div>
+        </article>
+        <article class="revision-card" id="q-28">
+          
+          <h3>प्रश्न 28</h3>
+          <div class="revision-question-text">निम्नलिखित में से कौन सा रोग मुख्य रूप से दूषित पानी से फैलता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) हैजा (कॉलरा)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हैजा; टीबी हवा से, मलेरिया मच्छर से</div>
+        </article>
+        <article class="revision-card" id="q-29">
+          
+          <h3>प्रश्न 29</h3>
+          <div class="revision-question-text">BCG टीका किस रोग से बचाव के लिए लगाया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) क्षय रोग (टीबी)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> BCG – क्षय रोग</div>
+        </article>
+        <article class="revision-card" id="q-30">
+          
+          <h3>प्रश्न 30</h3>
+          <div class="revision-question-text">दस्त (डायरिया) में शरीर में पानी की कमी रोकने का सबसे उपयुक्त प्राथमिक उपाय क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ORS घोल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ORS से पानी व लवण की कमी पूरी</div>
+        </article>
+        <article class="revision-card" id="q-31">
+          
+          <h3>प्रश्न 31</h3>
+          <div class="revision-question-text">दाँतों के इनेमल को मज़बूत कर कैविटी से बचाने वाला खनिज, जो टूथपेस्ट में भी मिलाया जाता है:</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) फ़्लोराइड</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ़्लोराइड; अधिकता से फ़्लोरोसिस</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">गृह विज्ञान — खाद्य संरक्षण</h2>
+        
+        <article class="revision-card" id="q-32">
+          
+          <h3>प्रश्न 32</h3>
+          <div class="revision-question-text">भोजन को दबाव में लगभग 121°C पर गर्म करके सभी सूक्ष्मजीव नष्ट करना क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) निर्जीवीकरण (स्टरलाइज़ेशन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> निर्जीवीकरण; पाश्चुरीकरण में कम ताप पर गर्म करके तुरंत ठंडा करते हैं</div>
+        </article>
+        <article class="revision-card" id="q-33">
+          
+          <h3>प्रश्न 33</h3>
+          <div class="revision-question-text">दूध को लगभग 135–150°C पर केवल 2–4 सेकंड गर्म कर तुरंत ठंडा करने और जीवाणु-रहित पैक में भरने की विधि, जिससे दूध बिना फ़्रिज के महीनों सुरक्षित रहता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) UHT (अति-उच्च तापमान) उपचार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> UHT (Ultra High Temperature); पाश्चुरीकरण – 63°C पर 30 मिनट या 72°C पर 15 सेकंड (लुई पाश्चर); समांगीकरण – वसा-कणों को बारीक तोड़ना, ताकि मलाई ऊपर न जमे।</div>
+        </article>
+        <article class="revision-card" id="q-34">
+          
+          <h3>प्रश्न 34</h3>
+          <div class="revision-question-text">अचार में नमक और मुरब्बे में चीनी भोजन को कैसे सुरक्षित रखते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) परासरण द्वारा सूक्ष्मजीवों से पानी खींचकर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अधिक नमक/चीनी से सूक्ष्मजीवों का पानी निकल जाता है</div>
+        </article>
+        <article class="revision-card" id="q-35">
+          
+          <h3>प्रश्न 35</h3>
+          <div class="revision-question-text">सॉस और शरबत में मिलाया जाने वाला सोडियम बेंज़ोएट क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) रासायनिक परिरक्षक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सोडियम बेंज़ोएट व KMS रासायनिक परिरक्षक</div>
+        </article>
+        <article class="revision-card" id="q-36">
+          
+          <h3>प्रश्न 36</h3>
+          <div class="revision-question-text">पोटैशियम मेटाबाइसल्फ़ाइट (KMS) का प्रयोग जामुन, फालसा जैसे रंगीन फलों के रस के संरक्षण में क्यों नहीं किया जाता?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) यह फलों का प्राकृतिक रंग उड़ा देता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> KMS रंग (एंथोसायनिन) उड़ाता है; रंगीन रस में सोडियम बेंज़ोएट</div>
+        </article>
+        <article class="revision-card" id="q-37">
+          
+          <h3>प्रश्न 37</h3>
+          <div class="revision-question-text">सब्ज़ियों को फ़्रीज़ करने से पहले थोड़ी देर उबलते पानी में डालकर तुरंत ठंडा करना (ब्लैंचिंग) का मुख्य उद्देश्य क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) एंज़ाइमों को निष्क्रिय करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ब्लैंचिंग से एंज़ाइम निष्क्रिय, रंग व स्वाद सुरक्षित</div>
+        </article>
+        <article class="revision-card" id="q-38">
+          
+          <h3>प्रश्न 38</h3>
+          <div class="revision-question-text">जैम या जेली बनाते समय उसके तैयार होने की जाँच के लिए कौन सा परीक्षण किया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) शीट (चादर) परीक्षण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चम्मच से गिराने पर चादर की तरह गिरे तो तैयार</div>
+        </article>
+        <article class="revision-card" id="q-39">
+          
+          <h3>प्रश्न 39</h3>
+          <div class="revision-question-text">मांस और मछली को लकड़ी के धुएँ में रखकर सुखाने व सुरक्षित रखने की विधि कहलाती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) धूम्रीकरण (Smoking)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> धूम्रीकरण; किण्वन – दही/इडली, डिब्बाबंदी – निकोलस एपर्ट।</div>
+        </article>
+        <article class="revision-card" id="q-40">
+          
+          <h3>प्रश्न 40</h3>
+          <div class="revision-question-text">घरेलू रेफ़्रिजरेटर (सामान्य खाने) में भोजन सुरक्षित रखने का उपयुक्त तापमान लगभग है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 4°C (0–5°C)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लगभग 4°C पर जीवाणु धीमे बढ़ते हैं; फ़्रीज़र – लगभग –18°C; 5°C से 60°C का ताप 'ख़तरे का क्षेत्र' कहलाता है।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">गृह विज्ञान — सिलाई-कढ़ाई व गृह प्रबंध</h2>
+        
+        <article class="revision-card" id="q-41">
+          
+          <h3>प्रश्न 41</h3>
+          <div class="revision-question-text">हाथ से सिलाई करते समय उंगली को सुई की चुभन से बचाने के लिए क्या पहना जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अंगुश्ताना (थिम्बल)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अंगुश्ताना; कढ़ाई घेरा कपड़े को कसकर रखता है</div>
+        </article>
+        <article class="revision-card" id="q-42">
+          
+          <h3>प्रश्न 42</h3>
+          <div class="revision-question-text">कपड़े के किनारों को उधड़ने से बचाने के लिए उन्हें टेढ़े-मेढ़े (ज़िगज़ैग) आकार में काटने वाली कैंची कौन सी है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पिंकिंग कैंची</p>
+          
+        </article>
+        <article class="revision-card" id="q-43">
+          
+          <h3>प्रश्न 43</h3>
+          <div class="revision-question-text">लखनऊ की प्रसिद्ध कढ़ाई कौन सी है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) चिकनकारी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चिकनकारी – लखनऊ; फुलकारी – पंजाब; कांथा – बंगाल; कसूती – कर्नाटक</div>
+        </article>
+        <article class="revision-card" id="q-44">
+          
+          <h3>प्रश्न 44</h3>
+          <div class="revision-question-text">गृह प्रबंधन प्रक्रिया के चरणों का सही क्रम कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) योजना → संगठन → नियंत्रण → मूल्यांकन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पहला कदम योजना (जुलाई 2026 में पूछा)</div>
+        </article>
+        <article class="revision-card" id="q-45">
+          
+          <h3>प्रश्न 45</h3>
+          <div class="revision-question-text">घर के किसी कार्य को कम समय, कम श्रम और कम थकान में पूरा करने के तरीके खोजना गृह प्रबंधन में क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कार्य सरलीकरण</p>
+          
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">पर्यावरण व आपदा प्रबंधन — पारितंत्र</h2>
+        
+        <article class="revision-card" id="q-46">
+          
+          <h3>प्रश्न 46</h3>
+          <div class="revision-question-text">मृत पौधों और जंतुओं को सरल पदार्थों में तोड़कर पोषक तत्व मिट्टी में लौटाने वाले जीव (जैसे जीवाणु, कवक) क्या कहलाते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अपघटक</p>
+          
+        </article>
+        <article class="revision-card" id="q-47">
+          
+          <h3>प्रश्न 47</h3>
+          <div class="revision-question-text">किसी पारितंत्र में अनेक खाद्य शृंखलाओं के आपस में जुड़े जाल को क्या कहते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) खाद्य जाल</p>
+          
+        </article>
+        <article class="revision-card" id="q-48">
+          
+          <h3>प्रश्न 48</h3>
+          <div class="revision-question-text">पारिस्थितिकी तंत्र में ऊर्जा हस्तांतरण का '10% नियम' किसने दिया?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लिंडेमैन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लिंडेमैन (1942); हर पोषण स्तर पर लगभग 10% ऊर्जा आगे जाती है</div>
+        </article>
+        <article class="revision-card" id="q-49">
+          
+          <h3>प्रश्न 49</h3>
+          <div class="revision-question-text">खाद्य शृंखला में ऊपर जाने पर DDT जैसे विषैले पदार्थों की सांद्रता बढ़ते जाना क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जैव आवर्धन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जैव आवर्धन; सुपोषण = पोषक तत्वों से शैवाल वृद्धि</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">पर्यावरण व आपदा प्रबंधन — प्रदूषण, जलवायु व ऊर्जा</h2>
+        
+        <article class="revision-card" id="q-50">
+          
+          <h3>प्रश्न 50</h3>
+          <div class="revision-question-text">किसी जल-स्रोत में जैव-रासायनिक ऑक्सीजन माँग (BOD) का अधिक होना संकेत करता है कि वह जल –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कार्बनिक पदार्थों से अत्यधिक प्रदूषित है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> BOD अधिक = अधिक कार्बनिक प्रदूषण (सूक्ष्मजीव उसे तोड़ने में अधिक ऑक्सीजन लेते हैं); स्वच्छ जल में BOD कम होता है।</div>
+        </article>
+        <article class="revision-card" id="q-51">
+          
+          <h3>प्रश्न 51</h3>
+          <div class="revision-question-text">अम्लीय वर्षा मुख्य रूप से किन गैसों के कारण होती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सल्फ़र डाइऑक्साइड व नाइट्रोजन ऑक्साइड</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> SO₂ व NOₓ जल से मिलकर अम्ल बनाते हैं</div>
+        </article>
+        <article class="revision-card" id="q-52">
+          
+          <h3>प्रश्न 52</h3>
+          <div class="revision-question-text">ओज़ोन परत को सबसे अधिक हानि पहुँचाने वाले रसायन कौन से हैं, जो पहले फ़्रिज और AC में प्रयोग होते थे?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) क्लोरोफ़्लोरोकार्बन (CFC)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> CFC; ओज़ोन परत समतापमंडल में</div>
+        </article>
+        <article class="revision-card" id="q-53">
+          
+          <h3>प्रश्न 53</h3>
+          <div class="revision-question-text">ध्वनि की तीव्रता (प्रबलता) मापने की इकाई –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) डेसिबल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> डेसिबल (dB); आवासीय क्षेत्र में दिन में 55 dB की सीमा; लगातार तेज़ ध्वनि से सुनने की क्षमता को हानि।</div>
+        </article>
+        <article class="revision-card" id="q-54">
+          
+          <h3>प्रश्न 54</h3>
+          <div class="revision-question-text">निम्नलिखित में से कौन सी ग्रीनहाउस गैस नहीं है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) नाइट्रोजन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नाइट्रोजन ऊष्मा नहीं रोकती</div>
+        </article>
+        <article class="revision-card" id="q-55">
+          
+          <h3>प्रश्न 55</h3>
+          <div class="revision-question-text">निम्नलिखित में से नवीकरणीय (Renewable) ऊर्जा स्रोत है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सौर ऊर्जा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सौर, पवन, जल, ज्वारीय, भूतापीय, बायोमास – नवीकरणीय; कोयला, पेट्रोलियम, गैस – जीवाश्म ईंधन (अनवीकरणीय)।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">पर्यावरण व आपदा प्रबंधन — अपशिष्ट प्रबंधन</h2>
+        
+        <article class="revision-card" id="q-56">
+          
+          <h3>प्रश्न 56</h3>
+          <div class="revision-question-text">अपशिष्ट प्रबंधन के '3R' का प्राथमिकता के अनुसार सही क्रम कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कम करना → पुनः उपयोग → पुनर्चक्रण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सबसे पहले कम उपयोग, फिर पुनः उपयोग, अंत में पुनर्चक्रण</div>
+        </article>
+        <article class="revision-card" id="q-57">
+          
+          <h3>प्रश्न 57</h3>
+          <div class="revision-question-text">निम्नलिखित में से कौन सा जैव निम्नीकरणीय (बायोडिग्रेडेबल) कचरा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सब्ज़ियों और फलों के छिलके</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> छिलके सड़कर खाद बनते हैं</div>
+        </article>
+        <article class="revision-card" id="q-58">
+          
+          <h3>प्रश्न 58</h3>
+          <div class="revision-question-text">अस्पतालों के संक्रामक जैव-चिकित्सा कचरे को सुरक्षित रूप से नष्ट करने की सबसे उपयुक्त विधि कौन सी है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) भस्मीकरण (इंसिनरेशन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उच्च ताप पर जलाना (ऑक्सीजन के साथ)</div>
+        </article>
+        <article class="revision-card" id="q-59">
+          
+          <h3>प्रश्न 59</h3>
+          <div class="revision-question-text">पुराने कंप्यूटर, मोबाइल फ़ोन, बैटरी, टीवी जैसे बेकार इलेक्ट्रॉनिक उपकरणों से उत्पन्न कचरा, जिसमें सीसा-पारा जैसे विषैले तत्व होते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ई-अपशिष्ट (E-waste)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ई-अपशिष्ट; भारत में ई-अपशिष्ट (प्रबंधन) नियम 2022 – उत्पादक की 'विस्तारित ज़िम्मेदारी' (EPR); इसे खुले में जलाना या कबाड़ में तोड़ना स्वास्थ्य के लिए घातक है।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">पर्यावरण व आपदा प्रबंधन — जैव विविधता, संरक्षण व आंदोलन</h2>
+        
+        <article class="revision-card" id="q-60">
+          
+          <h3>प्रश्न 60</h3>
+          <div class="revision-question-text">निम्नलिखित में से कौन सा क्षेत्र भारत का जैव विविधता हॉटस्पॉट नहीं है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) थार मरुस्थल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भारत के 4 हॉटस्पॉट: हिमालय, इंडो-बर्मा, पश्चिमी घाट, सुंडालैंड</div>
+        </article>
+        <article class="revision-card" id="q-61">
+          
+          <h3>प्रश्न 61</h3>
+          <div class="revision-question-text">वे पौधे या जीव-जंतु, जो किसी विशेष क्षेत्र में ही प्राकृतिक रूप से पाए जाते हैं और कहीं और नहीं (जैसे पचमढ़ी की भारतीय विशाल गिलहरी) –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्थानिक (विशेष क्षेत्री) प्रजातियाँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्थानिक (Endemic); पचमढ़ी जैवमंडल – साल व जंगली आम (वनस्पति), बाइसन व विशाल गिलहरी (जीव) – NCERT कक्षा 8।</div>
+        </article>
+        <article class="revision-card" id="q-62">
+          
+          <h3>प्रश्न 62</h3>
+          <div class="revision-question-text">संकटग्रस्त (विलुप्ति के ख़तरे वाले) पौधों और जीवों का रिकॉर्ड रखने वाली पुस्तक कहलाती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रेड डेटा बुक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रेड डेटा बुक अंतरराष्ट्रीय प्रकृति संरक्षण संघ (IUCN) रखता है; इसमें प्रजातियों को 'संकटग्रस्त', 'अति-संकटग्रस्त' आदि श्रेणियों में रखा जाता है।</div>
+        </article>
+        <article class="revision-card" id="q-63">
+          
+          <h3>प्रश्न 63</h3>
+          <div class="revision-question-text">जैवमंडल आरक्षित क्षेत्र (Biosphere Reserve) का वह केंद्रीय भाग, जहाँ किसी भी प्रकार की मानवीय गतिविधि की अनुमति नहीं होती –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कोर (केंद्रीय) क्षेत्र</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कोर क्षेत्र (पूर्ण सुरक्षित) → बफ़र क्षेत्र (सीमित शोध/शिक्षा) → संक्रमण क्षेत्र (मानव बस्ती, खेती)। भारत का पहला जैवमंडल आरक्षित क्षेत्र – नीलगिरि (1986)।</div>
+        </article>
+        <article class="revision-card" id="q-64">
+          
+          <h3>प्रश्न 64</h3>
+          <div class="revision-question-text">चिपको आंदोलन (1973, रेणी गाँव) से जुड़ी प्रमुख महिला कौन थीं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गौरा देवी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गौरा देवी; किंकरी देवी – चूना-पत्थर खनन के विरुद्ध PIL</div>
+        </article>
+        <article class="revision-card" id="q-65">
+          
+          <h3>प्रश्न 65</h3>
+          <div class="revision-question-text">1730 में राजस्थान के खेजड़ली गाँव में खेजड़ी के पेड़ों को बचाने के लिए बलिदान देने वाली महिला, जिनके नाम पर वन्यजीव संरक्षण पुरस्कार दिया जाता है:</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अमृता देवी बिश्नोई</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पर्यावरण मंत्रालय का 'अमृता देवी बिश्नोई वन्यजीव संरक्षण पुरस्कार'</div>
+        </article>
+        <article class="revision-card" id="q-66">
+          
+          <h3>प्रश्न 66</h3>
+          <div class="revision-question-text">छतों और खुले स्थानों पर गिरने वाले वर्षा जल को एकत्र कर गड्ढों/टैंकों में जमा करने और भूजल स्तर बढ़ाने की तकनीक –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वर्षा जल संचयन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वर्षा जल संचयन; राजस्थान में पारंपरिक टांका, कुंड व जोहड़; 'जल शक्ति अभियान – कैच द रेन' (2021) का संदेश – वर्षा जल को 'जहाँ भी गिरे, जब भी गिरे' रोकें।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">पर्यावरण व आपदा प्रबंधन — आपदा प्रबंधन</h2>
+        
+        <article class="revision-card" id="q-67">
+          
+          <h3>प्रश्न 67</h3>
+          <div class="revision-question-text">आपदा आने से पहले जोखिम घटाने के लिए उठाए गए दीर्घकालिक कदम (जैसे भूकंपरोधी भवन बनाना) आपदा प्रबंधन चक्र का कौन सा चरण है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शमन (मिटिगेशन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शमन; राहत व अनुक्रिया आपदा के बाद</div>
+        </article>
+        <article class="revision-card" id="q-68">
+          
+          <h3>प्रश्न 68</h3>
+          <div class="revision-question-text">राष्ट्रीय आपदा प्रबंधन प्राधिकरण (NDMA) का अध्यक्ष कौन होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) प्रधानमंत्री</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रधानमंत्री (आपदा प्रबंधन अधिनियम 2005)</div>
+        </article>
+        <article class="revision-card" id="q-69">
+          
+          <h3>प्रश्न 69</h3>
+          <div class="revision-question-text">प्राकृतिक व मानवजनित आपदाओं में विशेषज्ञ खोज एवं बचाव कार्य के लिए 2006 में गठित विशेष बल –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) राष्ट्रीय आपदा मोचन बल (NDRF)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> NDRF (आपदा प्रबंधन अधिनियम 2005 के अंतर्गत); राज्य स्तर पर SDRF; NDMA के अध्यक्ष प्रधानमंत्री।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">कृषि व उद्यान विज्ञान — बीज और अंकुरण</h2>
+        
+        <article class="revision-card" id="q-70">
+          
+          <h3>प्रश्न 70</h3>
+          <div class="revision-question-text">बीज के अंकुरण के समय सबसे पहले कौन सा भाग बाहर निकलता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मूलांकुर (रेडिकल)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मूलांकुर पहले, फिर प्रांकुर</div>
+        </article>
+        <article class="revision-card" id="q-71">
+          
+          <h3>प्रश्न 71</h3>
+          <div class="revision-question-text">मक्का और गेहूँ जैसे एकबीजपत्री बीजों में भोजन मुख्य रूप से कहाँ संचित रहता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) भ्रूणपोष (एंडोस्पर्म)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भ्रूणपोष; द्विबीजपत्री में भोजन बीजपत्रों में</div>
+        </article>
+        <article class="revision-card" id="q-72">
+          
+          <h3>प्रश्न 72</h3>
+          <div class="revision-question-text">अंकुरण के समय बीजपत्रों का मिट्टी से बाहर आ जाना (जैसे सेम में) किस प्रकार का अंकुरण है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उपरिभूमिक (एपिजियल)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उपरिभूमिक; मटर-मक्का में अधोभूमिक</div>
+        </article>
+        <article class="revision-card" id="q-73">
+          
+          <h3>प्रश्न 73</h3>
+          <div class="revision-question-text">कठोर बीजावरण वाले बीजों को रगड़कर या खरोंचकर अंकुरण में सहायता करने की विधि क्या कहलाती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) स्कैरिफ़िकेशन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्कैरिफ़िकेशन; स्ट्रैटिफ़िकेशन = ठंडा उपचार</div>
+        </article>
+        <article class="revision-card" id="q-74">
+          
+          <h3>प्रश्न 74</h3>
+          <div class="revision-question-text">बुवाई से पहले बीज उपचार (सीड ट्रीटमेंट) का मुख्य उद्देश्य क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बीज को रोग व कीटों से बचाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फफूंदनाशी/ट्राइकोडर्मा से बीज रोगमुक्त</div>
+        </article>
+        <article class="revision-card" id="q-75">
+          
+          <h3>प्रश्न 75</h3>
+          <div class="revision-question-text">किस पौधे के बीज रेशमी बालों की सहायता से हवा द्वारा दूर तक फैलते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आक (मदार)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आक व सेमल के बीजों पर रेशमी बाल; नारियल – पानी, गोखरू – जानवर</div>
+        </article>
+        <article class="revision-card" id="q-76">
+          
+          <h3>प्रश्न 76</h3>
+          <div class="revision-question-text">किस पौधे की फलियाँ झटके से फटकर बीज बिखेरती हैं (विस्फोटी प्रकीर्णन)?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) गुलमेंहदी (बालसम)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बालसम, मटर, अरंडी – विस्फोटी प्रकीर्णन</div>
+        </article>
+        <article class="revision-card" id="q-77">
+          
+          <h3>प्रश्न 77</h3>
+          <div class="revision-question-text">जंतुओं के शरीर या बालों से चिपककर दूर तक फैलने वाले काँटेदार बीज किस पौधे के होते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) गोखरू (ज़ैन्थियम)</p>
+          
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">कृषि व उद्यान विज्ञान — उर्वरक व खाद</h2>
+        
+        <article class="revision-card" id="q-78">
+          
+          <h3>प्रश्न 78</h3>
+          <div class="revision-question-text">DAP (डाइअमोनियम फॉस्फेट), जिसमें नाइट्रोजन और फॉस्फोरस रासायनिक रूप से जुड़े होते हैं, किस प्रकार का उर्वरक है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जटिल (कॉम्प्लेक्स) उर्वरक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जटिल उर्वरक; सीधे उर्वरकों को केवल मिलाने से बने = मिश्रित उर्वरक</div>
+        </article>
+        <article class="revision-card" id="q-79">
+          
+          <h3>प्रश्न 79</h3>
+          <div class="revision-question-text">सिंगल सुपर फ़ॉस्फ़ेट (SSP) उर्वरक मुख्य रूप से किस पोषक तत्व की आपूर्ति करता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) फ़ॉस्फ़ोरस</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> SSP में लगभग 16% P₂O₅, साथ में सल्फ़र व कैल्शियम</div>
+        </article>
+        <article class="revision-card" id="q-80">
+          
+          <h3>प्रश्न 80</h3>
+          <div class="revision-question-text">म्यूरेट ऑफ़ पोटाश (MOP) उर्वरक से फसल को कौन सा पोषक तत्व मिलता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पोटैशियम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> MOP में लगभग 60% K₂O</div>
+        </article>
+        <article class="revision-card" id="q-81">
+          
+          <h3>प्रश्न 81</h3>
+          <div class="revision-question-text">नीम लेपित यूरिया (नीम कोटेड यूरिया) का मुख्य लाभ क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नाइट्रोजन का धीरे-धीरे मुक्त होना और बर्बादी कम होना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 2015 से शत-प्रतिशत नीम लेपित</div>
+        </article>
+        <article class="revision-card" id="q-82">
+          
+          <h3>प्रश्न 82</h3>
+          <div class="revision-question-text">पोषक तत्वों का घोल सीधे पत्तियों पर छिड़कने की विधि क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) फोलियर फीडिंग (पर्णीय पोषण)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फोलियर फीडिंग; बैंड प्लेसमेंट = बीज के पास पट्टियों में (जुलाई 2026)</div>
+        </article>
+        <article class="revision-card" id="q-83">
+          
+          <h3>प्रश्न 83</h3>
+          <div class="revision-question-text">ड्रिप सिंचाई के पानी के साथ घुलनशील उर्वरक देने की विधि क्या कहलाती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) फर्टिगेशन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फर्टिगेशन = फर्टिलाइजर + इरिगेशन</div>
+        </article>
+        <article class="revision-card" id="q-84">
+          
+          <h3>प्रश्न 84</h3>
+          <div class="revision-question-text">राइज़ोबियम जीवाणु किन फसलों की जड़ों की गाँठों में रहकर नाइट्रोजन स्थिर करता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) दलहनी फसलें</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दलहनी फसलें (चना, मटर, अरहर)</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">कृषि व उद्यान विज्ञान — मिट्टी व मृदा संरक्षण</h2>
+        
+        <article class="revision-card" id="q-85">
+          
+          <h3>प्रश्न 85</h3>
+          <div class="revision-question-text">यदि मिट्टी का pH 7 से कम हो, तो मिट्टी कैसी कहलाएगी?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अम्लीय</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> pH 7 से कम अम्लीय, 7 उदासीन, 7 से अधिक क्षारीय</div>
+        </article>
+        <article class="revision-card" id="q-86">
+          
+          <h3>प्रश्न 86</h3>
+          <div class="revision-question-text">उत्तर प्रदेश की ऊसर (क्षारीय) भूमि को सुधारने के लिए क्या मिलाया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जिप्सम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जिप्सम – क्षारीय/ऊसर; चूना – अम्लीय मिट्टी</div>
+        </article>
+        <article class="revision-card" id="q-87">
+          
+          <h3>प्रश्न 87</h3>
+          <div class="revision-question-text">पहाड़ी ढलानों पर सीढ़ीनुमा खेत बनाकर की जाने वाली खेती, जो मृदा अपरदन रोकती है, क्या कहलाती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सीढ़ीदार (वेदिका) खेती</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सीढ़ीदार खेती</div>
+        </article>
+        <article class="revision-card" id="q-88">
+          
+          <h3>प्रश्न 88</h3>
+          <div class="revision-question-text">तेज़ हवाओं से मिट्टी का कटाव रोकने के लिए खेतों के किनारे पेड़ों की कतारें लगाना क्या कहलाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) रक्षक मेखला (शेल्टर बेल्ट)</p>
+          
+        </article>
+        <article class="revision-card" id="q-89">
+          
+          <h3>प्रश्न 89</h3>
+          <div class="revision-question-text">बागवानी में पौधों के चारों ओर पुआल/पत्तियों की परत बिछाने (मल्चिंग) का मुख्य लाभ क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मिट्टी की नमी बचाना और खरपतवार रोकना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मल्चिंग से नमी सुरक्षित, खरपतवार कम</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">कृषि व उद्यान विज्ञान — उद्यान विज्ञान व प्रवर्धन</h2>
+        
+        <article class="revision-card" id="q-90">
+          
+          <h3>प्रश्न 90</h3>
+          <div class="revision-question-text">उद्यान विज्ञान की वह शाखा कौन सी है जिसमें फलों की खेती का अध्ययन होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पोमोलॉजी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पोमोलॉजी; ओलेरीकल्चर = सब्ज़ी, फ़्लोरीकल्चर = फूल</div>
+        </article>
+        <article class="revision-card" id="q-91">
+          
+          <h3>प्रश्न 91</h3>
+          <div class="revision-question-text">घर के पीछे/आँगन में रसोई के बेकार पानी का उपयोग करके परिवार के लिए सब्ज़ियाँ उगाने वाला छोटा बगीचा –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गृह-वाटिका (किचन गार्डन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गृह-वाटिका – ताज़ी सब्ज़ी, पोषण व बचत; विद्यालयों में पोषण वाटिका (स्कूल न्यूट्री गार्डन) भी इसी सिद्धांत पर।</div>
+        </article>
+        <article class="revision-card" id="q-92">
+          
+          <h3>प्रश्न 92</h3>
+          <div class="revision-question-text">पारदर्शी पॉलीथीन से ढका ढाँचा, जिसमें नियंत्रित तापमान व नमी में बेमौसमी सब्ज़ियाँ और फूल उगाए जाते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पॉलीहाउस (हरितगृह)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पॉलीहाउस (संरक्षित खेती) – भीतर का तापमान बाहर से अधिक रहता है; प्रायः ड्रिप सिंचाई के साथ; खीरा, शिमला मिर्च, गुलाब, जरबेरा उगाए जाते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-93">
+          
+          <h3>प्रश्न 93</h3>
+          <div class="revision-question-text">गुलाब का प्रवर्धन सामान्यतः किस विधि से किया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कलम (कटिंग) से</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गुलाब – कलम; प्याज़/लिली – बल्ब; अदरक – प्रकंद</div>
+        </article>
+        <article class="revision-card" id="q-94">
+          
+          <h3>प्रश्न 94</h3>
+          <div class="revision-question-text">केले का प्रवर्धन सामान्यतः किससे किया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सकर (अंतःभूस्तारी)</p>
+          
+        </article>
+        <article class="revision-card" id="q-95">
+          
+          <h3>प्रश्न 95</h3>
+          <div class="revision-question-text">आम के पौधों का व्यावसायिक प्रवर्धन (मातृ पौधे जैसे गुण पाने के लिए) प्रायः किस विधि से किया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ग्राफ़्टिंग (कलम बंधन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विनियर/सॉफ़्टवुड ग्राफ़्टिंग</div>
+        </article>
+        <article class="revision-card" id="q-96">
+          
+          <h3>प्रश्न 96</h3>
+          <div class="revision-question-text">पौधे की टहनी पर छाल का छल्ला उतारकर उस पर नम मिट्टी या मॉस लपेटकर, पौधे पर ही जड़ें निकलवाने की विधि (लीची, अमरूद में प्रचलित) –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) गूटी (Air layering)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गूटी (वायवीय दाब कलम) – लीची, अमरूद, अनार; भेट कलम – आम में पुरानी विधि।</div>
+        </article>
+        <article class="revision-card" id="q-97">
+          
+          <h3>प्रश्न 97</h3>
+          <div class="revision-question-text">एक पौधे की स्वस्थ कली को दूसरे पौधे (मूलवृंत) के तने पर 'T' आकार का चीरा लगाकर स्थापित करने की विधि –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कलिकायन (T-बडिंग)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कलिकायन – गुलाब, नींबू वर्गीय फल, बेर; कली वाला भाग 'साइन', नीचे का पौधा 'मूलवृंत' (रूटस्टॉक)।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">कृषि व उद्यान विज्ञान — फ़सलें व पशुपालन</h2>
+        
+        <article class="revision-card" id="q-98">
+          
+          <h3>प्रश्न 98</h3>
+          <div class="revision-question-text">रबी और ख़रीफ़ के बीच (लगभग मार्च से जून) की छोटी अवधि में उगाई जाने वाली फ़सलें, जैसे तरबूज़, ख़रबूज़ा, खीरा –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) ज़ायद फ़सलें</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ज़ायद – तरबूज़, खीरा, कद्दू, मूँग; रबी – अक्टूबर-नवंबर में बुवाई; ख़रीफ़ – वर्षा के आरंभ में।</div>
+        </article>
+        <article class="revision-card" id="q-99">
+          
+          <h3>प्रश्न 99</h3>
+          <div class="revision-question-text">मिट्टी की उर्वरता बनाए रखने के लिए एक ही खेत में अलग-अलग मौसमों/वर्षों में फ़सलों को बदल-बदलकर बोना कहलाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) फ़सल-चक्र</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ़सल-चक्र में दलहनी फ़सल शामिल करने से नाइट्रोजन बढ़ती है; झूम – पूर्वोत्तर की स्थानांतरणशील खेती।</div>
+        </article>
+        <article class="revision-card" id="q-100">
+          
+          <h3>प्रश्न 100</h3>
+          <div class="revision-question-text">'ऑपरेशन फ़्लड' (1970) के सूत्रधार, जिन्हें भारत में 'श्वेत क्रांति का जनक' कहा जाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) डॉ. वर्गीज़ कुरियन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वर्गीज़ कुरियन (अमूल, आणंद); उनका जन्मदिन 26 नवंबर 'राष्ट्रीय दुग्ध दिवस'। हरित क्रांति – एम.एस. स्वामीनाथन (भारत), नॉर्मन बोरलॉग (विश्व)।</div>
+        </article>
+      </section>
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>
