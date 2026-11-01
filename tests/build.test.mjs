@@ -125,6 +125,11 @@ const revisionPages = {
   sanskrit1: 150,
   sanskrit2: 150,
   "sanskrit2-extra": 30,
+  "sst-rev-history": 102,
+  "sst-rev-geography": 102,
+  "sst-rev-civics": 76,
+  "sst-rev-economics": 28,
+  "sst-rev-upgk": 34,
 };
 
 for (const [paper, count] of Object.entries(revisionPages)) {
@@ -158,8 +163,9 @@ for (const [paper, count] of Object.entries(revisionPages)) {
 test("the selector lists the revision section first", async () => {
   const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
   const revisionAt = html.indexOf("<h2>रिवीज़न</h2>");
+  const socialAt = html.indexOf("<h2>सामाजिक विज्ञान</h2>");
   const mockAt = html.indexOf("<h2>मॉक पेपर</h2>");
-  assert.ok(revisionAt > 0 && mockAt > revisionAt);
+  assert.ok(revisionAt > 0 && socialAt > revisionAt && mockAt > socialAt);
   for (const paper of Object.keys(revisionPages)) {
     assert.match(html, new RegExp(`href="revision-${paper}\\.html"`));
   }

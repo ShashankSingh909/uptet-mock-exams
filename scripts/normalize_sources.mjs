@@ -23,6 +23,11 @@ for (const paperName of [
   "sst3",
   "sst4",
   "sst-current",
+  "sst-rev-history",
+  "sst-rev-geography",
+  "sst-rev-civics",
+  "sst-rev-economics",
+  "sst-rev-upgk",
 ]) {
   const source = JSON.parse(
     await readFile(path.join(root, "source", `${paperName}.json`), "utf8"),
