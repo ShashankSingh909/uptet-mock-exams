@@ -116,3 +116,50 @@ test("the selector does not contain exam state initialization", async () => {
     assert.match(html, new RegExp(`sst4-part${part}\\.html`));
   }
 });
+
+const revisionPages = {
+  cdp1: 150,
+  hindi1: 150,
+  hindi2: 150,
+  sanskrit1: 150,
+  sanskrit2: 150,
+  "sanskrit2-extra": 30,
+};
+
+for (const [paper, count] of Object.entries(revisionPages)) {
+  test(`revision-${paper}.html lists every question with its answer only`, async () => {
+    const [html, data] = await Promise.all([
+      readFile(new URL(`../revision-${paper}.html`, import.meta.url), "utf8"),
+      readFile(new URL(`../data/${paper}.json`, import.meta.url), "utf8").then(
+        JSON.parse,
+      ),
+    ]);
+    assert.match(html, /<!doctype html>/i);
+    assert.doesNotMatch(html, /<script/i);
+    assert.doesNotMatch(html, /https?:\/\//i);
+    assert.doesNotMatch(html, /<input/i);
+    assert.doesNotMatch(html, /\{\{\w+\}\}/);
+    assert.equal(html.match(/class="revision-card"/g).length, count);
+    assert.equal(html.match(/href="#q-\d+"/g).length, count);
+    assert.equal(html.match(/<strong>सही उत्तर:<\/strong>/g).length, count);
+    const explanations = html.match(/<strong>व्याख्या:<\/strong>/g).length;
+    assert.ok(explanations > count * 0.8 && explanations <= count);
+    assert.doesNotMatch(html, /व्याख्या:<\/strong> सही उत्तर:/);
+    const last = data.questions.at(-1);
+    const correct = last.options.find((option) => option.id === last.answer);
+    assert.ok(
+      html.includes(`(${correct.label}) ${correct.text}`),
+      "last question shows its correct option",
+    );
+  });
+}
+
+test("the selector lists the revision section first", async () => {
+  const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+  const revisionAt = html.indexOf("<h2>रिवीज़न</h2>");
+  const mockAt = html.indexOf("<h2>मॉक पेपर</h2>");
+  assert.ok(revisionAt > 0 && mockAt > revisionAt);
+  for (const paper of Object.keys(revisionPages)) {
+    assert.match(html, new RegExp(`href="revision-${paper}\\.html"`));
+  }
+});

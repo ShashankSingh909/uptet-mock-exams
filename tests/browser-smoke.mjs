@@ -277,3 +277,37 @@ for (const paperId of [
     }
   });
 }
+
+test("revision page jumps to a question and shows only answers", async () => {
+  const { server, baseUrl } = await startServer();
+  const browser = await chromium.launch({
+    executablePath: chromePath,
+    headless: true,
+  });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+
+  try {
+    await page.goto(`${baseUrl}/index.html`);
+    await page.locator('a[href="revision-hindi1.html"]').click();
+    assert.equal(await page.locator(".revision-card").count(), 150);
+    assert.equal(await page.locator("#timer").count(), 0);
+    assert.equal(await page.locator("input").count(), 0);
+
+    await page.locator(".jump-list summary").click();
+    await page.locator('.jump-numbers a[href="#q-120"]').click();
+    assert.match(page.url(), /#q-120$/);
+    const box = await page.locator("#q-120").boundingBox();
+    assert.ok(box.y >= 0 && box.y < 844, "question 120 is in view");
+
+    const dimensions = await page.evaluate(() => ({
+      scrollWidth: document.documentElement.scrollWidth,
+      innerWidth,
+    }));
+    assert.ok(dimensions.scrollWidth <= dimensions.innerWidth);
+  } finally {
+    await context.close();
+    await browser.close();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});

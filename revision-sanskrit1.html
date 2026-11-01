@@ -1,0 +1,2080 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>विशेष UPTET 2026 — संस्कृत (भाषा-II) — सेट 1 — रिवीज़न</title>
+    <style>:root {
+  color-scheme: light;
+  --teal-950: #073b3d;
+  --teal-800: #075f63;
+  --teal-700: #08777a;
+  --blue-700: #0b57d0;
+  --blue-100: #e9f1ff;
+  --amber-700: #b85d00;
+  --amber-100: #fff2dd;
+  --violet-700: #673ab7;
+  --violet-100: #f0eaff;
+  --green-700: #117a45;
+  --green-100: #e8f6ee;
+  --red-700: #b3261e;
+  --red-100: #fce8e6;
+  --ink: #172026;
+  --muted: #5e6b73;
+  --line: #d6dde1;
+  --surface: #ffffff;
+  --canvas: #f4f7f8;
+  --focus: #ffbf47;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(7, 59, 61, 0.09);
+  font-family: "Noto Sans Devanagari", "Nirmala UI", Mangal, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible + span,
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 16px;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: 0 2px 10px rgba(7, 59, 61, 0.2);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 4.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.topbar .paper-label {
+  margin: 2px 0 0;
+  color: #d9f3f1;
+  font-size: 0.78rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar button {
+  padding: 8px 11px;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: transparent;
+  font-size: 0.86rem;
+}
+
+.exam-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.timer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.timer-main {
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-label,
+.stat-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.timer {
+  margin-top: 2px;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.timer.urgent {
+  color: var(--red-700);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.status-item {
+  min-width: 0;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.status-item + .status-item {
+  border-left: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.answered .stat-number {
+  color: var(--green-700);
+}
+
+.remaining .stat-number {
+  color: var(--amber-700);
+}
+
+.reviewed .stat-number {
+  color: var(--violet-700);
+}
+
+.section-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #edf6f5;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nearby-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.nearby-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(38px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.number-button,
+.palette-button {
+  position: relative;
+  min-width: 42px;
+  border-color: #bdc8ce;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+}
+
+.number-button.current {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.number-button.answered:not(.current),
+.palette-button.answered:not(.current) {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.number-button.review:not(.current),
+.palette-button.review:not(.current) {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.number-button.answered.review:not(.current),
+.palette-button.answered.review:not(.current) {
+  box-shadow: inset 0 -5px 0 var(--violet-700);
+}
+
+.nearby-nav > button,
+.open-palette {
+  padding: 7px 10px;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+  font-weight: 700;
+}
+
+.question-area {
+  padding: 18px 16px 120px;
+  background: var(--surface);
+}
+
+.question-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-meta h2 {
+  margin: 0;
+  color: var(--blue-700);
+  font-size: 1.35rem;
+}
+
+.question-meta span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.passage {
+  margin: 18px 0;
+  padding: 14px;
+  border-left: 4px solid var(--teal-700);
+  background: #f6fbfa;
+  white-space: pre-line;
+}
+
+.question-text {
+  margin: 22px 0;
+  font-size: clamp(1.08rem, 4.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1.5px solid #c8d1d6;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--blue-700);
+}
+
+.option-row.selected {
+  border-color: var(--blue-700);
+  background: var(--blue-100);
+  box-shadow: inset 4px 0 0 var(--blue-700);
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.option-label {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #7a8991;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.selected .option-label {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.option-text {
+  line-height: 1.55;
+}
+
+.bottom-actions {
+  position: fixed;
+  z-index: 18;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  gap: 10px;
+  padding: 10px max(14px, calc((100vw - 1090px) / 2));
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -5px 18px rgba(21, 31, 36, 0.08);
+}
+
+.bottom-actions button {
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+}
+
+.primary {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.review-action {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 128px;
+  background: var(--surface);
+}
+
+#submit-exam {
+  width: min(100%, 440px);
+  border-color: var(--red-700);
+  color: #fff;
+  background: var(--red-700);
+  font-weight: 800;
+}
+
+.message {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid #e4bb72;
+  border-radius: var(--radius);
+  background: #fff8e8;
+}
+
+dialog {
+  width: min(92vw, 680px);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(4, 29, 31, 0.62);
+}
+
+.dialog-header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dialog-close {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend span::before {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  content: "";
+}
+
+.legend .lg-answered {
+  color: var(--green-700);
+}
+
+.legend .lg-review {
+  color: var(--violet-700);
+}
+
+.legend .lg-current {
+  color: var(--blue-700);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 4px 16px 20px;
+}
+
+.result-view,
+.review-view,
+.storage-error {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 26px 16px 50px;
+}
+
+.result-hero {
+  padding: 24px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--teal-800);
+  text-align: center;
+}
+
+.score {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: clamp(3rem, 16vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.result-stat {
+  padding: 14px 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.result-stat strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.result-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.result-actions button,
+.review-toolbar button {
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.review-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: var(--canvas);
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-tabs {
+  position: sticky;
+  z-index: 9;
+  top: 118px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 8px 0 10px;
+  background: var(--canvas);
+}
+
+.review-tab {
+  padding: 9px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-950);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-tab span {
+  display: inline-flex;
+  min-width: 24px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #eef4f5;
+}
+
+.review-tab.active {
+  border-color: var(--teal-700);
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.review-tab.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.review-card.correct {
+  border-left: 5px solid var(--green-700);
+}
+
+.review-card.incorrect {
+  border-left: 5px solid var(--red-700);
+}
+
+.review-card.unanswered {
+  border-left: 5px solid var(--amber-700);
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-question-text {
+  margin-bottom: 12px;
+}
+
+.review-options {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.review-option.correct-option {
+  border-color: rgba(21, 128, 61, 0.45);
+  background: #f0fdf4;
+}
+
+.review-option.incorrect-option {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: #fef2f2;
+}
+
+.review-option-badges {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-badge {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correct-badge {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.selected-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.empty-review {
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.answer-line {
+  margin: 8px 0;
+}
+
+.answer-line strong {
+  color: var(--teal-950);
+}
+
+.answer-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f1f6f7;
+}
+
+.selector {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 36px 18px 60px;
+}
+
+.selector-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.selector-heading h1,
+.selector-heading h2 {
+  margin-bottom: 8px;
+  color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
+}
+
+.paper-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.paper-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.paper-card h2 {
+  margin: 0 0 8px;
+}
+
+.paper-card p {
+  color: var(--muted);
+}
+
+.paper-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--blue-700);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.warning-note {
+  margin: 0 0 22px;
+  padding: 14px;
+  border-left: 4px solid var(--amber-700);
+  background: var(--amber-100);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .timer-panel {
+    grid-template-columns: minmax(240px, 0.8fr) 1.4fr;
+    align-items: stretch;
+  }
+
+  .status-grid {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .question-area {
+    padding-inline: clamp(28px, 6vw, 74px);
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .nearby-numbers {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-actions {
+    grid-template-columns: 180px 220px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+  </head>
+  <body data-mode="revision" data-question-count="150">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">Sanskrit 1</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>विशेष UPTET 2026 — संस्कृत (भाषा-II) — सेट 1</h2>
+        <p>उच्च प्राथमिक स्तर (कक्षा 6–8) • संस्कृत के 150 संभावित प्रश्न • PYQ प्रवृत्ति पर आधारित</p>
+        <p class="revision-note">150 प्रश्न • केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–150)</summary>
+        
+        <div class="jump-group">
+          <p>अभ्यास सेट A: वर्ण, संधि, समास, उपसर्ग</p>
+          <div class="jump-numbers"><a href="#q-1">1</a><a href="#q-2">2</a><a href="#q-3">3</a><a href="#q-4">4</a><a href="#q-5">5</a><a href="#q-6">6</a><a href="#q-7">7</a><a href="#q-8">8</a><a href="#q-9">9</a><a href="#q-10">10</a><a href="#q-11">11</a><a href="#q-12">12</a><a href="#q-13">13</a><a href="#q-14">14</a><a href="#q-15">15</a><a href="#q-16">16</a><a href="#q-17">17</a><a href="#q-18">18</a><a href="#q-19">19</a><a href="#q-20">20</a><a href="#q-21">21</a><a href="#q-22">22</a><a href="#q-23">23</a><a href="#q-24">24</a><a href="#q-25">25</a><a href="#q-26">26</a><a href="#q-27">27</a><a href="#q-28">28</a><a href="#q-29">29</a><a href="#q-30">30</a><a href="#q-31">31</a><a href="#q-32">32</a><a href="#q-33">33</a><a href="#q-34">34</a><a href="#q-35">35</a><a href="#q-36">36</a><a href="#q-37">37</a><a href="#q-38">38</a><a href="#q-39">39</a><a href="#q-40">40</a><a href="#q-41">41</a><a href="#q-42">42</a><a href="#q-43">43</a><a href="#q-44">44</a><a href="#q-45">45</a><a href="#q-46">46</a><a href="#q-47">47</a><a href="#q-48">48</a><a href="#q-49">49</a><a href="#q-50">50</a></div>
+        </div>
+        <div class="jump-group">
+          <p>अभ्यास सेट B: कारक, प्रत्यय, शब्द रूप, धातु रूप, वाच्य</p>
+          <div class="jump-numbers"><a href="#q-51">51</a><a href="#q-52">52</a><a href="#q-53">53</a><a href="#q-54">54</a><a href="#q-55">55</a><a href="#q-56">56</a><a href="#q-57">57</a><a href="#q-58">58</a><a href="#q-59">59</a><a href="#q-60">60</a><a href="#q-61">61</a><a href="#q-62">62</a><a href="#q-63">63</a><a href="#q-64">64</a><a href="#q-65">65</a><a href="#q-66">66</a><a href="#q-67">67</a><a href="#q-68">68</a><a href="#q-69">69</a><a href="#q-70">70</a><a href="#q-71">71</a><a href="#q-72">72</a><a href="#q-73">73</a><a href="#q-74">74</a><a href="#q-75">75</a><a href="#q-76">76</a><a href="#q-77">77</a><a href="#q-78">78</a><a href="#q-79">79</a><a href="#q-80">80</a><a href="#q-81">81</a><a href="#q-82">82</a><a href="#q-83">83</a><a href="#q-84">84</a><a href="#q-85">85</a><a href="#q-86">86</a><a href="#q-87">87</a><a href="#q-88">88</a><a href="#q-89">89</a><a href="#q-90">90</a><a href="#q-91">91</a><a href="#q-92">92</a><a href="#q-93">93</a><a href="#q-94">94</a><a href="#q-95">95</a><a href="#q-96">96</a><a href="#q-97">97</a><a href="#q-98">98</a><a href="#q-99">99</a><a href="#q-100">100</a></div>
+        </div>
+        <div class="jump-group">
+          <p>अभ्यास सेट C: संख्या, समय, अव्यय, शब्दावली, साहित्य, गद्यांश, शिक्षण शास्त्र</p>
+          <div class="jump-numbers"><a href="#q-101">101</a><a href="#q-102">102</a><a href="#q-103">103</a><a href="#q-104">104</a><a href="#q-105">105</a><a href="#q-106">106</a><a href="#q-107">107</a><a href="#q-108">108</a><a href="#q-109">109</a><a href="#q-110">110</a><a href="#q-111">111</a><a href="#q-112">112</a><a href="#q-113">113</a><a href="#q-114">114</a><a href="#q-115">115</a><a href="#q-116">116</a><a href="#q-117">117</a><a href="#q-118">118</a><a href="#q-119">119</a><a href="#q-120">120</a><a href="#q-121">121</a><a href="#q-122">122</a><a href="#q-123">123</a><a href="#q-124">124</a><a href="#q-125">125</a><a href="#q-126">126</a><a href="#q-127">127</a><a href="#q-128">128</a><a href="#q-129">129</a><a href="#q-130">130</a><a href="#q-131">131</a><a href="#q-132">132</a><a href="#q-133">133</a><a href="#q-134">134</a><a href="#q-135">135</a><a href="#q-136">136</a><a href="#q-137">137</a><a href="#q-138">138</a><a href="#q-139">139</a><a href="#q-140">140</a><a href="#q-141">141</a><a href="#q-142">142</a><a href="#q-143">143</a><a href="#q-144">144</a><a href="#q-145">145</a><a href="#q-146">146</a><a href="#q-147">147</a><a href="#q-148">148</a><a href="#q-149">149</a><a href="#q-150">150</a></div>
+        </div>
+      </details>
+      
+      <section class="revision-section">
+        <h2 class="revision-section-title">अभ्यास सेट A: वर्ण, संधि, समास, उपसर्ग</h2>
+        
+        <article class="revision-card" id="q-1">
+          
+          <h3>प्रश्न 1</h3>
+          <div class="revision-question-text">'क' वर्ग का उच्चारण स्थान है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कण्ठ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अकुहविसर्जनीयानां कण्ठः</div>
+        </article>
+        <article class="revision-card" id="q-2">
+          
+          <h3>प्रश्न 2</h3>
+          <div class="revision-question-text">'ष' का उच्चारण स्थान है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मूर्धा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ऋटुरषाणां मूर्धा</div>
+        </article>
+        <article class="revision-card" id="q-3">
+          
+          <h3>प्रश्न 3</h3>
+          <div class="revision-question-text">'ए' और 'ऐ' का उच्चारण स्थान है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कण्ठतालु</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एदैतोः कण्ठतालु</div>
+        </article>
+        <article class="revision-card" id="q-4">
+          
+          <h3>प्रश्न 4</h3>
+          <div class="revision-question-text">'व' का उच्चारण स्थान है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) दन्तोष्ठ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वकारस्य दन्तोष्ठम्</div>
+        </article>
+        <article class="revision-card" id="q-5">
+          
+          <h3>प्रश्न 5</h3>
+          <div class="revision-question-text">'ओ' और 'औ' का उच्चारण स्थान है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कण्ठोष्ठ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ओदौतोः कण्ठोष्ठम्</div>
+        </article>
+        <article class="revision-card" id="q-6">
+          
+          <h3>प्रश्न 6</h3>
+          <div class="revision-question-text">अनुस्वार का उच्चारण स्थान है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नासिका</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नासिकाऽनुस्वारस्य</div>
+        </article>
+        <article class="revision-card" id="q-7">
+          
+          <h3>प्रश्न 7</h3>
+          <div class="revision-question-text">माहेश्वर सूत्रों की संख्या है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 14</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अइउण् से हल् तक 14 सूत्र</div>
+        </article>
+        <article class="revision-card" id="q-8">
+          
+          <h3>प्रश्न 8</h3>
+          <div class="revision-question-text">'अक्' प्रत्याहार में आने वाले वर्ण हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अ इ उ ऋ ऌ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अइउण् + ऋऌक्</div>
+        </article>
+        <article class="revision-card" id="q-9">
+          
+          <h3>प्रश्न 9</h3>
+          <div class="revision-question-text">'हिमालयः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) हिम + आलयः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अ + आ = आ (दीर्घ)</div>
+        </article>
+        <article class="revision-card" id="q-10">
+          
+          <h3>प्रश्न 10</h3>
+          <div class="revision-question-text">'विद्यालयः' में कौन-सी सन्धि है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) दीर्घ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विद्या + आलयः</div>
+        </article>
+        <article class="revision-card" id="q-11">
+          
+          <h3>प्रश्न 11</h3>
+          <div class="revision-question-text">'महेशः' (महा + ईशः) में सन्धि है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गुण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आ + ई = ए (गुण)</div>
+        </article>
+        <article class="revision-card" id="q-12">
+          
+          <h3>प्रश्न 12</h3>
+          <div class="revision-question-text">'सदैव' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सदा + एव</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आ + ए = ऐ (वृद्धि)</div>
+        </article>
+        <article class="revision-card" id="q-13">
+          
+          <h3>प्रश्न 13</h3>
+          <div class="revision-question-text">'इत्यादि' में सन्धि है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) यण्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> इति + आदि, इ → य्</div>
+        </article>
+        <article class="revision-card" id="q-14">
+          
+          <h3>प्रश्न 14</h3>
+          <div class="revision-question-text">'नायकः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नै + अकः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ऐ + अ = आय (अयादि)</div>
+        </article>
+        <article class="revision-card" id="q-15">
+          
+          <h3>प्रश्न 15</h3>
+          <div class="revision-question-text">'पावकः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पौ + अकः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> औ + अ = आव (अयादि)</div>
+        </article>
+        <article class="revision-card" id="q-16">
+          
+          <h3>प्रश्न 16</h3>
+          <div class="revision-question-text">'वागीशः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) वाक् + ईशः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क् → ग् (जश्त्व)</div>
+        </article>
+        <article class="revision-card" id="q-17">
+          
+          <h3>प्रश्न 17</h3>
+          <div class="revision-question-text">'जगन्नाथः' में कौन-सी व्यंजन सन्धि है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अनुनासिक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त् + न → न्न</div>
+        </article>
+        <article class="revision-card" id="q-18">
+          
+          <h3>प्रश्न 18</h3>
+          <div class="revision-question-text">'सत् + चित्' = 'सच्चित्' में सन्धि है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) श्चुत्व</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त् + च → च्च (श्चुत्व)</div>
+        </article>
+        <article class="revision-card" id="q-19">
+          
+          <h3>प्रश्न 19</h3>
+          <div class="revision-question-text">'तल्लीनः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) तत् + लीनः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त् + ल → ल्ल</div>
+        </article>
+        <article class="revision-card" id="q-20">
+          
+          <h3>प्रश्न 20</h3>
+          <div class="revision-question-text">'नमस्ते' (नमः + ते) में सन्धि है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विसर्ग</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विसर्ग → स्</div>
+        </article>
+        <article class="revision-card" id="q-21">
+          
+          <h3>प्रश्न 21</h3>
+          <div class="revision-question-text">'मनोरथः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मनः + रथः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अः + घोष → ओ (उत्व)</div>
+        </article>
+        <article class="revision-card" id="q-22">
+          
+          <h3>प्रश्न 22</h3>
+          <div class="revision-question-text">'निश्चलः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) निः + चलः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विसर्ग + च → श्</div>
+        </article>
+        <article class="revision-card" id="q-23">
+          
+          <h3>प्रश्न 23</h3>
+          <div class="revision-question-text">'पुनरागमनम्' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पुनः + आगमनम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विसर्ग → र् (रुत्व)</div>
+        </article>
+        <article class="revision-card" id="q-24">
+          
+          <h3>प्रश्न 24</h3>
+          <div class="revision-question-text">'षडाननः' का सन्धि-विच्छेद है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) षट् + आननः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ट् → ड् (जश्त्व)</div>
+        </article>
+        <article class="revision-card" id="q-25">
+          
+          <h3>प्रश्न 25</h3>
+          <div class="revision-question-text">'राजपुत्रः' में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) षष्ठी तत्पुरुष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> राज्ञः पुत्रः</div>
+        </article>
+        <article class="revision-card" id="q-26">
+          
+          <h3>प्रश्न 26</h3>
+          <div class="revision-question-text">'पीताम्बरः' (विष्णु) में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बहुव्रीहि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पीतम् अम्बरं यस्य सः (विष्णु)</div>
+        </article>
+        <article class="revision-card" id="q-27">
+          
+          <h3>प्रश्न 27</h3>
+          <div class="revision-question-text">'रामलक्ष्मणौ' में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) द्वन्द्व</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रामः च लक्ष्मणः च</div>
+        </article>
+        <article class="revision-card" id="q-28">
+          
+          <h3>प्रश्न 28</h3>
+          <div class="revision-question-text">'त्रिभुवनम्' में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) द्विगु</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त्रयाणां भुवनानां समाहारः</div>
+        </article>
+        <article class="revision-card" id="q-29">
+          
+          <h3>प्रश्न 29</h3>
+          <div class="revision-question-text">'यथाशक्ति' में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अव्ययीभाव</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शक्तिम् अनतिक्रम्य</div>
+        </article>
+        <article class="revision-card" id="q-30">
+          
+          <h3>प्रश्न 30</h3>
+          <div class="revision-question-text">'नीलकमलम्' में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कर्मधारय</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नीलं च तत् कमलम्</div>
+        </article>
+        <article class="revision-card" id="q-31">
+          
+          <h3>प्रश्न 31</h3>
+          <div class="revision-question-text">'चक्रपाणिः' का समास-विग्रह है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) चक्रं पाणौ यस्य सः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अन्य पद (विष्णु) प्रधान</div>
+        </article>
+        <article class="revision-card" id="q-32">
+          
+          <h3>प्रश्न 32</h3>
+          <div class="revision-question-text">'उपकृष्णम्' का समास-विग्रह है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कृष्णस्य समीपम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समीप अर्थ में उप</div>
+        </article>
+        <article class="revision-card" id="q-33">
+          
+          <h3>प्रश्न 33</h3>
+          <div class="revision-question-text">अव्ययीभाव समास में प्रायः कौन-सा पद प्रधान होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पूर्वपद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पूर्वपदार्थप्रधानः अव्ययीभावः</div>
+        </article>
+        <article class="revision-card" id="q-34">
+          
+          <h3>प्रश्न 34</h3>
+          <div class="revision-question-text">बहुव्रीहि समास में कौन-सा पद प्रधान होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अन्यपद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अन्यपदार्थप्रधानः बहुव्रीहिः</div>
+        </article>
+        <article class="revision-card" id="q-35">
+          
+          <h3>प्रश्न 35</h3>
+          <div class="revision-question-text">'पञ्चवटी' में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) द्विगु</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पञ्चानां वटानां समाहारः</div>
+        </article>
+        <article class="revision-card" id="q-36">
+          
+          <h3>प्रश्न 36</h3>
+          <div class="revision-question-text">'घनश्यामः' का समास-विग्रह है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) घन इव श्यामः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उपमान कर्मधारय</div>
+        </article>
+        <article class="revision-card" id="q-37">
+          
+          <h3>प्रश्न 37</h3>
+          <div class="revision-question-text">'मातापितरौ' में समास है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) द्वन्द्व</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> माता च पिता च</div>
+        </article>
+        <article class="revision-card" id="q-38">
+          
+          <h3>प्रश्न 38</h3>
+          <div class="revision-question-text">'शरणागतः' में कौन-सा तत्पुरुष है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) द्वितीया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शरणम् आगतः</div>
+        </article>
+        <article class="revision-card" id="q-39">
+          
+          <h3>प्रश्न 39</h3>
+          <div class="revision-question-text">संस्कृत में उपसर्गों की संख्या है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 22</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्र, परा, अप, सम् आदि 22</div>
+        </article>
+        <article class="revision-card" id="q-40">
+          
+          <h3>प्रश्न 40</h3>
+          <div class="revision-question-text">'प्रहारः' में उपसर्ग है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) प्र</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्र + हृ + घञ्</div>
+        </article>
+        <article class="revision-card" id="q-41">
+          
+          <h3>प्रश्न 41</h3>
+          <div class="revision-question-text">'अनुभवः' में उपसर्ग है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अनु</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनु + भू</div>
+        </article>
+        <article class="revision-card" id="q-42">
+          
+          <h3>प्रश्न 42</h3>
+          <div class="revision-question-text">'संस्कारः' में उपसर्ग है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सम् + कृ (सुट् आगम)</div>
+        </article>
+        <article class="revision-card" id="q-43">
+          
+          <h3>प्रश्न 43</h3>
+          <div class="revision-question-text">'निर्गच्छति' में उपसर्ग है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) निर्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> निर् + गम्</div>
+        </article>
+        <article class="revision-card" id="q-44">
+          
+          <h3>प्रश्न 44</h3>
+          <div class="revision-question-text">'परा' उपसर्ग से बना शब्द है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पराजयः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> परा + जि</div>
+        </article>
+        <article class="revision-card" id="q-45">
+          
+          <h3>प्रश्न 45</h3>
+          <div class="revision-question-text">'आहारः' में उपसर्ग है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) आ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आ + हृ</div>
+        </article>
+        <article class="revision-card" id="q-46">
+          
+          <h3>प्रश्न 46</h3>
+          <div class="revision-question-text">'विहारः' में उपसर्ग है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वि + हृ</div>
+        </article>
+        <article class="revision-card" id="q-47">
+          
+          <h3>प्रश्न 47</h3>
+          <div class="revision-question-text">उपसर्ग धातु के साथ जुड़कर प्रायः क्या करते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अर्थ बदल देते हैं</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उपसर्गेण धात्वर्थो बलादन्यत्र नीयते</div>
+        </article>
+        <article class="revision-card" id="q-48">
+          
+          <h3>प्रश्न 48</h3>
+          <div class="revision-question-text">'अधि' उपसर्ग वाला शब्द है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अधिकारः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अधि + कृ</div>
+        </article>
+        <article class="revision-card" id="q-49">
+          
+          <h3>प्रश्न 49</h3>
+          <div class="revision-question-text">'दुर्' उपसर्ग वाला शब्द है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) दुर्जनः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दुर् + जनः</div>
+        </article>
+        <article class="revision-card" id="q-50">
+          
+          <h3>प्रश्न 50</h3>
+          <div class="revision-question-text">'प्रत्येकम्' में उपसर्ग और सन्धि हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) प्रति, यण्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रति + एकम्, इ → य्</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">अभ्यास सेट B: कारक, प्रत्यय, शब्द रूप, धातु रूप, वाच्य</h2>
+        
+        <article class="revision-card" id="q-51">
+          
+          <h3>प्रश्न 51</h3>
+          <div class="revision-question-text">'रामः ___ सह गच्छति।' (सीता) –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सीतया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सह के योग में तृतीया</div>
+        </article>
+        <article class="revision-card" id="q-52">
+          
+          <h3>प्रश्न 52</h3>
+          <div class="revision-question-text">'नमः' के योग में विभक्ति होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) चतुर्थी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नमः स्वस्ति स्वाहा… चतुर्थी</div>
+        </article>
+        <article class="revision-card" id="q-53">
+          
+          <h3>प्रश्न 53</h3>
+          <div class="revision-question-text">'बालकाय मोदकं रोचते' में 'बालकाय' में विभक्ति है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) चतुर्थी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रुच्यर्थानां प्रीयमाणः</div>
+        </article>
+        <article class="revision-card" id="q-54">
+          
+          <h3>प्रश्न 54</h3>
+          <div class="revision-question-text">'विना' के योग में विभक्ति होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) द्वितीया, तृतीया या पञ्चमी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विना के साथ 2, 3, 5</div>
+        </article>
+        <article class="revision-card" id="q-55">
+          
+          <h3>प्रश्न 55</h3>
+          <div class="revision-question-text">'वृक्षात् पत्रं पतति' में 'वृक्षात्' का कारक है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अपादान</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ध्रुवमपायेऽपादानम्</div>
+        </article>
+        <article class="revision-card" id="q-56">
+          
+          <h3>प्रश्न 56</h3>
+          <div class="revision-question-text">'सः ___ अन्धः अस्ति।' (नेत्र) –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) नेत्राभ्याम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> येनाङ्गविकारः — तृतीया</div>
+        </article>
+        <article class="revision-card" id="q-57">
+          
+          <h3>प्रश्न 57</h3>
+          <div class="revision-question-text">'परितः' के योग में विभक्ति होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) द्वितीया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अभितः, परितः — द्वितीया</div>
+        </article>
+        <article class="revision-card" id="q-58">
+          
+          <h3>प्रश्न 58</h3>
+          <div class="revision-question-text">कर्तृवाच्य में कर्ता की विभक्ति होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) प्रथमा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कर्तृवाच्य में कर्ता प्रथमा</div>
+        </article>
+        <article class="revision-card" id="q-59">
+          
+          <h3>प्रश्न 59</h3>
+          <div class="revision-question-text">करण कारक में विभक्ति होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) तृतीया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> साधकतमं करणम्</div>
+        </article>
+        <article class="revision-card" id="q-60">
+          
+          <h3>प्रश्न 60</h3>
+          <div class="revision-question-text">'रामस्य पुस्तकम्' में 'रामस्य' में विभक्ति है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) षष्ठी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सम्बन्ध — षष्ठी</div>
+        </article>
+        <article class="revision-card" id="q-61">
+          
+          <h3>प्रश्न 61</h3>
+          <div class="revision-question-text">'स्वस्ति' के योग में विभक्ति होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) चतुर्थी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्वस्ति — चतुर्थी</div>
+        </article>
+        <article class="revision-card" id="q-62">
+          
+          <h3>प्रश्न 62</h3>
+          <div class="revision-question-text">'बालकः ___ बिभेति।' (सर्प) –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सर्पात्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भीत्रार्थानां भयहेतुः — पञ्चमी</div>
+        </article>
+        <article class="revision-card" id="q-63">
+          
+          <h3>प्रश्न 63</h3>
+          <div class="revision-question-text">'वृक्षे खगाः वसन्ति' में 'वृक्षे' का कारक है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अधिकरण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आधारोऽधिकरणम्</div>
+        </article>
+        <article class="revision-card" id="q-64">
+          
+          <h3>प्रश्न 64</h3>
+          <div class="revision-question-text">संस्कृत व्याकरण में कारकों की संख्या है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 6</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कर्ता, कर्म, करण, सम्प्रदान, अपादान, अधिकरण</div>
+        </article>
+        <article class="revision-card" id="q-65">
+          
+          <h3>प्रश्न 65</h3>
+          <div class="revision-question-text">'पठित्वा' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) क्त्वा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पठ् + क्त्वा</div>
+        </article>
+        <article class="revision-card" id="q-66">
+          
+          <h3>प्रश्न 66</h3>
+          <div class="revision-question-text">'आगत्य' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) ल्यप्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आ + गम् + ल्यप्</div>
+        </article>
+        <article class="revision-card" id="q-67">
+          
+          <h3>प्रश्न 67</h3>
+          <div class="revision-question-text">'गन्तुम्' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) तुमुन्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गम् + तुमुन्</div>
+        </article>
+        <article class="revision-card" id="q-68">
+          
+          <h3>प्रश्न 68</h3>
+          <div class="revision-question-text">उपसर्गयुक्त धातु से 'क्त्वा' के स्थान पर कौन-सा प्रत्यय होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ल्यप्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समासेऽनञ्पूर्वे क्त्वो ल्यप्</div>
+        </article>
+        <article class="revision-card" id="q-69">
+          
+          <h3>प्रश्न 69</h3>
+          <div class="revision-question-text">'पठन्' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शतृ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पठ् + शतृ (परस्मैपद)</div>
+        </article>
+        <article class="revision-card" id="q-70">
+          
+          <h3>प्रश्न 70</h3>
+          <div class="revision-question-text">'वर्धमानः' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शानच्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वृध् + शानच् (आत्मनेपद)</div>
+        </article>
+        <article class="revision-card" id="q-71">
+          
+          <h3>प्रश्न 71</h3>
+          <div class="revision-question-text">'गतः' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) क्त</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गम् + क्त</div>
+        </article>
+        <article class="revision-card" id="q-72">
+          
+          <h3>प्रश्न 72</h3>
+          <div class="revision-question-text">'कर्तव्यम्' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) तव्यत्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कृ + तव्यत्</div>
+        </article>
+        <article class="revision-card" id="q-73">
+          
+          <h3>प्रश्न 73</h3>
+          <div class="revision-question-text">'अजा' में स्त्री प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) टाप्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अजाद्यतष्टाप्</div>
+        </article>
+        <article class="revision-card" id="q-74">
+          
+          <h3>प्रश्न 74</h3>
+          <div class="revision-question-text">'देवी' में स्त्री प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ङीप्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> देव + ङीप्</div>
+        </article>
+        <article class="revision-card" id="q-75">
+          
+          <h3>प्रश्न 75</h3>
+          <div class="revision-question-text">'बुद्धिमान्' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मतुप्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बुद्धि + मतुप्</div>
+        </article>
+        <article class="revision-card" id="q-76">
+          
+          <h3>प्रश्न 76</h3>
+          <div class="revision-question-text">'लघुता' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) तल्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लघु + तल् → ता</div>
+        </article>
+        <article class="revision-card" id="q-77">
+          
+          <h3>प्रश्न 77</h3>
+          <div class="revision-question-text">'राम' शब्द का षष्ठी बहुवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रामाणाम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> णत्व: रामाणाम्</div>
+        </article>
+        <article class="revision-card" id="q-78">
+          
+          <h3>प्रश्न 78</h3>
+          <div class="revision-question-text">'राम' शब्द का सप्तमी एकवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) रामे</p>
+          
+        </article>
+        <article class="revision-card" id="q-79">
+          
+          <h3>प्रश्न 79</h3>
+          <div class="revision-question-text">'हरि' शब्द का चतुर्थी एकवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) हरये</p>
+          
+        </article>
+        <article class="revision-card" id="q-80">
+          
+          <h3>प्रश्न 80</h3>
+          <div class="revision-question-text">'लता' शब्द का तृतीया एकवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लतया</p>
+          
+        </article>
+        <article class="revision-card" id="q-81">
+          
+          <h3>प्रश्न 81</h3>
+          <div class="revision-question-text">'नदी' शब्द का प्रथमा बहुवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नद्यः</p>
+          
+        </article>
+        <article class="revision-card" id="q-82">
+          
+          <h3>प्रश्न 82</h3>
+          <div class="revision-question-text">'अस्मद्' शब्द का षष्ठी एकवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मम / मे</div>
+        </article>
+        <article class="revision-card" id="q-83">
+          
+          <h3>प्रश्न 83</h3>
+          <div class="revision-question-text">'युष्मद्' शब्द का प्रथमा बहुवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) यूयम्</p>
+          
+        </article>
+        <article class="revision-card" id="q-84">
+          
+          <h3>प्रश्न 84</h3>
+          <div class="revision-question-text">'तत्' (पुल्लिंग) का प्रथमा द्विवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) तौ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सः, तौ, ते</div>
+        </article>
+        <article class="revision-card" id="q-85">
+          
+          <h3>प्रश्न 85</h3>
+          <div class="revision-question-text">'फल' शब्द का प्रथमा बहुवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) फलानि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फलम्, फले, फलानि</div>
+        </article>
+        <article class="revision-card" id="q-86">
+          
+          <h3>प्रश्न 86</h3>
+          <div class="revision-question-text">'गुरु' शब्द का पञ्चमी एकवचन है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गुरोः</p>
+          
+        </article>
+        <article class="revision-card" id="q-87">
+          
+          <h3>प्रश्न 87</h3>
+          <div class="revision-question-text">'पठ्' धातु, लट् लकार, प्रथम पुरुष बहुवचन –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पठन्ति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पठति, पठतः, पठन्ति</div>
+        </article>
+        <article class="revision-card" id="q-88">
+          
+          <h3>प्रश्न 88</h3>
+          <div class="revision-question-text">'भू' धातु, लृट् लकार, प्रथम पुरुष एकवचन –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) भविष्यति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भविष्यति (लृट् = भविष्यत्)</div>
+        </article>
+        <article class="revision-card" id="q-89">
+          
+          <h3>प्रश्न 89</h3>
+          <div class="revision-question-text">'गम्' धातु, लङ् लकार, प्रथम पुरुष एकवचन –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अगच्छत्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अगच्छत् (लङ् = भूत)</div>
+        </article>
+        <article class="revision-card" id="q-90">
+          
+          <h3>प्रश्न 90</h3>
+          <div class="revision-question-text">'अस्' धातु, लट् लकार, उत्तम पुरुष एकवचन –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अस्मि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अस्मि, स्वः, स्मः</div>
+        </article>
+        <article class="revision-card" id="q-91">
+          
+          <h3>प्रश्न 91</h3>
+          <div class="revision-question-text">आज्ञा के अर्थ में कौन-सा लकार प्रयुक्त होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) लोट्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लोट् — आज्ञा</div>
+        </article>
+        <article class="revision-card" id="q-92">
+          
+          <h3>प्रश्न 92</h3>
+          <div class="revision-question-text">'चाहिए' (विधि) के अर्थ में कौन-सा लकार है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विधिलिङ्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विधिलिङ् — चाहिए</div>
+        </article>
+        <article class="revision-card" id="q-93">
+          
+          <h3>प्रश्न 93</h3>
+          <div class="revision-question-text">'अपठत्' किस लकार का रूप है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) लङ्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 'अ' आगम = लङ्</div>
+        </article>
+        <article class="revision-card" id="q-94">
+          
+          <h3>प्रश्न 94</h3>
+          <div class="revision-question-text">'सेव्' धातु किस पद की है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आत्मनेपद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सेवते — आत्मनेपद</div>
+        </article>
+        <article class="revision-card" id="q-95">
+          
+          <h3>प्रश्न 95</h3>
+          <div class="revision-question-text">'लभते' में लकार और पद हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) लट्, आत्मनेपद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लभ् — आत्मनेपदी</div>
+        </article>
+        <article class="revision-card" id="q-96">
+          
+          <h3>प्रश्न 96</h3>
+          <div class="revision-question-text">कर्मवाच्य में कर्ता की विभक्ति होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) तृतीया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कर्मवाच्य में कर्ता तृतीया</div>
+        </article>
+        <article class="revision-card" id="q-97">
+          
+          <h3>प्रश्न 97</h3>
+          <div class="revision-question-text">'रामः ग्रन्थं पठति' का कर्मवाच्य है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रामेण ग्रन्थः पठ्यते</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कर्म प्रथमा, क्रिया कर्म अनुसार</div>
+        </article>
+        <article class="revision-card" id="q-98">
+          
+          <h3>प्रश्न 98</h3>
+          <div class="revision-question-text">भाववाच्य किस प्रकार की धातु से बनता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अकर्मक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भाववाच्य — अकर्मक धातु</div>
+        </article>
+        <article class="revision-card" id="q-99">
+          
+          <h3>प्रश्न 99</h3>
+          <div class="revision-question-text">'मया हस्यते' किस वाच्य में है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) भाववाच्य</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हस् अकर्मक, क्रिया प्रथम पुरुष एकवचन</div>
+        </article>
+        <article class="revision-card" id="q-100">
+          
+          <h3>प्रश्न 100</h3>
+          <div class="revision-question-text">कर्मवाच्य में क्रिया सदैव होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आत्मनेपद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> यक् + आत्मनेपद</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">अभ्यास सेट C: संख्या, समय, अव्यय, शब्दावली, साहित्य, गद्यांश, शिक्षण शास्त्र</h2>
+        
+        <article class="revision-card" id="q-101">
+          
+          <h3>प्रश्न 101</h3>
+          <div class="revision-question-text">'19' को संस्कृत में कहते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ऊनविंशतिः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ऊनविंशतिः / नवदश</div>
+        </article>
+        <article class="revision-card" id="q-102">
+          
+          <h3>प्रश्न 102</h3>
+          <div class="revision-question-text">'29' को संस्कृत में कहते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) एकोनत्रिंशत्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एकोनत्रिंशत् / नवविंशतिः</div>
+        </article>
+        <article class="revision-card" id="q-103">
+          
+          <h3>प्रश्न 103</h3>
+          <div class="revision-question-text">'षष्टिः' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 60</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> षष्टिः = 60</div>
+        </article>
+        <article class="revision-card" id="q-104">
+          
+          <h3>प्रश्न 104</h3>
+          <div class="revision-question-text">'चत्वारिंशत्' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 40</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चत्वारिंशत् = 40</div>
+        </article>
+        <article class="revision-card" id="q-105">
+          
+          <h3>प्रश्न 105</h3>
+          <div class="revision-question-text">'100' को संस्कृत में कहते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शतम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शतम् = 100</div>
+        </article>
+        <article class="revision-card" id="q-106">
+          
+          <h3>प्रश्न 106</h3>
+          <div class="revision-question-text">'चतुर्' शब्द का स्त्रीलिंग प्रथमा रूप है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) चतस्रः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चतस्रः (स्त्री.)</div>
+        </article>
+        <article class="revision-card" id="q-107">
+          
+          <h3>प्रश्न 107</h3>
+          <div class="revision-question-text">'सार्धपञ्चवादनम्' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 5:30</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सार्ध = आधा अधिक</div>
+        </article>
+        <article class="revision-card" id="q-108">
+          
+          <h3>प्रश्न 108</h3>
+          <div class="revision-question-text">'पादोन-सप्तवादनम्' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 6:45</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पादोन = पौना</div>
+        </article>
+        <article class="revision-card" id="q-109">
+          
+          <h3>प्रश्न 109</h3>
+          <div class="revision-question-text">'सपाद-अष्टवादनम्' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 8:15</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सपाद = सवा</div>
+        </article>
+        <article class="revision-card" id="q-110">
+          
+          <h3>प्रश्न 110</h3>
+          <div class="revision-question-text">'दशवादनम्' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 10 बजे</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दश = 10</div>
+        </article>
+        <article class="revision-card" id="q-111">
+          
+          <h3>प्रश्न 111</h3>
+          <div class="revision-question-text">निम्नलिखित में अव्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अत्र</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अत्र — स्थानवाचक अव्यय</div>
+        </article>
+        <article class="revision-card" id="q-112">
+          
+          <h3>प्रश्न 112</h3>
+          <div class="revision-question-text">'कुत्र' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कहाँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कुत्र = कहाँ</div>
+        </article>
+        <article class="revision-card" id="q-113">
+          
+          <h3>प्रश्न 113</h3>
+          <div class="revision-question-text">'श्वः' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) आने वाला कल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> श्वः = आने वाला कल</div>
+        </article>
+        <article class="revision-card" id="q-114">
+          
+          <h3>प्रश्न 114</h3>
+          <div class="revision-question-text">'ह्यः' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बीता हुआ कल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ह्यः = बीता हुआ कल</div>
+        </article>
+        <article class="revision-card" id="q-115">
+          
+          <h3>प्रश्न 115</h3>
+          <div class="revision-question-text">'जलम्' का पर्यायवाची है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नीरम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नीरम्, सलिलम्, वारि</div>
+        </article>
+        <article class="revision-card" id="q-116">
+          
+          <h3>प्रश्न 116</h3>
+          <div class="revision-question-text">'सूर्यः' का पर्यायवाची है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) दिवाकरः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दिवाकरः, भास्करः</div>
+        </article>
+        <article class="revision-card" id="q-117">
+          
+          <h3>प्रश्न 117</h3>
+          <div class="revision-question-text">'अग्निः' का पर्यायवाची है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अनलः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनलः = अग्नि; अनिलः = वायु</div>
+        </article>
+        <article class="revision-card" id="q-118">
+          
+          <h3>प्रश्न 118</h3>
+          <div class="revision-question-text">'पृथ्वी' का पर्यायवाची है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) वसुधा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वसुधा, धरा, भूमिः</div>
+        </article>
+        <article class="revision-card" id="q-119">
+          
+          <h3>प्रश्न 119</h3>
+          <div class="revision-question-text">'वृक्षः' का पर्यायवाची है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) तरुः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तरुः, विटपः</div>
+        </article>
+        <article class="revision-card" id="q-120">
+          
+          <h3>प्रश्न 120</h3>
+          <div class="revision-question-text">'उन्नतिः' का विलोम है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अवनतिः</p>
+          
+        </article>
+        <article class="revision-card" id="q-121">
+          
+          <h3>प्रश्न 121</h3>
+          <div class="revision-question-text">'ज्ञानम्' का विलोम है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अज्ञानम्</p>
+          
+        </article>
+        <article class="revision-card" id="q-122">
+          
+          <h3>प्रश्न 122</h3>
+          <div class="revision-question-text">'आदानम्' का विलोम है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) प्रदानम्</p>
+          
+        </article>
+        <article class="revision-card" id="q-123">
+          
+          <h3>प्रश्न 123</h3>
+          <div class="revision-question-text">'अभिज्ञानशाकुन्तलम्' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कालिदास</p>
+          
+        </article>
+        <article class="revision-card" id="q-124">
+          
+          <h3>प्रश्न 124</h3>
+          <div class="revision-question-text">'स्वप्नवासवदत्तम्' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) भास</p>
+          
+        </article>
+        <article class="revision-card" id="q-125">
+          
+          <h3>प्रश्न 125</h3>
+          <div class="revision-question-text">'कादम्बरी' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बाणभट्ट</p>
+          
+        </article>
+        <article class="revision-card" id="q-126">
+          
+          <h3>प्रश्न 126</h3>
+          <div class="revision-question-text">'पञ्चतन्त्रम्' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विष्णुशर्मा</p>
+          
+        </article>
+        <article class="revision-card" id="q-127">
+          
+          <h3>प्रश्न 127</h3>
+          <div class="revision-question-text">'हितोपदेशः' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नारायण पण्डित</p>
+          
+        </article>
+        <article class="revision-card" id="q-128">
+          
+          <h3>प्रश्न 128</h3>
+          <div class="revision-question-text">'उत्तररामचरितम्' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) भवभूति</p>
+          
+        </article>
+        <article class="revision-card" id="q-129">
+          
+          <h3>प्रश्न 129</h3>
+          <div class="revision-question-text">'मृच्छकटिकम्' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) शूद्रक</p>
+          
+        </article>
+        <article class="revision-card" id="q-130">
+          
+          <h3>प्रश्न 130</h3>
+          <div class="revision-question-text">'अष्टाध्यायी' के रचयिता हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पाणिनि</p>
+          
+        </article>
+        <article class="revision-card" id="q-131">
+          
+          <h3>प्रश्न 131</h3>
+          <div class="revision-question-text">'जननी जन्मभूमिश्च स्वर्गादपि ___' –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गरीयसी</p>
+          
+        </article>
+        <article class="revision-card" id="q-132">
+          
+          <h3>प्रश्न 132</h3>
+          <div class="revision-question-text">'सत्यमेव जयते' किस ग्रन्थ से लिया गया है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मुण्डकोपनिषद्</p>
+          
+        </article>
+        <article class="revision-card" id="q-133">
+          
+          <h3>प्रश्न 133</h3>
+          <div class="revision-question-text">'विद्याविहीनः ___' –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पशुः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> साक्षात् पशुः पुच्छविषाणहीनः</div>
+        </article>
+        <article class="revision-card" id="q-134">
+          
+          <h3>प्रश्न 134</h3>
+          <div class="revision-question-text">'वसुधैव कुटुम्बकम्' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पूरी पृथ्वी ही परिवार है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> महोपनिषद् की सूक्ति</div>
+        </article>
+        <article class="revision-card" id="q-135">
+          <div class="passage">संस्कृतभाषा भारतस्य प्राचीनतमा भाषा अस्ति। अस्यां भाषायां वेदाः, उपनिषदः, रामायणं महाभारतं च रचितानि। संस्कृतं सर्वासां भारतीयभाषाणां जननी इति कथ्यते। अस्याः व्याकरणं पाणिनिना अष्टाध्याय्यां व्यवस्थितम्। अद्यापि विद्यालयेषु छात्राः संस्कृतं पठन्ति, सुभाषितानि च स्मरन्ति। संस्कृतस्य अध्ययनेन संस्कारः ज्ञानं च वर्धेते।</div>
+          <h3>प्रश्न 135</h3>
+          <div class="revision-question-text">भारतस्य प्राचीनतमा भाषा का अस्ति?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) संस्कृतभाषा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पहली पंक्ति</div>
+        </article>
+        <article class="revision-card" id="q-136">
+          
+          <h3>प्रश्न 136</h3>
+          <div class="revision-question-text">संस्कृतस्य व्याकरणं केन व्यवस्थितम्?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पाणिनिना</p>
+          
+        </article>
+        <article class="revision-card" id="q-137">
+          
+          <h3>प्रश्न 137</h3>
+          <div class="revision-question-text">'जननी' इत्यस्य अर्थः अस्ति –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) माता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जननी = माता</div>
+        </article>
+        <article class="revision-card" id="q-138">
+          
+          <h3>प्रश्न 138</h3>
+          <div class="revision-question-text">'पठन्ति' इति क्रियापदस्य कर्ता अस्ति –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) छात्राः</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> छात्राः पठन्ति</div>
+        </article>
+        <article class="revision-card" id="q-139">
+          
+          <h3>प्रश्न 139</h3>
+          <div class="revision-question-text">'प्राचीनतमा' में प्रत्यय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) तमप्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्राचीन + तमप् + टाप्</div>
+        </article>
+        <article class="revision-card" id="q-140">
+          
+          <h3>प्रश्न 140</h3>
+          <div class="revision-question-text">गद्यांशस्य उचितं शीर्षकम् अस्ति –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) संस्कृतभाषायाः महत्त्वम्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पूरा गद्यांश संस्कृत के महत्त्व पर</div>
+        </article>
+        <article class="revision-card" id="q-141">
+          
+          <h3>प्रश्न 141</h3>
+          <div class="revision-question-text">उच्च प्राथमिक स्तर पर व्याकरण शिक्षण की उपयुक्त विधि है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आगमन-निगमन विधि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उदाहरण से नियम, फिर अभ्यास</div>
+        </article>
+        <article class="revision-card" id="q-142">
+          
+          <h3>प्रश्न 142</h3>
+          <div class="revision-question-text">आगमन विधि का क्रम है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उदाहरण से नियम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ज्ञात से अज्ञात</div>
+        </article>
+        <article class="revision-card" id="q-143">
+          
+          <h3>प्रश्न 143</h3>
+          <div class="revision-question-text">प्रत्यक्ष विधि में शिक्षण होता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सीधे संस्कृत में</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मातृभाषा का प्रयोग नहीं</div>
+        </article>
+        <article class="revision-card" id="q-144">
+          
+          <h3>प्रश्न 144</h3>
+          <div class="revision-question-text">भाषा कौशलों का स्वाभाविक क्रम है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सुनना, बोलना, पढ़ना, लिखना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> LSRW क्रम</div>
+        </article>
+        <article class="revision-card" id="q-145">
+          
+          <h3>प्रश्न 145</h3>
+          <div class="revision-question-text">भण्डारकर विधि को अन्य किस नाम से जाना जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पाठ्यपुस्तक विधि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पाठ्यपुस्तक के माध्यम से व्याकरण</div>
+        </article>
+        <article class="revision-card" id="q-146">
+          
+          <h3>प्रश्न 146</h3>
+          <div class="revision-question-text">परम्परागत पाठशाला विधि में मुख्य बल होता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कण्ठस्थीकरण पर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सूत्र व श्लोक कण्ठस्थ</div>
+        </article>
+        <article class="revision-card" id="q-147">
+          
+          <h3>प्रश्न 147</h3>
+          <div class="revision-question-text">संस्कृत में उच्चारण दोष दूर करने का उपयुक्त उपाय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आदर्श वाचन और अनुकरण वाचन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शिक्षक का आदर्श पाठ, फिर अनुकरण</div>
+        </article>
+        <article class="revision-card" id="q-148">
+          
+          <h3>प्रश्न 148</h3>
+          <div class="revision-question-text">श्लोक शिक्षण का प्रथम सोपान है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) शिक्षक द्वारा आदर्श सस्वर पाठ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आदर्श पाठ से आरम्भ</div>
+        </article>
+        <article class="revision-card" id="q-149">
+          
+          <h3>प्रश्न 149</h3>
+          <div class="revision-question-text">निदानात्मक परीक्षण का मुख्य उद्देश्य है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कठिनाइयों के कारण जानना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> निदान → उपचारात्मक शिक्षण</div>
+        </article>
+        <article class="revision-card" id="q-150">
+          
+          <h3>प्रश्न 150</h3>
+          <div class="revision-question-text">रचनात्मक (Formative) आकलन किया जाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अधिगम प्रक्रिया के दौरान</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सीखते समय लगातार</div>
+        </article>
+      </section>
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>

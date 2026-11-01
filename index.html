@@ -786,6 +786,146 @@ dialog::backdrop {
   text-decoration: none;
 }
 
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .warning-note {
   margin: 0 0 22px;
   padding: 14px;
@@ -843,8 +983,55 @@ dialog::backdrop {
     <main class="selector">
       <div class="selector-heading">
         <p class="eyebrow">UPTET 2026 • पेपर 2</p>
-        <h1>अभ्यास परीक्षा चुनें</h1>
+        <h1>रिवीज़न व अभ्यास परीक्षा</h1>
         <p>सामाजिक विज्ञान वर्ग • द्वितीय भाषा: संस्कृत</p>
+      </div>
+      <div class="selector-heading">
+        <p class="eyebrow">जल्दी दोहराएँ</p>
+        <h2>रिवीज़न</h2>
+        <p>हर प्रश्न के साथ केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <section class="paper-grid revision-grid" aria-label="रिवीज़न">
+        <article class="paper-card revision-paper-card">
+          <p class="eyebrow">बाल विकास एवं शिक्षाशास्त्र</p>
+          <h2>CDP 1</h2>
+          <p>150 प्रश्न • सही उत्तर व व्याख्या • कोई समय सीमा नहीं</p>
+          <a href="revision-cdp1.html">रिवीज़न खोलें</a>
+        </article>
+        <article class="paper-card revision-paper-card">
+          <p class="eyebrow">हिंदी (भाषा-I) — सेट 1</p>
+          <h2>Hindi 1</h2>
+          <p>150 प्रश्न • सही उत्तर व व्याख्या • कोई समय सीमा नहीं</p>
+          <a href="revision-hindi1.html">रिवीज़न खोलें</a>
+        </article>
+        <article class="paper-card revision-paper-card">
+          <p class="eyebrow">हिंदी — सेट 2</p>
+          <h2>Hindi 2</h2>
+          <p>150 प्रश्न • सही उत्तर व व्याख्या • कोई समय सीमा नहीं</p>
+          <a href="revision-hindi2.html">रिवीज़न खोलें</a>
+        </article>
+        <article class="paper-card revision-paper-card">
+          <p class="eyebrow">संस्कृत (भाषा-II) — सेट 1</p>
+          <h2>Sanskrit 1</h2>
+          <p>150 प्रश्न • सही उत्तर व व्याख्या • कोई समय सीमा नहीं</p>
+          <a href="revision-sanskrit1.html">रिवीज़न खोलें</a>
+        </article>
+        <article class="paper-card revision-paper-card">
+          <p class="eyebrow">संस्कृत (भाषा-II) — सेट 2</p>
+          <h2>Sanskrit 2</h2>
+          <p>150 प्रश्न • सही उत्तर व व्याख्या • कोई समय सीमा नहीं</p>
+          <a href="revision-sanskrit2.html">रिवीज़न खोलें</a>
+        </article>
+        <article class="paper-card revision-paper-card">
+          <p class="eyebrow">संस्कृत सेट 2 — अतिरिक्त प्रश्न</p>
+          <h2>Sanskrit 2 — अतिरिक्त 30</h2>
+          <p>30 प्रश्न • सही उत्तर व व्याख्या • कोई समय सीमा नहीं</p>
+          <a href="revision-sanskrit2-extra.html">रिवीज़न खोलें</a>
+        </article>
+      </section>
+      <div class="selector-heading">
+        <p class="eyebrow">समयबद्ध अभ्यास</p>
+        <h2>मॉक पेपर</h2>
       </div>
       <div class="warning-note">
         किसी पेपर को खोलते ही उसका समय शुरू हो जाएगा (पूरे पेपर में 2 घंटे 30 मिनट, 30 अंकों के टेस्ट में 30 मिनट)। उसी ब्राउज़र में बंद करके दोबारा खोलने पर समय और उत्तर सुरक्षित रहेंगे।

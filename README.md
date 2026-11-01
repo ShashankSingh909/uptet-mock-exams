@@ -14,6 +14,14 @@ choose any paper (Paper 1–5, CDP 1–2, Hindi 1–2, Sanskrit 1–2, SST 2, SS
 the exam.
 Opening a paper starts its 2 hour 30 minute timer.
 
+## Revision
+
+The top of the selector lists revision pages for CDP 1, Hindi 1, Hindi 2,
+Sanskrit 1, Sanskrit 2 and the Sanskrit 2 extra 30 questions
+(`revision-*.html`). Each shows every question with only its correct answer and
+व्याख्या, grouped by section, with a jump-to-question list and no timer. They
+are generated from the same `data/*.json` as the mock papers.
+
 ## Use Offline
 
 Download any generated paper file (`paper1.html` through `paper5.html`,
