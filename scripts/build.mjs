@@ -175,7 +175,7 @@ for (const paperName of [
   "sst-rev-upgk",
   "sst-rev-pe",
   "sst-rev-pedagogy",
-  "sst-rev-all",
+  "sst-rev-top100",
 ]) {
   const data = JSON.parse(
     await readFile(path.join(root, "data", `${paperName}.json`), "utf8"),

@@ -132,7 +132,7 @@ const revisionPages = {
   "sst-rev-upgk": 34,
   "sst-rev-pe": 106,
   "sst-rev-pedagogy": 24,
-  "sst-rev-all": 750,
+  "sst-rev-top100": 100,
 };
 
 for (const [paper, count] of Object.entries(revisionPages)) {
@@ -169,6 +169,7 @@ test("the selector lists the revision section first", async () => {
   const socialAt = html.indexOf("<h2>सामाजिक विज्ञान</h2>");
   const mockAt = html.indexOf("<h2>मॉक पेपर</h2>");
   assert.ok(revisionAt > 0 && socialAt > revisionAt && mockAt > socialAt);
+  assert.doesNotMatch(html, /revision-sst-rev-all\.html/);
   for (const paper of Object.keys(revisionPages)) {
     assert.match(html, new RegExp(`href="revision-${paper}\\.html"`));
   }
