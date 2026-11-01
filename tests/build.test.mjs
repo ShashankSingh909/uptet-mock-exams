@@ -130,6 +130,9 @@ const revisionPages = {
   "sst-rev-civics": 76,
   "sst-rev-economics": 28,
   "sst-rev-upgk": 34,
+  "sst-rev-pe": 106,
+  "sst-rev-pedagogy": 24,
+  "sst-rev-all": 750,
 };
 
 for (const [paper, count] of Object.entries(revisionPages)) {

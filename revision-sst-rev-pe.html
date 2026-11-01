@@ -1,0 +1,1772 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>सामाजिक विज्ञान — शारीरिक शिक्षा, योग व प्राथमिक चिकित्सा: विषयवार प्रश्न — रिवीज़न</title>
+    <style>:root {
+  color-scheme: light;
+  --teal-950: #073b3d;
+  --teal-800: #075f63;
+  --teal-700: #08777a;
+  --blue-700: #0b57d0;
+  --blue-100: #e9f1ff;
+  --amber-700: #b85d00;
+  --amber-100: #fff2dd;
+  --violet-700: #673ab7;
+  --violet-100: #f0eaff;
+  --green-700: #117a45;
+  --green-100: #e8f6ee;
+  --red-700: #b3261e;
+  --red-100: #fce8e6;
+  --ink: #172026;
+  --muted: #5e6b73;
+  --line: #d6dde1;
+  --surface: #ffffff;
+  --canvas: #f4f7f8;
+  --focus: #ffbf47;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(7, 59, 61, 0.09);
+  font-family: "Noto Sans Devanagari", "Nirmala UI", Mangal, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible + span,
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 16px;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: 0 2px 10px rgba(7, 59, 61, 0.2);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 4.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.topbar .paper-label {
+  margin: 2px 0 0;
+  color: #d9f3f1;
+  font-size: 0.78rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar button {
+  padding: 8px 11px;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: transparent;
+  font-size: 0.86rem;
+}
+
+.exam-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.timer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.timer-main {
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-label,
+.stat-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.timer {
+  margin-top: 2px;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.timer.urgent {
+  color: var(--red-700);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.status-item {
+  min-width: 0;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.status-item + .status-item {
+  border-left: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.answered .stat-number {
+  color: var(--green-700);
+}
+
+.remaining .stat-number {
+  color: var(--amber-700);
+}
+
+.reviewed .stat-number {
+  color: var(--violet-700);
+}
+
+.section-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #edf6f5;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nearby-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.nearby-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(38px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.number-button,
+.palette-button {
+  position: relative;
+  min-width: 42px;
+  border-color: #bdc8ce;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+}
+
+.number-button.current {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.number-button.answered:not(.current),
+.palette-button.answered:not(.current) {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.number-button.review:not(.current),
+.palette-button.review:not(.current) {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.number-button.answered.review:not(.current),
+.palette-button.answered.review:not(.current) {
+  box-shadow: inset 0 -5px 0 var(--violet-700);
+}
+
+.nearby-nav > button,
+.open-palette {
+  padding: 7px 10px;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+  font-weight: 700;
+}
+
+.question-area {
+  padding: 18px 16px 120px;
+  background: var(--surface);
+}
+
+.question-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-meta h2 {
+  margin: 0;
+  color: var(--blue-700);
+  font-size: 1.35rem;
+}
+
+.question-meta span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.passage {
+  margin: 18px 0;
+  padding: 14px;
+  border-left: 4px solid var(--teal-700);
+  background: #f6fbfa;
+  white-space: pre-line;
+}
+
+.question-text {
+  margin: 22px 0;
+  font-size: clamp(1.08rem, 4.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1.5px solid #c8d1d6;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--blue-700);
+}
+
+.option-row.selected {
+  border-color: var(--blue-700);
+  background: var(--blue-100);
+  box-shadow: inset 4px 0 0 var(--blue-700);
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.option-label {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #7a8991;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.selected .option-label {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.option-text {
+  line-height: 1.55;
+}
+
+.bottom-actions {
+  position: fixed;
+  z-index: 18;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  gap: 10px;
+  padding: 10px max(14px, calc((100vw - 1090px) / 2));
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -5px 18px rgba(21, 31, 36, 0.08);
+}
+
+.bottom-actions button {
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+}
+
+.primary {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.review-action {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 128px;
+  background: var(--surface);
+}
+
+#submit-exam {
+  width: min(100%, 440px);
+  border-color: var(--red-700);
+  color: #fff;
+  background: var(--red-700);
+  font-weight: 800;
+}
+
+.message {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid #e4bb72;
+  border-radius: var(--radius);
+  background: #fff8e8;
+}
+
+dialog {
+  width: min(92vw, 680px);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(4, 29, 31, 0.62);
+}
+
+.dialog-header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dialog-close {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend span::before {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  content: "";
+}
+
+.legend .lg-answered {
+  color: var(--green-700);
+}
+
+.legend .lg-review {
+  color: var(--violet-700);
+}
+
+.legend .lg-current {
+  color: var(--blue-700);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 4px 16px 20px;
+}
+
+.result-view,
+.review-view,
+.storage-error {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 26px 16px 50px;
+}
+
+.result-hero {
+  padding: 24px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--teal-800);
+  text-align: center;
+}
+
+.score {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: clamp(3rem, 16vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.result-stat {
+  padding: 14px 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.result-stat strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.result-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.result-actions button,
+.review-toolbar button {
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.review-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: var(--canvas);
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-tabs {
+  position: sticky;
+  z-index: 9;
+  top: 118px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 8px 0 10px;
+  background: var(--canvas);
+}
+
+.review-tab {
+  padding: 9px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-950);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-tab span {
+  display: inline-flex;
+  min-width: 24px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #eef4f5;
+}
+
+.review-tab.active {
+  border-color: var(--teal-700);
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.review-tab.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.review-card.correct {
+  border-left: 5px solid var(--green-700);
+}
+
+.review-card.incorrect {
+  border-left: 5px solid var(--red-700);
+}
+
+.review-card.unanswered {
+  border-left: 5px solid var(--amber-700);
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-question-text {
+  margin-bottom: 12px;
+}
+
+.review-options {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.review-option.correct-option {
+  border-color: rgba(21, 128, 61, 0.45);
+  background: #f0fdf4;
+}
+
+.review-option.incorrect-option {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: #fef2f2;
+}
+
+.review-option-badges {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-badge {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correct-badge {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.selected-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.empty-review {
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.answer-line {
+  margin: 8px 0;
+}
+
+.answer-line strong {
+  color: var(--teal-950);
+}
+
+.answer-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f1f6f7;
+}
+
+.selector {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 36px 18px 60px;
+}
+
+.selector-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.selector-heading h1,
+.selector-heading h2 {
+  margin-bottom: 8px;
+  color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
+}
+
+.paper-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.paper-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.paper-card h2 {
+  margin: 0 0 8px;
+}
+
+.paper-card p {
+  color: var(--muted);
+}
+
+.paper-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--blue-700);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.warning-note {
+  margin: 0 0 22px;
+  padding: 14px;
+  border-left: 4px solid var(--amber-700);
+  background: var(--amber-100);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .timer-panel {
+    grid-template-columns: minmax(240px, 0.8fr) 1.4fr;
+    align-items: stretch;
+  }
+
+  .status-grid {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .question-area {
+    padding-inline: clamp(28px, 6vw, 74px);
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .nearby-numbers {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-actions {
+    grid-template-columns: 180px 220px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+  </head>
+  <body data-mode="revision" data-question-count="106">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">सामाजिक विज्ञान — शारीरिक शिक्षा, योग व प्राथमिक चिकित्सा</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>सामाजिक विज्ञान — शारीरिक शिक्षा, योग व प्राथमिक चिकित्सा: विषयवार प्रश्न</h2>
+        <p>कुल 106 प्रश्न, पाँचों सेटों से एक जगह • उच्च प्राथमिक स्तर (कक्षा 6–8)</p>
+        <p class="revision-note">106 प्रश्न • केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–106)</summary>
+        
+        <div class="jump-group">
+          <p>शारीरिक शिक्षा व खेल</p>
+          <div class="jump-numbers"><a href="#q-1">1</a><a href="#q-2">2</a><a href="#q-3">3</a><a href="#q-4">4</a><a href="#q-5">5</a><a href="#q-6">6</a><a href="#q-7">7</a><a href="#q-8">8</a><a href="#q-9">9</a><a href="#q-10">10</a><a href="#q-11">11</a><a href="#q-12">12</a><a href="#q-13">13</a><a href="#q-14">14</a><a href="#q-15">15</a><a href="#q-16">16</a><a href="#q-17">17</a><a href="#q-18">18</a><a href="#q-19">19</a><a href="#q-20">20</a><a href="#q-21">21</a><a href="#q-22">22</a><a href="#q-23">23</a><a href="#q-24">24</a><a href="#q-25">25</a><a href="#q-26">26</a><a href="#q-27">27</a><a href="#q-28">28</a><a href="#q-29">29</a><a href="#q-30">30</a><a href="#q-31">31</a><a href="#q-32">32</a><a href="#q-33">33</a><a href="#q-34">34</a><a href="#q-35">35</a><a href="#q-36">36</a><a href="#q-37">37</a><a href="#q-38">38</a><a href="#q-39">39</a><a href="#q-40">40</a><a href="#q-41">41</a><a href="#q-42">42</a><a href="#q-43">43</a><a href="#q-44">44</a><a href="#q-45">45</a><a href="#q-46">46</a><a href="#q-47">47</a><a href="#q-48">48</a><a href="#q-49">49</a><a href="#q-50">50</a><a href="#q-51">51</a><a href="#q-52">52</a><a href="#q-53">53</a><a href="#q-54">54</a><a href="#q-55">55</a><a href="#q-56">56</a><a href="#q-57">57</a><a href="#q-58">58</a><a href="#q-59">59</a><a href="#q-60">60</a><a href="#q-61">61</a></div>
+        </div>
+        <div class="jump-group">
+          <p>योग</p>
+          <div class="jump-numbers"><a href="#q-62">62</a><a href="#q-63">63</a><a href="#q-64">64</a><a href="#q-65">65</a><a href="#q-66">66</a><a href="#q-67">67</a><a href="#q-68">68</a><a href="#q-69">69</a><a href="#q-70">70</a><a href="#q-71">71</a><a href="#q-72">72</a><a href="#q-73">73</a><a href="#q-74">74</a><a href="#q-75">75</a><a href="#q-76">76</a><a href="#q-77">77</a><a href="#q-78">78</a><a href="#q-79">79</a><a href="#q-80">80</a><a href="#q-81">81</a><a href="#q-82">82</a><a href="#q-83">83</a><a href="#q-84">84</a><a href="#q-85">85</a><a href="#q-86">86</a><a href="#q-87">87</a></div>
+        </div>
+        <div class="jump-group">
+          <p>प्राथमिक चिकित्सा व स्वास्थ्य</p>
+          <div class="jump-numbers"><a href="#q-88">88</a><a href="#q-89">89</a><a href="#q-90">90</a><a href="#q-91">91</a><a href="#q-92">92</a><a href="#q-93">93</a><a href="#q-94">94</a><a href="#q-95">95</a><a href="#q-96">96</a><a href="#q-97">97</a><a href="#q-98">98</a><a href="#q-99">99</a><a href="#q-100">100</a><a href="#q-101">101</a><a href="#q-102">102</a><a href="#q-103">103</a><a href="#q-104">104</a><a href="#q-105">105</a><a href="#q-106">106</a></div>
+        </div>
+      </details>
+      
+      <section class="revision-section">
+        <h2 class="revision-section-title">शारीरिक शिक्षा व खेल</h2>
+        
+        <article class="revision-card" id="q-1">
+          
+          <h3>प्रश्न 1</h3>
+          <div class="revision-question-text">ड्रिल में 'सावधान' स्थिति से बायाँ पैर लगभग 12 इंच खोलकर हाथ पीछे बाँधने का आदेश कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विश्राम (स्टैंड एट ईज़)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विश्राम; रुकने का आदेश 'थम', चलना शुरू 'आगे बढ़ेगा, तेज़ चल' (जुलाई 2026)</div>
+        </article>
+        <article class="revision-card" id="q-2">
+          
+          <h3>प्रश्न 2</h3>
+          <div class="revision-question-text">ड्रिल में 'पीछे मुड़' (अबाउट टर्न) में शरीर कितने अंश घूमता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 180°</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पीछे मुड़ = 180°; दाहिने/बाएँ मुड़ = 90°</div>
+        </article>
+        <article class="revision-card" id="q-3">
+          
+          <h3>प्रश्न 3</h3>
+          <div class="revision-question-text">29 अगस्त (राष्ट्रीय खेल दिवस) किसकी जयंती पर मनाया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मेजर ध्यानचंद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मेजर ध्यानचंद (हॉकी के जादूगर, प्रयागराज में जन्म)</div>
+        </article>
+        <article class="revision-card" id="q-4">
+          
+          <h3>प्रश्न 4</h3>
+          <div class="revision-question-text">खिलाड़ियों के प्रशिक्षकों (कोच) को दिया जाने वाला राष्ट्रीय पुरस्कार कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) द्रोणाचार्य पुरस्कार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> द्रोणाचार्य – कोच; अर्जुन – खिलाड़ी; MAKA – विश्वविद्यालय</div>
+        </article>
+        <article class="revision-card" id="q-5">
+          
+          <h3>प्रश्न 5</h3>
+          <div class="revision-question-text">आधुनिक ओलंपिक खेल 1896 में पहली बार कहाँ आयोजित हुए?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) एथेंस</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एथेंस 1896; महिलाएँ पहली बार 1900 पेरिस में (जुलाई 2026)</div>
+        </article>
+        <article class="revision-card" id="q-6">
+          
+          <h3>प्रश्न 6</h3>
+          <div class="revision-question-text">ओलंपिक ध्वज के पाँच छल्ले क्या दर्शाते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पाँच महाद्वीप</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पाँच बसे हुए महाद्वीपों की एकता</div>
+        </article>
+        <article class="revision-card" id="q-7">
+          
+          <h3>प्रश्न 7</h3>
+          <div class="revision-question-text">2028 के ग्रीष्मकालीन ओलंपिक खेल कहाँ होंगे?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) लॉस एंजिल्स</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लॉस एंजिल्स 2028; ब्रिस्बेन 2032</div>
+        </article>
+        <article class="revision-card" id="q-8">
+          
+          <h3>प्रश्न 8</h3>
+          <div class="revision-question-text">भारत में खेलों में डोपिंग की जाँच और रोकथाम करने वाली संस्था कौन सी है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) NADA</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> NADA (राष्ट्रीय डोपिंग रोधी एजेंसी); विश्व स्तर पर WADA</div>
+        </article>
+        <article class="revision-card" id="q-9">
+          
+          <h3>प्रश्न 9</h3>
+          <div class="revision-question-text">व्यायाम के बाद 'कूल-डाउन' करने का मुख्य उद्देश्य क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) हृदय गति व शरीर को धीरे-धीरे सामान्य करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कूल-डाउन से हृदय गति धीरे-धीरे सामान्य</div>
+        </article>
+        <article class="revision-card" id="q-10">
+          
+          <h3>प्रश्न 10</h3>
+          <div class="revision-question-text">ड्रिल में 'कदमताल' (Mark Time) आदेश मिलने पर क्या किया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) एक ही स्थान पर खड़े-खड़े बारी-बारी पैर उठाना-रखना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कदमताल – आगे नहीं बढ़ते (जुलाई से जुड़ा: रुकने का आदेश 'थम' (Squad HALT))</div>
+        </article>
+        <article class="revision-card" id="q-11">
+          
+          <h3>प्रश्न 11</h3>
+          <div class="revision-question-text">ड्रिल में 'सावधान' (Attention) स्थिति में दोनों एड़ियाँ मिली रहती हैं; पंजों के बीच लगभग कितना कोण होता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 30°</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लगभग 30° (जुलाई से जुड़ा: चलना शुरू: 'Forward, MARCH' (30 इंच का कदम))</div>
+        </article>
+        <article class="revision-card" id="q-12">
+          
+          <h3>प्रश्न 12</h3>
+          <div class="revision-question-text">ड्रिल में 'दाहिने मुड़' (Right Turn) आदेश पर शरीर किस ओर कितने अंश घूमता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) दाईं ओर 90°</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दाईं ओर 90°; पीछे मुड़ = 180° (जुलाई से जुड़ा: ड्रिल आदेश (दो पालियों में))</div>
+        </article>
+        <article class="revision-card" id="q-13">
+          
+          <h3>प्रश्न 13</h3>
+          <div class="revision-question-text">आधुनिक ओलंपिक खेलों का जनक किसे माना जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पियरे डी कुबर्टिन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कुबर्टिन, IOC 1894 (जुलाई से जुड़ा: प्राचीन ओलंपिक – ज़्यूस के सम्मान में)</div>
+        </article>
+        <article class="revision-card" id="q-14">
+          
+          <h3>प्रश्न 14</h3>
+          <div class="revision-question-text">ओलंपिक के आदर्श वाक्य 'Citius, Altius, Fortius – Communiter' का अर्थ क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) तेज़, ऊँचा, अधिक मज़बूत — एक साथ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 2021 में 'Communiter' (एक साथ) जोड़ा (जुलाई से जुड़ा: ओलंपिक)</div>
+        </article>
+        <article class="revision-card" id="q-15">
+          
+          <h3>प्रश्न 15</h3>
+          <div class="revision-question-text">ओलंपिक में व्यक्तिगत स्पर्धा में स्वर्ण पदक जीतने वाले पहले भारतीय कौन हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अभिनव बिंद्रा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बिंद्रा, 2008 बीजिंग, 10 मी. एयर राइफ़ल (जुलाई से जुड़ा: 1900 पेरिस – महिलाएँ पहली बार)</div>
+        </article>
+        <article class="revision-card" id="q-16">
+          
+          <h3>प्रश्न 16</h3>
+          <div class="revision-question-text">'हॉकी के जादूगर' मेजर ध्यानचंद का जन्म किस शहर में हुआ था?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) प्रयागराज (इलाहाबाद)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 29 अगस्त 1905, इलाहाबाद; बचपन झाँसी में (जुलाई से जुड़ा: खेल रत्न का नया नाम – ध्यानचंद)</div>
+        </article>
+        <article class="revision-card" id="q-17">
+          
+          <h3>प्रश्न 17</h3>
+          <div class="revision-question-text">बौद्धिक अक्षमता (इंटेलेक्चुअल डिसएबिलिटी) वाले खिलाड़ियों के लिए आयोजित अंतरराष्ट्रीय खेल कौन से हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) स्पेशल ओलंपिक्स</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्पेशल ओलंपिक्स; पैरालंपिक – शारीरिक दिव्यांगता (जुलाई से जुड़ा: अनुकूलित शारीरिक शिक्षा)</div>
+        </article>
+        <article class="revision-card" id="q-18">
+          
+          <h3>प्रश्न 18</h3>
+          <div class="revision-question-text">कठिन अभ्यास के बाद मांसपेशियों की मरम्मत और विकास के लिए खिलाड़ियों को किस पोषक तत्व की विशेष आवश्यकता होती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) प्रोटीन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रोटीन (जुलाई से जुड़ा: पोषक समय-निर्धारण, कार्बोहाइड्रेट, वसा)</div>
+        </article>
+        <article class="revision-card" id="q-19">
+          
+          <h3>प्रश्न 19</h3>
+          <div class="revision-question-text">लंबे समय तक बिना थके कोई शारीरिक कार्य करते रहने की क्षमता शारीरिक फ़िटनेस का कौन सा घटक है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सहनशक्ति (एंड्योरेंस)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सहनशक्ति (जुलाई से जुड़ा: एरोबिक व्यायाम, थकान से बचाव)</div>
+        </article>
+        <article class="revision-card" id="q-20">
+          
+          <h3>प्रश्न 20</h3>
+          <div class="revision-question-text">निम्नलिखित में से किस खेल में मैदान पर एक टीम के सबसे कम खिलाड़ी खेलते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बास्केटबॉल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बास्केटबॉल 5, वॉलीबॉल 6, कबड्डी 7, खो-खो 9 (टीम में 12), हॉकी-फ़ुटबॉल-क्रिकेट 11।</div>
+        </article>
+        <article class="revision-card" id="q-21">
+          
+          <h3>प्रश्न 21</h3>
+          <div class="revision-question-text">'लोना' शब्द – जब एक टीम विरोधी टीम के सभी खिलाड़ियों को आउट करके अतिरिक्त अंक पाती है – किस खेल से संबंधित है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कबड्डी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कबड्डी – लोना पर 2 अतिरिक्त अंक; अन्य शब्द – रेड, बोनस लाइन, कैंट। खो-खो के शब्द – खो, पोल, डाइव।</div>
+        </article>
+        <article class="revision-card" id="q-22">
+          
+          <h3>प्रश्न 22</h3>
+          <div class="revision-question-text">'बुली' (Bully) शब्द किस खेल से संबंधित है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) हॉकी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हॉकी के अन्य शब्द – पेनल्टी कॉर्नर, स्ट्राइकिंग सर्कल, ड्रैग फ़्लिक।</div>
+        </article>
+        <article class="revision-card" id="q-23">
+          
+          <h3>प्रश्न 23</h3>
+          <div class="revision-question-text">1891 में अमेरिका में बास्केटबॉल खेल का आविष्कार किसने किया?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) जेम्स नेस्मिथ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जेम्स नेस्मिथ (1891, स्प्रिंगफ़ील्ड); वॉलीबॉल – विलियम मॉर्गन (1895)।</div>
+        </article>
+        <article class="revision-card" id="q-24">
+          
+          <h3>प्रश्न 24</h3>
+          <div class="revision-question-text">क्रिकेट की पिच (दोनों स्टंपों के बीच) की लंबाई होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 22 गज़</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 22 गज़ (लगभग 20.12 मी.); गेंद का भार लगभग 156 ग्राम।</div>
+        </article>
+        <article class="revision-card" id="q-25">
+          
+          <h3>प्रश्न 25</h3>
+          <div class="revision-question-text">शतरंज के बोर्ड में कुल कितने खाने (वर्ग) होते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 64</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 64 खाने, हर खिलाड़ी के 16 मोहरे; शतरंज का प्राचीन रूप 'चतुरंग' भारत में माना जाता है।</div>
+        </article>
+        <article class="revision-card" id="q-26">
+          
+          <h3>प्रश्न 26</h3>
+          <div class="revision-question-text">मैराथन दौड़ की मानक दूरी है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 42.195 किमी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 42.195 किमी; हाफ़ मैराथन इसका आधा (21.0975 किमी)।</div>
+        </article>
+        <article class="revision-card" id="q-27">
+          
+          <h3>प्रश्न 27</h3>
+          <div class="revision-question-text">एशिया की सबसे पुरानी प्रतियोगिताओं में गिना जाने वाला 'डूरंड कप' किस खेल से संबंधित है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) फ़ुटबॉल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> डूरंड कप (1888 से) – फ़ुटबॉल; संतोष ट्रॉफ़ी भी फ़ुटबॉल, रणजी ट्रॉफ़ी – क्रिकेट।</div>
+        </article>
+        <article class="revision-card" id="q-28">
+          
+          <h3>प्रश्न 28</h3>
+          <div class="revision-question-text">'थॉमस कप' किस खेल की पुरुष टीम प्रतियोगिता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बैडमिंटन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> थॉमस कप – पुरुष बैडमिंटन (भारत ने 2022 में जीता); उबेर कप – महिला बैडमिंटन; डेविस कप – टेनिस।</div>
+        </article>
+        <article class="revision-card" id="q-29">
+          
+          <h3>प्रश्न 29</h3>
+          <div class="revision-question-text">पेरिस ओलंपिक 2024 में निशानेबाज़ी में दो कांस्य पदक जीतकर एक ही ओलंपिक में दो पदक जीतने वाली स्वतंत्र भारत की पहली खिलाड़ी –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मनु भाकर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मनु भाकर – 10 मी. एयर पिस्टल (व्यक्तिगत) और मिश्रित टीम (सरबजोत सिंह के साथ) में कांस्य। पेरिस 2024 में भारत को कुल 6 पदक (1 रजत, 5 कांस्य)।</div>
+        </article>
+        <article class="revision-card" id="q-30">
+          
+          <h3>प्रश्न 30</h3>
+          <div class="revision-question-text">टोक्यो ओलंपिक (2020, आयोजन 2021) में भाला फेंक में स्वर्ण जीतकर एथलेटिक्स में भारत को पहला ओलंपिक स्वर्ण दिलाने वाले खिलाड़ी –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) नीरज चोपड़ा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नीरज चोपड़ा – टोक्यो में स्वर्ण, पेरिस 2024 में रजत। व्यक्तिगत स्वर्ण जीतने वाले पहले भारतीय अभिनव बिंद्रा (2008, निशानेबाज़ी) थे।</div>
+        </article>
+        <article class="revision-card" id="q-31">
+          
+          <h3>प्रश्न 31</h3>
+          <div class="revision-question-text">पहले एशियाई खेल (1951) कहाँ आयोजित हुए थे?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नई दिल्ली</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नई दिल्ली, 1951; एशियाई खेल हर 4 वर्ष में होते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-32">
+          
+          <h3>प्रश्न 32</h3>
+          <div class="revision-question-text">हर ओलंपिक से पहले ओलंपिक मशाल (ज्योति) सूर्य की किरणों से कहाँ प्रज्वलित की जाती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ओलंपिया (यूनान)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ओलंपिया (यूनान) में अवतल दर्पण से सूर्य की किरणें केंद्रित करके; प्राचीन ओलंपिक यहीं ज़्यूस के सम्मान में होते थे।</div>
+        </article>
+        <article class="revision-card" id="q-33">
+          
+          <h3>प्रश्न 33</h3>
+          <div class="revision-question-text">शारीरिक दिव्यांगता वाले खिलाड़ियों के लिए आयोजित अंतरराष्ट्रीय बहु-खेल प्रतियोगिता, जो ओलंपिक के तुरंत बाद उसी मेज़बान शहर में होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पैरालंपिक खेल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पैरालंपिक (पहले 1960, रोम); पेरिस 2024 पैरालंपिक में भारत का सर्वश्रेष्ठ प्रदर्शन – 29 पदक (7 स्वर्ण)। स्पेशल ओलंपिक्स – बौद्धिक दिव्यांगता; डेफ़लंपिक्स – श्रवण बाधित।</div>
+        </article>
+        <article class="revision-card" id="q-34">
+          
+          <h3>प्रश्न 34</h3>
+          <div class="revision-question-text">नागरिकों को शारीरिक गतिविधि और खेल को दिनचर्या का हिस्सा बनाने के लिए प्रेरित करने वाला 'फ़िट इंडिया मूवमेंट' किस वर्ष शुरू हुआ?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 2019</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 29 अगस्त 2019 (राष्ट्रीय खेल दिवस) को आरंभ; 'खेलो इंडिया' अलग योजना है।</div>
+        </article>
+        <article class="revision-card" id="q-35">
+          
+          <h3>प्रश्न 35</h3>
+          <div class="revision-question-text">जोड़ के अचानक मुड़ने से स्नायुबंधन (लिगामेंट) में खिंचाव या फटन होना कहलाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मोच (Sprain)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मोच = स्नायुबंधन की चोट; खिंचाव (Strain) = मांसपेशी/कंडरा की चोट। दोनों में तुरंत आराम व बर्फ़ की सिकाई।</div>
+        </article>
+        <article class="revision-card" id="q-36">
+          
+          <h3>प्रश्न 36</h3>
+          <div class="revision-question-text">किसी जोड़ पर बिना कष्ट के अधिकतम सीमा तक गति कर पाने की क्षमता, शारीरिक पुष्टि (Fitness) का कौन-सा घटक है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लचीलापन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लचीलापन (Flexibility); शारीरिक पुष्टि के घटक – शक्ति, गति, सहनशक्ति, लचीलापन, समन्वयात्मक क्षमता।</div>
+        </article>
+        <article class="revision-card" id="q-37">
+          
+          <h3>प्रश्न 37</h3>
+          <div class="revision-question-text">शरीर द्रव्यमान सूचकांक (BMI) निकालने का सूत्र है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) भार (किग्रा) ÷ लंबाई (मीटर)²</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सामान्य BMI 18.5–24.9; 25 से अधिक – अधिक भार, 30 से अधिक – मोटापा।</div>
+        </article>
+        <article class="revision-card" id="q-38">
+          
+          <h3>प्रश्न 38</h3>
+          <div class="revision-question-text">मेरुदंड (रीढ़) का एक ओर (बाएँ या दाएँ) मुड़ जाना, जिससे एक कंधा ऊँचा दिखता है, कहलाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्कोलियोसिस</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्कोलियोसिस (पार्श्व वक्रता); लॉर्डोसिस – कमर (निचली रीढ़) का अत्यधिक अंदर की ओर मुड़ना।</div>
+        </article>
+        <article class="revision-card" id="q-39">
+          
+          <h3>प्रश्न 39</h3>
+          <div class="revision-question-text">पीठ के ऊपरी भाग का बाहर की ओर अधिक उभर आना (कूबड़), जो प्रायः झुककर बैठने-पढ़ने से होता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) काइफ़ोसिस</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> काइफ़ोसिस (कूबड़); सुधार के लिए सीधे बैठना, भुजंगासन/धनुरासन जैसे आसन।</div>
+        </article>
+        <article class="revision-card" id="q-40">
+          
+          <h3>प्रश्न 40</h3>
+          <div class="revision-question-text">100 मीटर दौड़ में धावक दोनों हाथ ज़मीन पर टिकाकर और स्टार्टिंग ब्लॉक का प्रयोग करके जिस प्रकार दौड़ शुरू करते हैं, उसे कहते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) क्राउच स्टार्ट</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्राउच स्टार्ट (छोटी दौड़ें 100, 200, 400 मी.); लंबी दौड़ों में स्टैंडिंग स्टार्ट। आदेश – 'On your marks', 'Set', फिर पिस्टल।</div>
+        </article>
+        <article class="revision-card" id="q-41">
+          
+          <h3>प्रश्न 41</h3>
+          <div class="revision-question-text">राष्ट्रीय कैडेट कोर (NCC) का आदर्श वाक्य है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) एकता और अनुशासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> NCC (1948) – 'एकता और अनुशासन'; स्काउट का आदर्श वाक्य – 'सदैव तैयार रहो' (Be Prepared)।</div>
+        </article>
+        <article class="revision-card" id="q-42">
+          
+          <h3>प्रश्न 42</h3>
+          <div class="revision-question-text">राष्ट्रीय सेवा योजना (NSS) का आदर्श वाक्य है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मैं नहीं, बल्कि आप (Not Me But You)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> NSS (24 सितंबर 1969) – 'Not Me But You'; इसका संबंध युवा कार्यक्रम एवं खेल मंत्रालय से।</div>
+        </article>
+        <article class="revision-card" id="q-43">
+          
+          <h3>प्रश्न 43</h3>
+          <div class="revision-question-text">विश्व में स्काउटिंग (स्काउट आंदोलन) के संस्थापक –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लॉर्ड बेडन पॉवेल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रॉबर्ट बेडन पॉवेल (1907, इंग्लैंड); भारत में 'भारत स्काउट्स एंड गाइड्स' (1950)। हेनरी ड्यूनांट – रेड क्रॉस के संस्थापक।</div>
+        </article>
+        <article class="revision-card" id="q-44">
+          
+          <h3>प्रश्न 44</h3>
+          <div class="revision-question-text">परेड/ड्रिल समाप्त होने पर दस्ते को औपचारिक रूप से भंग करने के लिए दिया जाने वाला आदेश –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विसर्जन (Dismiss)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विसर्जन (Dismiss) – दस्ता दाएँ मुड़कर औपचारिक रूप से भंग होता है; 'आराम से' में पंक्ति में ही ढीले खड़े रहते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-45">
+          
+          <h3>प्रश्न 45</h3>
+          <div class="revision-question-text">बैडमिंटन की शटलकॉक में कितने पंख लगे होते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 16</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 16 पंख; बैडमिंटन में गेम 21 अंकों का।</div>
+        </article>
+        <article class="revision-card" id="q-46">
+          
+          <h3>प्रश्न 46</h3>
+          <div class="revision-question-text">पुरुषों की गोला फेंक (Shot put) प्रतियोगिता में लोहे के गोले का भार होता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 7.26 किग्रा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पुरुष – 7.26 किग्रा, महिला – 4 किग्रा; गोला फेंक, भाला, तश्तरी – 'फ़ील्ड' स्पर्धाएँ।</div>
+        </article>
+        <article class="revision-card" id="q-47">
+          
+          <h3>प्रश्न 47</h3>
+          <div class="revision-question-text">अंतरराष्ट्रीय हॉकी मैच का कुल खेल-समय होता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 60 मिनट (15-15 मिनट के चार क्वार्टर)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चार क्वार्टर × 15 मिनट = 60 मिनट; फ़ुटबॉल 90 मिनट (45 + 45)।</div>
+        </article>
+        <article class="revision-card" id="q-48">
+          
+          <h3>प्रश्न 48</h3>
+          <div class="revision-question-text">खेलों में उत्कृष्ट प्रदर्शन करने वाले खिलाड़ियों को 1961 से दिया जाने वाला पुरस्कार, जिसमें महाभारत के एक धनुर्धर की काँसे की प्रतिमा दी जाती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अर्जुन पुरस्कार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अर्जुन पुरस्कार – खिलाड़ियों को; द्रोणाचार्य – प्रशिक्षकों को; सर्वोच्च – मेजर ध्यानचंद खेल रत्न।</div>
+        </article>
+        <article class="revision-card" id="q-49">
+          
+          <h3>प्रश्न 49</h3>
+          <div class="revision-question-text">टेबल टेनिस में एक गेम जीतने के लिए सामान्यतः कितने अंक चाहिए (कम से कम 2 अंकों की बढ़त के साथ)?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 11</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 11 अंक (2001 से; पहले 21); बैडमिंटन में 21 अंक।</div>
+        </article>
+        <article class="revision-card" id="q-50">
+          
+          <h3>प्रश्न 50</h3>
+          <div class="revision-question-text">2032 के ग्रीष्मकालीन ओलंपिक खेलों का मेज़बान शहर –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ब्रिसबेन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ब्रिसबेन (ऑस्ट्रेलिया) 2032; पेरिस 2024, लॉस एंजिलिस 2028।</div>
+        </article>
+        <article class="revision-card" id="q-51">
+          
+          <h3>प्रश्न 51</h3>
+          <div class="revision-question-text">तेज़ी से और संतुलन बनाए रखते हुए शरीर की दिशा बदलने की क्षमता (जैसे कबड्डी/खो-खो में) कहलाती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) चपलता (Agility)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चपलता; गति – कम समय में अधिक दूरी, शक्ति – प्रतिरोध पर बल लगाने की क्षमता।</div>
+        </article>
+        <article class="revision-card" id="q-52">
+          
+          <h3>प्रश्न 52</h3>
+          <div class="revision-question-text">शारीरिक शिक्षा का राष्ट्रीय संस्थान 'लक्ष्मीबाई राष्ट्रीय शारीरिक शिक्षा संस्थान (LNIPE)' कहाँ स्थित है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ग्वालियर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> LNIPE ग्वालियर (1957); राष्ट्रीय खेल संस्थान (NIS) – पटियाला।</div>
+        </article>
+        <article class="revision-card" id="q-53">
+          
+          <h3>प्रश्न 53</h3>
+          <div class="revision-question-text">'बर्डी', 'ईगल' और 'बोगी' शब्द किस खेल से संबंधित हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) गोल्फ़</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गोल्फ़ – बर्डी (पार से 1 कम), ईगल (2 कम), बोगी (1 अधिक) स्ट्रोक।</div>
+        </article>
+        <article class="revision-card" id="q-54">
+          
+          <h3>प्रश्न 54</h3>
+          <div class="revision-question-text">घोड़े पर बैठकर खेले जाने वाले 'पोलो' खेल में एक टीम में मैदान पर कितने खिलाड़ी होते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 4</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पोलो – 4 खिलाड़ी; आधुनिक पोलो का मूल मणिपुर का 'सगोल कांगजेई' माना जाता है।</div>
+        </article>
+        <article class="revision-card" id="q-55">
+          
+          <h3>प्रश्न 55</h3>
+          <div class="revision-question-text">बैडमिंटन खेल का प्रारंभिक नाम, जो भारत के एक शहर के नाम पर था, जहाँ 19वीं सदी में अंग्रेज़ अधिकारी इसे खेलते थे –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पूना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 'पूना'; 1873 में इंग्लैंड के 'बैडमिंटन हाउस' (ड्यूक ऑफ़ ब्यूफ़ोर्ट की जागीर) के नाम पर यह खेल 'बैडमिंटन' कहलाया; पंखों वाली शटलकॉक में 16 पंख होते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-56">
+          
+          <h3>प्रश्न 56</h3>
+          <div class="revision-question-text">ऐसा व्यायाम, जिसमें मांसपेशियों में तनाव तो होता है पर शरीर के अंगों में गति नहीं होती (जैसे दीवार को धक्का देना, प्लैंक) –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आइसोमेट्रिक (स्थिर) व्यायाम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आइसोमेट्रिक – मांसपेशी की लंबाई नहीं बदलती; आइसोटोनिक – लंबाई बदलती है, अंगों में गति होती है (जैसे उठक-बैठक, डम्बल); आइसोकाइनेटिक – पूरी गति में समान वेग (विशेष मशीन से)।</div>
+        </article>
+        <article class="revision-card" id="q-57">
+          
+          <h3>प्रश्न 57</h3>
+          <div class="revision-question-text">भारत में शारीरिक शिक्षा का पहला प्रशिक्षण कॉलेज 1920 में मद्रास (चेन्नई) में किस संस्था ने स्थापित किया?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) YMCA (यंग मेन्स क्रिश्चियन एसोसिएशन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> YMCA कॉलेज ऑफ़ फ़िज़िकल एजुकेशन, मद्रास (1920) – संस्थापक एच.सी. बक; YMCA की स्थापना 1844 में लंदन में (जॉर्ज विलियम्स); वॉलीबॉल का आविष्कार (विलियम मॉर्गन, 1895) भी अमेरिका के YMCA में हुआ।</div>
+        </article>
+        <article class="revision-card" id="q-58">
+          
+          <h3>प्रश्न 58</h3>
+          <div class="revision-question-text">स्वीडन में विकसित, प्राकृतिक भू-भाग (पहाड़ी, जंगल) पर दौड़ते समय गति को बार-बार बदलते रहने वाली प्रशिक्षण विधि, जिसे 'गति-खेल' कहा जाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) फ़र्टलेक प्रशिक्षण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ़र्टलेक (स्वीडिश शब्द – 'गति-खेल'), गोस्टा होल्मर (1930 का दशक); अंतराल प्रशिक्षण – तेज़ प्रयास के बीच निश्चित विश्राम; सर्किट प्रशिक्षण – अलग-अलग स्टेशनों पर क्रम से व्यायाम।</div>
+        </article>
+        <article class="revision-card" id="q-59">
+          
+          <h3>प्रश्न 59</h3>
+          <div class="revision-question-text">रग्बी यूनियन खेल में एक टीम में मैदान पर कितने खिलाड़ी होते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 15</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रग्बी यूनियन – 15; रग्बी लीग – 13; रग्बी सेवन्स – 7 (2016 से ओलंपिक में)।</div>
+        </article>
+        <article class="revision-card" id="q-60">
+          
+          <h3>प्रश्न 60</h3>
+          <div class="revision-question-text">'ड्यूस', 'एडवांटेज' और 'लव' शब्द मुख्य रूप से किस खेल से जुड़े हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) टेनिस</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> टेनिस – 'लव' = शून्य, 'ड्यूस' = 40-40 की बराबरी; ग्रैंड स्लैम – ऑस्ट्रेलियन ओपन, फ़्रेंच ओपन (क्ले कोर्ट), विंबलडन (घास), यूएस ओपन।</div>
+        </article>
+        <article class="revision-card" id="q-61">
+          
+          <h3>प्रश्न 61</h3>
+          <div class="revision-question-text">खेलों में डोपिंग रोकने वाली विश्व संस्था 'वाडा' (WADA) का मुख्यालय कहाँ है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मॉन्ट्रियल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मॉन्ट्रियल (कनाडा), स्थापना 1999; भारत में NADA (राष्ट्रीय डोपिंग रोधी एजेंसी) – 2005, नई दिल्ली; अंतरराष्ट्रीय ओलंपिक समिति (IOC) – लॉज़ेन।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">योग</h2>
+        
+        <article class="revision-card" id="q-62">
+          
+          <h3>प्रश्न 62</h3>
+          <div class="revision-question-text">सूर्य नमस्कार के एक चक्र में कितनी स्थितियाँ (आसन) होती हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 12</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 12 स्थितियाँ</div>
+        </article>
+        <article class="revision-card" id="q-63">
+          
+          <h3>प्रश्न 63</h3>
+          <div class="revision-question-text">पतंजलि के अष्टांग योग का पहला अंग कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) यम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> यम, नियम, आसन, प्राणायाम, प्रत्याहार, धारणा, ध्यान, समाधि</div>
+        </article>
+        <article class="revision-card" id="q-64">
+          
+          <h3>प्रश्न 64</h3>
+          <div class="revision-question-text">अष्टांग योग का अंतिम (आठवाँ) अंग कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) समाधि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समाधि अंतिम अंग</div>
+        </article>
+        <article class="revision-card" id="q-65">
+          
+          <h3>प्रश्न 65</h3>
+          <div class="revision-question-text">कौन सा आसन भोजन के तुरंत बाद भी किया जा सकता है और पाचन में सहायक है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) वज्रासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वज्रासन भोजन के बाद भी किया जा सकता है</div>
+        </article>
+        <article class="revision-card" id="q-66">
+          
+          <h3>प्रश्न 66</h3>
+          <div class="revision-question-text">अंतरराष्ट्रीय योग दिवस कब मनाया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 21 जून</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 21 जून (2015 से); 5 जून – पर्यावरण दिवस, 7 अप्रैल – स्वास्थ्य दिवस</div>
+        </article>
+        <article class="revision-card" id="q-67">
+          
+          <h3>प्रश्न 67</h3>
+          <div class="revision-question-text">'योग' शब्द की उत्पत्ति संस्कृत की किस धातु से हुई है, जिसका अर्थ 'जोड़ना' है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) युज्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> युज् = जोड़ना (जुलाई से जुड़ा: योग का अंग्रेज़ी सजातीय शब्द 'Yoke')</div>
+        </article>
+        <article class="revision-card" id="q-68">
+          
+          <h3>प्रश्न 68</h3>
+          <div class="revision-question-text">'योगश्चित्तवृत्तिनिरोधः' (चित्त की वृत्तियों का निरोध ही योग है) — यह सूत्र किस ग्रंथ का है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पतंजलि का योगसूत्र</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पतंजलि योगसूत्र (लगभग 196 सूत्र) (जुलाई से जुड़ा: योग के अंग – आसन)</div>
+        </article>
+        <article class="revision-card" id="q-69">
+          
+          <h3>प्रश्न 69</h3>
+          <div class="revision-question-text">प्राणायाम में साँस को अंदर लेने की क्रिया को क्या कहते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पूरक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पूरक; रेचक = छोड़ना, कुंभक = रोकना (जुलाई से जुड़ा: प्राणायाम = श्वास नियमन/विस्तार)</div>
+        </article>
+        <article class="revision-card" id="q-70">
+          
+          <h3>प्रश्न 70</h3>
+          <div class="revision-question-text">नाक के एक छिद्र से साँस लेकर दूसरे से छोड़ने वाला प्राणायाम कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अनुलोम-विलोम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुलोम-विलोम (जुलाई से जुड़ा: प्राणायाम)</div>
+        </article>
+        <article class="revision-card" id="q-71">
+          
+          <h3>प्रश्न 71</h3>
+          <div class="revision-question-text">'भुजंगासन' करते समय शरीर की आकृति किस जीव जैसी बनती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सर्प (फन उठाया कोबरा)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सर्प; उष्ट्रासन = ऊँट, मयूरासन = मोर (जुलाई से जुड़ा: गरुड़ासन (गरुड़))</div>
+        </article>
+        <article class="revision-card" id="q-72">
+          
+          <h3>प्रश्न 72</h3>
+          <div class="revision-question-text">योग सत्र के अंत में पूर्ण विश्राम (शिथिलीकरण) के लिए कौन सा आसन किया जाता है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शवासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शवासन (जुलाई से जुड़ा: सचेतन ध्यान)</div>
+        </article>
+        <article class="revision-card" id="q-73">
+          
+          <h3>प्रश्न 73</h3>
+          <div class="revision-question-text">अष्टांग योग का पाँचवाँ अंग, जिसमें इंद्रियों को बाहरी विषयों से हटाकर मन को अंतर्मुखी किया जाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रत्याहार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्रम याद रखें: यम – नियम – आसन – प्राणायाम – <strong>प्रत्याहार (5)</strong> – धारणा – ध्यान – समाधि। पहले पाँच 'बहिरंग', अंतिम तीन 'अंतरंग' योग।</div>
+        </article>
+        <article class="revision-card" id="q-74">
+          
+          <h3>प्रश्न 74</h3>
+          <div class="revision-question-text">शौच, संतोष, तप, स्वाध्याय और ईश्वर-प्रणिधान – ये पाँचों अष्टांग योग के किस अंग के अंतर्गत आते हैं?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नियम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नियम (व्यक्तिगत अनुशासन); यम (सामाजिक आचरण) – अहिंसा, सत्य, अस्तेय, ब्रह्मचर्य, अपरिग्रह।</div>
+        </article>
+        <article class="revision-card" id="q-75">
+          
+          <h3>प्रश्न 75</h3>
+          <div class="revision-question-text">मन को किसी एक बिंदु, वस्तु या विचार पर स्थिर करने का अभ्यास (अष्टांग योग का छठा अंग) –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) धारणा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> धारणा = एकाग्रता; धारणा लंबे समय तक टिके तो 'ध्यान', और ध्यान की चरम अवस्था 'समाधि'।</div>
+        </article>
+        <article class="revision-card" id="q-76">
+          
+          <h3>प्रश्न 76</h3>
+          <div class="revision-question-text">प्राणायाम में श्वास को भीतर या बाहर कुछ समय के लिए रोककर रखने की क्रिया –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कुंभक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पूरक = श्वास लेना, कुंभक = रोकना, रेचक = छोड़ना। कुंभक दो प्रकार का – आंतरिक व बाह्य।</div>
+        </article>
+        <article class="revision-card" id="q-77">
+          
+          <h3>प्रश्न 77</h3>
+          <div class="revision-question-text">षट्कर्म की वह क्रिया, जिसमें गुनगुने नमकीन पानी या सूत्र (धागे) से नासिका-मार्ग की सफ़ाई की जाती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) नेति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> षट्कर्म (छह शुद्धि-क्रियाएँ): धौति, बस्ति, नेति, त्राटक, नौलि, कपालभाति। त्राटक – दीपक की लौ पर एकटक देखना।</div>
+        </article>
+        <article class="revision-card" id="q-78">
+          
+          <h3>प्रश्न 78</h3>
+          <div class="revision-question-text">पेट को झटके से भीतर खींचते हुए नाक से बार-बार बलपूर्वक श्वास बाहर फेंकने की क्रिया –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कपालभाति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कपालभाति – श्वास छोड़ना बलपूर्वक, लेना स्वाभाविक; उच्च रक्तचाप व हृदय रोगी सावधानी से करें।</div>
+        </article>
+        <article class="revision-card" id="q-79">
+          
+          <h3>प्रश्न 79</h3>
+          <div class="revision-question-text">श्वास छोड़ते समय भौंरे जैसी गुंजन ध्वनि उत्पन्न करने वाला, मन को शांत करने वाला प्राणायाम –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) भ्रामरी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भ्रामरी (भ्रमर = भौंरा) – तनाव व क्रोध कम करता है; शीतली/शीतकारी शरीर को ठंडक देते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-80">
+          
+          <h3>प्रश्न 80</h3>
+          <div class="revision-question-text">ध्यान के लिए सबसे उपयुक्त माना जाने वाला आसन, जिसमें दोनों पैर विपरीत जाँघों पर रखे जाते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पद्मासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पद्मासन (कमलासन); ध्यान के अन्य आसन – सुखासन, सिद्धासन। वज्रासन भोजन के बाद भी किया जा सकता है।</div>
+        </article>
+        <article class="revision-card" id="q-81">
+          
+          <h3>प्रश्न 81</h3>
+          <div class="revision-question-text">सीधे खड़े होकर दोनों हाथ ऊपर उठाते हुए पंजों के बल पूरे शरीर को ऊपर की ओर खींचने वाला आसन, जो बच्चों की लंबाई बढ़ाने में सहायक माना जाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ताड़ासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ताड़ासन (ताड़ = खजूर जैसा ऊँचा पेड़); वृक्षासन में एक पैर पर संतुलन बनाया जाता है।</div>
+        </article>
+        <article class="revision-card" id="q-82">
+          
+          <h3>प्रश्न 82</h3>
+          <div class="revision-question-text">पीठ के बल लेटकर दोनों पैरों को सिर के पीछे ले जाकर ज़मीन से छुआने वाला आसन, जिसकी आकृति खेत जोतने के औज़ार जैसी होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) हलासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हलासन (हल = खेत जोतने का औज़ार) – रीढ़ को लचीला बनाता है; इसके बाद प्रति-आसन के रूप में मत्स्यासन किया जाता है।</div>
+        </article>
+        <article class="revision-card" id="q-83">
+          
+          <h3>प्रश्न 83</h3>
+          <div class="revision-question-text">पेट के बल लेटकर दोनों हाथों से टखनों को पकड़कर शरीर को धनुष के आकार में ऊपर खींचने वाला आसन –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) धनुरासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> धनुरासन – पेट के बल का आसन; भुजंगासन (सर्प), शलभासन (टिड्डा), मकरासन (मगरमच्छ) भी पेट के बल किए जाते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-84">
+          
+          <h3>प्रश्न 84</h3>
+          <div class="revision-question-text">योगासन करने का सबसे उपयुक्त समय है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रातःकाल, खाली पेट</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रातःकाल खाली पेट; भोजन के लगभग 3–4 घंटे बाद भी किया जा सकता है; अंत में शवासन में विश्राम।</div>
+        </article>
+        <article class="revision-card" id="q-85">
+          
+          <h3>प्रश्न 85</h3>
+          <div class="revision-question-text">घुटनों के बल खड़े होकर पीछे की ओर झुकते हुए दोनों हाथों से एड़ियाँ पकड़ने वाला, ऊँट की आकृति जैसा आसन –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) उष्ट्रासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उष्ट्रासन (उष्ट्र = ऊँट) – रीढ़ को लचीला बनाता है; गोमुखासन में बैठकर हाथ पीठ के पीछे जोड़े जाते हैं।</div>
+        </article>
+        <article class="revision-card" id="q-86">
+          
+          <h3>प्रश्न 86</h3>
+          <div class="revision-question-text">लोहार की धौंकनी की तरह तेज़ी से और बलपूर्वक श्वास लेने व छोड़ने वाला प्राणायाम –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) भस्त्रिका</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भस्त्रिका (भस्त्र = धौंकनी); उद्गीथ – 'ओम्' का लंबा उच्चारण।</div>
+        </article>
+        <article class="revision-card" id="q-87">
+          
+          <h3>प्रश्न 87</h3>
+          <div class="revision-question-text">पीठ के बल लेटकर हाथों और पैरों के सहारे पूरे शरीर को ऊपर उठाकर पहिए जैसी आकृति बनाने वाला आसन –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) चक्रासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चक्रासन (चक्र = पहिया) – रीढ़ लचीली होती है, छाती फैलती है; हलासन – पीठ के बल लेटकर पैर सिर के पीछे ज़मीन पर; ताड़ासन – खड़े होकर ऊपर की ओर खिंचाव।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">प्राथमिक चिकित्सा व स्वास्थ्य</h2>
+        
+        <article class="revision-card" id="q-88">
+          
+          <h3>प्रश्न 88</h3>
+          <div class="revision-question-text">हड्डी टूटने (फ़्रैक्चर) पर प्राथमिक उपचार में सबसे पहले क्या करना चाहिए?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) खपच्ची (स्प्लिंट) से अंग को स्थिर करना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्प्लिंट से स्थिर करें, हड्डी सीधी करने की कोशिश न करें</div>
+        </article>
+        <article class="revision-card" id="q-89">
+          
+          <h3>प्रश्न 89</h3>
+          <div class="revision-question-text">नाक से खून बहने (नकसीर) पर सही प्राथमिक उपचार क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सिर थोड़ा आगे झुकाकर नाक के नरम भाग को दबाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सिर आगे झुकाएँ ताकि खून गले में न जाए</div>
+        </article>
+        <article class="revision-card" id="q-90">
+          
+          <h3>प्रश्न 90</h3>
+          <div class="revision-question-text">साँप के काटने पर सही प्राथमिक उपचार कौन सा है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अंग को स्थिर रखकर व्यक्ति को शांत रखना और तुरंत अस्पताल ले जाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> घाव चूसना या कसकर बाँधना हानिकारक</div>
+        </article>
+        <article class="revision-card" id="q-91">
+          
+          <h3>प्रश्न 91</h3>
+          <div class="revision-question-text">वयस्क को CPR देते समय छाती को प्रति मिनट लगभग कितनी बार दबाना चाहिए?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 100–120</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 100–120 प्रति मिनट, 30 दबाव : 2 साँस</div>
+        </article>
+        <article class="revision-card" id="q-92">
+          
+          <h3>प्रश्न 92</h3>
+          <div class="revision-question-text">'हाइमलिक युक्ति' (Heimlich manoeuvre) किस आपात स्थिति में प्रयोग की जाती है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) श्वासनली में कुछ फँसने (दम घुटने) पर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पेट पर ऊपर की ओर झटके से दबाव (जुलाई से जुड़ा: दम घुटना – पीठ पर थपकी + पेट पर दबाव)</div>
+        </article>
+        <article class="revision-card" id="q-93">
+          
+          <h3>प्रश्न 93</h3>
+          <div class="revision-question-text">मोच (Sprain) के प्राथमिक उपचार में 'RICE' विधि के 'I' का अर्थ क्या है?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बर्फ़ (आइस) से सिकाई</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> Rest, Ice, Compression, Elevation (जुलाई से जुड़ा: प्राथमिक चिकित्सा का अर्थ)</div>
+        </article>
+        <article class="revision-card" id="q-94">
+          
+          <h3>प्रश्न 94</h3>
+          <div class="revision-question-text">बेहोश व्यक्ति (जिसकी साँस चल रही हो) को किस स्थिति में लिटाना चाहिए ताकि जीभ या उल्टी से श्वासनली बंद न हो?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) करवट (रिकवरी पोज़िशन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रिकवरी पोज़िशन (जुलाई से जुड़ा: CPR – हृदयाघात, डूबना)</div>
+        </article>
+        <article class="revision-card" id="q-95">
+          
+          <h3>प्रश्न 95</h3>
+          <div class="revision-question-text">कुत्ते के काटने पर सबसे पहले घाव के साथ क्या करना चाहिए?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) बहते पानी और साबुन से कम से कम 15 मिनट धोना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फिर एंटी-रेबीज़ टीका (जुलाई से जुड़ा: जलने पर 20 मिनट ठंडा पानी)</div>
+        </article>
+        <article class="revision-card" id="q-96">
+          
+          <h3>प्रश्न 96</h3>
+          <div class="revision-question-text">आपात स्थिति में प्राथमिक चिकित्सा के 'ABC' क्रम में 'A' का अर्थ है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वायुमार्ग (Airway)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> A – Airway (वायुमार्ग खुला करना), B – Breathing (श्वास जाँचना), C – Circulation (नाड़ी/रक्तस्राव)।</div>
+        </article>
+        <article class="revision-card" id="q-97">
+          
+          <h3>प्रश्न 97</h3>
+          <div class="revision-question-text">जब टूटी हुई हड्डी त्वचा को फाड़कर बाहर दिखाई देने लगे, तो उस अस्थिभंग को कहते हैं –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) खुला (संयुक्त/कंपाउंड) अस्थिभंग</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> खुला (कंपाउंड) अस्थिभंग – संक्रमण का ख़तरा सबसे अधिक; घाव को साफ़ कपड़े से ढकें, हड्डी को अंदर धकेलने का प्रयास न करें। ग्रीनस्टिक – बच्चों में अधूरा टूटना।</div>
+        </article>
+        <article class="revision-card" id="q-98">
+          
+          <h3>प्रश्न 98</h3>
+          <div class="revision-question-text">तेज़ धूप में काम करते हुए किसी व्यक्ति को लू (हीट स्ट्रोक) लग जाए, तो सबसे उचित प्राथमिक उपचार है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) छायादार ठंडी जगह ले जाकर कपड़े ढीले करें, गीले कपड़े से शरीर पोंछें और होश में हो तो पानी/ORS दें</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लू में शरीर का तापमान बहुत बढ़ जाता है, इसलिए ठंडा करना और तरल देना मुख्य है; बेहोश व्यक्ति को मुँह से कुछ न दें।</div>
+        </article>
+        <article class="revision-card" id="q-99">
+          
+          <h3>प्रश्न 99</h3>
+          <div class="revision-question-text">प्रार्थना-सभा में कोई विद्यार्थी बेहोश (मूर्च्छित) होकर गिर जाए, तो सबसे उचित उपचार है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पीठ के बल लिटाकर पैर थोड़ा ऊँचे करें, कपड़े ढीले करें और ताज़ी हवा आने दें</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पैर ऊँचे करने से मस्तिष्क तक रक्त लौटता है; होश आने पर धीरे-धीरे बैठाएँ।</div>
+        </article>
+        <article class="revision-card" id="q-100">
+          
+          <h3>प्रश्न 100</h3>
+          <div class="revision-question-text">बिजली का झटका लगे व्यक्ति की सहायता के लिए सबसे पहले क्या करना चाहिए?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मुख्य स्विच बंद करें या सूखी लकड़ी से उसे तार से अलग करें</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सीधे छूने से मदद करने वाले को भी झटका लगेगा; लकड़ी, रबर, सूखा कपड़ा कुचालक हैं।</div>
+        </article>
+        <article class="revision-card" id="q-101">
+          
+          <h3>प्रश्न 101</h3>
+          <div class="revision-question-text">चींटी के काटने पर उस स्थान पर खाने के सोडा (बेकिंग सोडा) का गीला लेप लगाने की सलाह दी जाती है, क्योंकि चींटी के डंक में होता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) फ़ॉर्मिक अम्ल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ़ॉर्मिक अम्ल (अम्लीय) को क्षारीय बेकिंग सोडा उदासीन करता है – दैनिक जीवन में उदासीनीकरण (कक्षा 7 विज्ञान)।</div>
+        </article>
+        <article class="revision-card" id="q-102">
+          
+          <h3>प्रश्न 102</h3>
+          <div class="revision-question-text">पुलिस, अग्निशमन और एंबुलेंस – किसी भी आपात स्थिति के लिए पूरे देश में लागू एकल आपातकालीन नंबर –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 112</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 112 – आपातकालीन प्रतिक्रिया सहायता प्रणाली (उ.प्र. में 'UP 112'); 1098 – चाइल्डलाइन, 108 – एंबुलेंस, 101 – अग्निशमन।</div>
+        </article>
+        <article class="revision-card" id="q-103">
+          
+          <h3>प्रश्न 103</h3>
+          <div class="revision-question-text">गंभीर चोट या दुर्घटना के बाद का वह पहला एक घंटा, जिसमें उपचार मिलने पर जान बचने की संभावना सबसे अधिक होती है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) गोल्डन आवर (स्वर्णिम घंटा)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गोल्डन आवर की परिभाषा मोटर वाहन (संशोधन) अधिनियम 2019 में दी गई है।</div>
+        </article>
+        <article class="revision-card" id="q-104">
+          
+          <h3>प्रश्न 104</h3>
+          <div class="revision-question-text">चोट लगने पर किसी हड्डी का जोड़ से अपनी जगह से खिसक जाना कहलाता है –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अस्थि-विस्थापन (Dislocation)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अस्थि-विस्थापन – जोड़ को सहारा देकर स्थिर रखें, स्वयं बैठाने का प्रयास न करें, तुरंत डॉक्टर के पास ले जाएँ।</div>
+        </article>
+        <article class="revision-card" id="q-105">
+          
+          <h3>प्रश्न 105</h3>
+          <div class="revision-question-text">हाथ या बाँह की चोट/अस्थिभंग में बाँह को सहारा देने के लिए गले से लटकाई जाने वाली (प्रायः त्रिकोणीय) पट्टी –</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) स्लिंग (झोली)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्लिंग (त्रिकोणीय पट्टी से); स्प्लिंट – टूटी हड्डी को सीधा रखने की खपच्ची।</div>
+        </article>
+        <article class="revision-card" id="q-106">
+          
+          <h3>प्रश्न 106</h3>
+          <div class="revision-question-text">किसी बच्चे ने ग़लती से तेज़ाब, फ़िनाइल या मिट्टी का तेल पी लिया हो, तो प्राथमिक चिकित्सा में क्या <strong>नहीं</strong> करना चाहिए?</div>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उल्टी कराना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उल्टी न कराएँ – तेज़ाब/क्षार लौटते समय मुँह व भोजन-नली को दोबारा जलाते हैं, और मिट्टी का तेल फेफड़ों में जाकर निमोनिया कर सकता है; तुरंत 108 एंबुलेंस बुलाएँ।</div>
+        </article>
+      </section>
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>
