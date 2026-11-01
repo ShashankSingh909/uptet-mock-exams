@@ -229,3 +229,29 @@ test("Sanskrit 2 keeps 150 questions and its extra 30-question test", async () =
   assert.equal(extra.questions[29].answer, "a");
   assert.match(extra.instructions, /सभी 30 प्रश्न/);
 });
+
+test("social science chapter revision sets keep their questions in order", async () => {
+  const expected = {
+    history: [102, /समाहर्ता/],
+    geography: [102, /हिमोढ़/],
+    civics: [76, /मौलिक कर्तव्य/],
+    economics: [28, /मनरेगा/],
+    upgk: [34, /चीफ़ ऑफ़ डिफ़ेंस स्टाफ़/],
+  };
+  for (const [chapter, [count, firstText]] of Object.entries(expected)) {
+    const data = JSON.parse(
+      await readFile(
+        new URL(`../data/sst-rev-${chapter}.json`, import.meta.url),
+        "utf8",
+      ),
+    );
+    assert.equal(data.questions.length, count, chapter);
+    assert.match(data.questions[0].text, firstText, chapter);
+    for (const question of data.questions) {
+      assert.equal(question.options.length, 4, `${chapter} ${question.number}`);
+      assert.match(question.answer, /^[abcd]$/);
+      assert.doesNotMatch(question.text, /`|\[(सेट|प्रश्न बैंक)/);
+      assert.ok(question.explanation.trim().length > 10);
+    }
+  }
+});
