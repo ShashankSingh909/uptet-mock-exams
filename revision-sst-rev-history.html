@@ -896,6 +896,40 @@ dialog::backdrop {
   font-weight: 650;
 }
 
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
 .revision-answer {
   margin: 10px 0 0;
   padding: 10px 12px;
@@ -1019,6 +1053,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 1</h3>
           <div class="revision-question-text">कौटिल्य के अर्थशास्त्र के अनुसार मौर्य प्रशासन में 'समाहर्ता' का मुख्य कार्य क्या था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) राजस्व संग्रह करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> समाहर्ता = राजस्व संग्रहकर्ता; सन्निधाता = कोषाध्यक्ष</div>
         </article>
@@ -1026,6 +1061,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 2</h3>
           <div class="revision-question-text">यूनानी लेखकों ने मौर्य शासक बिंदुसार को किस नाम से पुकारा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अमित्रोकेटस</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अमित्रोकेटस (अमित्रघात); सैंड्रोकोट्स = चंद्रगुप्त मौर्य</div>
         </article>
@@ -1033,6 +1069,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 3</h3>
           <div class="revision-question-text">पश्चिमोत्तर भारत (शाहबाज़गढ़ी, मानसेहरा) में मिले अशोक के अभिलेख किस लिपि में हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) खरोष्ठी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> खरोष्ठी दाएँ से बाएँ लिखी जाती थी; शेष अभिलेख ब्राह्मी में</div>
         </article>
@@ -1040,6 +1077,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 4</h3>
           <div class="revision-question-text">1837 में अशोक के अभिलेखों की ब्राह्मी लिपि को सबसे पहले किसने पढ़ा?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) जेम्स प्रिंसेप</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जेम्स प्रिंसेप, एशियाटिक सोसाइटी ऑफ़ बंगाल</div>
         </article>
@@ -1047,6 +1085,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 5</h3>
           <div class="revision-question-text">चीनी यात्री फाह्यान किस गुप्त शासक के समय भारत आया था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) चंद्रगुप्त द्वितीय</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> फाह्यान चंद्रगुप्त द्वितीय (विक्रमादित्य) के समय; ह्वेनसांग हर्ष के समय</div>
         </article>
@@ -1054,6 +1093,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 6</h3>
           <div class="revision-question-text">समुद्रगुप्त की विजयों का वर्णन करने वाली 'प्रयाग प्रशस्ति' की रचना किसने की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) हरिषेण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> हरिषेण समुद्रगुप्त के दरबारी कवि; प्रशस्ति अशोक स्तंभ (प्रयागराज) पर</div>
         </article>
@@ -1061,6 +1101,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 7</h3>
           <div class="revision-question-text">सोलह महाजनपदों में वज्जि संघ की राजधानी कौन सी थी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) वैशाली</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वज्जि – वैशाली; मगध – राजगृह; कोसल – श्रावस्ती; वत्स – कौशांबी</div>
         </article>
@@ -1068,6 +1109,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 8</h3>
           <div class="revision-question-text">वैदिक काल में 'सभा' और 'समिति' क्या थीं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जन की सभाएँ व परिषदें</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सभा (वृद्धों की) व समिति (जनसाधारण की) जन की परिषदें</div>
         </article>
@@ -1075,6 +1117,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 9</h3>
           <div class="revision-question-text">हड़प्पा सभ्यता का कौन सा स्थल गोदीवाड़ा (डॉकयार्ड) के लिए प्रसिद्ध है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) लोथल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लोथल (गुजरात) में गोदीवाड़ा; कालीबंगा में जुता हुआ खेत</div>
         </article>
@@ -1082,6 +1125,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 10</h3>
           <div class="revision-question-text">बौद्ध त्रिपिटक में बुद्ध के उपदेशों का संग्रह किस पिटक में है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सुत्त पिटक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सुत्त = उपदेश; विनय = भिक्षु अनुशासन; अभिधम्म = दर्शन</div>
         </article>
@@ -1089,6 +1133,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 11</h3>
           <div class="revision-question-text">जैन धर्म के 24वें तीर्थंकर महावीर स्वामी का जन्म कहाँ हुआ था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कुंडग्राम (वैशाली के पास)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कुंडग्राम; निर्वाण पावापुरी; लुंबिनी बुद्ध का जन्मस्थान</div>
         </article>
@@ -1096,6 +1141,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 12</h3>
           <div class="revision-question-text">आजीवक संप्रदाय के संस्थापक कौन माने जाते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मक्खलि गोसाल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मक्खलि गोसाल; आजीवक नियतिवादी थे (जुलाई से जुड़ा: बिंदुसार – आजीवक संरक्षण)</div>
         </article>
@@ -1103,6 +1149,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 13</h3>
           <div class="revision-question-text">अभिलेखों में 'देवानांपिय पियदसि' (देवताओं का प्रिय, प्रियदर्शी) किस शासक को कहा गया है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अशोक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मास्की अभिलेख में अशोक का नाम साफ़ लिखा है (जुलाई से जुड़ा: अशोक के अभिलेख – प्राकृत भाषा)</div>
         </article>
@@ -1110,6 +1157,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 14</h3>
           <div class="revision-question-text">यूनानी राजदूत मेगस्थनीज़ ने अपनी पुस्तक 'इंडिका' में किस शासक के दरबार और पाटलिपुत्र का वर्णन किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) चंद्रगुप्त मौर्य</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मेगस्थनीज़ सेल्यूकस का राजदूत था (जुलाई से जुड़ा: मौर्य केंद्रीकृत प्रशासन)</div>
         </article>
@@ -1117,6 +1165,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 15</h3>
           <div class="revision-question-text">'अर्थशास्त्र' के रचयिता कौटिल्य (चाणक्य) का एक अन्य नाम क्या था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विष्णुगुप्त</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विष्णुगुप्त; विशाखदत्त ने चाणक्य पर 'मुद्राराक्षस' लिखा (जुलाई से जुड़ा: अर्थशास्त्र – संगठित नौकरशाही)</div>
         </article>
@@ -1124,6 +1173,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 16</h3>
           <div class="revision-question-text">हर्षवर्धन के शासनकाल में भारत आकर नालंदा में अध्ययन करने वाला चीनी यात्री कौन था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ह्वेनसांग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ह्वेनसांग; फाह्यान चंद्रगुप्त द्वितीय के समय आया (जुलाई से जुड़ा: फाह्यान – विनय पिटक)</div>
         </article>
@@ -1131,6 +1181,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 17</h3>
           <div class="revision-question-text">शकों को पराजित करने के बाद 'शकारि' उपाधि किस गुप्त शासक ने धारण की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) चंद्रगुप्त द्वितीय</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चंद्रगुप्त द्वितीय ने पश्चिमी क्षत्रपों (शकों) को हराया (जुलाई से जुड़ा: चंद्रगुप्त द्वितीय = विक्रमादित्य)</div>
         </article>
@@ -1138,6 +1189,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 18</h3>
           <div class="revision-question-text">सोलह महाजनपदों में अवंति महाजनपद की राजधानी कौन सी थी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उज्जयिनी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अवंति – उज्जयिनी (व महिष्मती); अंग – चंपा, शूरसेन – मथुरा, गांधार – तक्षशिला (जुलाई से जुड़ा: मत्स्य – विराटनगर (बैराट))</div>
         </article>
@@ -1145,6 +1197,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 19</h3>
           <div class="revision-question-text">सिकंदर ने भारत पर आक्रमण कब किया और झेलम (हाइडेस्पीज़) के युद्ध में किस राजा से लड़ा?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 326 ई.पू. – पोरस (पुरु)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 326 ई.पू., पोरस से युद्ध (जुलाई से जुड़ा: 6वीं सदी ई.पू. हखामनी (अकेमेनिड) आक्रमण)</div>
         </article>
@@ -1152,6 +1205,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 20</h3>
           <div class="revision-question-text">भारत का राष्ट्रीय आदर्श वाक्य 'सत्यमेव जयते' किस ग्रंथ से लिया गया है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मुण्डक उपनिषद</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मुण्डक उपनिषद; 'तत्त्वमसि' छांदोग्य उपनिषद का वाक्य है (जुलाई से जुड़ा: उपनिषद – आत्मा व ब्रह्म)</div>
         </article>
@@ -1159,6 +1213,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 21</h3>
           <div class="revision-question-text">मानव इतिहास के किस युग में खेती, पशुपालन और स्थायी बस्तियाँ शुरू हुईं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नवपाषाण युग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> नवपाषाण युग (जैसे मेहरगढ़, बुर्ज़होम) (जुलाई से जुड़ा: शिकारी-संग्राहक खानाबदोश; ताम्रपाषाण युग)</div>
         </article>
@@ -1166,6 +1221,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 22</h3>
           <div class="revision-question-text">प्रागैतिहासिक शैलचित्रों के लिए प्रसिद्ध भीमबेटका की गुफाएँ किस राज्य में हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मध्य प्रदेश</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रायसेन ज़िला, यूनेस्को विश्व धरोहर (जुलाई से जुड़ा: शिकारी-संग्राहक समाज)</div>
         </article>
@@ -1173,6 +1229,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 23</h3>
           <div class="revision-question-text">1921 में दयाराम साहनी द्वारा जिस स्थल की खुदाई से सिंधु घाटी सभ्यता की खोज हुई और जिसके नाम पर इसे 'हड़प्पा सभ्यता' भी कहा जाता है, वह है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) हड़प्पा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> हड़प्पा (रावी तट, अब पाकिस्तान) – 1921, दयाराम साहनी। मोहनजोदड़ो – 1922, राखालदास बनर्जी।</div>
         </article>
@@ -1180,6 +1237,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 24</h3>
           <div class="revision-question-text">सिंधु सभ्यता की सबसे प्रसिद्ध सार्वजनिक संरचना – पक्की ईंटों से बना एक बड़ा जलकुंड, जो संभवतः धार्मिक या सामूहिक स्नान के लिए था – किस स्थल पर मिली है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मोहनजोदड़ो</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मोहनजोदड़ो का 'विशाल स्नानागार'। मोहनजोदड़ो का अर्थ 'मृतकों का टीला'; यहीं 'नर्तकी' की काँस्य मूर्ति मिली।</div>
         </article>
@@ -1187,6 +1245,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 25</h3>
           <div class="revision-question-text">राजस्थान का वह हड़प्पाकालीन स्थल, जहाँ जुते हुए खेत (हल की रेखाओं) और अग्नि-वेदिकाओं के प्रमाण मिले हैं –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कालीबंगा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कालीबंगा (हनुमानगढ़, घग्गर तट) – जुता खेत, अग्नि-वेदिकाएँ; नाम का अर्थ 'काली चूड़ियाँ'।</div>
         </article>
@@ -1194,6 +1253,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 26</h3>
           <div class="revision-question-text">ऋग्वेद में सबसे अधिक (लगभग 250) सूक्त जिस देवता को समर्पित हैं, जिन्हें वर्षा और युद्ध का देवता तथा 'पुरंदर' (किलों को तोड़ने वाला) कहा गया है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) इंद्र</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> इंद्र (लगभग 250 सूक्त), दूसरे स्थान पर अग्नि (लगभग 200)। ऋग्वेद में 10 मंडल व 1028 सूक्त।</div>
         </article>
@@ -1201,6 +1261,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 27</h3>
           <div class="revision-question-text">सविता (सूर्य) देवता को समर्पित प्रसिद्ध 'गायत्री मंत्र' मूल रूप से किस ग्रंथ में मिलता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ऋग्वेद</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ऋग्वेद के तीसरे मंडल में; रचयिता विश्वामित्र।</div>
         </article>
@@ -1208,6 +1269,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 28</h3>
           <div class="revision-question-text">वह वेद, जिसके मंत्र यज्ञ के समय गाने के लिए संकलित किए गए थे और जिसे भारतीय शास्त्रीय संगीत का मूल स्रोत माना जाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सामवेद</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सामवेद – 'साम' = गान; यजुर्वेद – यज्ञ-विधि; अथर्ववेद – औषधि, जादू-टोना।</div>
         </article>
@@ -1215,6 +1277,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 29</h3>
           <div class="revision-question-text">ज्ञान प्राप्ति के बाद गौतम बुद्ध ने अपना पहला उपदेश, जिसे 'धर्मचक्र प्रवर्तन' कहा जाता है, कहाँ दिया था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सारनाथ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सारनाथ (ऋषिपत्तन/मृगदाव), वाराणसी के पास। ज्ञान – बोधगया, जन्म – लुंबिनी।</div>
         </article>
@@ -1222,6 +1285,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 30</h3>
           <div class="revision-question-text">उत्तर प्रदेश का वह स्थान, जहाँ गौतम बुद्ध का महापरिनिर्वाण (देहांत) हुआ –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कुशीनगर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कुशीनगर (उ.प्र.)। बुद्ध के जीवन के चार प्रमुख स्थल: लुंबिनी, बोधगया, सारनाथ, कुशीनगर।</div>
         </article>
@@ -1229,6 +1293,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 31</h3>
           <div class="revision-question-text">जैन धर्म में मोक्ष प्राप्ति के लिए बताए गए 'त्रिरत्न' हैं –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सम्यक दर्शन, सम्यक ज्ञान, सम्यक चरित्र</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जैन त्रिरत्न = सही विश्वास, सही ज्ञान, सही आचरण। (C) बौद्ध त्रिरत्न है।</div>
         </article>
@@ -1236,6 +1301,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 32</h3>
           <div class="revision-question-text">हर्यक वंश का वह शासक, जिसने कोसल, लिच्छवि और मद्र राजघरानों से वैवाहिक संबंध बनाकर मगध की शक्ति बढ़ाई –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बिंबिसार</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बिंबिसार – कोसलदेवी, चेल्लना (लिच्छवि), खेमा (मद्र) से विवाह; राजधानी राजगृह।</div>
         </article>
@@ -1243,6 +1309,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 33</h3>
           <div class="revision-question-text">गंगा और सोन नदियों के संगम पर पाटलिपुत्र नगर बसाने वाला, अजातशत्रु का पुत्र था –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उदयिन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उदयिन ने पाटलिपुत्र (कुसुमपुर) बसाया; अजातशत्रु ने वहाँ दुर्ग बनवाया था।</div>
         </article>
@@ -1250,6 +1317,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 34</h3>
           <div class="revision-question-text">वह युद्ध, जिसके भीषण रक्तपात से विचलित होकर अशोक ने 'भेरीघोष' (युद्ध-घोष) की जगह 'धम्मघोष' की नीति अपनाई –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कलिंग युद्ध</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कलिंग युद्ध 261 ई.पू.; इसका वर्णन 13वें शिलालेख में।</div>
         </article>
@@ -1257,6 +1325,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 35</h3>
           <div class="revision-question-text">26 जनवरी 1950 को अपनाया गया भारत का राजकीय प्रतीक (चार सिंह) किस स्थान के अशोक-स्तंभ के शीर्ष से लिया गया है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सारनाथ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सारनाथ का सिंह-शीर्ष; चार सिंह (तीन दिखते हैं), नीचे धर्मचक्र, बैल व घोड़ा।</div>
         </article>
@@ -1264,6 +1333,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 36</h3>
           <div class="revision-question-text">कनिष्क के संरक्षण में हुई चौथी बौद्ध संगीति, जिसके बाद बौद्ध धर्म हीनयान और महायान में बँट गया, कहाँ आयोजित हुई थी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कश्मीर (कुंडलवन)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चौथी संगीति – कुंडलवन (कश्मीर), अध्यक्ष वसुमित्र, उपाध्यक्ष अश्वघोष। पहली – राजगृह, दूसरी – वैशाली, तीसरी – पाटलिपुत्र।</div>
         </article>
@@ -1271,6 +1341,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 37</h3>
           <div class="revision-question-text">कुषाण शासक कनिष्क के राज्यारोहण (78 ई.) से आरंभ माना जाने वाला संवत्, जिसे भारत सरकार ने राष्ट्रीय पंचांग के रूप में अपनाया है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शक संवत्</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शक संवत् 78 ई. से; राष्ट्रीय पंचांग 22 मार्च 1957 से। विक्रम संवत् 57 ई.पू. से।</div>
         </article>
@@ -1278,6 +1349,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 38</h3>
           <div class="revision-question-text">'अभिज्ञानशाकुंतलम्' और 'मेघदूतम्' के रचयिता, जिन्हें चंद्रगुप्त द्वितीय (विक्रमादित्य) के दरबार के 'नवरत्नों' में गिना जाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कालिदास</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कालिदास; अन्य नवरत्नों में अमरसिंह, वराहमिहिर, धन्वंतरि। बाणभट्ट – हर्ष के दरबार में।</div>
         </article>
@@ -1285,6 +1357,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 39</h3>
           <div class="revision-question-text">छठी शताब्दी ई.पू. के 16 महाजनपदों की सूची किस बौद्ध ग्रंथ में मिलती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अंगुत्तर निकाय</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अंगुत्तर निकाय (सुत्तपिटक का भाग); 16 महाजनपदों में आगे चलकर मगध सबसे शक्तिशाली बना।</div>
         </article>
@@ -1292,6 +1365,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 40</h3>
           <div class="revision-question-text">जैन धर्म के पहले तीर्थंकर –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ऋषभदेव</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ऋषभदेव (आदिनाथ) पहले, पार्श्वनाथ 23वें, महावीर 24वें तीर्थंकर।</div>
         </article>
@@ -1299,6 +1373,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 41</h3>
           <div class="revision-question-text">अपनी विजयों के कारण इतिहासकार वी.ए. स्मिथ द्वारा 'भारत का नेपोलियन' कहा गया गुप्त शासक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) समुद्रगुप्त</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> समुद्रगुप्त; उसकी विजयों का वर्णन प्रयाग प्रशस्ति में; सिक्कों पर वीणा बजाते दिखाया गया।</div>
         </article>
@@ -1306,6 +1381,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 42</h3>
           <div class="revision-question-text">जीवन के अंतिम वर्षों में जैन मुनि भद्रबाहु के साथ दक्षिण जाकर श्रवणबेलगोला (कर्नाटक) में उपवास (सल्लेखना) द्वारा देह त्यागने वाला मौर्य सम्राट –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) चंद्रगुप्त मौर्य</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चंद्रगुप्त मौर्य – जैन परंपरा के अनुसार भद्रबाहु के साथ दक्षिण गए; श्रवणबेलगोला की विंध्यगिरि पहाड़ी पर बाहुबली (गोमतेश्वर) की विशाल प्रतिमा है।</div>
         </article>
@@ -1313,6 +1389,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 43</h3>
           <div class="revision-question-text">गुप्त काल के वे गणितज्ञ-खगोलविद्, जिन्होंने 'आर्यभटीय' में बताया कि पृथ्वी अपनी धुरी पर घूमती है और ग्रहण का वैज्ञानिक कारण बताया –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) आर्यभट</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आर्यभट (जन्म 476 ई.); भारत का पहला उपग्रह 'आर्यभट' (1975) इन्हीं के नाम पर; वराहमिहिर – 'बृहत्संहिता', ब्रह्मगुप्त – 'ब्रह्मस्फुटसिद्धांत'।</div>
         </article>
@@ -1324,6 +1401,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 44</h3>
           <div class="revision-question-text">राष्ट्रकूट वंश का संस्थापक कौन था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) दंतिदुर्ग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> दंतिदुर्ग ने चालुक्यों को हटाकर लगभग 752 ई. में वंश स्थापित किया</div>
         </article>
@@ -1331,6 +1409,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 45</h3>
           <div class="revision-question-text">एलोरा का कैलाश मंदिर किस शासक ने बनवाया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कृष्ण प्रथम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> राष्ट्रकूट कृष्ण प्रथम; एक ही चट्टान काटकर बना</div>
         </article>
@@ -1338,6 +1417,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 46</h3>
           <div class="revision-question-text">महमूद गज़नवी ने सोमनाथ मंदिर पर आक्रमण किस वर्ष किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 1025 ई.</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 1025 ई.; 1001 ई. में पेशावर में जयपाल को हराया (जुलाई 2026 में पूछा)</div>
         </article>
@@ -1345,6 +1425,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 47</h3>
           <div class="revision-question-text">तराइन के प्रथम युद्ध (1191 ई.) में किसकी जीत हुई?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पृथ्वीराज चौहान</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्रथम युद्ध में पृथ्वीराज जीते; 1192 के द्वितीय युद्ध में गौरी</div>
         </article>
@@ -1352,6 +1433,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 48</h3>
           <div class="revision-question-text">दरबार में 'सिजदा' और 'पैबोस' की प्रथा किस सुल्तान ने शुरू की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बलबन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बलबन ने शासक के दैवीय पद (जिल्ल-ए-इलाही) पर ज़ोर दिया</div>
         </article>
@@ -1359,6 +1441,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 49</h3>
           <div class="revision-question-text">मुहम्मद बिन तुगलक ने अपनी राजधानी दिल्ली से कहाँ स्थानांतरित की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) देवगिरि (दौलताबाद)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 1327 में देवगिरि का नाम दौलताबाद रखा; देवगिरि यादवों की राजधानी थी</div>
         </article>
@@ -1366,6 +1449,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 50</h3>
           <div class="revision-question-text">अलाउद्दीन खिलजी की बाज़ार नियंत्रण नीति में बाज़ार का मुख्य अधीक्षक क्या कहलाता था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शहना-ए-मंडी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शहना-ए-मंडी = बाज़ार अधीक्षक; अमीर-ए-कोह = मुहम्मद तुगलक का कृषि विभाग</div>
         </article>
@@ -1373,6 +1457,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 51</h3>
           <div class="revision-question-text">कन्नौज पर अधिकार के लिए हुआ 'त्रिपक्षीय संघर्ष' किन तीन वंशों के बीच था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पाल, गुर्जर-प्रतिहार, राष्ट्रकूट</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पाल (बंगाल), प्रतिहार (उत्तर), राष्ट्रकूट (दक्कन) (जुलाई से जुड़ा: राष्ट्रकूट – तैलप द्वितीय)</div>
         </article>
@@ -1380,6 +1465,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 52</h3>
           <div class="revision-question-text">चोल शासक राजराज प्रथम ने तंजावुर में कौन सा प्रसिद्ध मंदिर बनवाया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) बृहदेश्वर मंदिर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बृहदेश्वर (राजराजेश्वर) मंदिर, तंजावुर (जुलाई से जुड़ा: दक्षिण के राजवंश – यादव)</div>
         </article>
@@ -1387,6 +1473,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 53</h3>
           <div class="revision-question-text">महमूद गज़नवी के साथ भारत आए किस विद्वान ने 'किताब-उल-हिंद' लिखी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अल-बरूनी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अल-बरूनी (तहकीक-ए-हिंद) (जुलाई से जुड़ा: महमूद गज़नवी – जयपाल (1001))</div>
         </article>
@@ -1394,6 +1481,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 54</h3>
           <div class="revision-question-text">1194 ई. के चंदावर युद्ध में मुहम्मद गौरी ने किस शासक को हराया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जयचंद (गहड़वाल, कन्नौज)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जयचंद; इससे गंगा घाटी में तुर्क शासन फैला (जुलाई से जुड़ा: तराइन का द्वितीय युद्ध 1192)</div>
         </article>
@@ -1401,6 +1489,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 55</h3>
           <div class="revision-question-text">सुल्तान बलबन ने अपनी सत्ता मज़बूत करने के लिए किस तुर्क अमीर-समूह की शक्ति समाप्त की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) चालीसा (तुर्कान-ए-चहलगानी)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चालीसा का गठन इल्तुतमिश ने किया था (जुलाई से जुड़ा: बलबन – दैवी राजत्व)</div>
         </article>
@@ -1408,6 +1497,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 56</h3>
           <div class="revision-question-text">1206 ई. में दिल्ली सल्तनत की नींव रखने वाला और उदारता के कारण 'लाखबख्श' (लाखों का दान देने वाला) कहलाने वाला शासक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कुतुबुद्दीन ऐबक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ऐबक – गुलाम (मामलूक) वंश का संस्थापक; राजधानी लाहौर; चौगान (पोलो) खेलते समय घोड़े से गिरकर मृत्यु (1210)।</div>
         </article>
@@ -1415,6 +1505,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 57</h3>
           <div class="revision-question-text">कुतुबुद्दीन ऐबक द्वारा आरंभ की गई कुतुब मीनार को पूरा कराने वाला सुल्तान था –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) इल्तुतमिश</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> इल्तुतमिश ने पूरी कराई; बिजली गिरने से क्षति के बाद फिरोज़ शाह तुगलक ने मरम्मत कराई।</div>
         </article>
@@ -1422,6 +1513,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 58</h3>
           <div class="revision-question-text">वह सुल्तान, जिसने चाँदी की कमी के कारण ताँबे/काँसे की 'सांकेतिक मुद्रा' (Token Currency) चलाई, जो बड़े पैमाने पर जाली सिक्के बनने से असफल रही –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मुहम्मद बिन तुगलक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मुहम्मद बिन तुगलक (1329–30); मोरक्को का यात्री इब्न बतूता इसी के दरबार में आया था।</div>
         </article>
@@ -1429,6 +1521,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 59</h3>
           <div class="revision-question-text">1504 ई. में आगरा नगर की स्थापना करने वाला लोदी वंश का शासक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सिकंदर लोदी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सिकंदर लोदी – आगरा (1504); 'गुलरुखी' उपनाम से कविता; भूमि नापने का 'गज़-ए-सिकंदरी'।</div>
         </article>
@@ -1436,6 +1529,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 60</h3>
           <div class="revision-question-text">पानीपत का प्रथम युद्ध (1526), जिसमें बाबर ने तोपखाने और 'तुलगमा' युद्ध-पद्धति के बल पर जीत हासिल की, किसके विरुद्ध लड़ा गया था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) इब्राहिम लोदी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 21 अप्रैल 1526; खानवा (1527) – राणा सांगा; चंदेरी (1528) – मेदिनी राय; पानीपत द्वितीय (1556) – हेमू।</div>
         </article>
@@ -1443,6 +1537,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 61</h3>
           <div class="revision-question-text">'रुपया' नामक चाँदी का सिक्का चलाने और सोनारगाँव से पेशावर तक 'सड़क-ए-आज़म' (ग्रैंड ट्रंक रोड) का पुनर्निर्माण कराने वाला शासक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शेरशाह सूरी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शेरशाह (1540–45) – रुपया (लगभग 178 ग्रेन चाँदी), डाक-चौकियाँ, सराएँ; मकबरा सासाराम (बिहार) में।</div>
         </article>
@@ -1450,6 +1545,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 62</h3>
           <div class="revision-question-text">अकबर की मनसबदारी व्यवस्था में 'मनसब' शब्द का अर्थ था –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पद या दर्जा (रैंक)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मनसब = पद/रैंक; 'ज़ात' से व्यक्तिगत पद और 'सवार' से घुड़सवारों की संख्या तय होती थी।</div>
         </article>
@@ -1457,6 +1553,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 63</h3>
           <div class="revision-question-text">गुजरात विजय की स्मृति में अकबर द्वारा फतेहपुर सीकरी में बनवाया गया विशाल प्रवेश-द्वार, जो विश्व के सबसे ऊँचे द्वारों में गिना जाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) बुलंद दरवाज़ा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बुलंद दरवाज़ा (लगभग 1575–76); अलाई दरवाज़ा (दिल्ली) – अलाउद्दीन खिलजी।</div>
         </article>
@@ -1464,6 +1561,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 64</h3>
           <div class="revision-question-text">हल्दीघाटी के युद्ध (1576) में महाराणा प्रताप के विरुद्ध मुगल सेना का नेतृत्व किसने किया था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) राजा मानसिंह</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आमेर के राजा मानसिंह (साथ में आसफ खाँ); प्रताप की ओर से हकीम खाँ सूर; प्रताप का घोड़ा 'चेतक'।</div>
         </article>
@@ -1471,6 +1569,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 65</h3>
           <div class="revision-question-text">शिवाजी द्वारा राज्य का प्रशासन चलाने के लिए बनाई गई आठ मंत्रियों की परिषद कहलाती थी –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अष्टप्रधान</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अष्टप्रधान में पेशवा (प्रधानमंत्री) प्रमुख; शिवाजी का राज्याभिषेक 1674, रायगढ़। चालीसा – सल्तनत काल का तुर्कान-ए-चिहलगानी।</div>
         </article>
@@ -1478,6 +1577,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 66</h3>
           <div class="revision-question-text">संत कबीर के गुरु, जिन्होंने भक्ति आंदोलन को दक्षिण से उत्तर भारत में लोकप्रिय बनाया –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) रामानंद</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रामानंद के शिष्यों में कबीर, रैदास (रविदास), धन्ना, पीपा।</div>
         </article>
@@ -1485,6 +1585,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 67</h3>
           <div class="revision-question-text">गोस्वामी तुलसीदास ने 'रामचरितमानस' की रचना किस भाषा में की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अवधी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अवधी (1574 ई. में अयोध्या में आरंभ); 'विनयपत्रिका' व 'कवितावली' ब्रजभाषा में।</div>
         </article>
@@ -1492,6 +1593,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 68</h3>
           <div class="revision-question-text">दिल्ली सल्तनत की पहली और एकमात्र महिला शासक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) रज़िया सुल्तान</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रज़िया (1236–40), इल्तुतमिश की पुत्री; नूरजहाँ मुग़ल बेगम थी, शासक नहीं।</div>
         </article>
@@ -1499,6 +1601,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 69</h3>
           <div class="revision-question-text">1336 ई. में तुंगभद्रा नदी के तट पर विजयनगर साम्राज्य की स्थापना करने वाले भाई –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) हरिहर और बुक्का</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> हरिहर-बुक्का (संगम वंश); सबसे प्रसिद्ध शासक कृष्णदेवराय; तालीकोटा (1565) के बाद पतन; हसन गंगू – बहमनी राज्य (1347)।</div>
         </article>
@@ -1506,6 +1609,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 70</h3>
           <div class="revision-question-text">विभिन्न धर्मों के विद्वानों के साथ धार्मिक चर्चा के लिए अकबर ने 1575 में फ़तेहपुर सीकरी में कौन-सा भवन बनवाया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) इबादतख़ाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> इबादतख़ाना (1575); 1582 में अकबर ने 'दीन-ए-इलाही' चलाया; पंचमहल – पाँच मंज़िला महल।</div>
         </article>
@@ -1513,6 +1617,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 71</h3>
           <div class="revision-question-text">गंगा तक सफल विजय अभियान के बाद 'गंगैकोंडचोल' की उपाधि लेने और गंगैकोंडचोलपुरम नई राजधानी बसाने वाला चोल शासक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) राजेंद्र प्रथम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> राजेंद्र प्रथम (1014–44); पिता राजराज प्रथम ने तंजावुर का बृहदेश्वर मंदिर बनवाया; राजेंद्र प्रथम ने नौसेना से श्रीविजय (दक्षिण-पूर्व एशिया) पर भी अभियान किया।</div>
         </article>
@@ -1520,6 +1625,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 72</h3>
           <div class="revision-question-text">घोड़ों को दाग़ने (दाग़) और सैनिकों का हुलिया (चेहरा-विवरण) दर्ज करने की प्रथा शुरू करने वाला दिल्ली सुल्तान –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अलाउद्दीन ख़िलजी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अलाउद्दीन ख़िलजी (1296–1316) – स्थायी सेना, बाज़ार नियंत्रण (बाज़ार अधीक्षक 'शहना-ए-मंडी'); आगे शेरशाह और अकबर ने भी दाग़ प्रथा अपनाई।</div>
         </article>
@@ -1527,6 +1633,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 73</h3>
           <div class="revision-question-text">आगरा क़िले में 'न्याय की ज़ंजीर' (ज़ंजीर-ए-अदल) लगवाने वाला मुग़ल बादशाह, ताकि कोई भी फ़रियादी सीधे बादशाह तक पहुँच सके –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) जहाँगीर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जहाँगीर (1605–27) – 60 घंटियों वाली सोने की ज़ंजीर; आत्मकथा 'तुज़ुक-ए-जहाँगीरी'; उसके दरबार में अंग्रेज़ दूत सर टॉमस रो (1615) आया।</div>
         </article>
@@ -1538,6 +1645,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 74</h3>
           <div class="revision-question-text">भारत में पहला पुर्तगाली वायसराय कौन था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) फ्रांसिस्को डी अल्मेडा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अल्मेडा (1505); अल्बुकर्क ने 1510 में गोवा जीता</div>
         </article>
@@ -1545,6 +1653,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 75</h3>
           <div class="revision-question-text">1757 के प्लासी युद्ध में अंग्रेज़ों ने किसे हराया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सिराजुद्दौला</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बंगाल का नवाब सिराजुद्दौला; क्लाइव की जीत</div>
         </article>
@@ -1552,6 +1661,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 76</h3>
           <div class="revision-question-text">बंगाल में स्थायी बंदोबस्त (1793) किस गवर्नर जनरल ने लागू किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कॉर्नवालिस</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कॉर्नवालिस; महालवाड़ी में गाँव का मुखिया लगान वसूलता था</div>
         </article>
@@ -1559,6 +1669,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 77</h3>
           <div class="revision-question-text">स्वामी विवेकानंद का बचपन का नाम क्या था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नरेंद्रनाथ दत्त</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> नरेंद्रनाथ दत्त; गदाधर = रामकृष्ण परमहंस, मूलशंकर = दयानंद</div>
         </article>
@@ -1566,6 +1677,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 78</h3>
           <div class="revision-question-text">1875 में बंबई में आर्य समाज की स्थापना किसने की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) स्वामी दयानंद सरस्वती</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> दयानंद सरस्वती; रामकृष्ण मिशन (1897) विवेकानंद ने बनाया</div>
         </article>
@@ -1573,6 +1685,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 79</h3>
           <div class="revision-question-text">1857 के विद्रोह में लखनऊ में नेतृत्व किसने किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) बेगम हज़रत महल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बेगम हज़रत महल; लक्ष्मीबाई – झाँसी, अवंतीबाई – रामगढ़</div>
         </article>
@@ -1580,6 +1693,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 80</h3>
           <div class="revision-question-text">गोरखपुर के चौरी-चौरा कांड (1922) के बाद गांधीजी ने कौन सा आंदोलन वापस लिया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) असहयोग आंदोलन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> असहयोग आंदोलन फ़रवरी 1922 में वापस</div>
         </article>
@@ -1587,6 +1701,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 81</h3>
           <div class="revision-question-text">भारत में पुर्तगाली साम्राज्य का वास्तविक संस्थापक किसे माना जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अल्फ़ांसो डी अल्बुकर्क</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अल्बुकर्क ने 1510 में बीजापुर के आदिलशाही सुल्तान से गोवा जीता (जुलाई से जुड़ा: गोवा 1510 (दो पालियों में))</div>
         </article>
@@ -1594,6 +1709,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 82</h3>
           <div class="revision-question-text">1498 में वास्को डी गामा भारत के किस बंदरगाह पर पहुँचा और वहाँ का शासक कौन था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कालीकट – ज़मोरिन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कालीकट (कप्पड़ तट) का शासक ज़मोरिन (जुलाई से जुड़ा: वास्को डी गामा – समुद्री मार्ग)</div>
         </article>
@@ -1601,6 +1717,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 83</h3>
           <div class="revision-question-text">1615 में जहाँगीर के दरबार में आकर अंग्रेज़ों के लिए व्यापारिक सुविधाएँ प्राप्त करने वाला इंग्लैंड के राजा जेम्स प्रथम का राजदूत कौन था?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सर टॉमस रो</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सर टॉमस रो; हॉकिंस 1608–09 में आया था (जुलाई से जुड़ा: ईस्ट इंडिया कंपनी – 17वीं सदी)</div>
         </article>
@@ -1608,6 +1725,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 84</h3>
           <div class="revision-question-text">स्वामी विवेकानंद की जयंती 12 जनवरी को किस रूप में मनाई जाती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) राष्ट्रीय युवा दिवस</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> राष्ट्रीय युवा दिवस (1985 से) (जुलाई से जुड़ा: विवेकानंद – 'उठो, जागो', रामकृष्ण मिशन)</div>
         </article>
@@ -1615,6 +1733,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 85</h3>
           <div class="revision-question-text">भारत में पहली यात्री रेलगाड़ी 16 अप्रैल 1853 को कहाँ से कहाँ तक चली?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बंबई (बोरीबंदर) – ठाणे</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बोरीबंदर–ठाणे, डलहौज़ी का काल (जुलाई से जुड़ा: रेलवे से पहले अंतर्देशीय जलमार्ग)</div>
         </article>
@@ -1622,6 +1741,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 86</h3>
           <div class="revision-question-text">बक्सर के युद्ध (1764) में अंग्रेज़ों के विरुद्ध बंगाल के नवाब मीर कासिम, अवध के नवाब शुजाउद्दौला और किस मुगल बादशाह की संयुक्त सेना लड़ी थी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शाह आलम द्वितीय</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शाह आलम द्वितीय; अंग्रेज़ सेनापति हेक्टर मुनरो। इलाहाबाद की संधि (1765) से बंगाल, बिहार, उड़ीसा की दीवानी कंपनी को मिली।</div>
         </article>
@@ -1629,6 +1749,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 87</h3>
           <div class="revision-question-text">'व्यपगत का सिद्धांत' (Doctrine of Lapse) – जिसके अनुसार निःसंतान शासक की मृत्यु पर दत्तक पुत्र को उत्तराधिकारी न मानकर राज्य को अंग्रेज़ी राज में मिला लिया जाता था – किसने लागू किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) लॉर्ड डलहौज़ी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डलहौज़ी (1848–56); पहला शिकार सतारा (1848), फिर झाँसी, नागपुर। सहायक संधि – वेलेज़ली।</div>
         </article>
@@ -1636,6 +1757,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 88</h3>
           <div class="revision-question-text">1857 के विद्रोह की शुरुआत 10 मई 1857 को किस छावनी से हुई?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मेरठ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मेरठ (10 मई); 29 मार्च 1857 को बैरकपुर में मंगल पांडे की घटना पहले हुई थी, पर विद्रोह मेरठ से फैला।</div>
         </article>
@@ -1643,6 +1765,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 89</h3>
           <div class="revision-question-text">राजा राममोहन राय के प्रयासों से 1829 में सती प्रथा पर कानूनी रोक लगाने वाला गवर्नर-जनरल –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लॉर्ड विलियम बेंटिंक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बेंटिंक – सती निषेध (नियम XVII, 1829)। विधवा पुनर्विवाह अधिनियम (1856) – ईश्वरचंद्र विद्यासागर के प्रयास से।</div>
         </article>
@@ -1650,6 +1773,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 90</h3>
           <div class="revision-question-text">भारतीय राष्ट्रीय कांग्रेस का पहला अधिवेशन (दिसंबर 1885) कहाँ हुआ और उसके अध्यक्ष कौन थे?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) बंबई – व्योमेश चंद्र बनर्जी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बंबई (गोकुलदास तेजपाल संस्कृत कॉलेज), 72 प्रतिनिधि; संस्थापक ए.ओ. ह्यूम। अधिवेशन पूना में होना था, हैज़े के कारण बंबई में हुआ।</div>
         </article>
@@ -1657,6 +1781,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 91</h3>
           <div class="revision-question-text">"स्वराज मेरा जन्मसिद्ध अधिकार है और मैं इसे लेकर रहूँगा" – यह घोषणा किसने की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) बाल गंगाधर तिलक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> तिलक – 'केसरी' (मराठी) व 'मराठा' (अंग्रेज़ी) पत्र; 'लाल-बाल-पाल' में 'बाल'।</div>
         </article>
@@ -1664,6 +1789,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 92</h3>
           <div class="revision-question-text">नील की खेती करने वाले किसानों पर थोपी गई 'तिनकठिया' प्रथा के विरोध में भारत में गांधीजी का पहला सत्याग्रह (1917) कहाँ हुआ?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) चंपारण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चंपारण (बिहार), 1917 – राजकुमार शुक्ल के आग्रह पर; खेड़ा (1918) – लगान माफ़ी; अहमदाबाद (1918) – मिल मज़दूर।</div>
         </article>
@@ -1671,6 +1797,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 93</h3>
           <div class="revision-question-text">13 अप्रैल 1919 (बैसाखी) को जनरल डायर के आदेश पर निहत्थी भीड़ पर गोलियाँ चलाने की घटना कहाँ हुई?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) जलियाँवाला बाग, अमृतसर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जलियाँवाला बाग – रौलट एक्ट के विरोध की सभा; टैगोर ने 'नाइट' की उपाधि लौटा दी। अल्फ्रेड पार्क (प्रयागराज) – चंद्रशेखर आज़ाद का बलिदान (1931)।</div>
         </article>
@@ -1678,6 +1805,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 94</h3>
           <div class="revision-question-text">9 अगस्त 1925 को लखनऊ के निकट सरकारी ख़ज़ाना ले जा रही रेलगाड़ी को रोककर क्रांतिकारी कार्यों के लिए धन जुटाने की योजना (काकोरी कांड) का नेतृत्व किसने किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) राम प्रसाद 'बिस्मिल'</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बिस्मिल (हिंदुस्तान रिपब्लिकन एसोसिएशन); अशफ़ाकउल्ला खाँ, रोशन सिंह, राजेंद्र लाहिड़ी को भी फाँसी; चंद्रशेखर आज़ाद भी इसमें शामिल थे।</div>
         </article>
@@ -1685,6 +1813,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 95</h3>
           <div class="revision-question-text">12 मार्च 1930 को साबरमती आश्रम से आरंभ हुई 'दांडी यात्रा' (नमक कानून तोड़ना) किस आंदोलन की शुरुआत थी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सविनय अवज्ञा आंदोलन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 78 साथियों के साथ लगभग 24 दिन की यात्रा; 6 अप्रैल 1930 को दांडी (गुजरात) में नमक कानून तोड़ा।</div>
         </article>
@@ -1692,6 +1821,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 96</h3>
           <div class="revision-question-text">गांधीजी ने 'करो या मरो' (Do or Die) का नारा किस आंदोलन के समय दिया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) भारत छोड़ो आंदोलन (1942)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 8 अगस्त 1942, ग्वालिया टैंक मैदान (बंबई); 9 अगस्त 'अगस्त क्रांति दिवस'।</div>
         </article>
@@ -1699,6 +1829,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 97</h3>
           <div class="revision-question-text">स्वतंत्रता के बाद 560 से अधिक देशी रियासतों के भारत में विलय का मुख्य श्रेय जिन्हें दिया जाता है और जिन्हें 'भारत का लौह पुरुष' कहा जाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सरदार वल्लभभाई पटेल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पटेल – पहले गृह मंत्री व उप-प्रधानमंत्री; 31 अक्टूबर (जन्मदिन) 'राष्ट्रीय एकता दिवस'; 'स्टैच्यू ऑफ यूनिटी' (गुजरात)।</div>
         </article>
@@ -1706,6 +1837,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 98</h3>
           <div class="revision-question-text">1875 में अलीगढ़ में 'मोहम्मडन एंग्लो-ओरिएंटल कॉलेज' (आगे चलकर अलीगढ़ मुस्लिम विश्वविद्यालय) की स्थापना किसने की?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सर सैयद अहमद ख़ान</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सर सैयद (अलीगढ़ आंदोलन); 1920 में यह अलीगढ़ मुस्लिम विश्वविद्यालय बना।</div>
         </article>
@@ -1713,6 +1845,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 99</h3>
           <div class="revision-question-text">1916 में कांग्रेस और मुस्लिम लीग के बीच हुआ समझौता, जिसमें तिलक और जिन्ना की प्रमुख भूमिका थी, किस शहर में हुआ?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) लखनऊ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लखनऊ समझौता (1916) – कांग्रेस व लीग पहली बार साथ; उसी वर्ष होम रूल आंदोलन (तिलक, एनी बेसेंट)।</div>
         </article>
@@ -1720,6 +1853,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 100</h3>
           <div class="revision-question-text">1857 के विद्रोह में कानपुर में विद्रोहियों का नेतृत्व किसने किया, जो पेशवा बाजीराव द्वितीय के दत्तक पुत्र थे?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नाना साहब</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> नाना साहब (धोंधू पंत), तात्या टोपे उनके सेनापति; लखनऊ – बेगम हज़रत महल, झाँसी – रानी लक्ष्मीबाई, जगदीशपुर (बिहार) – कुँवर सिंह, फ़ैज़ाबाद – मौलवी अहमदुल्ला।</div>
         </article>
@@ -1727,6 +1861,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 101</h3>
           <div class="revision-question-text">1932 में दलित वर्गों के प्रतिनिधित्व के प्रश्न पर महात्मा गांधी और डॉ. भीमराव अंबेडकर के बीच हुआ समझौता –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पूना पैक्ट</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पूना पैक्ट (24 सितंबर 1932, यरवदा जेल) – रैम्से मैकडोनाल्ड के 'सांप्रदायिक पंचाट' (अगस्त 1932) के पृथक निर्वाचन के विरोध में गांधीजी के अनशन के बाद; संयुक्त निर्वाचन में दलितों के लिए 148 सुरक्षित सीटें तय हुईं।</div>
         </article>
@@ -1734,6 +1869,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 102</h3>
           <div class="revision-question-text">स्वतंत्र भारत के पहले और अंतिम भारतीय गवर्नर-जनरल –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सी. राजगोपालाचारी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सी. राजगोपालाचारी ('राजाजी', 1948–50); पहले गवर्नर-जनरल लॉर्ड माउंटबेटन; 1954 में पहला भारत रत्न – राजाजी, सर्वपल्ली राधाकृष्णन और सी.वी. रमन को।</div>
         </article>

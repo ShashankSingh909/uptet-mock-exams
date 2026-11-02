@@ -1,0 +1,1528 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>विशेष TET 2026 — हिंदी: 60 प्रश्नों का चुना हुआ पेपर — रिवीज़न</title>
+    <style>:root {
+  color-scheme: light;
+  --teal-950: #073b3d;
+  --teal-800: #075f63;
+  --teal-700: #08777a;
+  --blue-700: #0b57d0;
+  --blue-100: #e9f1ff;
+  --amber-700: #b85d00;
+  --amber-100: #fff2dd;
+  --violet-700: #673ab7;
+  --violet-100: #f0eaff;
+  --green-700: #117a45;
+  --green-100: #e8f6ee;
+  --red-700: #b3261e;
+  --red-100: #fce8e6;
+  --ink: #172026;
+  --muted: #5e6b73;
+  --line: #d6dde1;
+  --surface: #ffffff;
+  --canvas: #f4f7f8;
+  --focus: #ffbf47;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(7, 59, 61, 0.09);
+  font-family: "Noto Sans Devanagari", "Nirmala UI", Mangal, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible + span,
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 16px;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: 0 2px 10px rgba(7, 59, 61, 0.2);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 4.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.topbar .paper-label {
+  margin: 2px 0 0;
+  color: #d9f3f1;
+  font-size: 0.78rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar button {
+  padding: 8px 11px;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: transparent;
+  font-size: 0.86rem;
+}
+
+.exam-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.timer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.timer-main {
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-label,
+.stat-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.timer {
+  margin-top: 2px;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.timer.urgent {
+  color: var(--red-700);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.status-item {
+  min-width: 0;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.status-item + .status-item {
+  border-left: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.answered .stat-number {
+  color: var(--green-700);
+}
+
+.remaining .stat-number {
+  color: var(--amber-700);
+}
+
+.reviewed .stat-number {
+  color: var(--violet-700);
+}
+
+.section-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #edf6f5;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nearby-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.nearby-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(38px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.number-button,
+.palette-button {
+  position: relative;
+  min-width: 42px;
+  border-color: #bdc8ce;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+}
+
+.number-button.current {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.number-button.answered:not(.current),
+.palette-button.answered:not(.current) {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.number-button.review:not(.current),
+.palette-button.review:not(.current) {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.number-button.answered.review:not(.current),
+.palette-button.answered.review:not(.current) {
+  box-shadow: inset 0 -5px 0 var(--violet-700);
+}
+
+.nearby-nav > button,
+.open-palette {
+  padding: 7px 10px;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+  font-weight: 700;
+}
+
+.question-area {
+  padding: 18px 16px 120px;
+  background: var(--surface);
+}
+
+.question-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-meta h2 {
+  margin: 0;
+  color: var(--blue-700);
+  font-size: 1.35rem;
+}
+
+.question-meta span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.passage {
+  margin: 18px 0;
+  padding: 14px;
+  border-left: 4px solid var(--teal-700);
+  background: #f6fbfa;
+  white-space: pre-line;
+}
+
+.question-text {
+  margin: 22px 0;
+  font-size: clamp(1.08rem, 4.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1.5px solid #c8d1d6;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--blue-700);
+}
+
+.option-row.selected {
+  border-color: var(--blue-700);
+  background: var(--blue-100);
+  box-shadow: inset 4px 0 0 var(--blue-700);
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.option-label {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #7a8991;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.selected .option-label {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.option-text {
+  line-height: 1.55;
+}
+
+.bottom-actions {
+  position: fixed;
+  z-index: 18;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  gap: 10px;
+  padding: 10px max(14px, calc((100vw - 1090px) / 2));
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -5px 18px rgba(21, 31, 36, 0.08);
+}
+
+.bottom-actions button {
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+}
+
+.primary {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.review-action {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 128px;
+  background: var(--surface);
+}
+
+#submit-exam {
+  width: min(100%, 440px);
+  border-color: var(--red-700);
+  color: #fff;
+  background: var(--red-700);
+  font-weight: 800;
+}
+
+.message {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid #e4bb72;
+  border-radius: var(--radius);
+  background: #fff8e8;
+}
+
+dialog {
+  width: min(92vw, 680px);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(4, 29, 31, 0.62);
+}
+
+.dialog-header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dialog-close {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend span::before {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  content: "";
+}
+
+.legend .lg-answered {
+  color: var(--green-700);
+}
+
+.legend .lg-review {
+  color: var(--violet-700);
+}
+
+.legend .lg-current {
+  color: var(--blue-700);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 4px 16px 20px;
+}
+
+.result-view,
+.review-view,
+.storage-error {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 26px 16px 50px;
+}
+
+.result-hero {
+  padding: 24px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--teal-800);
+  text-align: center;
+}
+
+.score {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: clamp(3rem, 16vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.result-stat {
+  padding: 14px 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.result-stat strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.result-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.result-actions button,
+.review-toolbar button {
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.review-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: var(--canvas);
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-tabs {
+  position: sticky;
+  z-index: 9;
+  top: 118px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 8px 0 10px;
+  background: var(--canvas);
+}
+
+.review-tab {
+  padding: 9px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-950);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-tab span {
+  display: inline-flex;
+  min-width: 24px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #eef4f5;
+}
+
+.review-tab.active {
+  border-color: var(--teal-700);
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.review-tab.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.review-card.correct {
+  border-left: 5px solid var(--green-700);
+}
+
+.review-card.incorrect {
+  border-left: 5px solid var(--red-700);
+}
+
+.review-card.unanswered {
+  border-left: 5px solid var(--amber-700);
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-question-text {
+  margin-bottom: 12px;
+}
+
+.review-options {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.review-option.correct-option {
+  border-color: rgba(21, 128, 61, 0.45);
+  background: #f0fdf4;
+}
+
+.review-option.incorrect-option {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: #fef2f2;
+}
+
+.review-option-badges {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-badge {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correct-badge {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.selected-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.empty-review {
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.answer-line {
+  margin: 8px 0;
+}
+
+.answer-line strong {
+  color: var(--teal-950);
+}
+
+.answer-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f1f6f7;
+}
+
+.selector {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 36px 18px 60px;
+}
+
+.selector-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.selector-heading h1,
+.selector-heading h2 {
+  margin-bottom: 8px;
+  color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
+}
+
+.paper-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.paper-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.paper-card h2 {
+  margin: 0 0 8px;
+}
+
+.paper-card p {
+  color: var(--muted);
+}
+
+.paper-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--blue-700);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.warning-note {
+  margin: 0 0 22px;
+  padding: 14px;
+  border-left: 4px solid var(--amber-700);
+  background: var(--amber-100);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .timer-panel {
+    grid-template-columns: minmax(240px, 0.8fr) 1.4fr;
+    align-items: stretch;
+  }
+
+  .status-grid {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .question-area {
+    padding-inline: clamp(28px, 6vw, 74px);
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .nearby-numbers {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-actions {
+    grid-template-columns: 180px 220px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+  </head>
+  <body data-mode="revision" data-question-count="60">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">हिंदी — 60 चुनिंदा प्रश्न</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>विशेष TET 2026 — हिंदी: 60 प्रश्नों का चुना हुआ पेपर</h2>
+        <p>300 प्रश्नों में से चुने गए 60 • विकल्पों सहित रिवीज़न</p>
+        <p class="revision-note">60 प्रश्न • केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–60)</summary>
+        
+        <div class="jump-group">
+          <p>हिंदी — 60 चुनिंदा प्रश्न</p>
+          <div class="jump-numbers"><a href="#q-1">1</a><a href="#q-2">2</a><a href="#q-3">3</a><a href="#q-4">4</a><a href="#q-5">5</a><a href="#q-6">6</a><a href="#q-7">7</a><a href="#q-8">8</a><a href="#q-9">9</a><a href="#q-10">10</a><a href="#q-11">11</a><a href="#q-12">12</a><a href="#q-13">13</a><a href="#q-14">14</a><a href="#q-15">15</a><a href="#q-16">16</a><a href="#q-17">17</a><a href="#q-18">18</a><a href="#q-19">19</a><a href="#q-20">20</a><a href="#q-21">21</a><a href="#q-22">22</a><a href="#q-23">23</a><a href="#q-24">24</a><a href="#q-25">25</a><a href="#q-26">26</a><a href="#q-27">27</a><a href="#q-28">28</a><a href="#q-29">29</a><a href="#q-30">30</a><a href="#q-31">31</a><a href="#q-32">32</a><a href="#q-33">33</a><a href="#q-34">34</a><a href="#q-35">35</a><a href="#q-36">36</a><a href="#q-37">37</a><a href="#q-38">38</a><a href="#q-39">39</a><a href="#q-40">40</a><a href="#q-41">41</a><a href="#q-42">42</a><a href="#q-43">43</a><a href="#q-44">44</a><a href="#q-45">45</a><a href="#q-46">46</a><a href="#q-47">47</a><a href="#q-48">48</a><a href="#q-49">49</a><a href="#q-50">50</a><a href="#q-51">51</a><a href="#q-52">52</a><a href="#q-53">53</a><a href="#q-54">54</a><a href="#q-55">55</a><a href="#q-56">56</a><a href="#q-57">57</a><a href="#q-58">58</a><a href="#q-59">59</a><a href="#q-60">60</a></div>
+        </div>
+      </details>
+      
+      <section class="revision-section">
+        <h2 class="revision-section-title">हिंदी — 60 चुनिंदा प्रश्न</h2>
+        
+        <article class="revision-card" id="q-1">
+          
+          <h3>प्रश्न 1</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा तत्सम–तद्भव युग्म सही है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>नारिकेल – नारंगी</span></li><li class=""><span class="option-label">ब</span><span>मक्षिका – मच्छर</span></li><li class=""><span class="option-label">स</span><span>नारिकेल – नाली</span></li><li class="correct"><span class="option-label">द</span><span>मक्षिका – मक्खी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मक्षिका – मक्खी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मक्षिका → मक्खी; नारिकेल → नारियल।</div>
+        </article>
+        <article class="revision-card" id="q-2">
+          
+          <h3>प्रश्न 2</h3>
+          <div class="revision-question-text">‘यह मोहन की पुस्तक है।’ — ‘मोहन की’ में कारक है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>संप्रदान</span></li><li class=""><span class="option-label">ब</span><span>करण</span></li><li class="correct"><span class="option-label">स</span><span>संबंध</span></li><li class=""><span class="option-label">द</span><span>अधिकरण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) संबंध</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> का, के, की = संबंध कारक।</div>
+        </article>
+        <article class="revision-card" id="q-3">
+          
+          <h3>प्रश्न 3</h3>
+          <div class="revision-question-text">‘गोधूम’ और ‘कर्पट’ के तद्भव रूप क्रमशः हैं —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>गोबर, कपट</span></li><li class="correct"><span class="option-label">ब</span><span>गेहूँ, कपड़ा</span></li><li class=""><span class="option-label">स</span><span>कपड़ा, गेहूँ</span></li><li class=""><span class="option-label">द</span><span>धुआँ, कपास</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गेहूँ, कपड़ा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गोधूम → गेहूँ; कर्पट → कपड़ा।</div>
+        </article>
+        <article class="revision-card" id="q-4">
+          
+          <h3>प्रश्न 4</h3>
+          <div class="revision-question-text">‘रीता सो रही है’ और ‘रीता फल खा रही है’ — इनमें क्रियाएँ क्रमशः हैं —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सकर्मक, अकर्मक</span></li><li class="correct"><span class="option-label">ब</span><span>अकर्मक, सकर्मक</span></li><li class=""><span class="option-label">स</span><span>दोनों अकर्मक</span></li><li class=""><span class="option-label">द</span><span>दोनों सकर्मक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अकर्मक, सकर्मक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सोना — कर्म नहीं; खाना — कर्म ‘फल’।</div>
+        </article>
+        <article class="revision-card" id="q-5">
+          
+          <h3>प्रश्न 5</h3>
+          <div class="revision-question-text">‘घबराहट’ और ‘सजावट’ में प्रत्यय क्रमशः हैं —</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>आहट, आवट</span></li><li class=""><span class="option-label">ब</span><span>हट, वट</span></li><li class=""><span class="option-label">स</span><span>आवट, आहट</span></li><li class=""><span class="option-label">द</span><span>ट, ट</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) आहट, आवट</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> घबरा + आहट, सज + आवट।</div>
+        </article>
+        <article class="revision-card" id="q-6">
+          
+          <h3>प्रश्न 6</h3>
+          <div class="revision-question-text">निम्न में कौन-सा युग्म अशुद्ध है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>क — कंठ्य, अघोष</span></li><li class="correct"><span class="option-label">ब</span><span>ध — दंत्य, अघोष</span></li><li class=""><span class="option-label">स</span><span>ब — ओष्ठ्य, सघोष</span></li><li class=""><span class="option-label">द</span><span>स — दंत्य, अघोष</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ध — दंत्य, अघोष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रश्न में ‘अशुद्ध’ है। ध दंत्य है पर सघोष (और महाप्राण)।</div>
+        </article>
+        <article class="revision-card" id="q-7">
+          
+          <h3>प्रश्न 7</h3>
+          <div class="revision-question-text">‘अक्ल पर पत्थर पड़ना’ का अर्थ है ______</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सिर पर चोट लगना</span></li><li class="correct"><span class="option-label">ब</span><span>बुद्धि भ्रष्ट हो जाना</span></li><li class=""><span class="option-label">स</span><span>बहुत बुद्धिमान होना</span></li><li class=""><span class="option-label">द</span><span>बहुत परिश्रम करना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) बुद्धि भ्रष्ट हो जाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सोच-समझ काम न करना।</div>
+        </article>
+        <article class="revision-card" id="q-8">
+          
+          <h3>प्रश्न 8</h3>
+          <div class="revision-question-text">‘रेलगाड़ी’ और ‘टिकटघर’ किस प्रकार के शब्द हैं?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>संकर शब्द</span></li><li class=""><span class="option-label">ब</span><span>देशज शब्द</span></li><li class=""><span class="option-label">स</span><span>तत्सम शब्द</span></li><li class=""><span class="option-label">द</span><span>तद्भव शब्द</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) संकर शब्द</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दो भाषाओं के शब्दों से बने: रेल (अंग्रेज़ी) + गाड़ी (हिंदी)।</div>
+        </article>
+        <article class="revision-card" id="q-9">
+          
+          <h3>प्रश्न 9</h3>
+          <div class="revision-question-text">‘तत् + लीन’ का सन्धि रूप क्या है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>तत्लीन</span></li><li class="correct"><span class="option-label">ब</span><span>तल्लीन</span></li><li class=""><span class="option-label">स</span><span>तद्लीन</span></li><li class=""><span class="option-label">द</span><span>तलीन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) तल्लीन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त् + ल = ल्ल (व्यंजन संधि)।</div>
+        </article>
+        <article class="revision-card" id="q-10">
+          
+          <h3>प्रश्न 10</h3>
+          <div class="revision-question-text">‘गरिमा’ का विलोम है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>महिमा</span></li><li class=""><span class="option-label">ब</span><span>कालिमा</span></li><li class="correct"><span class="option-label">स</span><span>लघिमा</span></li><li class=""><span class="option-label">द</span><span>लालिमा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) लघिमा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गरिमा (भारीपन/गौरव) ↔ लघिमा (हल्कापन)।</div>
+        </article>
+        <article class="revision-card" id="q-11">
+          
+          <h3>प्रश्न 11</h3>
+          <div class="revision-question-text">‘जंगल में लगने वाली आग’ के लिए एक शब्द है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>बड़वानल</span></li><li class=""><span class="option-label">ब</span><span>जठरानल</span></li><li class="correct"><span class="option-label">स</span><span>दावानल</span></li><li class=""><span class="option-label">द</span><span>वज्रानल</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) दावानल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दावानल = वन की आग; बड़वानल = समुद्र की आग; जठरानल = पेट की आग।</div>
+        </article>
+        <article class="revision-card" id="q-12">
+          
+          <h3>प्रश्न 12</h3>
+          <div class="revision-question-text">‘हरिद्रा’ का तद्भव रूप है —</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>हल्दी</span></li><li class=""><span class="option-label">ब</span><span>हरियाली</span></li><li class=""><span class="option-label">स</span><span>हरा</span></li><li class=""><span class="option-label">द</span><span>हिरदा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) हल्दी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हरिद्रा (तत्सम) → हल्दी (तद्भव)।</div>
+        </article>
+        <article class="revision-card" id="q-13">
+          
+          <h3>प्रश्न 13</h3>
+          <div class="revision-question-text">अलि – अली, युग्म शब्दों का सही अर्थ है ______</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सखी – भौंरा</span></li><li class="correct"><span class="option-label">ब</span><span>भौंरा – सखी</span></li><li class=""><span class="option-label">स</span><span>कली – फूल</span></li><li class=""><span class="option-label">द</span><span>पंक्ति – सखी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) भौंरा – सखी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अलि = भौंरा; अली = सखी। क्रम भी देखें।</div>
+        </article>
+        <article class="revision-card" id="q-14">
+          
+          <h3>प्रश्न 14</h3>
+          <div class="revision-question-text">‘आँख का अंधा नाम नयनसुख’ — लोकोक्ति का अर्थ है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अंधे को सुख मिलना</span></li><li class=""><span class="option-label">ब</span><span>आँखों का इलाज करना</span></li><li class=""><span class="option-label">स</span><span>नाम से ही सुख मिलना</span></li><li class="correct"><span class="option-label">द</span><span>गुण के विपरीत नाम होना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) गुण के विपरीत नाम होना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नाम और गुण में उल्टा संबंध।</div>
+        </article>
+        <article class="revision-card" id="q-15">
+          
+          <h3>प्रश्न 15</h3>
+          <div class="revision-question-text">‘क़, ख़, ग़’ जैसी नुक़्ता वाली ध्वनियाँ हिंदी में किन भाषाओं से आई हैं?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>अरबी-फ़ारसी</span></li><li class=""><span class="option-label">ब</span><span>संस्कृत</span></li><li class=""><span class="option-label">स</span><span>पुर्तगाली</span></li><li class=""><span class="option-label">द</span><span>तमिल</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अरबी-फ़ारसी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नुक़्ता वाली ध्वनियाँ अरबी-फ़ारसी शब्दों से आईं।</div>
+        </article>
+        <article class="revision-card" id="q-16">
+          
+          <h3>प्रश्न 16</h3>
+          <div class="revision-question-text">‘सामाजिक’ और ‘ऐतिहासिक’ में प्रत्यय है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>क</span></li><li class="correct"><span class="option-label">ब</span><span>इक</span></li><li class=""><span class="option-label">स</span><span>सिक</span></li><li class=""><span class="option-label">द</span><span>जिक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) इक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समाज + इक, इतिहास + इक (पहला स्वर वृद्धि होता है)।</div>
+        </article>
+        <article class="revision-card" id="q-17">
+          
+          <h3>प्रश्न 17</h3>
+          <div class="revision-question-text">‘किसलय’ और ‘पल्लव’ किसके पर्यायवाची हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>फूल</span></li><li class=""><span class="option-label">ब</span><span>शाखा</span></li><li class="correct"><span class="option-label">स</span><span>पत्ता (कोंपल)</span></li><li class=""><span class="option-label">द</span><span>जड़</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पत्ता (कोंपल)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> किसलय, पल्लव, दल, पर्ण = पत्ता।</div>
+        </article>
+        <article class="revision-card" id="q-18">
+          
+          <h3>प्रश्न 18</h3>
+          <div class="revision-question-text">‘वह पढ़ता तो उत्तीर्ण हो जाता।’ — इसमें भूतकाल का कौन-सा भेद है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>संदिग्ध भूतकाल</span></li><li class=""><span class="option-label">ब</span><span>आसन्न भूतकाल</span></li><li class=""><span class="option-label">स</span><span>पूर्ण भूतकाल</span></li><li class="correct"><span class="option-label">द</span><span>हेतुहेतुमद् भूतकाल</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) हेतुहेतुमद् भूतकाल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एक क्रिया दूसरी पर निर्भर (शर्त) — हेतुहेतुमद्।</div>
+        </article>
+        <article class="revision-card" id="q-19">
+          
+          <h3>प्रश्न 19</h3>
+          <div class="revision-question-text">कौन-सा शब्द ‘गंगा’ का पर्यायवाची नहीं है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>भागीरथी</span></li><li class=""><span class="option-label">ब</span><span>जाह्नवी</span></li><li class=""><span class="option-label">स</span><span>मंदाकिनी</span></li><li class="correct"><span class="option-label">द</span><span>कालिंदी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कालिंदी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रश्न में ‘नहीं’ है। कालिंदी = यमुना।</div>
+        </article>
+        <article class="revision-card" id="q-20">
+          
+          <h3>प्रश्न 20</h3>
+          <div class="revision-question-text">‘दुस्साहस’ में उपसर्ग है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>दु</span></li><li class="correct"><span class="option-label">ब</span><span>दुस्</span></li><li class=""><span class="option-label">स</span><span>दुर्</span></li><li class=""><span class="option-label">द</span><span>सा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) दुस्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दुः + साहस = दुस्साहस।</div>
+        </article>
+        <article class="revision-card" id="q-21">
+          
+          <h3>प्रश्न 21</h3>
+          <div class="revision-question-text">‘आविर्भाव’ का विलोम है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>प्रादुर्भाव</span></li><li class=""><span class="option-label">ब</span><span>अभाव</span></li><li class=""><span class="option-label">स</span><span>सद्भाव</span></li><li class="correct"><span class="option-label">द</span><span>तिरोभाव</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) तिरोभाव</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आविर्भाव = प्रकट होना; तिरोभाव = छिप जाना।</div>
+        </article>
+        <article class="revision-card" id="q-22">
+          
+          <h3>प्रश्न 22</h3>
+          <div class="revision-question-text">‘गागर में सागर भरना’ का अर्थ है ______</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>असंभव काम करना</span></li><li class=""><span class="option-label">ब</span><span>घड़े में पानी भरना</span></li><li class="correct"><span class="option-label">स</span><span>थोड़े शब्दों में बहुत बात कहना</span></li><li class=""><span class="option-label">द</span><span>बहुत धन जमा करना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) थोड़े शब्दों में बहुत बात कहना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> यह उक्ति बिहारी के दोहों के लिए प्रसिद्ध है।</div>
+        </article>
+        <article class="revision-card" id="q-23">
+          
+          <h3>प्रश्न 23</h3>
+          <div class="revision-question-text">‘कलेजे पर साँप लोटना’ का अर्थ है ______</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>ईर्ष्या से जलना</span></li><li class=""><span class="option-label">ब</span><span>बहुत डर जाना</span></li><li class=""><span class="option-label">स</span><span>साँप से डसा जाना</span></li><li class=""><span class="option-label">द</span><span>बहुत दुखी होना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) ईर्ष्या से जलना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दूसरे की उन्नति देखकर जलना। शाब्दिक विकल्प जाल है।</div>
+        </article>
+        <article class="revision-card" id="q-24">
+          
+          <h3>प्रश्न 24</h3>
+          <div class="revision-question-text">‘पंडित’ से बनी भाववाचक संज्ञा है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>पंडितजी</span></li><li class=""><span class="option-label">ब</span><span>पंडिताइन</span></li><li class=""><span class="option-label">स</span><span>पंडितपन</span></li><li class="correct"><span class="option-label">द</span><span>पांडित्य</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पांडित्य</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पंडित → पांडित्य।</div>
+        </article>
+        <article class="revision-card" id="q-25">
+          
+          <h3>प्रश्न 25</h3>
+          <div class="revision-question-text">किस शब्द में ‘अभि’ उपसर्ग नहीं है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अभिमान</span></li><li class=""><span class="option-label">ब</span><span>अभिनय</span></li><li class="correct"><span class="option-label">स</span><span>अधिपति</span></li><li class=""><span class="option-label">द</span><span>अभियान</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अधिपति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रश्न में ‘नहीं’ है। अधिपति में ‘अधि’ उपसर्ग है।</div>
+        </article>
+        <article class="revision-card" id="q-26">
+          
+          <h3>प्रश्न 26</h3>
+          <div class="revision-question-text">शब्दकोश में ‘क्ष’ से शुरू होने वाले शब्द कहाँ मिलते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>‘ह’ के बाद</span></li><li class=""><span class="option-label">ब</span><span>‘ष’ के बाद</span></li><li class=""><span class="option-label">स</span><span>‘ज्ञ’ के बाद</span></li><li class="correct"><span class="option-label">द</span><span>‘क’ के अंतर्गत</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ‘क’ के अंतर्गत</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्ष = क् + ष, इसलिए शब्दकोश में ‘क’ के अंतर्गत आता है; वर्णमाला क्रम (ह के बाद) से भ्रम न करें।</div>
+        </article>
+        <article class="revision-card" id="q-27">
+          
+          <h3>प्रश्न 27</h3>
+          <div class="revision-question-text">हर वर्ग के पहले, तीसरे, पाँचवें वर्ण और य, र, ल, व कहलाते हैं —</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>अल्पप्राण</span></li><li class=""><span class="option-label">ब</span><span>महाप्राण</span></li><li class=""><span class="option-label">स</span><span>अघोष</span></li><li class=""><span class="option-label">द</span><span>ऊष्म</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अल्पप्राण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दूसरे और चौथे वर्ण तथा श, ष, स, ह महाप्राण।</div>
+        </article>
+        <article class="revision-card" id="q-28">
+          
+          <h3>प्रश्न 28</h3>
+          <div class="revision-question-text">‘लुटेरा’ में प्रत्यय है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>रा</span></li><li class=""><span class="option-label">ब</span><span>टेरा</span></li><li class=""><span class="option-label">स</span><span>आ</span></li><li class="correct"><span class="option-label">द</span><span>एरा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) एरा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लूट + एरा।</div>
+        </article>
+        <article class="revision-card" id="q-29">
+          
+          <h3>प्रश्न 29</h3>
+          <div class="revision-question-text">‘स्थावर’ का विलोम है —</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>जंगम</span></li><li class=""><span class="option-label">ब</span><span>अचल</span></li><li class=""><span class="option-label">स</span><span>स्थिर</span></li><li class=""><span class="option-label">द</span><span>स्थायी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) जंगम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्थावर = अचल; जंगम = चलने-फिरने वाला।</div>
+        </article>
+        <article class="revision-card" id="q-30">
+          
+          <h3>प्रश्न 30</h3>
+          <div class="revision-question-text">‘सत् + चित् + आनंद’ का सन्धि रूप क्या है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सत्चिदानंद</span></li><li class=""><span class="option-label">ब</span><span>सच्चितानंद</span></li><li class=""><span class="option-label">स</span><span>सद्चिदानंद</span></li><li class="correct"><span class="option-label">द</span><span>सच्चिदानंद</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सच्चिदानंद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> त् + च = च्च, त् + आ = दा (व्यंजन संधि)।</div>
+        </article>
+        <article class="revision-card" id="q-31">
+          
+          <h3>प्रश्न 31</h3>
+          <div class="revision-question-text">‘वाह! कितना सुंदर दृश्य है।’ — अर्थ के आधार पर वाक्य है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>इच्छावाचक वाक्य</span></li><li class=""><span class="option-label">ब</span><span>प्रश्नवाचक वाक्य</span></li><li class="correct"><span class="option-label">स</span><span>विस्मयादिबोधक वाक्य</span></li><li class=""><span class="option-label">द</span><span>आज्ञावाचक वाक्य</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) विस्मयादिबोधक वाक्य</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हर्ष/आश्चर्य का भाव।</div>
+        </article>
+        <article class="revision-card" id="q-32">
+          
+          <h3>प्रश्न 32</h3>
+          <div class="revision-question-text">‘काठ का उल्लू होना’ का अर्थ है ______</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>बहुत चालाक होना</span></li><li class=""><span class="option-label">ब</span><span>रात में जागना</span></li><li class="correct"><span class="option-label">स</span><span>बहुत मूर्ख होना</span></li><li class=""><span class="option-label">द</span><span>लकड़ी का खिलौना होना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बहुत मूर्ख होना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ‘अक्ल का दुश्मन’ भी यही अर्थ देता है।</div>
+        </article>
+        <article class="revision-card" id="q-33">
+          
+          <h3>प्रश्न 33</h3>
+          <div class="revision-question-text">च-वर्ग के साथ और कौन-से वर्ण तालव्य हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>उ, ऊ, व, स</span></li><li class="correct"><span class="option-label">ब</span><span>इ, ई, य, श</span></li><li class=""><span class="option-label">स</span><span>ऋ, र, ष</span></li><li class=""><span class="option-label">द</span><span>ए, ऐ, ह</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) इ, ई, य, श</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तालु से बोले जाने वाले: इ, ई, च-वर्ग, य, श।</div>
+        </article>
+        <article class="revision-card" id="q-34">
+          
+          <h3>प्रश्न 34</h3>
+          <div class="revision-question-text">किसी के कथन को ज्यों का त्यों लिखने के लिए कौन-सा चिह्न लगता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>योजक चिह्न (-)</span></li><li class=""><span class="option-label">ब</span><span>कोष्ठक ( )</span></li><li class=""><span class="option-label">स</span><span>लाघव चिह्न (॰)</span></li><li class="correct"><span class="option-label">द</span><span>उद्धरण चिह्न (“ ”)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) उद्धरण चिह्न (“ ”)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जैसे: उसने कहा, “मैं कल आऊँगा।”</div>
+        </article>
+        <article class="revision-card" id="q-35">
+          
+          <h3>प्रश्न 35</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा तत्सम–तद्भव युग्म सही नहीं है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>अट्टालिका – अट्टहास</span></li><li class=""><span class="option-label">ब</span><span>वानर – बंदर</span></li><li class=""><span class="option-label">स</span><span>श्वसुर – ससुर</span></li><li class=""><span class="option-label">द</span><span>अट्टालिका – अटारी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अट्टालिका – अट्टहास</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रश्न में ‘नहीं’ है। अट्टालिका का तद्भव अटारी है; अट्टहास अलग शब्द है।</div>
+        </article>
+        <article class="revision-card" id="q-36">
+          
+          <h3>प्रश्न 36</h3>
+          <div class="revision-question-text">‘चक्रपाणि’ (विष्णु के अर्थ में) में कौन-सा समास है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>बहुव्रीहि</span></li><li class=""><span class="option-label">ब</span><span>कर्मधारय</span></li><li class=""><span class="option-label">स</span><span>द्विगु</span></li><li class=""><span class="option-label">द</span><span>तत्पुरुष</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बहुव्रीहि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चक्र है पाणि (हाथ) में जिसके — विष्णु; तीसरा अर्थ = बहुव्रीहि।</div>
+        </article>
+        <article class="revision-card" id="q-37">
+          
+          <h3>प्रश्न 37</h3>
+          <div class="revision-question-text">‘निरभिमान’ और ‘निर्दोष’ में उपसर्ग है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>नि</span></li><li class="correct"><span class="option-label">ब</span><span>निर्</span></li><li class=""><span class="option-label">स</span><span>अभि</span></li><li class=""><span class="option-label">द</span><span>निरा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) निर्</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> निर् + अभिमान, निर् + दोष।</div>
+        </article>
+        <article class="revision-card" id="q-38">
+          
+          <h3>प्रश्न 38</h3>
+          <div class="revision-question-text">‘अपना’ सर्वनाम से बनी भाववाचक संज्ञा है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अपनाना</span></li><li class=""><span class="option-label">ब</span><span>अपनी</span></li><li class=""><span class="option-label">स</span><span>अपनों</span></li><li class="correct"><span class="option-label">द</span><span>अपनापन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अपनापन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सर्वनाम से भी भाववाचक संज्ञा बनती है: अपना → अपनापन।</div>
+        </article>
+        <article class="revision-card" id="q-39">
+          
+          <h3>प्रश्न 39</h3>
+          <div class="revision-question-text">अर्धविराम का चिह्न कौन-सा है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>( : )</span></li><li class=""><span class="option-label">ब</span><span>( , )</span></li><li class=""><span class="option-label">स</span><span>( ^ )</span></li><li class="correct"><span class="option-label">द</span><span>( ; )</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ( ; )</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ; = अर्धविराम, : = उपविराम/कोलन, , = अल्पविराम, ^ = हंसपद।</div>
+        </article>
+        <article class="revision-card" id="q-40">
+          
+          <h3>प्रश्न 40</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा शब्द सदा एकवचन में प्रयुक्त होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>प्राण</span></li><li class="correct"><span class="option-label">ब</span><span>जनता</span></li><li class=""><span class="option-label">स</span><span>दर्शन</span></li><li class=""><span class="option-label">द</span><span>हस्ताक्षर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जनता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जनता, वर्षा, पानी, दूध — एकवचन; प्राण, दर्शन, हस्ताक्षर — सदा बहुवचन।</div>
+        </article>
+        <article class="revision-card" id="q-41">
+          
+          <h3>प्रश्न 41</h3>
+          <div class="revision-question-text">‘अदालत’, ‘मुकदमा’, ‘वकील’ शब्द किस भाषा से आए हैं?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>अरबी</span></li><li class=""><span class="option-label">ब</span><span>पुर्तगाली</span></li><li class=""><span class="option-label">स</span><span>तुर्की</span></li><li class=""><span class="option-label">द</span><span>अंग्रेज़ी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अरबी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ये अरबी शब्द हैं; अलमारी, तौलिया पुर्तगाली; कैंची, तोप तुर्की।</div>
+        </article>
+        <article class="revision-card" id="q-42">
+          
+          <h3>प्रश्न 42</h3>
+          <div class="revision-question-text">निम्न में कौन-सा कथन गलत है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>भ — ओष्ठ्य, अल्पप्राण</span></li><li class=""><span class="option-label">ब</span><span>ग — कंठ्य, अल्पप्राण</span></li><li class=""><span class="option-label">स</span><span>थ — दंत्य, महाप्राण</span></li><li class=""><span class="option-label">द</span><span>ट — मूर्धन्य, अल्पप्राण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) भ — ओष्ठ्य, अल्पप्राण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रश्न में ‘गलत’ है। भ वर्ग का चौथा वर्ण है, इसलिए महाप्राण।</div>
+        </article>
+        <article class="revision-card" id="q-43">
+          
+          <h3>प्रश्न 43</h3>
+          <div class="revision-question-text">‘बहुत कम बोलने वाला’ के लिए एक शब्द है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>वाचाल</span></li><li class=""><span class="option-label">ब</span><span>मृदुभाषी</span></li><li class="correct"><span class="option-label">स</span><span>मितभाषी</span></li><li class=""><span class="option-label">द</span><span>बहुभाषी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मितभाषी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मितभाषी = कम बोलने वाला; वाचाल = बहुत बोलने वाला।</div>
+        </article>
+        <article class="revision-card" id="q-44">
+          
+          <h3>प्रश्न 44</h3>
+          <div class="revision-question-text">‘जिसके आर-पार देखा जा सके’ के लिए एक शब्द है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अपारदर्शी</span></li><li class=""><span class="option-label">ब</span><span>पारखी</span></li><li class="correct"><span class="option-label">स</span><span>पारदर्शी</span></li><li class=""><span class="option-label">द</span><span>दूरदर्शी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पारदर्शी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पारदर्शी, जैसे काँच।</div>
+        </article>
+        <article class="revision-card" id="q-45">
+          
+          <h3>प्रश्न 45</h3>
+          <div class="revision-question-text">‘अनु + एषण’ का सन्धि रूप क्या है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अनुएषण</span></li><li class=""><span class="option-label">ब</span><span>अनवेषण</span></li><li class=""><span class="option-label">स</span><span>अनेषण</span></li><li class="correct"><span class="option-label">द</span><span>अन्वेषण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अन्वेषण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उ + ए = वे (यण संधि)।</div>
+        </article>
+        <article class="revision-card" id="q-46">
+          
+          <h3>प्रश्न 46</h3>
+          <div class="revision-question-text">‘दिक् + गज’ का सन्धि रूप क्या है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>दिक्गज</span></li><li class=""><span class="option-label">ब</span><span>दिगज</span></li><li class="correct"><span class="option-label">स</span><span>दिग्गज</span></li><li class=""><span class="option-label">द</span><span>दिग्ज</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) दिग्गज</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क् के बाद घोष वर्ण (ग) आने पर क् → ग् (व्यंजन संधि)।</div>
+        </article>
+        <article class="revision-card" id="q-47">
+          
+          <h3>प्रश्न 47</h3>
+          <div class="revision-question-text">‘आभीर’ का तद्भव रूप है —</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>अहीर</span></li><li class=""><span class="option-label">ब</span><span>अमीर</span></li><li class=""><span class="option-label">स</span><span>अभी</span></li><li class=""><span class="option-label">द</span><span>आभार</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अहीर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आभीर → अहीर; इसी तरह अट्टालिका → अटारी।</div>
+        </article>
+        <article class="revision-card" id="q-48">
+          
+          <h3>प्रश्न 48</h3>
+          <div class="revision-question-text">‘अंधे के हाथ बटेर लगना’ का अर्थ है —</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>अयोग्य को संयोग से बड़ी चीज़ मिल जाना</span></li><li class=""><span class="option-label">ब</span><span>अंधे को रास्ता मिलना</span></li><li class=""><span class="option-label">स</span><span>पक्षी पकड़ना</span></li><li class=""><span class="option-label">द</span><span>मेहनत का फल मिलना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अयोग्य को संयोग से बड़ी चीज़ मिल जाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बिना योग्यता और प्रयास के संयोगवश लाभ।</div>
+        </article>
+        <article class="revision-card" id="q-49">
+          
+          <h3>प्रश्न 49</h3>
+          <div class="revision-question-text">हिंदी के अर्धस्वर कौन-से हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>र और ल</span></li><li class=""><span class="option-label">ब</span><span>श और ष</span></li><li class="correct"><span class="option-label">स</span><span>य और व</span></li><li class=""><span class="option-label">द</span><span>ह और स</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) य और व</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> य, व अर्धस्वर; र लुंठित, ल पार्श्विक।</div>
+        </article>
+        <article class="revision-card" id="q-50">
+          
+          <h3>प्रश्न 50</h3>
+          <div class="revision-question-text">‘यद्यपि वह निर्धन है, तथापि ईमानदार है।’ — रचना के आधार पर वाक्य है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सरल वाक्य</span></li><li class=""><span class="option-label">ब</span><span>संयुक्त वाक्य</span></li><li class="correct"><span class="option-label">स</span><span>मिश्र वाक्य</span></li><li class=""><span class="option-label">द</span><span>विधानवाचक वाक्य</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मिश्र वाक्य</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ‘यद्यपि… तथापि’ आश्रित उपवाक्य जोड़ता है — मिश्र वाक्य।</div>
+        </article>
+        <article class="revision-card" id="q-51">
+          
+          <h3>प्रश्न 51</h3>
+          <div class="revision-question-text">‘मोर’ का पर्यायवाची है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>कोकिल</span></li><li class=""><span class="option-label">ब</span><span>कपोत</span></li><li class=""><span class="option-label">स</span><span>काक</span></li><li class="correct"><span class="option-label">द</span><span>केकी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) केकी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मोर = केकी, मयूर, शिखी, कलापी। कोकिल = कोयल, कपोत = कबूतर, काक = कौआ।</div>
+        </article>
+        <article class="revision-card" id="q-52">
+          
+          <h3>प्रश्न 52</h3>
+          <div class="revision-question-text">‘नीलगाय’ में कौन-सा समास है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>कर्मधारय</span></li><li class=""><span class="option-label">ब</span><span>द्विगु</span></li><li class=""><span class="option-label">स</span><span>द्वंद्व</span></li><li class=""><span class="option-label">द</span><span>अव्ययीभाव</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कर्मधारय</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नीली है जो गाय — विशेषण-विशेष्य, कर्मधारय।</div>
+        </article>
+        <article class="revision-card" id="q-53">
+          
+          <h3>प्रश्न 53</h3>
+          <div class="revision-question-text">‘अँगूठी का नगीना होना’ का अर्थ है ______</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>गहने पहनना</span></li><li class=""><span class="option-label">ब</span><span>बहुत धनी होना</span></li><li class="correct"><span class="option-label">स</span><span>सबसे सुंदर या श्रेष्ठ होना</span></li><li class=""><span class="option-label">द</span><span>छोटा होना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सबसे सुंदर या श्रेष्ठ होना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समूह में सबसे सुंदर/श्रेष्ठ, बिल्कुल उपयुक्त।</div>
+        </article>
+        <article class="revision-card" id="q-54">
+          
+          <h3>प्रश्न 54</h3>
+          <div class="revision-question-text">शुद्ध वर्तनी वाला शब्द चुनिए —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अनुषांगिक</span></li><li class="correct"><span class="option-label">ब</span><span>आनुषंगिक</span></li><li class=""><span class="option-label">स</span><span>आनुसंगिक</span></li><li class=""><span class="option-label">द</span><span>अनुशंगिक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आनुषंगिक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुषंग + इक → आनुषंगिक (पहला स्वर वृद्धि)।</div>
+        </article>
+        <article class="revision-card" id="q-55">
+          
+          <h3>प्रश्न 55</h3>
+          <div class="revision-question-text">‘ने + अन’ का सन्धि रूप क्या है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>नेअन</span></li><li class="correct"><span class="option-label">ब</span><span>नयन</span></li><li class=""><span class="option-label">स</span><span>नैन</span></li><li class=""><span class="option-label">द</span><span>नेन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नयन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ए + अ = अय (अयादि संधि)।</div>
+        </article>
+        <article class="revision-card" id="q-56">
+          
+          <h3>प्रश्न 56</h3>
+          <div class="revision-question-text">‘सु + आगत’ का सन्धि रूप क्या है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सुआगत</span></li><li class=""><span class="option-label">ब</span><span>स्वगत</span></li><li class=""><span class="option-label">स</span><span>सौगत</span></li><li class="correct"><span class="option-label">द</span><span>स्वागत</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) स्वागत</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उ + आ = वा (यण संधि)।</div>
+        </article>
+        <article class="revision-card" id="q-57">
+          
+          <h3>प्रश्न 57</h3>
+          <div class="revision-question-text">‘गिलास में थोड़ा दूध है।’ — ‘थोड़ा’ कौन-सा विशेषण है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>निश्चित परिमाणवाचक</span></li><li class=""><span class="option-label">ब</span><span>अनिश्चित संख्यावाचक</span></li><li class="correct"><span class="option-label">स</span><span>अनिश्चित परिमाणवाचक</span></li><li class=""><span class="option-label">द</span><span>गुणवाचक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अनिश्चित परिमाणवाचक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मात्रा बताता है, पर निश्चित नहीं।</div>
+        </article>
+        <article class="revision-card" id="q-58">
+          
+          <h3>प्रश्न 58</h3>
+          <div class="revision-question-text">‘जिसे बुलाया न गया हो’ के लिए एक शब्द है —</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>आमंत्रित</span></li><li class="correct"><span class="option-label">ब</span><span>अनाहूत</span></li><li class=""><span class="option-label">स</span><span>अप्रत्याशित</span></li><li class=""><span class="option-label">द</span><span>आगंतुक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अनाहूत</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनाहूत = बिना बुलाया; अप्रत्याशित = जिसकी आशा न हो।</div>
+        </article>
+        <article class="revision-card" id="q-59">
+          
+          <h3>प्रश्न 59</h3>
+          <div class="revision-question-text">अभिराम – अविराम, युग्म शब्दों का सही अर्थ है ______</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>लगातार – सुंदर</span></li><li class="correct"><span class="option-label">ब</span><span>सुंदर – लगातार</span></li><li class=""><span class="option-label">स</span><span>विश्राम – थकान</span></li><li class=""><span class="option-label">द</span><span>सुंदर – विश्राम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सुंदर – लगातार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अभिराम = मनोहर/सुंदर; अविराम = बिना रुके।</div>
+        </article>
+        <article class="revision-card" id="q-60">
+          
+          <h3>प्रश्न 60</h3>
+          <div class="revision-question-text">‘उद्धत’ का विलोम है —</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>विनीत</span></li><li class=""><span class="option-label">ब</span><span>उग्र</span></li><li class=""><span class="option-label">स</span><span>उदार</span></li><li class=""><span class="option-label">द</span><span>उन्नत</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विनीत</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उद्धत = अक्खड़/उद्दंड; विनीत = नम्र।</div>
+        </article>
+      </section>
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>

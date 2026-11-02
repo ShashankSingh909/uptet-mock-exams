@@ -896,6 +896,40 @@ dialog::backdrop {
   font-weight: 650;
 }
 
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
 .revision-answer {
   margin: 10px 0 0;
   padding: 10px 12px;
@@ -1031,6 +1065,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 1</h3>
           <div class="revision-question-text">विकास के संबंध में कौन-सा कथन <strong>सही नहीं</strong> है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सभी बच्चों में विकास की दर समान होती है</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विकास की दर हर बच्चे में अलग होती है (वैयक्तिक भिन्नता), पर क्रम समान रहता है।</div>
         </article>
@@ -1038,6 +1073,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 2</h3>
           <div class="revision-question-text">"विकास सिर से पैर की ओर होता है" – यह विकास के किस सिद्धांत को दर्शाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मस्तकाधोमुखी (सेफैलोकॉडल) सिद्धांत</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मस्तकाधोमुखी = सिर से पैर की ओर; समीप-दूराभिमुख = केंद्र (धड़) से बाहर की ओर।</div>
         </article>
@@ -1045,6 +1081,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 3</h3>
           <div class="revision-question-text">"किशोरावस्था बड़े संघर्ष, तनाव, तूफान तथा विरोध की अवस्था है" – यह कथन किसका है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) स्टैनले हॉल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्टैनले हॉल ने किशोरावस्था को "तूफान और तनाव का काल" कहा।</div>
         </article>
@@ -1052,6 +1089,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 4</h3>
           <div class="revision-question-text">"टोली या गिरोह की अवस्था (Gang Age)" किस अवस्था को कहा जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) बाल्यावस्था (उत्तर बाल्यावस्था)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बाल्यावस्था में बच्चे टोली बनाकर खेलते हैं, इसलिए इसे टोली/गिरोह की आयु कहते हैं।</div>
         </article>
@@ -1059,6 +1097,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 5</h3>
           <div class="revision-question-text">कक्षा 7 की एक छात्रा अचानक अपने रूप-रंग को लेकर बहुत चिंतित रहने लगी है और माता-पिता की अपेक्षा सहेलियों की राय को अधिक महत्व देती है। शिक्षक को इसे कैसे समझना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) किशोरावस्था के सामान्य विकासात्मक परिवर्तन के रूप में</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> किशोरावस्था में शारीरिक छवि की चिंता और साथियों का प्रभाव बढ़ना सामान्य है; शिक्षक संवेदनशील रहे।</div>
         </article>
@@ -1066,6 +1105,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 6</h3>
           <div class="revision-question-text">एरिक्सन के मनोसामाजिक सिद्धांत के अनुसार किशोरावस्था (12–18 वर्ष) का मुख्य संकट है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पहचान बनाम भूमिका भ्रम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> एरिक्सन की पाँचवीं अवस्था: पहचान बनाम भूमिका भ्रम (कुल 8 अवस्थाएँ)।</div>
         </article>
@@ -1073,6 +1113,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 7</h3>
           <div class="revision-question-text">एरिक्सन के अनुसार लगभग 6–12 वर्ष के विद्यालयी बच्चों का मनोसामाजिक संकट कौन-सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) परिश्रम बनाम हीनता</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 6–12 वर्ष: परिश्रम बनाम हीनता। कक्षा 6 के आसपास बच्चा अगली अवस्था की ओर बढ़ता है।</div>
         </article>
@@ -1080,6 +1121,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 8</h3>
           <div class="revision-question-text">कोहलबर्ग के नैतिक विकास सिद्धांत में "अच्छा लड़का–अच्छी लड़की" अभिविन्यास किस स्तर का भाग है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) परंपरागत स्तर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> परंपरागत स्तर = अवस्था 3 (अच्छा लड़का–अच्छी लड़की) + अवस्था 4 (कानून व व्यवस्था)।</div>
         </article>
@@ -1087,6 +1129,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 9</h3>
           <div class="revision-question-text">कोहलबर्ग ने बच्चों के नैतिक विकास का अध्ययन किसकी सहायता से किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नैतिक दुविधा वाली कहानियाँ (जैसे हाइंज की दुविधा)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> हाइंज की दुविधा (पत्नी के लिए दवा चुराना) जैसी कहानियाँ; उत्तर के पीछे का तर्क देखा जाता था।</div>
         </article>
@@ -1094,6 +1137,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 10</h3>
           <div class="revision-question-text">कोहलबर्ग ने नैतिक विकास के कितने स्तर और कितनी अवस्थाएँ बताई हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 3 स्तर, 6 अवस्थाएँ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पूर्व-परंपरागत, परंपरागत, उत्तर-परंपरागत – हर स्तर में 2 अवस्थाएँ।</div>
         </article>
@@ -1101,6 +1145,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 11</h3>
           <div class="revision-question-text">"प्रतिभाशाली माता-पिता की संतान कम प्रतिभाशाली होने की प्रवृत्ति रखती है" – यह वंशानुक्रम का कौन-सा नियम है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) प्रत्यागमन का नियम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्रत्यागमन (Regression) का नियम – गाल्टन; संतान औसत की ओर लौटती है।</div>
         </article>
@@ -1108,6 +1153,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 12</h3>
           <div class="revision-question-text">मनुष्य की प्रत्येक कोशिका में सामान्यतः कितने गुणसूत्र होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 46</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 46 गुणसूत्र (23 जोड़े); लड़के में XY, लड़की में XX।</div>
         </article>
@@ -1115,6 +1161,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 13</h3>
           <div class="revision-question-text">"मुझे कोई भी दर्जन भर स्वस्थ बच्चे दे दो, मैं उन्हें डॉक्टर, वकील या चोर कुछ भी बना सकता हूँ" – वातावरण के पक्ष में यह कथन किसका है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) जे.बी. वाटसन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वाटसन (व्यवहारवाद) वातावरण को सर्वोपरि मानते थे।</div>
         </article>
@@ -1122,6 +1169,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 14</h3>
           <div class="revision-question-text">भाषा अर्जन यंत्र (LAD – Language Acquisition Device) की संकल्पना किसने दी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नोम चॉम्स्की</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चॉम्स्की: बच्चों में भाषा सीखने की जन्मजात क्षमता होती है।</div>
         </article>
@@ -1129,6 +1177,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 15</h3>
           <div class="revision-question-text">वाइगोत्सकी के अनुसार काम करते समय बच्चे का स्वयं से बात करना (निजी वाक् / Private Speech)—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विचार व व्यवहार को नियंत्रित करने (आत्म-नियमन) का साधन है</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वाइगोत्सकी के अनुसार निजी वाक् आत्म-निर्देशन का साधन है; पियाजे इसे अहंकेंद्रित वाक् कहते हैं।</div>
         </article>
@@ -1136,6 +1185,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 16</h3>
           <div class="revision-question-text">सृजनात्मकता का सर्वाधिक संबंध किस प्रकार के चिंतन से है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अपसारी चिंतन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अपसारी चिंतन = एक प्रश्न के अनेक उत्तर सोचना (गिलफोर्ड)।</div>
         </article>
@@ -1143,6 +1193,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 17</h3>
           <div class="revision-question-text">कक्षा 8 के विद्यार्थियों में सृजनात्मकता बढ़ाने के लिए शिक्षक को क्या करना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) खुले सिरे वाले प्रश्न पूछे और विविध उत्तरों को प्रोत्साहित करे</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> खुले प्रश्न अपसारी चिंतन को बढ़ाते हैं।</div>
         </article>
@@ -1150,6 +1201,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 18</h3>
           <div class="revision-question-text">संवेगात्मक बुद्धि (Emotional Intelligence) की अवधारणा को अपनी पुस्तक द्वारा लोकप्रिय किसने बनाया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) डेनियल गोलमैन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गोलमैन की पुस्तक "इमोशनल इंटेलिजेंस" (1995); अवधारणा सलोवे व मेयर ने दी थी।</div>
         </article>
@@ -1157,6 +1209,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 19</h3>
           <div class="revision-question-text">बालिकाओं में यौवनारंभ (किशोरावस्था के शारीरिक परिवर्तन) सामान्यतः बालकों की तुलना में—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पहले आरंभ होता है</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बालिकाओं में यौवनारंभ सामान्यतः 1–2 वर्ष पहले होता है।</div>
         </article>
@@ -1164,6 +1217,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 20</h3>
           <div class="revision-question-text">कक्षा 8 का एक छात्र हर गतिविधि में नेतृत्व करना चाहता है और अपने निर्णय स्वयं लेना चाहता है। शिक्षक के लिए सबसे उपयुक्त कदम है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) समूह-नायक, बाल संसद जैसी जिम्मेदारियाँ देकर उसकी ऊर्जा को सकारात्मक दिशा देना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> किशोरों की स्वतंत्रता व नेतृत्व की इच्छा को रचनात्मक जिम्मेदारी में बदलना चाहिए।</div>
         </article>
@@ -1171,6 +1225,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 21</h3>
           <div class="revision-question-text">बच्चा पहले कंधे और भुजा पर तथा बाद में उँगलियों पर नियंत्रण सीखता है। यह विकास के किस सिद्धांत का उदाहरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) समीप-दूराभिमुख (प्रॉक्सिमोडिस्टल) सिद्धांत</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> केंद्र (कंधा) से परिधि (उँगलियाँ) की ओर = समीप-दूराभिमुख।</div>
         </article>
@@ -1178,6 +1233,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 22</h3>
           <div class="revision-question-text">वृद्धि (Growth) और विकास (Development) के संबंध में कौन-सा कथन सही है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) वृद्धि मात्रात्मक है, जबकि विकास मात्रात्मक व गुणात्मक दोनों</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वृद्धि = आकार-भार में बढ़ोत्तरी, एक सीमा पर रुकती है; विकास जीवनभर चलता है।</div>
         </article>
@@ -1185,6 +1241,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 23</h3>
           <div class="revision-question-text">बाल विकास के अध्ययन की वह विधि जिसमें एक ही बच्चों के समूह का कई वर्षों तक लगातार अध्ययन किया जाता है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अनुदैर्ध्य (Longitudinal) विधि</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनुदैर्ध्य = समय के साथ वही समूह; अनुप्रस्थ = एक समय पर अलग-अलग आयु के समूह।</div>
         </article>
@@ -1192,6 +1249,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 24</h3>
           <div class="revision-question-text">बच्चे के समाजीकरण की प्राथमिक (सबसे पहली) संस्था कौन-सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) परिवार</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> परिवार प्राथमिक संस्था है; विद्यालय औपचारिक संस्था है।</div>
         </article>
@@ -1199,6 +1257,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 25</h3>
           <div class="revision-question-text">कक्षा 7–8 के कई बच्चे मोबाइल पर देखी गई बातों को बिना जाँचे सच मान लेते हैं। शिक्षक का सर्वोत्तम कदम है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कक्षा में मीडिया साक्षरता की गतिविधियाँ कराकर सही-गलत सूचना पहचानना सिखाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्रतिबंध नहीं, सोच-समझ कर मीडिया का उपयोग सिखाना सही है।</div>
         </article>
@@ -1210,6 +1269,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 26</h3>
           <div class="revision-question-text">थार्नडाइक ने प्रयास एवं त्रुटि सिद्धांत का प्रयोग मुख्यतः किस प्राणी पर किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) भूखी बिल्ली</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पहेली बॉक्स (Puzzle box) में भूखी बिल्ली ने कई प्रयासों के बाद दरवाजा खोलना सीखा।</div>
         </article>
@@ -1217,6 +1277,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 27</h3>
           <div class="revision-question-text">निम्न में से कौन-सा थार्नडाइक का <strong>मुख्य</strong> नियम नहीं है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सादृश्यता का नियम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मुख्य नियम 3: तत्परता, अभ्यास, प्रभाव। सादृश्यता गौण नियम है।</div>
         </article>
@@ -1224,6 +1285,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 28</h3>
           <div class="revision-question-text">नया पाठ शुरू करने से पहले शिक्षक रोचक कहानी और प्रेरक प्रश्नों से बच्चों को सीखने के लिए उत्सुक करता है। यह थार्नडाइक के किस नियम का अनुप्रयोग है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) तत्परता का नियम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पहले सीखने के लिए मानसिक रूप से तैयार करना = तत्परता का नियम।</div>
         </article>
@@ -1231,6 +1293,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 29</h3>
           <div class="revision-question-text">थार्नडाइक के "प्रभाव के नियम" को अन्य किस नाम से जाना जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) संतोष-असंतोष का नियम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> संतोषजनक परिणाम से सीखना मजबूत होता है, असंतोष से कमजोर।</div>
         </article>
@@ -1238,6 +1301,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 30</h3>
           <div class="revision-question-text">थार्नडाइक के प्रयास एवं त्रुटि सिद्धांत का दूसरा नाम है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) संयोजनवाद (उद्दीपन-अनुक्रिया बंध सिद्धांत)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उद्दीपक और अनुक्रिया के बीच बंध बनना = संयोजनवाद (S-R Bond)।</div>
         </article>
@@ -1245,6 +1309,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 31</h3>
           <div class="revision-question-text">पावलव ने शास्त्रीय अनुबंधन का प्रयोग किस पर किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कुत्ता</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> इवान पावलव (रूसी शरीरशास्त्री) – कुत्ते पर लार स्राव का प्रयोग।</div>
         </article>
@@ -1252,6 +1317,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 32</h3>
           <div class="revision-question-text">पावलव के प्रयोग में भोजन से पहले बजाई गई घंटी की आवाज़ क्या थी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अनुबंधित उद्दीपक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> भोजन = स्वाभाविक उद्दीपक; घंटी = अनुबंधित उद्दीपक; घंटी पर लार = अनुबंधित अनुक्रिया।</div>
         </article>
@@ -1259,6 +1325,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 33</h3>
           <div class="revision-question-text">कक्षा 6 का एक छात्र गणित की कक्षा में बार-बार डाँट खाने के कारण अब गणित की पुस्तक देखते ही घबराने लगता है। इसे किस सिद्धांत से सबसे अच्छे ढंग से समझा जा सकता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शास्त्रीय अनुबंधन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डर (संवेग) गणित के साथ जुड़ गया – यह शास्त्रीय अनुबंधन है।</div>
         </article>
@@ -1266,6 +1333,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 34</h3>
           <div class="revision-question-text">यदि घंटी बजने के बाद लंबे समय तक भोजन न दिया जाए तो कुत्ते की लार आना बंद हो जाता है। इसे कहते हैं—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) विलोपन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पुनर्बलन न मिलने पर अनुबंधित अनुक्रिया का समाप्त होना = विलोपन।</div>
         </article>
@@ -1273,6 +1341,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 35</h3>
           <div class="revision-question-text">स्किनर ने क्रियाप्रसूत अनुबंधन के प्रयोग मुख्यतः किन पर किए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) चूहा व कबूतर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्किनर बॉक्स में चूहे (लीवर दबाना) और कबूतर (चोंच मारना)।</div>
         </article>
@@ -1280,6 +1349,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 36</h3>
           <div class="revision-question-text">क्रियाप्रसूत अनुबंधन में सबसे महत्वपूर्ण तत्व है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पुनर्बलन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> व्यवहार के बाद मिलने वाला पुनर्बलन उसे दोहराने की संभावना बढ़ाता है।</div>
         </article>
@@ -1287,6 +1357,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 37</h3>
           <div class="revision-question-text">अभिक्रमित अनुदेशन (Programmed Instruction) किसके सिद्धांत पर आधारित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बी.एफ. स्किनर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> छोटे फ्रेम, तुरंत प्रतिपुष्टि और स्व-गति से सीखना – स्किनर की देन।</div>
         </article>
@@ -1294,6 +1365,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 38</h3>
           <div class="revision-question-text">"नकारात्मक पुनर्बलन" का सही अर्थ है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अप्रिय उद्दीपक को हटाकर वांछित व्यवहार की आवृत्ति बढ़ाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> नकारात्मक पुनर्बलन व्यवहार बढ़ाता है; दंड व्यवहार घटाता है – दोनों अलग हैं।</div>
         </article>
@@ -1301,6 +1373,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 39</h3>
           <div class="revision-question-text">शिक्षक घोषणा करता है: "जो बच्चे सप्ताह भर का गृहकार्य पूरा करेंगे, उन्हें शनिवार का अतिरिक्त गृहकार्य नहीं मिलेगा।" यह किसका उदाहरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) नकारात्मक पुनर्बलन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अप्रिय चीज़ (अतिरिक्त गृहकार्य) हटाकर वांछित व्यवहार बढ़ाया गया।</div>
         </article>
@@ -1308,6 +1381,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 40</h3>
           <div class="revision-question-text">वांछित व्यवहार तक पहुँचने के लिए उसके निकट के छोटे-छोटे चरणों को क्रमशः पुनर्बलन देना (स्किनर) कहलाता है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) आकार देना (शेपिंग)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शेपिंग = क्रमिक सन्निकटन का पुनर्बलन।</div>
         </article>
@@ -1315,6 +1389,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 41</h3>
           <div class="revision-question-text">कोहलर ने अन्तर्दृष्टि द्वारा सीखने का प्रयोग किस पर किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) चिंपांजी (सुल्तान)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कोहलर का चिंपांजी "सुल्तान" डंडे जोड़कर/बक्से रखकर केले तक पहुँचा।</div>
         </article>
@@ -1322,6 +1397,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 42</h3>
           <div class="revision-question-text">अन्तर्दृष्टि सिद्धांत मनोविज्ञान के किस सम्प्रदाय से संबंधित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) गेस्टाल्टवाद</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गेस्टाल्ट सम्प्रदाय: वर्दाइमर, कोफका, कोहलर।</div>
         </article>
@@ -1329,6 +1405,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 43</h3>
           <div class="revision-question-text">कक्षा 8 की एक छात्रा कठिन ज्यामिति प्रश्न पर देर तक सोचती रही और अचानक पूरे हल का ढाँचा समझ गई। यह किस प्रकार का अधिगम है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अन्तर्दृष्टि द्वारा अधिगम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अचानक पूरी परिस्थिति समझ आना ("आहा!" अनुभव) = अन्तर्दृष्टि।</div>
         </article>
@@ -1336,6 +1413,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 44</h3>
           <div class="revision-question-text">गेस्टाल्ट मनोवैज्ञानिकों के अनुसार सीखना होता है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) परिस्थिति के पूर्ण (समग्र) रूप के प्रत्यक्षीकरण से</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गेस्टाल्ट = समग्र आकार; "पूर्ण अंशों के योग से अधिक है"।</div>
         </article>
@@ -1343,6 +1421,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 45</h3>
           <div class="revision-question-text">पियाजे के अनुसार संज्ञानात्मक विकास की अवस्थाओं का सही क्रम है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) संवेदी-गामक → पूर्व-संक्रियात्मक → मूर्त संक्रियात्मक → औपचारिक संक्रियात्मक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> संवेदी-गामक (0–2), पूर्व-संक्रियात्मक (2–7), मूर्त (7–11), औपचारिक (11 वर्ष से आगे)।</div>
         </article>
@@ -1350,6 +1429,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 46</h3>
           <div class="revision-question-text">पियाजे के अनुसार "परिकल्पनात्मक-निगमनात्मक तर्क" की क्षमता किस अवस्था में विकसित होती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) औपचारिक संक्रियात्मक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कक्षा 6–8 के बच्चे इसी अवस्था में प्रवेश करते हैं; अमूर्त व परिकल्पनात्मक तर्क संभव।</div>
         </article>
@@ -1357,6 +1437,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 47</h3>
           <div class="revision-question-text">"संरक्षण (Conservation)" की अवधारणा की समझ बच्चे में किस अवस्था में विकसित होती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मूर्त संक्रियात्मक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मूर्त संक्रियात्मक अवस्था में बच्चा समझता है कि आकार बदलने पर मात्रा नहीं बदलती।</div>
         </article>
@@ -1364,6 +1445,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 48</h3>
           <div class="revision-question-text">पियाजे के अनुसार नई जानकारी को पहले से मौजूद स्कीमा (मानसिक ढाँचे) में बिना बदलाव के शामिल कर लेना कहलाता है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आत्मसात्करण (Assimilation)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आत्मसात्करण = पुराने ढाँचे में नई जानकारी फिट करना।</div>
         </article>
@@ -1371,6 +1453,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 49</h3>
           <div class="revision-question-text">कक्षा 6 का एक छात्र मानता था कि "सभी उड़ने वाले जीव पक्षी हैं"। चमगादड़ के स्तनधारी होने की जानकारी मिलने पर उसने अपनी धारणा बदल ली। पियाजे के अनुसार यह है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) समायोजन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> नई जानकारी के अनुसार पुराना ढाँचा बदलना = समायोजन।</div>
         </article>
@@ -1378,6 +1461,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 50</h3>
           <div class="revision-question-text">"बच्चा स्वयं क्या कर सकता है और किसी जानकार व्यक्ति की सहायता से क्या कर सकता है" – इन दोनों के बीच के अंतर को वाइगोत्सकी ने क्या कहा?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) समीपस्थ विकास का क्षेत्र (ZPD)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ZPD = वास्तविक विकास स्तर और संभावित विकास स्तर के बीच का क्षेत्र।</div>
         </article>
@@ -1385,6 +1469,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 51</h3>
           <div class="revision-question-text">शिक्षक नए प्रकार के सवाल में पहले विस्तृत संकेत देता है, फिर धीरे-धीरे सहायता कम करता जाता है जब तक कि बच्चे स्वयं हल करने न लगें। यह है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पाड़/आधार देना (Scaffolding)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सहायता को धीरे-धीरे कम करना स्कैफोल्डिंग की पहचान है (शब्द ब्रूनर व साथियों ने दिया, विचार वाइगोत्सकी से)।</div>
         </article>
@@ -1392,6 +1477,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 52</h3>
           <div class="revision-question-text">वाइगोत्सकी के सिद्धांत को किस नाम से जाना जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सामाजिक-सांस्कृतिक सिद्धांत</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वाइगोत्सकी: सीखना सामाजिक अंतःक्रिया और संस्कृति से होता है। मनोसामाजिक = एरिक्सन।</div>
         </article>
@@ -1399,6 +1485,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 53</h3>
           <div class="revision-question-text">कक्षा में तेज़ बच्चों को कमज़ोर बच्चों के साथ जोड़ी में बिठाकर सहपाठी-शिक्षण (Peer tutoring) कराना किस विचार पर आधारित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वाइगोत्सकी की सामाजिक अंतःक्रिया व "अधिक जानकार अन्य (MKO)"</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अधिक जानकार सहपाठी MKO की भूमिका निभाता है।</div>
         </article>
@@ -1406,6 +1493,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 54</h3>
           <div class="revision-question-text">"बोबो डॉल" प्रयोग किस मनोवैज्ञानिक से संबंधित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अल्बर्ट बंडूरा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बंडूरा ने दिखाया कि बच्चे वयस्कों का आक्रामक व्यवहार देखकर सीखते हैं।</div>
         </article>
@@ -1413,6 +1501,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 55</h3>
           <div class="revision-question-text">कक्षा 8 के अधिकांश बच्चे अपने पसंदीदा खिलाड़ी के हाव-भाव और बोलचाल की नकल करते हैं। यह किस प्रकार का अधिगम है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अवलोकनात्मक/सामाजिक अधिगम (मॉडलिंग)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मॉडल को देखकर सीखना – ध्यान, धारण, पुनरुत्पादन, अभिप्रेरणा (बंडूरा)।</div>
         </article>
@@ -1420,6 +1509,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 56</h3>
           <div class="revision-question-text">ब्रूनर के अनुसार ज्ञान निरूपण (Representation) की अवस्थाओं का सही क्रम है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सक्रियता (Enactive) → प्रतिबिंबात्मक (Iconic) → सांकेतिक (Symbolic)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> करके → चित्र/प्रतिमा से → प्रतीक/भाषा से। ब्रूनर खोज अधिगम के भी प्रवर्तक हैं।</div>
         </article>
@@ -1427,6 +1517,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 57</h3>
           <div class="revision-question-text">अधिगम वक्र में "पठार (Plateau)" से क्या तात्पर्य है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सीखने की प्रगति का कुछ समय के लिए रुक जाना (स्थिरता)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पठार = अधिगम वक्र में समतल भाग, प्रगति अस्थायी रूप से रुकती है।</div>
         </article>
@@ -1434,6 +1525,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 58</h3>
           <div class="revision-question-text">निम्न में से कौन-सा अधिगम में पठार आने का कारण <strong>नहीं</strong> है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) उचित अभिप्रेरणा व विश्राम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उचित अभिप्रेरणा व विश्राम पठार का निवारण (उपाय) है, कारण नहीं।</div>
         </article>
@@ -1441,6 +1533,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 59</h3>
           <div class="revision-question-text">जिस अधिगम वक्र में प्रारंभ में सीखने की गति तीव्र और बाद में धीमी हो जाती है, उसे कहते हैं—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) उन्नतोदर वक्र (ऋणात्मक त्वरण वाला)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उन्नतोदर = पहले तेज, फिर मंद; नतोदर = पहले मंद, फिर तेज।</div>
         </article>
@@ -1448,6 +1541,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 60</h3>
           <div class="revision-question-text">साइकिल चलाना जानने वाला व्यक्ति स्कूटर जल्दी सीख लेता है। यह किस प्रकार का अधिगम अंतरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) धनात्मक अंतरण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पुराना अधिगम नए अधिगम में सहायक = धनात्मक अंतरण; द्विपार्श्विक = एक अंग से दूसरे अंग में।</div>
         </article>
@@ -1459,6 +1553,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 61</h3>
           <div class="revision-question-text">शिक्षक नया पाठ शुरू करने से पहले बच्चों से उनके घर-परिवार के अनुभव पूछता है और फिर उन्हें पाठ से जोड़ता है। वह किस शिक्षण सूत्र का पालन कर रहा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) ज्ञात से अज्ञात की ओर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बच्चों के जाने-पहचाने अनुभव से नया ज्ञान जोड़ना = ज्ञात से अज्ञात।</div>
         </article>
@@ -1466,6 +1561,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 62</h3>
           <div class="revision-question-text">शिक्षण सूत्र "मूर्त से अमूर्त की ओर" का सर्वोत्तम उदाहरण है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) भिन्न सिखाने के लिए पहले रोटी/कागज़ के टुकड़े बाँटना, फिर संकेत में लिखना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पहले वास्तविक वस्तु, फिर प्रतीक/संकेत = मूर्त से अमूर्त।</div>
         </article>
@@ -1473,6 +1569,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 63</h3>
           <div class="revision-question-text">वह शिक्षण विधि जिसमें अनेक उदाहरणों का अवलोकन करके बच्चे स्वयं सामान्य नियम तक पहुँचते हैं—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) आगमन विधि</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आगमन = उदाहरण से नियम (विशिष्ट से सामान्य)। छोटी कक्षाओं के लिए अधिक उपयुक्त।</div>
         </article>
@@ -1480,6 +1577,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 64</h3>
           <div class="revision-question-text">कक्षा 7 में शिक्षक पहले आयत के क्षेत्रफल का सूत्र बताता है और फिर उस पर आधारित प्रश्न हल करवाता है। यह कौन-सी विधि है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) निगमन विधि</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> निगमन = नियम/सूत्र से उदाहरण (सामान्य से विशिष्ट)।</div>
         </article>
@@ -1487,6 +1585,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 65</h3>
           <div class="revision-question-text">प्रोजेक्ट (योजना) विधि के प्रवर्तक कौन हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) डब्ल्यू.एच. किलपैट्रिक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> किलपैट्रिक (जॉन डीवी के शिष्य) – वास्तविक जीवन की समस्या पर आधारित उद्देश्यपूर्ण कार्य।</div>
         </article>
@@ -1494,6 +1593,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 66</h3>
           <div class="revision-question-text">ह्यूरिस्टिक (अन्वेषण/खोज) विधि के प्रवर्तक कौन हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) एच.ई. आर्मस्ट्रांग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आर्मस्ट्रांग – बच्चा स्वयं खोजकर्ता की तरह सीखता है (विज्ञान शिक्षण में उपयोगी)।</div>
         </article>
@@ -1501,6 +1601,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 67</h3>
           <div class="revision-question-text">"डाल्टन योजना" किसकी देन है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) हेलेन पार्खर्स्ट</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> हेलेन पार्खर्स्ट – अनुबंध (कॉन्ट्रैक्ट) के आधार पर स्व-गति से सीखना।</div>
         </article>
@@ -1508,6 +1609,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 68</h3>
           <div class="revision-question-text">"किंडरगार्टन" (बालोद्यान) पद्धति के जनक कौन हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) फ्रोबेल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> फ्रोबेल – खेल व उपहार (Gifts) के माध्यम से शिक्षा।</div>
         </article>
@@ -1515,6 +1617,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 69</h3>
           <div class="revision-question-text">सूक्ष्म शिक्षण (Micro-teaching) का विकास सर्वप्रथम कहाँ हुआ?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्टैनफोर्ड विश्वविद्यालय</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्टैनफोर्ड विश्वविद्यालय (अमेरिका), डी.डब्ल्यू. एलन व साथियों द्वारा 1961 में।</div>
         </article>
@@ -1522,6 +1625,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 70</h3>
           <div class="revision-question-text">भारतीय प्रतिमान में सूक्ष्म शिक्षण चक्र की कुल अवधि कितनी होती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 36 मिनट</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शिक्षण 6 + प्रतिपुष्टि 6 + पुनर्योजना 12 + पुनर्शिक्षण 6 + पुनः प्रतिपुष्टि 6 = 36 मिनट।</div>
         </article>
@@ -1529,6 +1633,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 71</h3>
           <div class="revision-question-text">शिक्षक कक्षा में आवाज़ के उतार-चढ़ाव, हाव-भाव, चलने-फिरने और गतिविधि में बदलाव करके बच्चों का ध्यान बनाए रखता है। यह कौन-सा शिक्षण कौशल है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) उद्दीपन परिवर्तन कौशल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उद्दीपन परिवर्तन कौशल ध्यान बनाए रखने के लिए है।</div>
         </article>
@@ -1536,6 +1641,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 72</h3>
           <div class="revision-question-text">ब्लूम के मूल वर्गीकरण (1956) में संज्ञानात्मक पक्ष का उच्चतम स्तर कौन-सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मूल्यांकन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> क्रम: ज्ञान → बोध → अनुप्रयोग → विश्लेषण → संश्लेषण → मूल्यांकन। संशोधित (2001) में उच्चतम = सृजन।</div>
         </article>
@@ -1543,6 +1649,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 73</h3>
           <div class="revision-question-text">"कक्षा में पढ़े गए नियम का प्रयोग करके अपने घर के बिजली बिल की गणना करो।" ब्लूम के वर्गीकरण में यह प्रश्न किस स्तर का है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अनुप्रयोग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सीखे गए नियम को नई वास्तविक परिस्थिति में लगाना = अनुप्रयोग।</div>
         </article>
@@ -1550,6 +1657,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 74</h3>
           <div class="revision-question-text">निम्न में से कौन-सी रचनावादी (Constructivist) कक्षा की विशेषता <strong>नहीं</strong> है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) शिक्षक द्वारा केवल व्याख्यान और बच्चों द्वारा उत्तर रटना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रचनावाद में बच्चा सक्रिय रहकर ज्ञान का निर्माण करता है; रटना इसके विपरीत है।</div>
         </article>
@@ -1557,6 +1665,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 75</h3>
           <div class="revision-question-text">रचनावादी दृष्टिकोण में शिक्षक की मुख्य भूमिका है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) सुविधादाता (Facilitator)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शिक्षक सीखने का वातावरण बनाता है और मार्गदर्शन करता है।</div>
         </article>
@@ -1564,6 +1673,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 76</h3>
           <div class="revision-question-text">सतत एवं व्यापक मूल्यांकन (CCE) में "व्यापक" शब्द का अर्थ है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शैक्षिक व सह-शैक्षिक दोनों पक्षों का आकलन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> "सतत" = लगातार आकलन; "व्यापक" = शैक्षिक + सह-शैक्षिक (व्यक्तित्व, कला, खेल, मूल्य)।</div>
         </article>
@@ -1571,6 +1681,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 77</h3>
           <div class="revision-question-text">रचनात्मक आकलन (Formative Assessment) का मुख्य उद्देश्य है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सीखने के दौरान कमियाँ पहचानकर सुधार करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रचनात्मक आकलन शिक्षण के दौरान सुधार के लिए; योगात्मक आकलन अंत में ग्रेड के लिए।</div>
         </article>
@@ -1578,6 +1689,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 78</h3>
           <div class="revision-question-text">"अधिगम के लिए आकलन (Assessment for Learning)" का सर्वोत्तम उदाहरण है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पढ़ाते समय प्रश्न पूछकर तुरंत प्रतिपुष्टि देना और शिक्षण में बदलाव करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> "अधिगम के लिए" = सीखने के दौरान; "अधिगम का" = अंत में (सत्रांत परीक्षा)।</div>
         </article>
@@ -1585,6 +1697,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 79</h3>
           <div class="revision-question-text">आकलन में "पोर्टफोलियो" का अर्थ है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बच्चे के कार्यों का क्रमबद्ध संग्रह जो समय के साथ उसकी प्रगति दिखाए</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पोर्टफोलियो में कार्य, चित्र, प्रोजेक्ट, स्व-आकलन आदि होते हैं।</div>
         </article>
@@ -1592,6 +1705,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 80</h3>
           <div class="revision-question-text">नैदानिक परीक्षण (Diagnostic Test) से बच्चों की कठिनाइयाँ पहचानने के बाद शिक्षक को क्या करना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) उपचारात्मक शिक्षण (Remedial Teaching)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> निदान के बाद उपचार – कमज़ोरी वाले भाग का अलग तरीके से शिक्षण।</div>
         </article>
@@ -1599,6 +1713,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 81</h3>
           <div class="revision-question-text">क्रियात्मक अनुसंधान (Action Research) का मुख्य उद्देश्य है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कक्षा/विद्यालय की तात्कालिक समस्या का व्यावहारिक समाधान खोजना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शिक्षा में क्रियात्मक अनुसंधान का श्रेय स्टीफन एम. कोरे को; शिक्षक स्वयं अपनी समस्या हल करता है।</div>
         </article>
@@ -1606,6 +1721,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 82</h3>
           <div class="revision-question-text">कक्षा 7 के कई बच्चे नियमित रूप से गृहकार्य नहीं कर रहे। शिक्षक कारण का पता लगाता है, एक समाधान आज़माता है और कुछ सप्ताह बाद परिणाम देखता है। यह है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) क्रियात्मक अनुसंधान</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> समस्या → कारण → उपाय (परिकल्पना) → प्रयोग → परिणाम = क्रियात्मक अनुसंधान के चरण।</div>
         </article>
@@ -1613,6 +1729,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 83</h3>
           <div class="revision-question-text">एडगर डेल के "अनुभव शंकु (Cone of Experience)" के आधार पर (सबसे मूर्त अनुभव) क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) प्रत्यक्ष उद्देश्यपूर्ण अनुभव</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शंकु का आधार = प्रत्यक्ष अनुभव (सबसे मूर्त); शीर्ष = शाब्दिक प्रतीक (सबसे अमूर्त)।</div>
         </article>
@@ -1620,6 +1737,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 84</h3>
           <div class="revision-question-text">कक्षा में प्रभावी संप्रेषण के लिए सबसे आवश्यक है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) द्विमार्गी संप्रेषण, जिसमें प्रतिपुष्टि हो</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> द्विमार्गी संप्रेषण से शिक्षक को पता चलता है कि बच्चे कितना समझे।</div>
         </article>
@@ -1627,6 +1745,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 85</h3>
           <div class="revision-question-text">निम्न में से कौन-सा प्रश्न बच्चों में उच्च-स्तरीय चिंतन (HOTS) को सबसे अधिक बढ़ावा देता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) यदि पृथ्वी पर गुरुत्वाकर्षण न होता तो हमारा दैनिक जीवन कैसा होता?</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कल्पना, तर्क व विश्लेषण माँगने वाला खुला प्रश्न; बाकी सब स्मरण स्तर के हैं।</div>
         </article>
@@ -1638,6 +1757,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 86</h3>
           <div class="revision-question-text">समावेशी शिक्षा (Inclusive Education) का सही अर्थ है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विशेष आवश्यकता वाले बच्चों सहित सभी बच्चों को सामान्य विद्यालय में एक साथ गुणवत्तापूर्ण शिक्षा देना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> समावेशन = सब एक साथ, विद्यालय बच्चे के अनुसार बदले; अलग विद्यालय = पृथक्करण।</div>
         </article>
@@ -1645,6 +1765,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 87</h3>
           <div class="revision-question-text">"डिस्लेक्सिया" का संबंध किस कठिनाई से है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पढ़ने में कठिनाई</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डिस्लेक्सिया = पढ़ने (अक्षर पहचान, b-d में भ्रम) की कठिनाई।</div>
         </article>
@@ -1652,6 +1773,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 88</h3>
           <div class="revision-question-text">"डिस्ग्राफिया" से ग्रस्त बच्चे को मुख्यतः किसमें कठिनाई होती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लिखने में</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डिस्ग्राफिया = लिखने की कठिनाई (खराब लिखावट, वर्तनी)।</div>
         </article>
@@ -1659,6 +1781,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 89</h3>
           <div class="revision-question-text">"डिस्कैलकुलिया" किससे संबंधित अधिगम अक्षमता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) गणितीय गणना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डिस्कैलकुलिया = अंकों व गणना की कठिनाई।</div>
         </article>
@@ -1666,6 +1789,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 90</h3>
           <div class="revision-question-text">"डिस्प्रैक्सिया" का संबंध किससे है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गामक कौशल व शारीरिक समन्वय</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डिस्प्रैक्सिया = गामक समन्वय; डिसफेसिया = भाषा/बोलने की कठिनाई।</div>
         </article>
@@ -1673,6 +1797,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 91</h3>
           <div class="revision-question-text">ब्रेल लिपि के एक मूल सेल में कितने उभरे हुए बिंदु होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 6</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लुई ब्रेल की लिपि – 6 बिंदु (2 स्तंभ × 3 पंक्ति)।</div>
         </article>
@@ -1680,6 +1805,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 92</h3>
           <div class="revision-question-text">कक्षा 6 का एक बच्चा लगातार बेचैन रहता है, किसी कार्य पर ध्यान नहीं टिका पाता, बार-बार सीट छोड़ता है और बिना सोचे बोल पड़ता है। इन लक्षणों का संभावित कारण है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ध्यान अभाव अतिसक्रियता विकार (ADHD)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ध्यान की कमी + अतिसक्रियता + आवेगशीलता = ADHD के लक्षण; निदान विशेषज्ञ करे।</div>
         </article>
@@ -1687,6 +1813,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 93</h3>
           <div class="revision-question-text">दिव्यांगजन अधिकार अधिनियम (RPwD Act), 2016 में कितने प्रकार की दिव्यांगताएँ शामिल हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 21</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> RPwD 2016 में 21 प्रकार (पहले 1995 के अधिनियम में 7 थे)।</div>
         </article>
@@ -1694,6 +1821,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 94</h3>
           <div class="revision-question-text">RPwD अधिनियम 2016 के अनुसार "बेंचमार्क दिव्यांगता" का अर्थ है निर्धारित दिव्यांगता—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 40% या अधिक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बेंचमार्क = कम से कम 40% निर्धारित दिव्यांगता।</div>
         </article>
@@ -1701,6 +1829,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 95</h3>
           <div class="revision-question-text">विशेष शिक्षकों के प्रशिक्षण कार्यक्रमों को मान्यता देने और उनका पंजीकरण (CRR संख्या) करने वाली संस्था कौन-सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) भारतीय पुनर्वास परिषद (RCI)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> RCI अधिनियम 1992; विशेष शिक्षक का पंजीकरण CRR संख्या से होता है।</div>
         </article>
@@ -1708,6 +1837,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 96</h3>
           <div class="revision-question-text">कक्षा 7 में एक आंशिक श्रवण-बाधित छात्र है। शिक्षक को क्या करना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आगे बैठाना, बोलते समय चेहरा उसकी ओर रखना और दृश्य सामग्री का उपयोग करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आगे बैठाने और चेहरा दिखने से बच्चा होंठ पढ़ सकता है; दृश्य संकेत मदद करते हैं।</div>
         </article>
@@ -1715,6 +1845,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 97</h3>
           <div class="revision-question-text">कक्षा में एक अल्पदृष्टि (Low Vision) वाली छात्रा है। सबसे उपयुक्त सहायता है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बड़े अक्षरों वाली सामग्री, ऑडियो व स्पर्शीय सामग्री तथा अच्छी रोशनी में आगे बैठाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अल्पदृष्टि के लिए बड़ा फॉन्ट, रोशनी और अन्य इंद्रियों का उपयोग।</div>
         </article>
@@ -1722,6 +1853,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 98</h3>
           <div class="revision-question-text">प्रतिभाशाली (Gifted) बच्चों के लिए सबसे उपयुक्त है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) संवर्धन (Enrichment) कार्यक्रम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> संवर्धन = अधिक गहरे व चुनौतीपूर्ण कार्य; उपचारात्मक शिक्षण पिछड़े बच्चों के लिए।</div>
         </article>
@@ -1729,6 +1861,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 99</h3>
           <div class="revision-question-text">कक्षा 6 में कुछ बच्चे मंद गति से सीखते हैं (Slow learners)। उनके लिए शिक्षक को—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) छोटे-छोटे चरण, ठोस उदाहरण, बार-बार अभ्यास व अतिरिक्त समय देना चाहिए</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मंद गति से सीखने वालों को समय, ठोस अनुभव और अभ्यास चाहिए; तुलना हानिकारक है।</div>
         </article>
@@ -1736,6 +1869,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 100</h3>
           <div class="revision-question-text">उत्तर प्रदेश में मनोविज्ञानशाला (Psychology Bureau), जो निर्देशन एवं परामर्श सेवा देती है, कहाँ स्थित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रयागराज</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मनोविज्ञानशाला, उ.प्र., प्रयागराज; मण्डल स्तर पर मनोविज्ञान केंद्र भी हैं।</div>
         </article>
@@ -1743,6 +1877,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 101</h3>
           <div class="revision-question-text">कक्षा 8 के बाद कौन-से विषय या पाठ्यक्रम चुनें, इस बारे में छात्रों को दी गई सहायता किस प्रकार का निर्देशन है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) शैक्षिक निर्देशन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विषय/पाठ्यक्रम चुनने में मदद = शैक्षिक निर्देशन; व्यवसाय चुनने में = व्यावसायिक निर्देशन।</div>
         </article>
@@ -1750,6 +1885,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 102</h3>
           <div class="revision-question-text">अनिर्देशात्मक (सेवार्थी/ग्राहक-केंद्रित) परामर्श के प्रतिपादक कौन हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कार्ल रोजर्स</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रोजर्स: सेवार्थी स्वयं समाधान खोजता है, परामर्शदाता सुनता व स्वीकार करता है।</div>
         </article>
@@ -1757,6 +1893,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 103</h3>
           <div class="revision-question-text">निर्देशात्मक (परामर्शदाता-केंद्रित) परामर्श के प्रतिपादक कौन हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) ई.जी. विलियमसन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विलियमसन: परामर्शदाता समस्या का विश्लेषण कर सुझाव देता है। समन्वित परामर्श = एफ.सी. थॉर्न।</div>
         </article>
@@ -1764,6 +1901,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 104</h3>
           <div class="revision-question-text">कक्षा 8 का एक छात्र घर के कलह के कारण कुछ समय से उदास रहता है और पढ़ाई में पिछड़ रहा है। शिक्षक का पहला कदम होना चाहिए—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अकेले में सहानुभूतिपूर्वक बात करना और आवश्यकता हो तो अभिभावक/परामर्शदाता से संपर्क करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> निजता का सम्मान, सहानुभूति और आवश्यकता होने पर सहायता तंत्र से जोड़ना।</div>
         </article>
@@ -1771,6 +1909,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 105</h3>
           <div class="revision-question-text">कक्षा में अलग-अलग मातृभाषा (अवधी, भोजपुरी, उर्दू आदि) बोलने वाले बच्चे हैं। शिक्षक का सर्वोत्तम दृष्टिकोण है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बच्चों की घरेलू भाषा को संसाधन मानकर बहुभाषिकता का उपयोग करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> NEP 2020 व NCF बहुभाषिकता को संसाधन मानते हैं।</div>
         </article>
@@ -1778,6 +1917,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 106</h3>
           <div class="revision-question-text">जेंडर समावेशी कक्षा के लिए सबसे उचित कदम है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सभी कार्य और जिम्मेदारियाँ बिना लैंगिक भेदभाव बारी-बारी से देना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लैंगिक रूढ़ियों को तोड़ना और समान अवसर देना।</div>
         </article>
@@ -1785,6 +1925,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 107</h3>
           <div class="revision-question-text">स्वलीनता (Autism Spectrum Disorder) का प्रमुख लक्षण है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सामाजिक संप्रेषण व अंतःक्रिया में कठिनाई तथा दोहराव वाला व्यवहार</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ASD में सामाजिक संप्रेषण की कठिनाई, सीमित रुचियाँ व दोहराव वाला व्यवहार।</div>
         </article>
@@ -1792,6 +1933,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 108</h3>
           <div class="revision-question-text">श्रवण-बाधित बच्चों के संप्रेषण का मुख्य साधन कौन-सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सांकेतिक भाषा व ओष्ठ-पठन (Lip reading)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ब्रेल दृष्टिबाधितों के लिए; श्रवण-बाधितों के लिए सांकेतिक भाषा व ओष्ठ-पठन।</div>
         </article>
@@ -1799,6 +1941,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 109</h3>
           <div class="revision-question-text">विशेष आवश्यकता वाले बच्चों के संदर्भ में IEP का पूर्ण रूप क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) Individualized Education Programme (वैयक्तिक शिक्षा कार्यक्रम)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> IEP = हर बच्चे की आवश्यकता के अनुसार लक्ष्य व सहायता की लिखित योजना।</div>
         </article>
@@ -1806,6 +1949,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 110</h3>
           <div class="revision-question-text">विशेष आवश्यकता वाले बच्चों (CWSN) के आकलन के लिए सबसे उपयुक्त है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) लचीला आकलन – मौखिक, अवलोकन, पोर्टफोलियो, अतिरिक्त समय, लेखक (Scribe) की सुविधा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आकलन में लचीलापन और उचित सुविधाएँ (Reasonable accommodation) समावेशन का भाग हैं।</div>
         </article>
@@ -1817,6 +1961,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 111</h3>
           <div class="revision-question-text">बच्चों द्वारा की गई त्रुटियों के बारे में सही दृष्टिकोण है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) त्रुटियाँ सीखने का स्वाभाविक भाग हैं और बच्चे के चिंतन को समझने का अवसर देती हैं</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> NCF 2005 से आज तक: त्रुटियाँ बच्चे के सोचने की खिड़की हैं, सीखने का सार्थक चरण।</div>
         </article>
@@ -1824,6 +1969,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 112</h3>
           <div class="revision-question-text">कक्षा 6 का एक छात्र लिखता है कि 0.25 > 0.5, क्योंकि "25 बड़ा है 5 से"। शिक्षक का सर्वोत्तम कदम है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बच्चे की वैकल्पिक अवधारणा पहचानकर ग्रिड/पैसे जैसे मूर्त मॉडल से दोनों संख्याओं की तुलना करवाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बच्चा दशमलव को पूर्ण संख्या की तरह देख रहा है; मूर्त मॉडल से अवधारणा सुधरती है।</div>
         </article>
@@ -1831,6 +1977,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 113</h3>
           <div class="revision-question-text">"बच्चे कोरी स्लेट (Tabula Rasa) नहीं होते" – इस कथन का अर्थ है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बच्चे अपने पूर्व अनुभव और धारणाएँ लेकर आते हैं, नया ज्ञान उन्हीं पर बनता है</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> Tabula rasa (कोरी स्लेट) – जॉन लॉक का विचार; आधुनिक रचनावाद इसे नहीं मानता।</div>
         </article>
@@ -1838,6 +1985,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 114</h3>
           <div class="revision-question-text">बच्चों के विद्यालयी प्रदर्शन में असफल होने का प्रमुख कारण है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) रटंत, बच्चों के अनुभवों से कटी हुई शिक्षा और अरुचिकर शिक्षण विधियाँ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> असफलता का कारण प्रायः व्यवस्था है, बच्चा नहीं – इसलिए बाल-केंद्रित, अनुभव आधारित शिक्षण।</div>
         </article>
@@ -1845,6 +1993,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 115</h3>
           <div class="revision-question-text">"सीखना एक सामाजिक गतिविधि है" – इसका कक्षा के लिए निहितार्थ है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) समूह कार्य, चर्चा और सहयोगात्मक अधिगम के अवसर दिए जाएँ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सामाजिक अंतःक्रिया (वाइगोत्सकी) से सीखना गहरा होता है।</div>
         </article>
@@ -1852,6 +2001,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 116</h3>
           <div class="revision-question-text">बच्चे को "समस्या-समाधानकर्ता एवं वैज्ञानिक अन्वेषक" मानने वाला शिक्षक कक्षा में क्या करेगा?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) प्रश्न पूछने, अनुमान लगाने और प्रयोग करके जाँचने के अवसर देगा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्रश्न → परिकल्पना → प्रयोग → निष्कर्ष = वैज्ञानिक अन्वेषण।</div>
         </article>
@@ -1859,6 +2009,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 117</h3>
           <div class="revision-question-text">निम्न में से आंतरिक अभिप्रेरणा का उदाहरण कौन-सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आनंद आने के कारण कहानियाँ पढ़ना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आंतरिक = कार्य में ही आनंद; बाकी तीनों बाह्य अभिप्रेरणा हैं।</div>
         </article>
@@ -1866,6 +2017,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 118</h3>
           <div class="revision-question-text">मास्लो के आवश्यकता पदानुक्रम में सबसे निचले स्तर पर कौन-सी आवश्यकताएँ हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) शारीरिक (दैहिक) आवश्यकताएँ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> क्रम (नीचे से): शारीरिक → सुरक्षा → प्रेम/संबद्धता → सम्मान → आत्म-सिद्धि। भूखा बच्चा ध्यान नहीं दे पाता।</div>
         </article>
@@ -1873,6 +2025,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 119</h3>
           <div class="revision-question-text">कक्षा 7 के बच्चों में सीखने की अभिप्रेरणा बढ़ाने का सबसे प्रभावी तरीका है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) रुचि व दैनिक जीवन से जुड़े सार्थक तथा उचित रूप से चुनौतीपूर्ण कार्य देना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रुचि, सार्थकता और सही स्तर की चुनौती आंतरिक अभिप्रेरणा बढ़ाती है।</div>
         </article>
@@ -1880,6 +2033,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 120</h3>
           <div class="revision-question-text">"उपलब्धि अभिप्रेरणा (Achievement Motivation)" का सिद्धांत किसने दिया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) डेविड मैक्लीलैंड</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मैक्लीलैंड – उपलब्धि, शक्ति व संबद्धता की आवश्यकता।</div>
         </article>
@@ -1887,6 +2041,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 121</h3>
           <div class="revision-question-text">संवेदना (Sensation) और प्रत्यक्षीकरण (Perception) के संबंध में सही कथन है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रत्यक्षीकरण = संवेदना + अर्थ (संवेदना की अर्थपूर्ण व्याख्या)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> संवेदना पहले (इंद्रिय अनुभव), फिर उसका अर्थ लगाना = प्रत्यक्षीकरण।</div>
         </article>
@@ -1894,6 +2049,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 122</h3>
           <div class="revision-question-text">"रुचि गुप्त ध्यान है और ध्यान क्रियाशील रुचि है" – यह कथन किसका है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मैक्डूगल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मैक्डूगल ने रुचि और ध्यान का गहरा संबंध बताया।</div>
         </article>
@@ -1901,6 +2057,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 123</h3>
           <div class="revision-question-text">निम्न में से कौन-सा अधिगम को प्रभावित करने वाला <strong>वातावरणीय</strong> कारक है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कक्षा का भौतिक वातावरण (रोशनी, हवा, बैठने की व्यवस्था)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बुद्धि, परिपक्वता, अभिप्रेरणा = वैयक्तिक कारक; कक्षा, घर, समाज = वातावरणीय।</div>
         </article>
@@ -1908,6 +2065,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 124</h3>
           <div class="revision-question-text">विस्मरण का अध्ययन करने के लिए निरर्थक शब्दों (Nonsense syllables) का प्रयोग किसने किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) एबिंगहॉस</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> एबिंगहॉस का विस्मरण वक्र: सीखने के तुरंत बाद सबसे तेज़ भूलना।</div>
         </article>
@@ -1915,6 +2073,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 125</h3>
           <div class="revision-question-text">पढ़ी हुई सामग्री को लंबे समय तक याद रखने का सबसे प्रभावी तरीका है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अंतराल देकर दोहराना और पहले के ज्ञान से अर्थपूर्ण संबंध बनाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अंतराल युक्त अभ्यास व अर्थपूर्ण संबंध से स्मृति स्थायी होती है।</div>
         </article>
@@ -1922,6 +2081,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 126</h3>
           <div class="revision-question-text">"करके सीखना (Learning by Doing)" का विचार मुख्यतः किससे जुड़ा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जॉन डीवी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जॉन डीवी – प्रयोजनवाद, अनुभव से सीखना।</div>
         </article>
@@ -1929,6 +2089,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 127</h3>
           <div class="revision-question-text">कक्षा 8 में "स्थानीय स्वशासन / पंचायती राज" पढ़ाने का सबसे प्रभावी तरीका है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कक्षा में "बाल पंचायत" का अभिनय (रोल-प्ले) करवाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रोल-प्ले से अनुभवात्मक सीख होती है और किशोरों की भागीदारी बढ़ती है।</div>
         </article>
@@ -1936,6 +2097,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 128</h3>
           <div class="revision-question-text">"अधिसंज्ञान (Metacognition)" का अर्थ है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अपने सोचने और सीखने के बारे में सोचना तथा उसे नियंत्रित करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अधिसंज्ञान = "सोचने के बारे में सोचना"; जैसे बच्चा स्वयं जाँचे कि उसे क्या समझ नहीं आया।</div>
         </article>
@@ -1943,6 +2105,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 129</h3>
           <div class="revision-question-text">कक्षा 6 का एक छात्र हर बात पर "क्यों?" पूछता है। शिक्षक को—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) जिज्ञासा को प्रोत्साहित करके उसे स्वयं उत्तर खोजने में मार्गदर्शन देना चाहिए</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जिज्ञासा सीखने की सबसे बड़ी शक्ति है; उसे दबाना नहीं चाहिए।</div>
         </article>
@@ -1950,6 +2113,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 130</h3>
           <div class="revision-question-text">"जिगसॉ (Jigsaw)" तकनीक किस प्रकार के अधिगम से संबंधित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सहयोगात्मक (Cooperative) अधिगम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जिगसॉ (इलियट एरॉनसन): हर सदस्य विषय का एक भाग सीखकर समूह को सिखाता है।</div>
         </article>
@@ -1961,6 +2125,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 131</h3>
           <div class="revision-question-text">एक बच्चे की मानसिक आयु 12 वर्ष और वास्तविक (कालानुक्रमिक) आयु 10 वर्ष है। उसकी बुद्धि लब्धि (IQ) कितनी होगी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 120</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> IQ = (मानसिक आयु ÷ वास्तविक आयु) × 100 = (12 ÷ 10) × 100 = 120।</div>
         </article>
@@ -1968,6 +2133,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 132</h3>
           <div class="revision-question-text">"बुद्धि लब्धि (IQ)" की अवधारणा सर्वप्रथम किसने दी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विलियम स्टर्न</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्टर्न (1912) ने मानसिक लब्धि दी; टरमन ने ×100 जोड़ा; बिने = बुद्धि परीक्षण के जनक।</div>
         </article>
@@ -1975,6 +2141,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 133</h3>
           <div class="revision-question-text">बहु-बुद्धि सिद्धांत (Multiple Intelligences) के प्रतिपादक कौन हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) हावर्ड गार्डनर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गार्डनर (1983) – पहले 7, बाद में 8 (प्रकृतिवादी जोड़कर) बुद्धियाँ।</div>
         </article>
@@ -1982,6 +2149,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 134</h3>
           <div class="revision-question-text">कक्षा 8 की एक छात्रा दूसरों की भावनाएँ जल्दी समझ लेती है, झगड़े सुलझा देती है और समूह में अच्छा तालमेल बनाती है। गार्डनर के अनुसार उसमें कौन-सी बुद्धि प्रबल है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अंतर्वैयक्तिक (Interpersonal) बुद्धि</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अंतर्वैयक्तिक = दूसरों को समझना; अंतःवैयक्तिक = स्वयं को समझना।</div>
         </article>
@@ -1989,6 +2157,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 135</h3>
           <div class="revision-question-text">बुद्धि का द्वि-कारक सिद्धांत (सामान्य 'G' एवं विशिष्ट 'S' कारक) किसने दिया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) चार्ल्स स्पीयरमैन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्पीयरमैन (1904) – G व S कारक; थर्स्टन = बहुखंड/प्राथमिक मानसिक योग्यताएँ।</div>
         </article>
@@ -1996,6 +2165,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 136</h3>
           <div class="revision-question-text">बुद्धि का त्रितंत्र सिद्धांत (Triarchic Theory) किसने दिया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रॉबर्ट स्टर्नबर्ग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्टर्नबर्ग – विश्लेषणात्मक, सृजनात्मक व व्यावहारिक बुद्धि।</div>
         </article>
@@ -2003,6 +2173,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 137</h3>
           <div class="revision-question-text">व्यक्तित्व को "अंतर्मुखी" और "बहिर्मुखी" में वर्गीकृत किसने किया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कार्ल युंग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कार्ल युंग ने अंतर्मुखी-बहिर्मुखी वर्गीकरण दिया (उभयमुखी बाद में जोड़ा गया)।</div>
         </article>
@@ -2010,6 +2181,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 138</h3>
           <div class="revision-question-text">निम्न में से कौन-सा प्रक्षेपी (Projective) व्यक्तित्व परीक्षण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) रोर्शा स्याही धब्बा परीक्षण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्रक्षेपी परीक्षण: रोर्शा, TAT (मरे व मॉर्गन), CAT; बाकी तीनों बुद्धि परीक्षण हैं।</div>
         </article>
@@ -2017,6 +2189,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 139</h3>
           <div class="revision-question-text">कक्षा 7 में कुछ बच्चे पढ़ने में आगे हैं, कुछ औसत और कुछ पीछे। व्यक्तिगत भिन्नता को ध्यान में रखते हुए शिक्षक को—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) विभेदित शिक्षण – स्तर व रुचि के अनुसार विविध कार्य व लचीले समूह बनाना चाहिए</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विभेदित शिक्षण व्यक्तिगत भिन्नता का सबसे उपयुक्त उत्तर है।</div>
         </article>
@@ -2024,6 +2197,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 140</h3>
           <div class="revision-question-text">लोमड़ी का अंगूर न मिलने पर कहना कि "अंगूर खट्टे हैं" – यह किस रक्षा युक्ति (Defence Mechanism) का उदाहरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) युक्तिकरण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> असफलता को तर्कसंगत दिखाने का बहाना = युक्तिकरण।</div>
         </article>
@@ -2031,6 +2205,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 141</h3>
           <div class="revision-question-text">निःशुल्क एवं अनिवार्य बाल शिक्षा का अधिकार (RTE) अधिनियम 2009 देश में कब से लागू हुआ?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 1 अप्रैल 2010</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अधिनियम अगस्त 2009 में पारित हुआ, 1 अप्रैल 2010 से लागू; 6–14 वर्ष के बच्चे, अनुच्छेद 21A।</div>
         </article>
@@ -2038,6 +2213,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 142</h3>
           <div class="revision-question-text">RTE अधिनियम 2009 की किस धारा में बच्चों के शारीरिक दंड और मानसिक उत्पीड़न पर रोक है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) धारा 17</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> धारा 17 – शारीरिक दंड व मानसिक उत्पीड़न निषिद्ध; धारा 21 = विद्यालय प्रबंध समिति; धारा 29 = पाठ्यक्रम व मूल्यांकन।</div>
         </article>
@@ -2045,6 +2221,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 143</h3>
           <div class="revision-question-text">RTE की धारा 12(1)(c) के अनुसार निजी गैर-सहायता प्राप्त विद्यालयों को कमज़ोर व वंचित वर्ग के बच्चों के लिए प्रवेश स्तर पर कितनी सीटें आरक्षित करनी होती हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 25%</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> धारा 12(1)(c) – प्रवेश स्तर की 25% सीटें कमज़ोर व वंचित वर्ग के लिए।</div>
         </article>
@@ -2052,6 +2229,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 144</h3>
           <div class="revision-question-text">RTE अधिनियम की अनुसूची के अनुसार उच्च प्राथमिक स्तर (कक्षा 6–8) पर छात्र-शिक्षक अनुपात कितना होना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 35 : 1</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्राथमिक स्तर 30:1; उच्च प्राथमिक 35:1।</div>
         </article>
@@ -2059,6 +2237,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 145</h3>
           <div class="revision-question-text">राष्ट्रीय शिक्षा नीति 2020 की 5+3+3+4 संरचना में कक्षा 6 से 8 (आयु 11–14 वर्ष) को क्या कहा गया है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मध्य चरण (Middle Stage)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 5 (आधारभूत: 3–8 वर्ष) + 3 (प्रारंभिक: कक्षा 3–5) + 3 (मध्य: कक्षा 6–8) + 4 (माध्यमिक: कक्षा 9–12)।</div>
         </article>
@@ -2066,6 +2245,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 146</h3>
           <div class="revision-question-text">NEP 2020 के अनुसार विद्यालयों में व्यावसायिक शिक्षा (इंटर्नशिप सहित) किस कक्षा से आरंभ होनी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कक्षा 6</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कक्षा 6 से व्यावसायिक शिक्षा; कक्षा 6–8 में 10 दिन की बस्ता-रहित अवधि।</div>
         </article>
@@ -2073,6 +2253,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 147</h3>
           <div class="revision-question-text">NEP 2020 के अनुसार शिक्षा का माध्यम मातृभाषा/घरेलू भाषा/स्थानीय भाषा कब तक होना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) कम से कम कक्षा 5 तक, अधिमानतः कक्षा 8 तक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> NEP 2020: कम से कम कक्षा 5 तक, अधिमानतः कक्षा 8 तक मातृभाषा/स्थानीय भाषा।</div>
         </article>
@@ -2080,6 +2261,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 148</h3>
           <div class="revision-question-text">NEP 2020 के अंतर्गत स्थापित राष्ट्रीय आकलन केंद्र का नाम क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) परख (PARAKH)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> PARAKH = समग्र विकास के लिए कार्य-प्रदर्शन आकलन, समीक्षा और ज्ञान का विश्लेषण; निष्ठा = शिक्षक प्रशिक्षण।</div>
         </article>
@@ -2087,6 +2269,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 149</h3>
           <div class="revision-question-text">निपुण भारत मिशन का लक्ष्य क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वर्ष 2026-27 तक कक्षा 3 के अंत तक हर बच्चे में बुनियादी साक्षरता एवं संख्या ज्ञान (FLN)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> निपुण भारत (5 जुलाई 2021) – लक्ष्य वर्ष 2026-27 तक कक्षा 3 के अंत तक FLN।</div>
         </article>
@@ -2094,6 +2277,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 150</h3>
           <div class="revision-question-text">NEP 2020 के अनुसार "समग्र प्रगति कार्ड (Holistic Progress Card)" की विशेषता है—</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 360-डिग्री आकलन – स्व-आकलन, सहपाठी आकलन व शिक्षक आकलन सहित संज्ञानात्मक, भावात्मक व मनोगत्यात्मक पक्ष</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> HPC में बच्चे के सभी पक्षों का 360-डिग्री आकलन होता है।</div>
         </article>

@@ -118,6 +118,8 @@ test("the selector does not contain exam state initialization", async () => {
 });
 
 const revisionPages = {
+  "rev-cdp60": 60,
+  "rev-hindi60": 60,
   cdp1: 150,
   cdp2: 150,
   hindi1: 150,
@@ -173,4 +175,25 @@ test("the selector lists the revision section first", async () => {
   for (const paper of Object.keys(revisionPages)) {
     assert.match(html, new RegExp(`href="revision-${paper}\\.html"`));
   }
+});
+
+test("60-question revision pages show all options with the answer marked", async () => {
+  for (const paper of ["rev-cdp60", "rev-hindi60"]) {
+    const html = await readFile(
+      new URL(`../revision-${paper}.html`, import.meta.url),
+      "utf8",
+    );
+    assert.equal(html.match(/class="revision-options"/g).length, 60, paper);
+    assert.equal(html.match(/<li class="correct">/g).length, 60, paper);
+    assert.equal(html.match(/<li class="">/g).length, 180, paper);
+  }
+  const plain = await readFile(
+    new URL("../revision-cdp1.html", import.meta.url),
+    "utf8",
+  );
+  assert.doesNotMatch(plain, /class="revision-options"/);
+
+  const index = await readFile(new URL("../index.html", import.meta.url), "utf8");
+  const firstRevision = index.indexOf('href="revision-');
+  assert.equal(index.indexOf('href="revision-rev-cdp60.html"'), firstRevision);
 });

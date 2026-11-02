@@ -896,6 +896,40 @@ dialog::backdrop {
   font-weight: 650;
 }
 
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
 .revision-answer {
   margin: 10px 0 0;
   padding: 10px 12px;
@@ -1075,6 +1109,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 1</h3>
           <div class="revision-question-text">सप्तक के पहले स्वर 'सा' का पूरा नाम है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) षड्ज</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सा – षड्ज, रे – ऋषभ, ग – गांधार, म – मध्यम, प – पंचम, ध – धैवत, नि – निषाद।</div>
         </article>
@@ -1082,6 +1117,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 2</h3>
           <div class="revision-question-text">हिंदुस्तानी संगीत में कितने स्वरों का कोमल रूप होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 4</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कोमल: रे, ग, ध, नि; तीव्र: केवल म; अचल: सा, प (जुलाई 2026)</div>
         </article>
@@ -1089,6 +1125,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 3</h3>
           <div class="revision-question-text">भारतीय संगीत शास्त्र के अनुसार एक सप्तक में कुल कितनी श्रुतियाँ मानी गई हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 22</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 22 श्रुतियाँ, 12 स्वरस्थान</div>
         </article>
@@ -1096,6 +1133,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 4</h3>
           <div class="revision-question-text">सामान्य (मध्य) सप्तक से नीचे के स्वरों वाला सप्तक क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मंद्र सप्तक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मंद्र सप्तक = स्वर के नीचे बिंदु</div>
         </article>
@@ -1103,6 +1141,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 5</h3>
           <div class="revision-question-text">भातखंडे स्वरलिपि पद्धति में कोमल स्वर (जैसे कोमल रे) को कैसे दर्शाया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्वर के नीचे आड़ी रेखा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कोमल = नीचे आड़ी रेखा</div>
         </article>
@@ -1110,6 +1149,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 6</h3>
           <div class="revision-question-text">भातखंडे स्वरलिपि में तीव्र मध्यम (तीव्र म) को कैसे दर्शाया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) स्वर के ऊपर खड़ी रेखा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> तीव्र म = ऊपर खड़ी रेखा</div>
         </article>
@@ -1121,6 +1161,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 7</h3>
           <div class="revision-question-text">लय के तीन मुख्य प्रकारों का धीमी से तेज़ गति की ओर सही क्रम कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विलंबित, मध्य, द्रुत</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विलंबित < मध्य < द्रुत</div>
         </article>
@@ -1128,6 +1169,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 8</h3>
           <div class="revision-question-text">ताल की वह पहली मात्रा, जिस पर सबसे अधिक ज़ोर होता है और जहाँ गायक व तबला वादक मिलते हैं, क्या कहलाती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सम = पहली मात्रा (×); एक पूरा चक्र = आवर्तन</div>
         </article>
@@ -1135,6 +1177,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 9</h3>
           <div class="revision-question-text">झपताल में कितनी मात्राएँ होती हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 10</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> झपताल 10 (2+3+2+3); तीनताल 16, एकताल 12, दादरा 6</div>
         </article>
@@ -1142,6 +1185,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 10</h3>
           <div class="revision-question-text">लोक गीतों और भजनों में बहुत प्रचलित 'कहरवा' ताल में कितनी मात्राएँ होती हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 8</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कहरवा 8 मात्रा; दादरा 6 (जुलाई 2026)</div>
         </article>
@@ -1149,6 +1193,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 11</h3>
           <div class="revision-question-text">रूपक ताल की सही विशेषता कौन सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 7 मात्राएँ, सम पर खाली</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रूपक 7 (3+2+2), सम पर खाली</div>
         </article>
@@ -1160,6 +1205,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 12</h3>
           <div class="revision-question-text">'थाट' के बारे में कौन-सा कथन सही है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) थाट में सात स्वर क्रम से होते हैं और केवल आरोह होता है</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> थाट – सात स्वर क्रम से, केवल आरोह, गाया नहीं जाता, इससे राग उत्पन्न होते हैं; पं. विष्णु नारायण भातखंडे ने 10 थाट माने – बिलावल, कल्याण, खमाज, भैरव, पूर्वी, मारवा, काफ़ी, आसावरी, भैरवी, तोड़ी।</div>
         </article>
@@ -1167,6 +1213,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 13</h3>
           <div class="revision-question-text">पं. विष्णु नारायण भातखंडे ने हिंदुस्तानी रागों को कितने थाटों में बाँटा?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 10</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 10 थाट: बिलावल, कल्याण, खमाज, भैरव, पूर्वी, मारवा, काफी, आसावरी, भैरवी, तोड़ी</div>
         </article>
@@ -1174,6 +1221,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 14</h3>
           <div class="revision-question-text">राग भूपाली किस थाट से संबंधित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कल्याण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> भूपाली व यमन – कल्याण थाट; थाट का नाम उसके प्रमुख राग पर</div>
         </article>
@@ -1181,6 +1229,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 15</h3>
           <div class="revision-question-text">किसी राग में सबसे अधिक प्रयोग होने वाला प्रमुख स्वर क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) वादी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वादी = राग का राजा; संवादी = मंत्री; विवादी = वर्जित सा स्वर</div>
         </article>
@@ -1188,6 +1237,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 16</h3>
           <div class="revision-question-text">राग में स्वरों को नीचे से ऊपर की ओर (सा रे ग म प ध नि साँ) गाना क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आरोह</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आरोह = चढ़ता क्रम; अवरोह = उतरता क्रम</div>
         </article>
@@ -1195,6 +1245,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 17</h3>
           <div class="revision-question-text">जिस राग में केवल पाँच स्वर प्रयुक्त होते हैं, उसकी जाति क्या कहलाती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) औडव</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> औडव 5, षाडव 6, संपूर्ण 7</div>
         </article>
@@ -1206,6 +1257,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 18</h3>
           <div class="revision-question-text">विटामिन A की कमी से कौन सा रोग होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रतौंधी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विटामिन A – रतौंधी; D – रिकेट्स; B₁ – बेरी-बेरी</div>
         </article>
@@ -1213,6 +1265,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 19</h3>
           <div class="revision-question-text">मसूड़ों से खून आना किस विटामिन की कमी का लक्षण है (स्कर्वी)?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विटामिन C</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विटामिन C – स्कर्वी; खट्टे फल, आँवला</div>
         </article>
@@ -1220,6 +1273,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 20</h3>
           <div class="revision-question-text">धूप के संपर्क में आने पर हमारी त्वचा में कौन सा विटामिन बनता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) विटामिन D</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विटामिन D; कमी से रिकेट्स</div>
         </article>
@@ -1227,6 +1281,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 21</h3>
           <div class="revision-question-text">वसा में घुलनशील विटामिनों का सही समूह कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) A, D, E, K</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> A, D, E, K; B व C जल में घुलनशील</div>
         </article>
@@ -1234,6 +1289,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 22</h3>
           <div class="revision-question-text">प्रोटीन की गंभीर कमी से बच्चों में होने वाला रोग, जिसमें पेट फूलता है और शरीर में सूजन आती है:</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) क्वाशियोरकॉर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> क्वाशियोरकॉर – प्रोटीन; मरास्मस – प्रोटीन व कैलोरी दोनों</div>
         </article>
@@ -1241,6 +1297,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 23</h3>
           <div class="revision-question-text">बच्चे की लंबाई के अनुपात में बहुत कम वज़न होना, जो हाल के तीव्र कुपोषण को दर्शाता है, क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) दुबलापन (वेस्टिंग)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वेस्टिंग; स्टंटिंग = आयु के अनुसार कम लंबाई</div>
         </article>
@@ -1248,6 +1305,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 24</h3>
           <div class="revision-question-text">आयोडीन की कमी (घेंघा) से बचाव के लिए भारत में किस खाद्य पदार्थ को आयोडीन युक्त किया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नमक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आयोडीन युक्त नमक</div>
         </article>
@@ -1259,6 +1317,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 25</h3>
           <div class="revision-question-text">शरीर के ताप-नियमन (समस्थिति) तंत्र में वह भाग कौन सा है जो नियंत्रण केंद्र से संदेश पाकर प्रतिक्रिया करता है (जैसे पसीना निकालने वाली ग्रंथियाँ)?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) प्रभावक (इफ़ेक्टर)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्रभावक; ग्राही परिवर्तन पहचानता है</div>
         </article>
@@ -1266,6 +1325,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 26</h3>
           <div class="revision-question-text">मलेरिया का संक्रमण किसके काटने से होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मादा एनाफ़िलीज़</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मादा एनाफ़िलीज़; डेंगू – एडीज़</div>
         </article>
@@ -1273,6 +1333,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 27</h3>
           <div class="revision-question-text">डेंगू रोग किस मच्छर के काटने से फैलता है, जो प्रायः दिन में काटता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) एडीज़</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> एडीज़ एजिप्टी</div>
         </article>
@@ -1280,6 +1341,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 28</h3>
           <div class="revision-question-text">निम्नलिखित में से कौन सा रोग मुख्य रूप से दूषित पानी से फैलता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) हैजा (कॉलरा)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> हैजा; टीबी हवा से, मलेरिया मच्छर से</div>
         </article>
@@ -1287,6 +1349,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 29</h3>
           <div class="revision-question-text">BCG टीका किस रोग से बचाव के लिए लगाया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) क्षय रोग (टीबी)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> BCG – क्षय रोग</div>
         </article>
@@ -1294,6 +1357,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 30</h3>
           <div class="revision-question-text">दस्त (डायरिया) में शरीर में पानी की कमी रोकने का सबसे उपयुक्त प्राथमिक उपाय क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ORS घोल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ORS से पानी व लवण की कमी पूरी</div>
         </article>
@@ -1301,6 +1365,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 31</h3>
           <div class="revision-question-text">दाँतों के इनेमल को मज़बूत कर कैविटी से बचाने वाला खनिज, जो टूथपेस्ट में भी मिलाया जाता है:</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) फ़्लोराइड</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> फ़्लोराइड; अधिकता से फ़्लोरोसिस</div>
         </article>
@@ -1312,6 +1377,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 32</h3>
           <div class="revision-question-text">भोजन को दबाव में लगभग 121°C पर गर्म करके सभी सूक्ष्मजीव नष्ट करना क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) निर्जीवीकरण (स्टरलाइज़ेशन)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> निर्जीवीकरण; पाश्चुरीकरण में कम ताप पर गर्म करके तुरंत ठंडा करते हैं</div>
         </article>
@@ -1319,6 +1385,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 33</h3>
           <div class="revision-question-text">दूध को लगभग 135–150°C पर केवल 2–4 सेकंड गर्म कर तुरंत ठंडा करने और जीवाणु-रहित पैक में भरने की विधि, जिससे दूध बिना फ़्रिज के महीनों सुरक्षित रहता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) UHT (अति-उच्च तापमान) उपचार</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> UHT (Ultra High Temperature); पाश्चुरीकरण – 63°C पर 30 मिनट या 72°C पर 15 सेकंड (लुई पाश्चर); समांगीकरण – वसा-कणों को बारीक तोड़ना, ताकि मलाई ऊपर न जमे।</div>
         </article>
@@ -1326,6 +1393,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 34</h3>
           <div class="revision-question-text">अचार में नमक और मुरब्बे में चीनी भोजन को कैसे सुरक्षित रखते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) परासरण द्वारा सूक्ष्मजीवों से पानी खींचकर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अधिक नमक/चीनी से सूक्ष्मजीवों का पानी निकल जाता है</div>
         </article>
@@ -1333,6 +1401,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 35</h3>
           <div class="revision-question-text">सॉस और शरबत में मिलाया जाने वाला सोडियम बेंज़ोएट क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) रासायनिक परिरक्षक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सोडियम बेंज़ोएट व KMS रासायनिक परिरक्षक</div>
         </article>
@@ -1340,6 +1409,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 36</h3>
           <div class="revision-question-text">पोटैशियम मेटाबाइसल्फ़ाइट (KMS) का प्रयोग जामुन, फालसा जैसे रंगीन फलों के रस के संरक्षण में क्यों नहीं किया जाता?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) यह फलों का प्राकृतिक रंग उड़ा देता है</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> KMS रंग (एंथोसायनिन) उड़ाता है; रंगीन रस में सोडियम बेंज़ोएट</div>
         </article>
@@ -1347,6 +1417,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 37</h3>
           <div class="revision-question-text">सब्ज़ियों को फ़्रीज़ करने से पहले थोड़ी देर उबलते पानी में डालकर तुरंत ठंडा करना (ब्लैंचिंग) का मुख्य उद्देश्य क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) एंज़ाइमों को निष्क्रिय करना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ब्लैंचिंग से एंज़ाइम निष्क्रिय, रंग व स्वाद सुरक्षित</div>
         </article>
@@ -1354,6 +1425,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 38</h3>
           <div class="revision-question-text">जैम या जेली बनाते समय उसके तैयार होने की जाँच के लिए कौन सा परीक्षण किया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) शीट (चादर) परीक्षण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चम्मच से गिराने पर चादर की तरह गिरे तो तैयार</div>
         </article>
@@ -1361,6 +1433,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 39</h3>
           <div class="revision-question-text">मांस और मछली को लकड़ी के धुएँ में रखकर सुखाने व सुरक्षित रखने की विधि कहलाती है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) धूम्रीकरण (Smoking)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> धूम्रीकरण; किण्वन – दही/इडली, डिब्बाबंदी – निकोलस एपर्ट।</div>
         </article>
@@ -1368,6 +1441,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 40</h3>
           <div class="revision-question-text">घरेलू रेफ़्रिजरेटर (सामान्य खाने) में भोजन सुरक्षित रखने का उपयुक्त तापमान लगभग है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 4°C (0–5°C)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लगभग 4°C पर जीवाणु धीमे बढ़ते हैं; फ़्रीज़र – लगभग –18°C; 5°C से 60°C का ताप 'ख़तरे का क्षेत्र' कहलाता है।</div>
         </article>
@@ -1379,6 +1453,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 41</h3>
           <div class="revision-question-text">हाथ से सिलाई करते समय उंगली को सुई की चुभन से बचाने के लिए क्या पहना जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अंगुश्ताना (थिम्बल)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अंगुश्ताना; कढ़ाई घेरा कपड़े को कसकर रखता है</div>
         </article>
@@ -1386,6 +1461,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 42</h3>
           <div class="revision-question-text">कपड़े के किनारों को उधड़ने से बचाने के लिए उन्हें टेढ़े-मेढ़े (ज़िगज़ैग) आकार में काटने वाली कैंची कौन सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पिंकिंग कैंची</p>
           
         </article>
@@ -1393,6 +1469,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 43</h3>
           <div class="revision-question-text">लखनऊ की प्रसिद्ध कढ़ाई कौन सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) चिकनकारी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चिकनकारी – लखनऊ; फुलकारी – पंजाब; कांथा – बंगाल; कसूती – कर्नाटक</div>
         </article>
@@ -1400,6 +1477,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 44</h3>
           <div class="revision-question-text">गृह प्रबंधन प्रक्रिया के चरणों का सही क्रम कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) योजना → संगठन → नियंत्रण → मूल्यांकन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पहला कदम योजना (जुलाई 2026 में पूछा)</div>
         </article>
@@ -1407,6 +1485,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 45</h3>
           <div class="revision-question-text">घर के किसी कार्य को कम समय, कम श्रम और कम थकान में पूरा करने के तरीके खोजना गृह प्रबंधन में क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कार्य सरलीकरण</p>
           
         </article>
@@ -1418,6 +1497,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 46</h3>
           <div class="revision-question-text">मृत पौधों और जंतुओं को सरल पदार्थों में तोड़कर पोषक तत्व मिट्टी में लौटाने वाले जीव (जैसे जीवाणु, कवक) क्या कहलाते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अपघटक</p>
           
         </article>
@@ -1425,6 +1505,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 47</h3>
           <div class="revision-question-text">किसी पारितंत्र में अनेक खाद्य शृंखलाओं के आपस में जुड़े जाल को क्या कहते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) खाद्य जाल</p>
           
         </article>
@@ -1432,6 +1513,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 48</h3>
           <div class="revision-question-text">पारिस्थितिकी तंत्र में ऊर्जा हस्तांतरण का '10% नियम' किसने दिया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लिंडेमैन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लिंडेमैन (1942); हर पोषण स्तर पर लगभग 10% ऊर्जा आगे जाती है</div>
         </article>
@@ -1439,6 +1521,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 49</h3>
           <div class="revision-question-text">खाद्य शृंखला में ऊपर जाने पर DDT जैसे विषैले पदार्थों की सांद्रता बढ़ते जाना क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जैव आवर्धन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जैव आवर्धन; सुपोषण = पोषक तत्वों से शैवाल वृद्धि</div>
         </article>
@@ -1450,6 +1533,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 50</h3>
           <div class="revision-question-text">किसी जल-स्रोत में जैव-रासायनिक ऑक्सीजन माँग (BOD) का अधिक होना संकेत करता है कि वह जल –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कार्बनिक पदार्थों से अत्यधिक प्रदूषित है</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> BOD अधिक = अधिक कार्बनिक प्रदूषण (सूक्ष्मजीव उसे तोड़ने में अधिक ऑक्सीजन लेते हैं); स्वच्छ जल में BOD कम होता है।</div>
         </article>
@@ -1457,6 +1541,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 51</h3>
           <div class="revision-question-text">अम्लीय वर्षा मुख्य रूप से किन गैसों के कारण होती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सल्फ़र डाइऑक्साइड व नाइट्रोजन ऑक्साइड</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> SO₂ व NOₓ जल से मिलकर अम्ल बनाते हैं</div>
         </article>
@@ -1464,6 +1549,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 52</h3>
           <div class="revision-question-text">ओज़ोन परत को सबसे अधिक हानि पहुँचाने वाले रसायन कौन से हैं, जो पहले फ़्रिज और AC में प्रयोग होते थे?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) क्लोरोफ़्लोरोकार्बन (CFC)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> CFC; ओज़ोन परत समतापमंडल में</div>
         </article>
@@ -1471,6 +1557,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 53</h3>
           <div class="revision-question-text">ध्वनि की तीव्रता (प्रबलता) मापने की इकाई –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) डेसिबल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डेसिबल (dB); आवासीय क्षेत्र में दिन में 55 dB की सीमा; लगातार तेज़ ध्वनि से सुनने की क्षमता को हानि।</div>
         </article>
@@ -1478,6 +1565,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 54</h3>
           <div class="revision-question-text">निम्नलिखित में से कौन सी ग्रीनहाउस गैस नहीं है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) नाइट्रोजन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> नाइट्रोजन ऊष्मा नहीं रोकती</div>
         </article>
@@ -1485,6 +1573,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 55</h3>
           <div class="revision-question-text">निम्नलिखित में से नवीकरणीय (Renewable) ऊर्जा स्रोत है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सौर ऊर्जा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सौर, पवन, जल, ज्वारीय, भूतापीय, बायोमास – नवीकरणीय; कोयला, पेट्रोलियम, गैस – जीवाश्म ईंधन (अनवीकरणीय)।</div>
         </article>
@@ -1496,6 +1585,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 56</h3>
           <div class="revision-question-text">अपशिष्ट प्रबंधन के '3R' का प्राथमिकता के अनुसार सही क्रम कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कम करना → पुनः उपयोग → पुनर्चक्रण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सबसे पहले कम उपयोग, फिर पुनः उपयोग, अंत में पुनर्चक्रण</div>
         </article>
@@ -1503,6 +1593,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 57</h3>
           <div class="revision-question-text">निम्नलिखित में से कौन सा जैव निम्नीकरणीय (बायोडिग्रेडेबल) कचरा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सब्ज़ियों और फलों के छिलके</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> छिलके सड़कर खाद बनते हैं</div>
         </article>
@@ -1510,6 +1601,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 58</h3>
           <div class="revision-question-text">अस्पतालों के संक्रामक जैव-चिकित्सा कचरे को सुरक्षित रूप से नष्ट करने की सबसे उपयुक्त विधि कौन सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) भस्मीकरण (इंसिनरेशन)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उच्च ताप पर जलाना (ऑक्सीजन के साथ)</div>
         </article>
@@ -1517,6 +1609,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 59</h3>
           <div class="revision-question-text">पुराने कंप्यूटर, मोबाइल फ़ोन, बैटरी, टीवी जैसे बेकार इलेक्ट्रॉनिक उपकरणों से उत्पन्न कचरा, जिसमें सीसा-पारा जैसे विषैले तत्व होते हैं –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ई-अपशिष्ट (E-waste)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ई-अपशिष्ट; भारत में ई-अपशिष्ट (प्रबंधन) नियम 2022 – उत्पादक की 'विस्तारित ज़िम्मेदारी' (EPR); इसे खुले में जलाना या कबाड़ में तोड़ना स्वास्थ्य के लिए घातक है।</div>
         </article>
@@ -1528,6 +1621,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 60</h3>
           <div class="revision-question-text">निम्नलिखित में से कौन सा क्षेत्र भारत का जैव विविधता हॉटस्पॉट नहीं है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) थार मरुस्थल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> भारत के 4 हॉटस्पॉट: हिमालय, इंडो-बर्मा, पश्चिमी घाट, सुंडालैंड</div>
         </article>
@@ -1535,6 +1629,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 61</h3>
           <div class="revision-question-text">वे पौधे या जीव-जंतु, जो किसी विशेष क्षेत्र में ही प्राकृतिक रूप से पाए जाते हैं और कहीं और नहीं (जैसे पचमढ़ी की भारतीय विशाल गिलहरी) –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) स्थानिक (विशेष क्षेत्री) प्रजातियाँ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्थानिक (Endemic); पचमढ़ी जैवमंडल – साल व जंगली आम (वनस्पति), बाइसन व विशाल गिलहरी (जीव) – NCERT कक्षा 8।</div>
         </article>
@@ -1542,6 +1637,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 62</h3>
           <div class="revision-question-text">संकटग्रस्त (विलुप्ति के ख़तरे वाले) पौधों और जीवों का रिकॉर्ड रखने वाली पुस्तक कहलाती है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रेड डेटा बुक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रेड डेटा बुक अंतरराष्ट्रीय प्रकृति संरक्षण संघ (IUCN) रखता है; इसमें प्रजातियों को 'संकटग्रस्त', 'अति-संकटग्रस्त' आदि श्रेणियों में रखा जाता है।</div>
         </article>
@@ -1549,6 +1645,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 63</h3>
           <div class="revision-question-text">जैवमंडल आरक्षित क्षेत्र (Biosphere Reserve) का वह केंद्रीय भाग, जहाँ किसी भी प्रकार की मानवीय गतिविधि की अनुमति नहीं होती –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कोर (केंद्रीय) क्षेत्र</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कोर क्षेत्र (पूर्ण सुरक्षित) → बफ़र क्षेत्र (सीमित शोध/शिक्षा) → संक्रमण क्षेत्र (मानव बस्ती, खेती)। भारत का पहला जैवमंडल आरक्षित क्षेत्र – नीलगिरि (1986)।</div>
         </article>
@@ -1556,6 +1653,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 64</h3>
           <div class="revision-question-text">चिपको आंदोलन (1973, रेणी गाँव) से जुड़ी प्रमुख महिला कौन थीं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गौरा देवी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गौरा देवी; किंकरी देवी – चूना-पत्थर खनन के विरुद्ध PIL</div>
         </article>
@@ -1563,6 +1661,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 65</h3>
           <div class="revision-question-text">1730 में राजस्थान के खेजड़ली गाँव में खेजड़ी के पेड़ों को बचाने के लिए बलिदान देने वाली महिला, जिनके नाम पर वन्यजीव संरक्षण पुरस्कार दिया जाता है:</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अमृता देवी बिश्नोई</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पर्यावरण मंत्रालय का 'अमृता देवी बिश्नोई वन्यजीव संरक्षण पुरस्कार'</div>
         </article>
@@ -1570,6 +1669,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 66</h3>
           <div class="revision-question-text">छतों और खुले स्थानों पर गिरने वाले वर्षा जल को एकत्र कर गड्ढों/टैंकों में जमा करने और भूजल स्तर बढ़ाने की तकनीक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) वर्षा जल संचयन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वर्षा जल संचयन; राजस्थान में पारंपरिक टांका, कुंड व जोहड़; 'जल शक्ति अभियान – कैच द रेन' (2021) का संदेश – वर्षा जल को 'जहाँ भी गिरे, जब भी गिरे' रोकें।</div>
         </article>
@@ -1581,6 +1681,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 67</h3>
           <div class="revision-question-text">आपदा आने से पहले जोखिम घटाने के लिए उठाए गए दीर्घकालिक कदम (जैसे भूकंपरोधी भवन बनाना) आपदा प्रबंधन चक्र का कौन सा चरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शमन (मिटिगेशन)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शमन; राहत व अनुक्रिया आपदा के बाद</div>
         </article>
@@ -1588,6 +1689,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 68</h3>
           <div class="revision-question-text">राष्ट्रीय आपदा प्रबंधन प्राधिकरण (NDMA) का अध्यक्ष कौन होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) प्रधानमंत्री</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> प्रधानमंत्री (आपदा प्रबंधन अधिनियम 2005)</div>
         </article>
@@ -1595,6 +1697,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 69</h3>
           <div class="revision-question-text">प्राकृतिक व मानवजनित आपदाओं में विशेषज्ञ खोज एवं बचाव कार्य के लिए 2006 में गठित विशेष बल –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) राष्ट्रीय आपदा मोचन बल (NDRF)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> NDRF (आपदा प्रबंधन अधिनियम 2005 के अंतर्गत); राज्य स्तर पर SDRF; NDMA के अध्यक्ष प्रधानमंत्री।</div>
         </article>
@@ -1606,6 +1709,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 70</h3>
           <div class="revision-question-text">बीज के अंकुरण के समय सबसे पहले कौन सा भाग बाहर निकलता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मूलांकुर (रेडिकल)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मूलांकुर पहले, फिर प्रांकुर</div>
         </article>
@@ -1613,6 +1717,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 71</h3>
           <div class="revision-question-text">मक्का और गेहूँ जैसे एकबीजपत्री बीजों में भोजन मुख्य रूप से कहाँ संचित रहता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) भ्रूणपोष (एंडोस्पर्म)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> भ्रूणपोष; द्विबीजपत्री में भोजन बीजपत्रों में</div>
         </article>
@@ -1620,6 +1725,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 72</h3>
           <div class="revision-question-text">अंकुरण के समय बीजपत्रों का मिट्टी से बाहर आ जाना (जैसे सेम में) किस प्रकार का अंकुरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उपरिभूमिक (एपिजियल)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उपरिभूमिक; मटर-मक्का में अधोभूमिक</div>
         </article>
@@ -1627,6 +1733,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 73</h3>
           <div class="revision-question-text">कठोर बीजावरण वाले बीजों को रगड़कर या खरोंचकर अंकुरण में सहायता करने की विधि क्या कहलाती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) स्कैरिफ़िकेशन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्कैरिफ़िकेशन; स्ट्रैटिफ़िकेशन = ठंडा उपचार</div>
         </article>
@@ -1634,6 +1741,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 74</h3>
           <div class="revision-question-text">बुवाई से पहले बीज उपचार (सीड ट्रीटमेंट) का मुख्य उद्देश्य क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बीज को रोग व कीटों से बचाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> फफूंदनाशी/ट्राइकोडर्मा से बीज रोगमुक्त</div>
         </article>
@@ -1641,6 +1749,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 75</h3>
           <div class="revision-question-text">किस पौधे के बीज रेशमी बालों की सहायता से हवा द्वारा दूर तक फैलते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) आक (मदार)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आक व सेमल के बीजों पर रेशमी बाल; नारियल – पानी, गोखरू – जानवर</div>
         </article>
@@ -1648,6 +1757,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 76</h3>
           <div class="revision-question-text">किस पौधे की फलियाँ झटके से फटकर बीज बिखेरती हैं (विस्फोटी प्रकीर्णन)?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) गुलमेंहदी (बालसम)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बालसम, मटर, अरंडी – विस्फोटी प्रकीर्णन</div>
         </article>
@@ -1655,6 +1765,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 77</h3>
           <div class="revision-question-text">जंतुओं के शरीर या बालों से चिपककर दूर तक फैलने वाले काँटेदार बीज किस पौधे के होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) गोखरू (ज़ैन्थियम)</p>
           
         </article>
@@ -1666,6 +1777,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 78</h3>
           <div class="revision-question-text">DAP (डाइअमोनियम फॉस्फेट), जिसमें नाइट्रोजन और फॉस्फोरस रासायनिक रूप से जुड़े होते हैं, किस प्रकार का उर्वरक है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जटिल (कॉम्प्लेक्स) उर्वरक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जटिल उर्वरक; सीधे उर्वरकों को केवल मिलाने से बने = मिश्रित उर्वरक</div>
         </article>
@@ -1673,6 +1785,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 79</h3>
           <div class="revision-question-text">सिंगल सुपर फ़ॉस्फ़ेट (SSP) उर्वरक मुख्य रूप से किस पोषक तत्व की आपूर्ति करता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) फ़ॉस्फ़ोरस</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> SSP में लगभग 16% P₂O₅, साथ में सल्फ़र व कैल्शियम</div>
         </article>
@@ -1680,6 +1793,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 80</h3>
           <div class="revision-question-text">म्यूरेट ऑफ़ पोटाश (MOP) उर्वरक से फसल को कौन सा पोषक तत्व मिलता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पोटैशियम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> MOP में लगभग 60% K₂O</div>
         </article>
@@ -1687,6 +1801,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 81</h3>
           <div class="revision-question-text">नीम लेपित यूरिया (नीम कोटेड यूरिया) का मुख्य लाभ क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नाइट्रोजन का धीरे-धीरे मुक्त होना और बर्बादी कम होना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 2015 से शत-प्रतिशत नीम लेपित</div>
         </article>
@@ -1694,6 +1809,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 82</h3>
           <div class="revision-question-text">पोषक तत्वों का घोल सीधे पत्तियों पर छिड़कने की विधि क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) फोलियर फीडिंग (पर्णीय पोषण)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> फोलियर फीडिंग; बैंड प्लेसमेंट = बीज के पास पट्टियों में (जुलाई 2026)</div>
         </article>
@@ -1701,6 +1817,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 83</h3>
           <div class="revision-question-text">ड्रिप सिंचाई के पानी के साथ घुलनशील उर्वरक देने की विधि क्या कहलाती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) फर्टिगेशन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> फर्टिगेशन = फर्टिलाइजर + इरिगेशन</div>
         </article>
@@ -1708,6 +1825,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 84</h3>
           <div class="revision-question-text">राइज़ोबियम जीवाणु किन फसलों की जड़ों की गाँठों में रहकर नाइट्रोजन स्थिर करता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) दलहनी फसलें</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> दलहनी फसलें (चना, मटर, अरहर)</div>
         </article>
@@ -1719,6 +1837,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 85</h3>
           <div class="revision-question-text">यदि मिट्टी का pH 7 से कम हो, तो मिट्टी कैसी कहलाएगी?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अम्लीय</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> pH 7 से कम अम्लीय, 7 उदासीन, 7 से अधिक क्षारीय</div>
         </article>
@@ -1726,6 +1845,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 86</h3>
           <div class="revision-question-text">उत्तर प्रदेश की ऊसर (क्षारीय) भूमि को सुधारने के लिए क्या मिलाया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जिप्सम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जिप्सम – क्षारीय/ऊसर; चूना – अम्लीय मिट्टी</div>
         </article>
@@ -1733,6 +1853,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 87</h3>
           <div class="revision-question-text">पहाड़ी ढलानों पर सीढ़ीनुमा खेत बनाकर की जाने वाली खेती, जो मृदा अपरदन रोकती है, क्या कहलाती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सीढ़ीदार (वेदिका) खेती</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सीढ़ीदार खेती</div>
         </article>
@@ -1740,6 +1861,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 88</h3>
           <div class="revision-question-text">तेज़ हवाओं से मिट्टी का कटाव रोकने के लिए खेतों के किनारे पेड़ों की कतारें लगाना क्या कहलाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) रक्षक मेखला (शेल्टर बेल्ट)</p>
           
         </article>
@@ -1747,6 +1869,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 89</h3>
           <div class="revision-question-text">बागवानी में पौधों के चारों ओर पुआल/पत्तियों की परत बिछाने (मल्चिंग) का मुख्य लाभ क्या है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मिट्टी की नमी बचाना और खरपतवार रोकना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मल्चिंग से नमी सुरक्षित, खरपतवार कम</div>
         </article>
@@ -1758,6 +1881,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 90</h3>
           <div class="revision-question-text">उद्यान विज्ञान की वह शाखा कौन सी है जिसमें फलों की खेती का अध्ययन होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पोमोलॉजी</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पोमोलॉजी; ओलेरीकल्चर = सब्ज़ी, फ़्लोरीकल्चर = फूल</div>
         </article>
@@ -1765,6 +1889,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 91</h3>
           <div class="revision-question-text">घर के पीछे/आँगन में रसोई के बेकार पानी का उपयोग करके परिवार के लिए सब्ज़ियाँ उगाने वाला छोटा बगीचा –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गृह-वाटिका (किचन गार्डन)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गृह-वाटिका – ताज़ी सब्ज़ी, पोषण व बचत; विद्यालयों में पोषण वाटिका (स्कूल न्यूट्री गार्डन) भी इसी सिद्धांत पर।</div>
         </article>
@@ -1772,6 +1897,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 92</h3>
           <div class="revision-question-text">पारदर्शी पॉलीथीन से ढका ढाँचा, जिसमें नियंत्रित तापमान व नमी में बेमौसमी सब्ज़ियाँ और फूल उगाए जाते हैं –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पॉलीहाउस (हरितगृह)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> पॉलीहाउस (संरक्षित खेती) – भीतर का तापमान बाहर से अधिक रहता है; प्रायः ड्रिप सिंचाई के साथ; खीरा, शिमला मिर्च, गुलाब, जरबेरा उगाए जाते हैं।</div>
         </article>
@@ -1779,6 +1905,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 93</h3>
           <div class="revision-question-text">गुलाब का प्रवर्धन सामान्यतः किस विधि से किया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) कलम (कटिंग) से</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गुलाब – कलम; प्याज़/लिली – बल्ब; अदरक – प्रकंद</div>
         </article>
@@ -1786,6 +1913,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 94</h3>
           <div class="revision-question-text">केले का प्रवर्धन सामान्यतः किससे किया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सकर (अंतःभूस्तारी)</p>
           
         </article>
@@ -1793,6 +1921,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 95</h3>
           <div class="revision-question-text">आम के पौधों का व्यावसायिक प्रवर्धन (मातृ पौधे जैसे गुण पाने के लिए) प्रायः किस विधि से किया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ग्राफ़्टिंग (कलम बंधन)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विनियर/सॉफ़्टवुड ग्राफ़्टिंग</div>
         </article>
@@ -1800,6 +1929,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 96</h3>
           <div class="revision-question-text">पौधे की टहनी पर छाल का छल्ला उतारकर उस पर नम मिट्टी या मॉस लपेटकर, पौधे पर ही जड़ें निकलवाने की विधि (लीची, अमरूद में प्रचलित) –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) गूटी (Air layering)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गूटी (वायवीय दाब कलम) – लीची, अमरूद, अनार; भेट कलम – आम में पुरानी विधि।</div>
         </article>
@@ -1807,6 +1937,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 97</h3>
           <div class="revision-question-text">एक पौधे की स्वस्थ कली को दूसरे पौधे (मूलवृंत) के तने पर 'T' आकार का चीरा लगाकर स्थापित करने की विधि –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) कलिकायन (T-बडिंग)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कलिकायन – गुलाब, नींबू वर्गीय फल, बेर; कली वाला भाग 'साइन', नीचे का पौधा 'मूलवृंत' (रूटस्टॉक)।</div>
         </article>
@@ -1818,6 +1949,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 98</h3>
           <div class="revision-question-text">रबी और ख़रीफ़ के बीच (लगभग मार्च से जून) की छोटी अवधि में उगाई जाने वाली फ़सलें, जैसे तरबूज़, ख़रबूज़ा, खीरा –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) ज़ायद फ़सलें</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ज़ायद – तरबूज़, खीरा, कद्दू, मूँग; रबी – अक्टूबर-नवंबर में बुवाई; ख़रीफ़ – वर्षा के आरंभ में।</div>
         </article>
@@ -1825,6 +1957,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 99</h3>
           <div class="revision-question-text">मिट्टी की उर्वरता बनाए रखने के लिए एक ही खेत में अलग-अलग मौसमों/वर्षों में फ़सलों को बदल-बदलकर बोना कहलाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) फ़सल-चक्र</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> फ़सल-चक्र में दलहनी फ़सल शामिल करने से नाइट्रोजन बढ़ती है; झूम – पूर्वोत्तर की स्थानांतरणशील खेती।</div>
         </article>
@@ -1832,6 +1965,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 100</h3>
           <div class="revision-question-text">'ऑपरेशन फ़्लड' (1970) के सूत्रधार, जिन्हें भारत में 'श्वेत क्रांति का जनक' कहा जाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) डॉ. वर्गीज़ कुरियन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> वर्गीज़ कुरियन (अमूल, आणंद); उनका जन्मदिन 26 नवंबर 'राष्ट्रीय दुग्ध दिवस'। हरित क्रांति – एम.एस. स्वामीनाथन (भारत), नॉर्मन बोरलॉग (विश्व)।</div>
         </article>
