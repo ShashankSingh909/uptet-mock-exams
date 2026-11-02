@@ -119,7 +119,7 @@ test("the selector does not contain exam state initialization", async () => {
 
 const revisionPages = {
   "rev-cdp60": 60,
-  "rev-hindi60": 60,
+  "rev-hindi60": 76,
   cdp1: 150,
   cdp2: 150,
   hindi1: 150,
@@ -178,14 +178,17 @@ test("the selector lists the revision section first", async () => {
 });
 
 test("60-question revision pages show all options with the answer marked", async () => {
-  for (const paper of ["rev-cdp60", "rev-hindi60"]) {
+  for (const [paper, count] of [
+    ["rev-cdp60", 60],
+    ["rev-hindi60", 76],
+  ]) {
     const html = await readFile(
       new URL(`../revision-${paper}.html`, import.meta.url),
       "utf8",
     );
-    assert.equal(html.match(/class="revision-options"/g).length, 60, paper);
-    assert.equal(html.match(/<li class="correct">/g).length, 60, paper);
-    assert.equal(html.match(/<li class="">/g).length, 180, paper);
+    assert.equal(html.match(/class="revision-options"/g).length, count, paper);
+    assert.equal(html.match(/<li class="correct">/g).length, count, paper);
+    assert.equal(html.match(/<li class="">/g).length, count * 3, paper);
   }
   const plain = await readFile(
     new URL("../revision-cdp1.html", import.meta.url),
