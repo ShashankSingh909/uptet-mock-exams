@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>बाल विकास एवं शिक्षाशास्त्र — 60 चुनिंदा प्रश्न — रिवीज़न</title>
+    <style>:root {
+  color-scheme: light;
+  --teal-950: #073b3d;
+  --teal-800: #075f63;
+  --teal-700: #08777a;
+  --blue-700: #0b57d0;
+  --blue-100: #e9f1ff;
+  --amber-700: #b85d00;
+  --amber-100: #fff2dd;
+  --violet-700: #673ab7;
+  --violet-100: #f0eaff;
+  --green-700: #117a45;
+  --green-100: #e8f6ee;
+  --red-700: #b3261e;
+  --red-100: #fce8e6;
+  --ink: #172026;
+  --muted: #5e6b73;
+  --line: #d6dde1;
+  --surface: #ffffff;
+  --canvas: #f4f7f8;
+  --focus: #ffbf47;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(7, 59, 61, 0.09);
+  font-family: "Noto Sans Devanagari", "Nirmala UI", Mangal, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible + span,
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 16px;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: 0 2px 10px rgba(7, 59, 61, 0.2);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 4.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.topbar .paper-label {
+  margin: 2px 0 0;
+  color: #d9f3f1;
+  font-size: 0.78rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar button {
+  padding: 8px 11px;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: transparent;
+  font-size: 0.86rem;
+}
+
+.exam-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.timer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.timer-main {
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-label,
+.stat-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.timer {
+  margin-top: 2px;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.timer.urgent {
+  color: var(--red-700);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.status-item {
+  min-width: 0;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.status-item + .status-item {
+  border-left: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.answered .stat-number {
+  color: var(--green-700);
+}
+
+.remaining .stat-number {
+  color: var(--amber-700);
+}
+
+.reviewed .stat-number {
+  color: var(--violet-700);
+}
+
+.section-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #edf6f5;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nearby-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.nearby-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(38px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.number-button,
+.palette-button {
+  position: relative;
+  min-width: 42px;
+  border-color: #bdc8ce;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+}
+
+.number-button.current {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.number-button.answered:not(.current),
+.palette-button.answered:not(.current) {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.number-button.review:not(.current),
+.palette-button.review:not(.current) {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.number-button.answered.review:not(.current),
+.palette-button.answered.review:not(.current) {
+  box-shadow: inset 0 -5px 0 var(--violet-700);
+}
+
+.nearby-nav > button,
+.open-palette {
+  padding: 7px 10px;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+  font-weight: 700;
+}
+
+.question-area {
+  padding: 18px 16px 120px;
+  background: var(--surface);
+}
+
+.question-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-meta h2 {
+  margin: 0;
+  color: var(--blue-700);
+  font-size: 1.35rem;
+}
+
+.question-meta span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.passage {
+  margin: 18px 0;
+  padding: 14px;
+  border-left: 4px solid var(--teal-700);
+  background: #f6fbfa;
+  white-space: pre-line;
+}
+
+.question-text {
+  margin: 22px 0;
+  font-size: clamp(1.08rem, 4.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1.5px solid #c8d1d6;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--blue-700);
+}
+
+.option-row.selected {
+  border-color: var(--blue-700);
+  background: var(--blue-100);
+  box-shadow: inset 4px 0 0 var(--blue-700);
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.option-label {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #7a8991;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.selected .option-label {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.option-text {
+  line-height: 1.55;
+}
+
+.bottom-actions {
+  position: fixed;
+  z-index: 18;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  gap: 10px;
+  padding: 10px max(14px, calc((100vw - 1090px) / 2));
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -5px 18px rgba(21, 31, 36, 0.08);
+}
+
+.bottom-actions button {
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+}
+
+.primary {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.review-action {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 128px;
+  background: var(--surface);
+}
+
+#submit-exam {
+  width: min(100%, 440px);
+  border-color: var(--red-700);
+  color: #fff;
+  background: var(--red-700);
+  font-weight: 800;
+}
+
+.message {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid #e4bb72;
+  border-radius: var(--radius);
+  background: #fff8e8;
+}
+
+dialog {
+  width: min(92vw, 680px);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(4, 29, 31, 0.62);
+}
+
+.dialog-header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dialog-close {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend span::before {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  content: "";
+}
+
+.legend .lg-answered {
+  color: var(--green-700);
+}
+
+.legend .lg-review {
+  color: var(--violet-700);
+}
+
+.legend .lg-current {
+  color: var(--blue-700);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 4px 16px 20px;
+}
+
+.result-view,
+.review-view,
+.storage-error {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 26px 16px 50px;
+}
+
+.result-hero {
+  padding: 24px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--teal-800);
+  text-align: center;
+}
+
+.score {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: clamp(3rem, 16vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.result-stat {
+  padding: 14px 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.result-stat strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.result-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.result-actions button,
+.review-toolbar button {
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.review-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: var(--canvas);
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-tabs {
+  position: sticky;
+  z-index: 9;
+  top: 118px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 8px 0 10px;
+  background: var(--canvas);
+}
+
+.review-tab {
+  padding: 9px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-950);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-tab span {
+  display: inline-flex;
+  min-width: 24px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #eef4f5;
+}
+
+.review-tab.active {
+  border-color: var(--teal-700);
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.review-tab.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.review-card.correct {
+  border-left: 5px solid var(--green-700);
+}
+
+.review-card.incorrect {
+  border-left: 5px solid var(--red-700);
+}
+
+.review-card.unanswered {
+  border-left: 5px solid var(--amber-700);
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-question-text {
+  margin-bottom: 12px;
+}
+
+.review-options {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.review-option.correct-option {
+  border-color: rgba(21, 128, 61, 0.45);
+  background: #f0fdf4;
+}
+
+.review-option.incorrect-option {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: #fef2f2;
+}
+
+.review-option-badges {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-badge {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correct-badge {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.selected-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.empty-review {
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.answer-line {
+  margin: 8px 0;
+}
+
+.answer-line strong {
+  color: var(--teal-950);
+}
+
+.answer-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f1f6f7;
+}
+
+.selector {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 36px 18px 60px;
+}
+
+.selector-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.selector-heading h1,
+.selector-heading h2 {
+  margin-bottom: 8px;
+  color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
+}
+
+.paper-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.paper-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.paper-card h2 {
+  margin: 0 0 8px;
+}
+
+.paper-card p {
+  color: var(--muted);
+}
+
+.paper-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--blue-700);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.warning-note {
+  margin: 0 0 22px;
+  padding: 14px;
+  border-left: 4px solid var(--amber-700);
+  background: var(--amber-100);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .timer-panel {
+    grid-template-columns: minmax(240px, 0.8fr) 1.4fr;
+    align-items: stretch;
+  }
+
+  .status-grid {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .question-area {
+    padding-inline: clamp(28px, 6vw, 74px);
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .nearby-numbers {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-actions {
+    grid-template-columns: 180px 220px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+  </head>
+  <body data-mode="revision" data-question-count="60">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">बाल विकास — 60 चुनिंदा प्रश्न</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>बाल विकास एवं शिक्षाशास्त्र — 60 चुनिंदा प्रश्न</h2>
+        <p>300 प्रश्नों के संकलन से छाँटे गए 60 • विकल्पों सहित रिवीज़न</p>
+        <p class="revision-note">60 प्रश्न • केवल सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–60)</summary>
+        
+        <div class="jump-group">
+          <p>खंड क — संज्ञानात्मक विकास और बुद्धि</p>
+          <div class="jump-numbers"><a href="#q-1">1</a><a href="#q-2">2</a><a href="#q-3">3</a><a href="#q-4">4</a><a href="#q-5">5</a></div>
+        </div>
+        <div class="jump-group">
+          <p>खंड ख — व्यक्तित्व, रक्षा युक्तियाँ और द्वंद्व</p>
+          <div class="jump-numbers"><a href="#q-6">6</a><a href="#q-7">7</a><a href="#q-8">8</a><a href="#q-9">9</a><a href="#q-10">10</a><a href="#q-11">11</a><a href="#q-12">12</a><a href="#q-13">13</a></div>
+        </div>
+        <div class="jump-group">
+          <p>खंड ग — अधिगम, स्थानांतरण, स्मृति और सृजनात्मकता</p>
+          <div class="jump-numbers"><a href="#q-14">14</a><a href="#q-15">15</a><a href="#q-16">16</a><a href="#q-17">17</a><a href="#q-18">18</a><a href="#q-19">19</a><a href="#q-20">20</a><a href="#q-21">21</a><a href="#q-22">22</a></div>
+        </div>
+        <div class="jump-group">
+          <p>खंड घ — विकास, वंशानुक्रम और वातावरण</p>
+          <div class="jump-numbers"><a href="#q-23">23</a><a href="#q-24">24</a><a href="#q-25">25</a><a href="#q-26">26</a><a href="#q-27">27</a><a href="#q-28">28</a><a href="#q-29">29</a></div>
+        </div>
+        <div class="jump-group">
+          <p>खंड ङ — समावेशी शिक्षा और विशेष आवश्यकता</p>
+          <div class="jump-numbers"><a href="#q-30">30</a><a href="#q-31">31</a><a href="#q-32">32</a><a href="#q-33">33</a><a href="#q-34">34</a><a href="#q-35">35</a><a href="#q-36">36</a><a href="#q-37">37</a><a href="#q-38">38</a><a href="#q-39">39</a><a href="#q-40">40</a><a href="#q-41">41</a></div>
+        </div>
+        <div class="jump-group">
+          <p>खंड च — शिक्षण विधियाँ और आकलन</p>
+          <div class="jump-numbers"><a href="#q-42">42</a><a href="#q-43">43</a><a href="#q-44">44</a><a href="#q-45">45</a><a href="#q-46">46</a><a href="#q-47">47</a><a href="#q-48">48</a><a href="#q-49">49</a><a href="#q-50">50</a><a href="#q-51">51</a></div>
+        </div>
+        <div class="jump-group">
+          <p>खंड छ — नीति, मनोविज्ञान के आधार और अन्य</p>
+          <div class="jump-numbers"><a href="#q-52">52</a><a href="#q-53">53</a><a href="#q-54">54</a><a href="#q-55">55</a><a href="#q-56">56</a><a href="#q-57">57</a><a href="#q-58">58</a><a href="#q-59">59</a><a href="#q-60">60</a></div>
+        </div>
+      </details>
+      
+      <section class="revision-section">
+        <h2 class="revision-section-title">खंड क — संज्ञानात्मक विकास और बुद्धि</h2>
+        
+        <article class="revision-card" id="q-1">
+          
+          <h3>प्रश्न 1</h3>
+          <div class="revision-question-text">कक्षा 3 का एक बालक अलग-अलग लंबाई की छड़ियों को छोटे से बड़े क्रम में सही-सही सजा लेता है। पियाजे के अनुसार यह कौन-सी योग्यता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>वस्तु स्थायित्व</span></li><li class="correct"><span class="option-label">ब</span><span>श्रेणीकरण (Seriation)</span></li><li class=""><span class="option-label">स</span><span>जीववाद (Animism)</span></li><li class=""><span class="option-label">द</span><span>अहंकेंद्रिता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) श्रेणीकरण (Seriation)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> छोटे-बड़े क्रम में सजाना = श्रेणीकरण; यह मूर्त संक्रियात्मक अवस्था (7–11 वर्ष) की योग्यता है।</div>
+        </article>
+        <article class="revision-card" id="q-2">
+          
+          <h3>प्रश्न 2</h3>
+          <div class="revision-question-text">जेरोम ब्रूनर की कौन-सी अवस्था पियाजे की 'संवेदी-गामक अवस्था' के समान है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सांकेतिक अवस्था (Symbolic)</span></li><li class=""><span class="option-label">ब</span><span>प्रतिमानात्मक अवस्था (Iconic)</span></li><li class=""><span class="option-label">स</span><span>औपचारिक अवस्था</span></li><li class="correct"><span class="option-label">द</span><span>क्रियात्मक अवस्था (Enactive)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) क्रियात्मक अवस्था (Enactive)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ब्रूनर की अवस्थाएँ: क्रियात्मक (करके) → प्रतिमानात्मक (चित्र) → सांकेतिक। क्रियात्मक अवस्था पियाजे की संवेदी-गामक अवस्था जैसी है।</div>
+        </article>
+        <article class="revision-card" id="q-3">
+          
+          <h3>प्रश्न 3</h3>
+          <div class="revision-question-text">बुद्धि के 'तरल एवं ठोस' (Fluid and Crystallized) प्रतिमान के प्रतिपादक कौन हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>स्पीयरमैन</span></li><li class=""><span class="option-label">ब</span><span>गिलफोर्ड</span></li><li class="correct"><span class="option-label">स</span><span>आर.बी. कैटल</span></li><li class=""><span class="option-label">द</span><span>थर्स्टन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) आर.बी. कैटल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कैटल के अनुसार तरल बुद्धि = नई समस्या सुलझाने की जन्मजात क्षमता; ठोस बुद्धि = अनुभव से अर्जित ज्ञान।</div>
+        </article>
+        <article class="revision-card" id="q-4">
+          
+          <h3>प्रश्न 4</h3>
+          <div class="revision-question-text">बुद्धि का 'बहु-कारक सिद्धांत' (जिसे 'बालू का सिद्धांत' भी कहते हैं) किसने दिया?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>ई.एल. थार्नडाइक</span></li><li class=""><span class="option-label">ब</span><span>अल्फ्रेड बिने</span></li><li class=""><span class="option-label">स</span><span>लुईस टरमन</span></li><li class=""><span class="option-label">द</span><span>रॉबर्ट स्टर्नबर्ग</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) ई.एल. थार्नडाइक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> थार्नडाइक ने बुद्धि को बहुत-से छोटे स्वतंत्र तत्वों से बना माना, जैसे बालू के कण।</div>
+        </article>
+        <article class="revision-card" id="q-5">
+          
+          <h3>प्रश्न 5</h3>
+          <div class="revision-question-text">एक बालक की वास्तविक आयु 12 वर्ष और बुद्धि-लब्धि (IQ) 75 है। उसकी मानसिक आयु कितनी होगी?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>8 वर्ष</span></li><li class="correct"><span class="option-label">ब</span><span>9 वर्ष</span></li><li class=""><span class="option-label">स</span><span>10 वर्ष</span></li><li class=""><span class="option-label">द</span><span>16 वर्ष</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 9 वर्ष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मानसिक आयु = IQ × वास्तविक आयु ÷ 100 = 75 × 12 ÷ 100 = 9 वर्ष।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">खंड ख — व्यक्तित्व, रक्षा युक्तियाँ और द्वंद्व</h2>
+        
+        <article class="revision-card" id="q-6">
+          
+          <h3>प्रश्न 6</h3>
+          <div class="revision-question-text">एक 5 वर्ष की बालिका में माता की अपेक्षा पिता के प्रति अधिक लगाव विकसित हो जाता है। फ्रायड ने इसे क्या कहा?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>ओडिपस ग्रंथि</span></li><li class=""><span class="option-label">ब</span><span>हीनता ग्रंथि</span></li><li class="correct"><span class="option-label">स</span><span>इलेक्ट्रा ग्रंथि</span></li><li class=""><span class="option-label">द</span><span>श्रेष्ठता ग्रंथि</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) इलेक्ट्रा ग्रंथि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बालिका का पिता के प्रति लगाव = इलेक्ट्रा ग्रंथि; बालक का माता के प्रति लगाव = ओडिपस ग्रंथि।</div>
+        </article>
+        <article class="revision-card" id="q-7">
+          
+          <h3>प्रश्न 7</h3>
+          <div class="revision-question-text">खराब प्रदर्शन के बाद छात्र कहता है— "शिक्षक ने ही प्रश्न गलत पढ़ाए थे।" ("नाच न जाने आँगन टेढ़ा")। यह कौन-सी रक्षा युक्ति है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>युक्तिकरण</span></li><li class=""><span class="option-label">ब</span><span>दमन</span></li><li class=""><span class="option-label">स</span><span>उदात्तीकरण</span></li><li class="correct"><span class="option-label">द</span><span>प्रक्षेपण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रक्षेपण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अपनी कमी का दोष दूसरों पर डालना = प्रक्षेपण।</div>
+        </article>
+        <article class="revision-card" id="q-8">
+          
+          <h3>प्रश्न 8</h3>
+          <div class="revision-question-text">खेल टीम में चयन न होने पर छात्र कहता है— "वैसे भी उस टीम में खेलकर समय ही बर्बाद होता।" ("अंगूर खट्टे हैं")। यह कौन-सी रक्षा युक्ति है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>प्रक्षेपण</span></li><li class=""><span class="option-label">ब</span><span>प्रतिगमन</span></li><li class="correct"><span class="option-label">स</span><span>युक्तिकरण</span></li><li class=""><span class="option-label">द</span><span>क्षतिपूर्ति</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) युक्तिकरण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जो नहीं मिला उसे बेकार बताकर अपने मन को उचित कारण देना = युक्तिकरण। भेद याद रखें: प्रक्षेपण में दोष दूसरे पर डाला जाता है, युक्तिकरण में बहाना बनाया जाता है।</div>
+        </article>
+        <article class="revision-card" id="q-9">
+          
+          <h3>प्रश्न 9</h3>
+          <div class="revision-question-text">शिक्षक द्वारा बिना कारण डाँटे जाने पर बालक घर जाकर अपना छोटा खिलौना तोड़ देता है। यह किस रक्षा युक्ति का उदाहरण है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>विस्थापन</span></li><li class=""><span class="option-label">ब</span><span>प्रक्षेपण</span></li><li class=""><span class="option-label">स</span><span>तादात्म्यीकरण</span></li><li class=""><span class="option-label">द</span><span>पलायन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विस्थापन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गुस्सा असली कारण (शिक्षक) के बजाय सुरक्षित लक्ष्य (खिलौने) पर निकालना = विस्थापन।</div>
+        </article>
+        <article class="revision-card" id="q-10">
+          
+          <h3>प्रश्न 10</h3>
+          <div class="revision-question-text">छोटे भाई के जन्म के बाद बड़ा भाई फिर से अँगूठा चूसने और बिस्तर गीला करने लगता है। यह कौन-सी रक्षा युक्ति है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>क्षतिपूर्ति</span></li><li class=""><span class="option-label">ब</span><span>दिवास्वप्न</span></li><li class=""><span class="option-label">स</span><span>विस्थापन</span></li><li class="correct"><span class="option-label">द</span><span>प्रतिगमन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) प्रतिगमन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तनाव में बचपन जैसे व्यवहार पर लौटना = प्रतिगमन।</div>
+        </article>
+        <article class="revision-card" id="q-11">
+          
+          <h3>प्रश्न 11</h3>
+          <div class="revision-question-text">पढ़ाई में कमज़ोर एक छात्र खेल के मैदान में सर्वश्रेष्ठ खिलाड़ी बनकर अपनी श्रेष्ठता सिद्ध करता है। यह कौन-सी रक्षा युक्ति है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>क्षतिपूर्ति</span></li><li class=""><span class="option-label">ब</span><span>प्रतिगमन</span></li><li class=""><span class="option-label">स</span><span>प्रक्षेपण</span></li><li class=""><span class="option-label">द</span><span>दमन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) क्षतिपूर्ति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एक क्षेत्र की कमी को दूसरे क्षेत्र में श्रेष्ठता से पूरा करना = क्षतिपूर्ति (एडलर)।</div>
+        </article>
+        <article class="revision-card" id="q-12">
+          
+          <h3>प्रश्न 12</h3>
+          <div class="revision-question-text">छात्र को गृहकार्य करना भी पसंद नहीं और न करने पर मिलने वाला दंड भी पसंद नहीं ("आगे कुआँ, पीछे खाई")। यह किस प्रकार का द्वंद्व है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>उपागम-उपागम</span></li><li class=""><span class="option-label">ब</span><span>उपागम-परिहार</span></li><li class="correct"><span class="option-label">स</span><span>परिहार-परिहार</span></li><li class=""><span class="option-label">द</span><span>द्वि-उपागम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) परिहार-परिहार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दोनों विकल्प अप्रिय हैं = परिहार-परिहार द्वंद्व।</div>
+        </article>
+        <article class="revision-card" id="q-13">
+          
+          <h3>प्रश्न 13</h3>
+          <div class="revision-question-text">एक व्यक्ति अच्छे वेतन के कारण एक नौकरी करना चाहता है, पर उसमें जान के जोखिम से डरता भी है। यह कौन-सा द्वंद्व है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>परिहार-परिहार</span></li><li class="correct"><span class="option-label">ब</span><span>उपागम-परिहार</span></li><li class=""><span class="option-label">स</span><span>उपागम-उपागम</span></li><li class=""><span class="option-label">द</span><span>कोई द्वंद्व नहीं</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) उपागम-परिहार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एक ही लक्ष्य आकर्षक भी है और डरावना भी = उपागम-परिहार द्वंद्व।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">खंड ग — अधिगम, स्थानांतरण, स्मृति और सृजनात्मकता</h2>
+        
+        <article class="revision-card" id="q-14">
+          
+          <h3>प्रश्न 14</h3>
+          <div class="revision-question-text">हिंदी लिखने की आदत के कारण छात्र को उर्दू (दाएँ से बाएँ) लिखना सीखने में कठिनाई होती है। यह किस प्रकार का अधिगम स्थानांतरण है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>धनात्मक</span></li><li class=""><span class="option-label">ब</span><span>शून्य</span></li><li class="correct"><span class="option-label">स</span><span>ऋणात्मक</span></li><li class=""><span class="option-label">द</span><span>द्विपार्श्विक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) ऋणात्मक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पुरानी सीख नई सीख में बाधा डाले = ऋणात्मक स्थानांतरण।</div>
+        </article>
+        <article class="revision-card" id="q-15">
+          
+          <h3>प्रश्न 15</h3>
+          <div class="revision-question-text">"स्थानांतरण तभी होता है जब दोनों परिस्थितियों में समान तत्व हों।" यह सिद्धांत किसने दिया?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>चार्ल्स जड</span></li><li class="correct"><span class="option-label">ब</span><span>ई.एल. थार्नडाइक</span></li><li class=""><span class="option-label">स</span><span>बागले</span></li><li class=""><span class="option-label">द</span><span>स्पीयरमैन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ई.एल. थार्नडाइक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> थार्नडाइक का 'समान तत्वों का सिद्धांत'। चार्ल्स जड ने 'सामान्यीकरण का सिद्धांत' दिया।</div>
+        </article>
+        <article class="revision-card" id="q-16">
+          
+          <h3>प्रश्न 16</h3>
+          <div class="revision-question-text">नई समस्या आने पर छात्र अपने पुराने, मिलते-जुलते अनुभवों का सहारा लेकर हल खोजता है। यह थार्नडाइक का कौन-सा गौण नियम है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>तत्परता का नियम</span></li><li class=""><span class="option-label">ब</span><span>बहु-अनुक्रिया का नियम</span></li><li class=""><span class="option-label">स</span><span>आंशिक क्रिया का नियम</span></li><li class="correct"><span class="option-label">द</span><span>सादृश्यता का नियम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) सादृश्यता का नियम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मिलते-जुलते पुराने अनुभव से नई अनुक्रिया करना = सादृश्यता (आत्मीकरण) का नियम।</div>
+        </article>
+        <article class="revision-card" id="q-17">
+          
+          <h3>प्रश्न 17</h3>
+          <div class="revision-question-text">जिस विषय के प्रति छात्र का दृष्टिकोण सकारात्मक होता है, उसे वह जल्दी सीखता है। यह थार्नडाइक के किस नियम से समझाया जाता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>मनोवृत्ति (अभिवृत्ति) का नियम</span></li><li class=""><span class="option-label">ब</span><span>प्रभाव का नियम</span></li><li class=""><span class="option-label">स</span><span>अभ्यास का नियम</span></li><li class=""><span class="option-label">द</span><span>सादृश्यता का नियम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) मनोवृत्ति (अभिवृत्ति) का नियम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> थार्नडाइक का गौण नियम: सीखने के प्रति जैसी मनोवृत्ति, वैसा सीखना।</div>
+        </article>
+        <article class="revision-card" id="q-18">
+          
+          <h3>प्रश्न 18</h3>
+          <div class="revision-question-text">छात्र ने पहले फ्रेंच सीखी, फिर स्पेनिश। अब स्पेनिश शब्द याद करते समय फ्रेंच शब्द बीच में आ जाते हैं। पुरानी सीख का नई सीख के स्मरण में बाधा डालना कहलाता है—</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>अग्रोन्मुखी अवरोध (Proactive inhibition)</span></li><li class=""><span class="option-label">ब</span><span>पश्चोन्मुखी अवरोध (Retroactive inhibition)</span></li><li class=""><span class="option-label">स</span><span>दमन</span></li><li class=""><span class="option-label">द</span><span>अवधान</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अग्रोन्मुखी अवरोध (Proactive inhibition)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पुरानी सीख नई सीख में बाधा डाले = अग्रोन्मुखी अवरोध। नई सीख पुरानी को भुला दे = पश्चोन्मुखी अवरोध।</div>
+        </article>
+        <article class="revision-card" id="q-19">
+          
+          <h3>प्रश्न 19</h3>
+          <div class="revision-question-text">एबिंगहॉस ने अपने प्रसिद्ध प्रयोग मनोविज्ञान के किस क्षेत्र में किए?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>बुद्धि</span></li><li class=""><span class="option-label">ब</span><span>व्यक्तित्व</span></li><li class=""><span class="option-label">स</span><span>अभिप्रेरणा</span></li><li class="correct"><span class="option-label">द</span><span>स्मृति एवं विस्मरण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) स्मृति एवं विस्मरण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एबिंगहॉस ने निरर्थक शब्दों पर स्मृति एवं विस्मरण का अध्ययन किया ('विस्मरण वक्र')।</div>
+        </article>
+        <article class="revision-card" id="q-20">
+          
+          <h3>प्रश्न 20</h3>
+          <div class="revision-question-text">शिक्षक ने पूछा, "ईंट के कितने उपयोग हो सकते हैं?" एक छात्र ने 20 अलग-अलग मौलिक उपयोग बताए। यह किस चिंतन को दर्शाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अभिसारी चिंतन (Convergent)</span></li><li class="correct"><span class="option-label">ब</span><span>अपसारी चिंतन (Divergent)</span></li><li class=""><span class="option-label">स</span><span>मूर्त चिंतन</span></li><li class=""><span class="option-label">द</span><span>अहंकेंद्रित चिंतन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अपसारी चिंतन (Divergent)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एक प्रश्न के अनेक मौलिक उत्तर = अपसारी चिंतन, जो सृजनात्मकता का मुख्य घटक है।</div>
+        </article>
+        <article class="revision-card" id="q-21">
+          
+          <h3>प्रश्न 21</h3>
+          <div class="revision-question-text">सृजनात्मक समस्या समाधान की वह अवस्था जिसमें व्यक्ति समस्या पर सचेत रूप से सोचना छोड़ देता है पर अचेतन रूप से उस पर काम चलता रहता है—</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>तैयारी</span></li><li class=""><span class="option-label">ब</span><span>प्रबोधन (Illumination)</span></li><li class="correct"><span class="option-label">स</span><span>उद्भवन (Incubation)</span></li><li class=""><span class="option-label">द</span><span>सत्यापन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) उद्भवन (Incubation)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्रम: तैयारी → उद्भवन → प्रबोधन ("आहा!") → सत्यापन।</div>
+        </article>
+        <article class="revision-card" id="q-22">
+          
+          <h3>प्रश्न 22</h3>
+          <div class="revision-question-text">जिस अधिगम वक्र में शुरू में सीखने की गति धीमी और बाद में तीव्र होती है, वह कहलाता है—</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>नतोदर वक्र (Concave)</span></li><li class=""><span class="option-label">ब</span><span>उन्नतोदर वक्र (Convex)</span></li><li class=""><span class="option-label">स</span><span>मिश्रित वक्र</span></li><li class=""><span class="option-label">द</span><span>सरल रेखीय वक्र</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) नतोदर वक्र (Concave)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नतोदर = पहले धीमा, फिर तेज़। उन्नतोदर = पहले तेज़, फिर धीमा।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">खंड घ — विकास, वंशानुक्रम और वातावरण</h2>
+        
+        <article class="revision-card" id="q-23">
+          
+          <h3>प्रश्न 23</h3>
+          <div class="revision-question-text">वृद्धि (Growth) और विकास (Development) के संबंध में कौन-सा कथन सही है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>वृद्धि और विकास दोनों जीवन भर चलते हैं</span></li><li class=""><span class="option-label">ब</span><span>विकास केवल मात्रात्मक होता है</span></li><li class=""><span class="option-label">स</span><span>वृद्धि गुणात्मक और विकास मात्रात्मक है</span></li><li class="correct"><span class="option-label">द</span><span>वृद्धि मात्रात्मक है और परिपक्वता पर रुक जाती है; विकास मात्रात्मक व गुणात्मक दोनों है और जीवन भर चलता है</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) वृद्धि मात्रात्मक है और परिपक्वता पर रुक जाती है; विकास मात्रात्मक व गुणात्मक दोनों है और जीवन भर चलता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वृद्धि संकुचित और मात्रात्मक है; विकास व्यापक, मात्रात्मक व गुणात्मक है और गर्भ से मृत्यु तक चलता है।</div>
+        </article>
+        <article class="revision-card" id="q-24">
+          
+          <h3>प्रश्न 24</h3>
+          <div class="revision-question-text">बच्चा पहले कंधे और भुजा चलाना सीखता है, फिर हाथ, और अंत में उँगलियों से बारीक काम (पेंसिल पकड़ना)। यह विकास का कौन-सा सिद्धांत है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>मस्तकाधोमुखी (सिर से पैर)</span></li><li class="correct"><span class="option-label">ब</span><span>समीपदूराभिमुख (केंद्र से परिधि की ओर)</span></li><li class=""><span class="option-label">स</span><span>निरंतरता</span></li><li class=""><span class="option-label">द</span><span>एकीकरण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) समीपदूराभिमुख (केंद्र से परिधि की ओर)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> केंद्र (धड़) से परिधि (उँगलियों) की ओर विकास = समीपदूराभिमुख सिद्धांत।</div>
+        </article>
+        <article class="revision-card" id="q-25">
+          
+          <h3>प्रश्न 25</h3>
+          <div class="revision-question-text">"मुझे एक दर्जन स्वस्थ बच्चे दो, मैं उन्हें डॉक्टर, वकील, भिखारी या चोर कुछ भी बना सकता हूँ।" वातावरण के महत्व वाला यह कथन किसका है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>जे.बी. वाटसन</span></li><li class=""><span class="option-label">ब</span><span>फ्रांसिस गाल्टन</span></li><li class=""><span class="option-label">स</span><span>ग्रेगर मेंडल</span></li><li class=""><span class="option-label">द</span><span>स्टेनली हॉल</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) जे.बी. वाटसन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> व्यवहारवादी वाटसन का यह कथन वातावरण के महत्व को दिखाता है।</div>
+        </article>
+        <article class="revision-card" id="q-26">
+          
+          <h3>प्रश्न 26</h3>
+          <div class="revision-question-text">"प्रतिभाशाली माता-पिता की संतान कम प्रतिभाशाली होने की प्रवृत्ति रखती है।" वंशानुक्रम का यह कौन-सा नियम है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>समानता का नियम</span></li><li class=""><span class="option-label">ब</span><span>भिन्नता का नियम</span></li><li class="correct"><span class="option-label">स</span><span>प्रत्यागमन का नियम</span></li><li class=""><span class="option-label">द</span><span>बीजकोष की निरंतरता का नियम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) प्रत्यागमन का नियम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रत्यागमन का नियम (सोरेन्सन): संतान माता-पिता के गुणों से औसत की ओर लौटती है।</div>
+        </article>
+        <article class="revision-card" id="q-27">
+          
+          <h3>प्रश्न 27</h3>
+          <div class="revision-question-text">शैशवावस्था को 'सीखने का आदर्श काल' किसने कहा?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>स्टेनली हॉल</span></li><li class="correct"><span class="option-label">ब</span><span>वैलेंटाइन</span></li><li class=""><span class="option-label">स</span><span>रॉस</span></li><li class=""><span class="option-label">द</span><span>किलपैट्रिक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) वैलेंटाइन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वैलेंटाइन ने शैशवावस्था को सीखने का आदर्श काल कहा।</div>
+        </article>
+        <article class="revision-card" id="q-28">
+          
+          <h3>प्रश्न 28</h3>
+          <div class="revision-question-text">रॉस ने किस अवस्था को 'मिथ्या परिपक्वता का काल' कहा?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>शैशवावस्था</span></li><li class=""><span class="option-label">ब</span><span>किशोरावस्था</span></li><li class=""><span class="option-label">स</span><span>प्रौढ़ावस्था</span></li><li class="correct"><span class="option-label">द</span><span>बाल्यावस्था</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) बाल्यावस्था</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रॉस ने बाल्यावस्था (6–12 वर्ष) को मिथ्या परिपक्वता का काल कहा।</div>
+        </article>
+        <article class="revision-card" id="q-29">
+          
+          <h3>प्रश्न 29</h3>
+          <div class="revision-question-text">बालक 'बा-बा', 'मा-मा' जैसी ध्वनियाँ निकालना (बबलाना) सामान्यतः किस आयु में शुरू करता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>लगभग 5–6 माह</span></li><li class=""><span class="option-label">ब</span><span>लगभग 1 माह</span></li><li class=""><span class="option-label">स</span><span>लगभग 18 माह</span></li><li class=""><span class="option-label">द</span><span>लगभग 3 वर्ष</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लगभग 5–6 माह</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बबलाना लगभग 5–6 माह में शुरू होता है।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">खंड ङ — समावेशी शिक्षा और विशेष आवश्यकता</h2>
+        
+        <article class="revision-card" id="q-30">
+          
+          <h3>प्रश्न 30</h3>
+          <div class="revision-question-text">'डिस्लेक्सिया' मुख्य रूप से किस कठिनाई से संबंधित है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>गणना</span></li><li class=""><span class="option-label">ब</span><span>लेखन में गामक समन्वय</span></li><li class="correct"><span class="option-label">स</span><span>पठन (पढ़ना)</span></li><li class=""><span class="option-label">द</span><span>श्रवण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) पठन (पढ़ना)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> डिस्लेक्सिया = पठन विकार।</div>
+        </article>
+        <article class="revision-card" id="q-31">
+          
+          <h3>प्रश्न 31</h3>
+          <div class="revision-question-text">कक्षा 6 का एक छात्र भाषा में अच्छा है, पर जोड़-घटाव और संख्याओं के क्रम में लगातार गलती करता है। उसमें किसकी संभावना है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>डिस्लेक्सिया</span></li><li class="correct"><span class="option-label">ब</span><span>डिस्कैल्कुलिया</span></li><li class=""><span class="option-label">स</span><span>डिस्ग्राफिया</span></li><li class=""><span class="option-label">द</span><span>अफेज़िया</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) डिस्कैल्कुलिया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गणना और संख्या की कठिनाई = डिस्कैल्कुलिया।</div>
+        </article>
+        <article class="revision-card" id="q-32">
+          
+          <h3>प्रश्न 32</h3>
+          <div class="revision-question-text">'डिस्प्रैक्सिया' का संबंध किस अक्षमता से है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>पढ़ने की अक्षमता</span></li><li class=""><span class="option-label">ब</span><span>गणितीय अक्षमता</span></li><li class=""><span class="option-label">स</span><span>बोलने की अक्षमता</span></li><li class="correct"><span class="option-label">द</span><span>गामक एवं पेशीय समन्वय (चलना, पकड़ना, लिखना) की अक्षमता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) गामक एवं पेशीय समन्वय (चलना, पकड़ना, लिखना) की अक्षमता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> डिस्प्रैक्सिया = गामक समन्वय की अक्षमता।</div>
+        </article>
+        <article class="revision-card" id="q-33">
+          
+          <h3>प्रश्न 33</h3>
+          <div class="revision-question-text">'अफेज़िया' से ग्रसित बालक को किस क्षेत्र में कठिनाई होती है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>भाषा को समझने और बोलकर व्यक्त करने में</span></li><li class=""><span class="option-label">ब</span><span>केवल गणित में</span></li><li class=""><span class="option-label">स</span><span>केवल देखने में</span></li><li class=""><span class="option-label">द</span><span>केवल दौड़ने में</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) भाषा को समझने और बोलकर व्यक्त करने में</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अफेज़िया = भाषा ग्रहण और वाक्-अभिव्यक्ति का विकार।</div>
+        </article>
+        <article class="revision-card" id="q-34">
+          
+          <h3>प्रश्न 34</h3>
+          <div class="revision-question-text">एक छात्र किसी काम पर कुछ मिनट भी ध्यान नहीं टिका पाता, बार-बार सीट से उठता है और बिना सोचे बीच में बोल पड़ता है। इसकी सबसे संभावित स्थिति है—</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>डिस्लेक्सिया</span></li><li class=""><span class="option-label">ब</span><span>ऑटिज़्म</span></li><li class="correct"><span class="option-label">स</span><span>ADHD (अवधान की कमी व अति-सक्रियता)</span></li><li class=""><span class="option-label">द</span><span>प्रतिभाशालीपन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) ADHD (अवधान की कमी व अति-सक्रियता)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अवधान की कमी, अति-सक्रियता और आवेगशीलता = ADHD।</div>
+        </article>
+        <article class="revision-card" id="q-35">
+          
+          <h3>प्रश्न 35</h3>
+          <div class="revision-question-text">एक छात्र आँखें नहीं मिलाता, दूसरों से बातचीत में गंभीर कठिनाई महसूस करता है और एक ही क्रिया बार-बार दोहराता है। यह किसके लक्षण हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>ADHD</span></li><li class="correct"><span class="option-label">ब</span><span>ऑटिज़्म (स्वलीनता)</span></li><li class=""><span class="option-label">स</span><span>डिस्कैल्कुलिया</span></li><li class=""><span class="option-label">द</span><span>डिस्प्रैक्सिया</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ऑटिज़्म (स्वलीनता)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सामाजिक संप्रेषण में कठिनाई और दोहराव वाला व्यवहार = ऑटिज़्म।</div>
+        </article>
+        <article class="revision-card" id="q-36">
+          
+          <h3>प्रश्न 36</h3>
+          <div class="revision-question-text">ब्रेल लिपि मूल रूप से कितने उभरे हुए बिंदुओं पर आधारित है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>4</span></li><li class=""><span class="option-label">ब</span><span>8</span></li><li class=""><span class="option-label">स</span><span>10</span></li><li class="correct"><span class="option-label">द</span><span>6</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 6</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लुई ब्रेल की लिपि 6 उभरे बिंदुओं (2×3) पर आधारित है।</div>
+        </article>
+        <article class="revision-card" id="q-37">
+          
+          <h3>प्रश्न 37</h3>
+          <div class="revision-question-text">प्रतिभाशाली (Gifted) बालकों के लिए सबसे उपयुक्त कार्यक्रम कौन-सा है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>पाठ्यक्रम संवर्धन (Enrichment) और त्वरण (Acceleration)</span></li><li class=""><span class="option-label">ब</span><span>उन्हें अलग विद्यालय भेजना</span></li><li class=""><span class="option-label">स</span><span>अधिक रटने का कार्य देना</span></li><li class=""><span class="option-label">द</span><span>कमज़ोर छात्रों के साथ पुनः वही पाठ दोहराना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) पाठ्यक्रम संवर्धन (Enrichment) और त्वरण (Acceleration)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रतिभाशाली बालकों के लिए संवर्धन (गहराई) और त्वरण (आगे बढ़ाना) उपयुक्त हैं।</div>
+        </article>
+        <article class="revision-card" id="q-38">
+          
+          <h3>प्रश्न 38</h3>
+          <div class="revision-question-text">समावेशी विद्यालय में 'संसाधन कक्ष' (Resource Room) और 'संसाधन शिक्षक' की मुख्य भूमिका क्या है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>सभी छात्रों की परीक्षा लेना</span></li><li class=""><span class="option-label">ब</span><span>विशेष आवश्यकता वाले बच्चों को स्थायी रूप से अलग पढ़ाना</span></li><li class="correct"><span class="option-label">स</span><span>विशेष आवश्यकता वाले बच्चों को सामान्य कक्षा के साथ-साथ ब्रेल, साइन लैंग्वेज, स्पीच थेरेपी व विशेष TLM से अतिरिक्त सहयोग देना</span></li><li class=""><span class="option-label">द</span><span>केवल पुस्तकालय का संचालन करना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) विशेष आवश्यकता वाले बच्चों को सामान्य कक्षा के साथ-साथ ब्रेल, साइन लैंग्वेज, स्पीच थेरेपी व विशेष TLM से अतिरिक्त सहयोग देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> संसाधन कक्ष सामान्य कक्षा का पूरक है, उसका विकल्प नहीं।</div>
+        </article>
+        <article class="revision-card" id="q-39">
+          
+          <h3>प्रश्न 39</h3>
+          <div class="revision-question-text">समावेशी शिक्षा को वैश्विक स्तर पर मज़बूती देने वाला 1994 का यूनेस्को सम्मेलन कहाँ हुआ था?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>जोमटियन (थाईलैंड)</span></li><li class="correct"><span class="option-label">ब</span><span>सलामांका (स्पेन)</span></li><li class=""><span class="option-label">स</span><span>डकार (सेनेगल)</span></li><li class=""><span class="option-label">द</span><span>नई दिल्ली</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सलामांका (स्पेन)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सलामांका वक्तव्य, 1994।</div>
+        </article>
+        <article class="revision-card" id="q-40">
+          
+          <h3>प्रश्न 40</h3>
+          <div class="revision-question-text">एक छात्र बार-बार आँखें मलता है, श्यामपट्ट पढ़ने के लिए आँखें सिकोड़ता है और किताब चेहरे के बहुत पास रखता है। शिक्षक को क्या करना चाहिए?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>उसे लापरवाह मानकर डाँटना</span></li><li class=""><span class="option-label">ब</span><span>उसे पीछे की पंक्ति में बैठाना</span></li><li class=""><span class="option-label">स</span><span>उसे अतिरिक्त गृहकार्य देना</span></li><li class="correct"><span class="option-label">द</span><span>उसे आगे बैठाना और नेत्र-जाँच की सलाह देना — यह दृष्टि दोष का संकेत है</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) उसे आगे बैठाना और नेत्र-जाँच की सलाह देना — यह दृष्टि दोष का संकेत है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ये दृष्टि दोष के संकेत हैं, इसलिए आगे बैठाएँ और नेत्र-जाँच की सलाह दें।</div>
+        </article>
+        <article class="revision-card" id="q-41">
+          
+          <h3>प्रश्न 41</h3>
+          <div class="revision-question-text">कक्षा में एक छात्र बोलते समय हकलाता है। संवेदनशील शिक्षक को क्या करना चाहिए?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>धैर्य से पूरी बात सुनना और बिना टोके बोलने के लिए सहज वातावरण देना</span></li><li class=""><span class="option-label">ब</span><span>उसे बोलने से छूट दे देना</span></li><li class=""><span class="option-label">स</span><span>उसकी जगह स्वयं वाक्य पूरा कर देना</span></li><li class=""><span class="option-label">द</span><span>उसे जल्दी बोलने के लिए कहना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) धैर्य से पूरी बात सुनना और बिना टोके बोलने के लिए सहज वातावरण देना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> धैर्य से सुनना और सहज वातावरण देना आत्मविश्वास बढ़ाता है; टोकना या वाक्य पूरा कर देना हकलाहट बढ़ाता है।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">खंड च — शिक्षण विधियाँ और आकलन</h2>
+        
+        <article class="revision-card" id="q-42">
+          
+          <h3>प्रश्न 42</h3>
+          <div class="revision-question-text">शिक्षण की 'प्रोजेक्ट (योजना) विधि' के जन्मदाता कौन हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>फ्रोबेल</span></li><li class=""><span class="option-label">ब</span><span>आर्मस्ट्रांग</span></li><li class="correct"><span class="option-label">स</span><span>डब्ल्यू.एच. किलपैट्रिक</span></li><li class=""><span class="option-label">द</span><span>मॉन्टेसरी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) डब्ल्यू.एच. किलपैट्रिक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> किलपैट्रिक; यह विधि प्रयोजनवाद (जॉन डीवी) पर आधारित है।</div>
+        </article>
+        <article class="revision-card" id="q-43">
+          
+          <h3>प्रश्न 43</h3>
+          <div class="revision-question-text">'ह्यूरिस्टिक (अन्वेषण) विधि', जिसमें बालक को एक खोजकर्ता की तरह रखा जाता है, के प्रतिपादक कौन हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>किलपैट्रिक</span></li><li class="correct"><span class="option-label">ब</span><span>एच.ई. आर्मस्ट्रांग</span></li><li class=""><span class="option-label">स</span><span>हरबर्ट</span></li><li class=""><span class="option-label">द</span><span>डीवी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) एच.ई. आर्मस्ट्रांग</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एच.ई. आर्मस्ट्रांग।</div>
+        </article>
+        <article class="revision-card" id="q-44">
+          
+          <h3>प्रश्न 44</h3>
+          <div class="revision-question-text">शिक्षक पहले नियम बताता है— "त्रिभुज के तीनों कोणों का योग 180° होता है"— फिर उदाहरणों से उसकी जाँच कराता है। यह कौन-सी विधि है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>निगमन विधि (Deductive)</span></li><li class=""><span class="option-label">ब</span><span>आगमन विधि (Inductive)</span></li><li class=""><span class="option-label">स</span><span>प्रोजेक्ट विधि</span></li><li class=""><span class="option-label">द</span><span>ह्यूरिस्टिक विधि</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) निगमन विधि (Deductive)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नियम से उदाहरण (सामान्य से विशिष्ट) = निगमन विधि। उदाहरण से नियम = आगमन विधि।</div>
+        </article>
+        <article class="revision-card" id="q-45">
+          
+          <h3>प्रश्न 45</h3>
+          <div class="revision-question-text">'किंडरगार्टन' (बालोद्यान) शिक्षा पद्धति के जन्मदाता कौन हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>मॉन्टेसरी</span></li><li class=""><span class="option-label">ब</span><span>रूसो</span></li><li class=""><span class="option-label">स</span><span>पेस्टालॉज़ी</span></li><li class="correct"><span class="option-label">द</span><span>फ्रेडरिक फ्रोबेल</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) फ्रेडरिक फ्रोबेल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ्रोबेल (जर्मनी, 1837); इसमें खेल, उपहार और गीत प्रमुख हैं।</div>
+        </article>
+        <article class="revision-card" id="q-46">
+          
+          <h3>प्रश्न 46</h3>
+          <div class="revision-question-text">'मॉन्टेसरी पद्धति' में सबसे अधिक बल किस पर दिया जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>रटने पर</span></li><li class=""><span class="option-label">ब</span><span>शिक्षक के व्याख्यान पर</span></li><li class="correct"><span class="option-label">स</span><span>ज्ञानेंद्रियों के प्रशिक्षण और स्व-शिक्षा पर</span></li><li class=""><span class="option-label">द</span><span>परीक्षा पर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) ज्ञानेंद्रियों के प्रशिक्षण और स्व-शिक्षा पर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मॉन्टेसरी पद्धति में ज्ञानेंद्रियों का प्रशिक्षण और बालक की स्व-शिक्षा प्रमुख हैं।</div>
+        </article>
+        <article class="revision-card" id="q-47">
+          
+          <h3>प्रश्न 47</h3>
+          <div class="revision-question-text">एडगर डेल के 'अनुभव शंकु' के अनुसार सबसे प्रभावी अधिगम किससे होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>मौखिक प्रतीकों (शब्दों) से</span></li><li class="correct"><span class="option-label">ब</span><span>प्रत्यक्ष एवं उद्देश्यपूर्ण अनुभवों से</span></li><li class=""><span class="option-label">स</span><span>दृश्य प्रतीकों से</span></li><li class=""><span class="option-label">द</span><span>रेडियो-रिकॉर्डिंग से</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) प्रत्यक्ष एवं उद्देश्यपूर्ण अनुभवों से</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शंकु के आधार पर प्रत्यक्ष अनुभव (सबसे प्रभावी) और शिखर पर मौखिक प्रतीक हैं।</div>
+        </article>
+        <article class="revision-card" id="q-48">
+          
+          <h3>प्रश्न 48</h3>
+          <div class="revision-question-text">ब्लूम के वर्गीकरण (1956) के ज्ञानात्मक पक्ष का सर्वोच्च स्तर कौन-सा है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>ज्ञान</span></li><li class=""><span class="option-label">ब</span><span>संश्लेषण</span></li><li class="correct"><span class="option-label">स</span><span>मूल्यांकन</span></li><li class=""><span class="option-label">द</span><span>अनुप्रयोग</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) मूल्यांकन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 1956 का क्रम: ज्ञान → बोध → अनुप्रयोग → विश्लेषण → संश्लेषण → मूल्यांकन। (संशोधित 2001 वर्गीकरण में सर्वोच्च स्तर = सृजन।)</div>
+        </article>
+        <article class="revision-card" id="q-49">
+          
+          <h3>प्रश्न 49</h3>
+          <div class="revision-question-text">सत्र की समाप्ति पर छात्रों को ग्रेड या प्रमाणपत्र देने के लिए किया जाने वाला मूल्यांकन कहलाता है—</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>रचनात्मक मूल्यांकन</span></li><li class=""><span class="option-label">ब</span><span>निदानात्मक मूल्यांकन</span></li><li class=""><span class="option-label">स</span><span>स्थापनात्मक मूल्यांकन</span></li><li class="correct"><span class="option-label">द</span><span>योगात्मक मूल्यांकन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) योगात्मक मूल्यांकन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अंत में ग्रेड या प्रमाणपत्र देना = योगात्मक मूल्यांकन।</div>
+        </article>
+        <article class="revision-card" id="q-50">
+          
+          <h3>प्रश्न 50</h3>
+          <div class="revision-question-text">छात्रों के व्यवहार की रोज़ की महत्वपूर्ण घटनाओं का वस्तुनिष्ठ विवरण जिस अभिलेख में लिखा जाता है, उसे कहते हैं—</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>उपाख्यानात्मक अभिलेख (Anecdotal record)</span></li><li class=""><span class="option-label">ब</span><span>संचयी अभिलेख</span></li><li class=""><span class="option-label">स</span><span>उपस्थिति पंजिका</span></li><li class=""><span class="option-label">द</span><span>प्रगति पत्र</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) उपाख्यानात्मक अभिलेख (Anecdotal record)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उपाख्यानात्मक अभिलेख।</div>
+        </article>
+        <article class="revision-card" id="q-51">
+          
+          <h3>प्रश्न 51</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा शिक्षण सूत्र <strong>अशुद्ध</strong> है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>ज्ञात से अज्ञात की ओर</span></li><li class="correct"><span class="option-label">ब</span><span>जटिल से सरल की ओर</span></li><li class=""><span class="option-label">स</span><span>मूर्त से अमूर्त की ओर</span></li><li class=""><span class="option-label">द</span><span>विशिष्ट से सामान्य की ओर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) जटिल से सरल की ओर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सही सूत्र "सरल से जटिल की ओर" है।</div>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">खंड छ — नीति, मनोविज्ञान के आधार और अन्य</h2>
+        
+        <article class="revision-card" id="q-52">
+          
+          <h3>प्रश्न 52</h3>
+          <div class="revision-question-text">भारतीय संविधान के किस अनुच्छेद में 6 से 14 वर्ष के बच्चों के लिए निःशुल्क एवं अनिवार्य शिक्षा को मौलिक अधिकार बनाया गया है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>अनुच्छेद 45</span></li><li class=""><span class="option-label">ब</span><span>अनुच्छेद 51(A)</span></li><li class="correct"><span class="option-label">स</span><span>अनुच्छेद 21(A)</span></li><li class=""><span class="option-label">द</span><span>अनुच्छेद 14</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अनुच्छेद 21(A)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 21(A), 86वें संशोधन (2002) से। अनुच्छेद 45 नीति-निदेशक तत्व है।</div>
+        </article>
+        <article class="revision-card" id="q-53">
+          
+          <h3>प्रश्न 53</h3>
+          <div class="revision-question-text">राष्ट्रीय शिक्षा नीति 2020 में '10+2' के स्थान पर कौन-सी नई संरचना प्रस्तावित है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>4+4+4</span></li><li class=""><span class="option-label">ब</span><span>5+3+2+2</span></li><li class=""><span class="option-label">स</span><span>6+3+3</span></li><li class="correct"><span class="option-label">द</span><span>5+3+3+4</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 5+3+3+4</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 5+3+3+4 (आधारभूत, प्रारंभिक, मध्य, माध्यमिक)।</div>
+        </article>
+        <article class="revision-card" id="q-54">
+          
+          <h3>प्रश्न 54</h3>
+          <div class="revision-question-text">पूर्व अनुभव के आधार पर संवेदना को अर्थ देना क्या कहलाता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>प्रत्यक्षीकरण (Perception)</span></li><li class=""><span class="option-label">ब</span><span>संवेदना</span></li><li class=""><span class="option-label">स</span><span>अवधान</span></li><li class=""><span class="option-label">द</span><span>कल्पना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) प्रत्यक्षीकरण (Perception)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> संवेदना + अर्थ = प्रत्यक्षीकरण।</div>
+        </article>
+        <article class="revision-card" id="q-55">
+          
+          <h3>प्रश्न 55</h3>
+          <div class="revision-question-text">किसी अच्छे परीक्षण को बार-बार देने पर भी समान परिणाम मिलें, तो यह उसकी कौन-सी विशेषता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>वैधता (Validity)</span></li><li class="correct"><span class="option-label">ब</span><span>विश्वसनीयता (Reliability)</span></li><li class=""><span class="option-label">स</span><span>वस्तुनिष्ठता</span></li><li class=""><span class="option-label">द</span><span>व्यावहारिकता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विश्वसनीयता (Reliability)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> परिणाम में स्थिरता = विश्वसनीयता। जो मापना है वही मापे = वैधता।</div>
+        </article>
+        <article class="revision-card" id="q-56">
+          
+          <h3>प्रश्न 56</h3>
+          <div class="revision-question-text">1879 में लिपज़िग (जर्मनी) में विश्व की पहली मनोविज्ञान प्रयोगशाला किसने स्थापित की?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>विलियम जेम्स</span></li><li class=""><span class="option-label">ब</span><span>फ्रायड</span></li><li class=""><span class="option-label">स</span><span>वाटसन</span></li><li class="correct"><span class="option-label">द</span><span>विल्हेम वुण्ट</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) विल्हेम वुण्ट</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विल्हेम वुण्ट, प्रयोगात्मक मनोविज्ञान के जनक।</div>
+        </article>
+        <article class="revision-card" id="q-57">
+          
+          <h3>प्रश्न 57</h3>
+          <div class="revision-question-text">अभिक्रमित अनुदेशन में 'शाखीय अभिक्रमण' (Branching Programming) के प्रतिपादक कौन हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>बी.एफ. स्किनर</span></li><li class=""><span class="option-label">ब</span><span>थॉमस गिलबर्ट</span></li><li class="correct"><span class="option-label">स</span><span>नॉर्मन ए. क्राउडर</span></li><li class=""><span class="option-label">द</span><span>पावलोव</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (स) नॉर्मन ए. क्राउडर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्राउडर ने शाखीय अभिक्रमण दिया; स्किनर ने रेखीय और गिलबर्ट ने मैथेटिक्स।</div>
+        </article>
+        <article class="revision-card" id="q-58">
+          
+          <h3>प्रश्न 58</h3>
+          <div class="revision-question-text">रॉबर्ट गेने के अधिगम पदानुक्रम में सर्वोच्च स्तर पर कौन-सा अधिगम है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">अ</span><span>समस्या समाधान अधिगम</span></li><li class=""><span class="option-label">ब</span><span>संकेत अधिगम</span></li><li class=""><span class="option-label">स</span><span>प्रत्यय अधिगम</span></li><li class=""><span class="option-label">द</span><span>शृंखला अधिगम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) समस्या समाधान अधिगम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गेने के 8 प्रकारों में संकेत अधिगम सबसे नीचे और समस्या समाधान सबसे ऊपर है।</div>
+        </article>
+        <article class="revision-card" id="q-59">
+          
+          <h3>प्रश्न 59</h3>
+          <div class="revision-question-text">कार्ल युंग ने सामाजिक अंतःक्रिया के आधार पर व्यक्तित्व के मुख्य प्रकार कौन-से बताए?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>गोलकाय, कृशकाय, सुडौलकाय</span></li><li class="correct"><span class="option-label">ब</span><span>अंतर्मुखी और बहिर्मुखी</span></li><li class=""><span class="option-label">स</span><span>सात्विक, राजसिक, तामसिक</span></li><li class=""><span class="option-label">द</span><span>इदम्, अहम्, पराहम्</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अंतर्मुखी और बहिर्मुखी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> युंग ने अंतर्मुखी और बहिर्मुखी प्रकार बताए (कई पुस्तकों में उभयमुखी भी जोड़ा जाता है)।</div>
+        </article>
+        <article class="revision-card" id="q-60">
+          
+          <h3>प्रश्न 60</h3>
+          <div class="revision-question-text">निम्न में से कौन-सा व्यक्तित्व मापन की प्रक्षेपी (Projective) विधि <strong>नहीं</strong> है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">अ</span><span>TAT (प्रासंगिक अंतर्बोध परीक्षण)</span></li><li class=""><span class="option-label">ब</span><span>रोशा स्याही-धब्बा परीक्षण</span></li><li class=""><span class="option-label">स</span><span>वाक्य पूर्ति परीक्षण</span></li><li class="correct"><span class="option-label">द</span><span>16-PF प्रश्नावली (कैटल)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 16-PF प्रश्नावली (कैटल)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 16-PF एक प्रश्नावली (आत्मनिष्ठ) विधि है, प्रक्षेपी नहीं।</div>
+        </article>
+      </section>
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>

@@ -85,7 +85,7 @@ function fillTemplate(template, values) {
   );
 }
 
-function renderRevision(data) {
+function renderRevision(data, { showOptions = false } = {}) {
   const groups = [];
   for (const question of data.questions) {
     const section = question.section.replace(/\s*\(प्र(?:\.|श्न)[^)]*\)/, "");
@@ -136,6 +136,12 @@ function renderRevision(data) {
           ${passage}
           <h3>प्रश्न ${question.number}</h3>
           <div class="revision-question-text">${question.text}</div>
+          ${showOptions ? `<ul class="revision-options">${question.options
+            .map(
+              (option) =>
+                `<li class="${option.id === question.answer ? "correct" : ""}"><span class="option-label">${option.label}</span><span>${option.text}</span></li>`,
+            )
+            .join("")}</ul>` : ""}
           <p class="revision-answer"><strong>सही उत्तर:</strong> (${correct.label}) ${correct.text}</p>
           ${explanation ? `<div class="answer-explanation"><strong>व्याख्या:</strong> ${explanation}</div>` : ""}
         </article>`;
@@ -160,7 +166,12 @@ function renderRevision(data) {
   });
 }
 
+// These revision pages also list all four options.
+const revisionWithOptions = new Set(["rev-cdp60", "rev-hindi60"]);
+
 for (const paperName of [
+  "rev-cdp60",
+  "rev-hindi60",
   "cdp1",
   "cdp2",
   "hindi1",
@@ -182,7 +193,7 @@ for (const paperName of [
   );
   await writeFile(
     path.join(root, `revision-${paperName}.html`),
-    renderRevision(data),
+    renderRevision(data, { showOptions: revisionWithOptions.has(paperName) }),
     "utf8",
   );
 }

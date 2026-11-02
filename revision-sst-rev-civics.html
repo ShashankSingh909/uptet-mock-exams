@@ -896,6 +896,40 @@ dialog::backdrop {
   font-weight: 650;
 }
 
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
 .revision-answer {
   margin: 10px 0 0;
   padding: 10px 12px;
@@ -1015,6 +1049,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 1</h3>
           <div class="revision-question-text">भारतीय संविधान में मौलिक कर्तव्य किस अनुच्छेद में दिए गए हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अनुच्छेद 51क</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 42वें संशोधन (1976) से जोड़े गए; अब 11 कर्तव्य</div>
         </article>
@@ -1022,6 +1057,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 2</h3>
           <div class="revision-question-text">6 से 14 वर्ष के बच्चों को निःशुल्क व अनिवार्य शिक्षा का मौलिक अधिकार किस अनुच्छेद में है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) अनुच्छेद 21क</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 86वाँ संशोधन (2002) से 21क; इसी से 51क(ट) में अभिभावकों का कर्तव्य</div>
         </article>
@@ -1029,6 +1065,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 3</h3>
           <div class="revision-question-text">अनुच्छेद 32 (संवैधानिक उपचारों का अधिकार) को संविधान का 'हृदय और आत्मा' किसने कहा?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) डॉ. भीमराव अंबेडकर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डॉ. अंबेडकर</div>
         </article>
@@ -1036,6 +1073,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 4</h3>
           <div class="revision-question-text">राज्य के मुख्यमंत्री की नियुक्ति कौन करता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) राज्यपाल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> राज्यपाल राज्य का प्रमुख; राज्यपाल की नियुक्ति राष्ट्रपति करते हैं</div>
         </article>
@@ -1043,6 +1081,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 5</h3>
           <div class="revision-question-text">73वाँ संविधान संशोधन (1992) किससे संबंधित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) पंचायती राज</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 73वाँ – पंचायत, 74वाँ – नगरपालिका; त्रिस्तरीय ढाँचा बलवंत राय मेहता समिति की सिफ़ारिश</div>
         </article>
@@ -1050,6 +1089,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 6</h3>
           <div class="revision-question-text">ग्राम सभा में कौन शामिल होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) गाँव के सभी पंजीकृत वयस्क मतदाता</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गाँव की मतदाता सूची में दर्ज सभी वयस्क</div>
         </article>
@@ -1057,6 +1097,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 7</h3>
           <div class="revision-question-text">जिले का सर्वोच्च प्रशासनिक अधिकारी कौन होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) जिलाधिकारी (कलेक्टर)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जिलाधिकारी; BDO खंड स्तर पर ग्रामीण विकास कार्यक्रम देखता है</div>
         </article>
@@ -1064,6 +1105,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 8</h3>
           <div class="revision-question-text">निम्नलिखित में से कौन सा विषय समवर्ती सूची में है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शिक्षा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शिक्षा 42वें संशोधन से राज्य सूची से समवर्ती सूची में; पुलिस – राज्य सूची</div>
         </article>
@@ -1071,6 +1113,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 9</h3>
           <div class="revision-question-text">राज्यसभा के सदस्यों का कार्यकाल कितना होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 6 वर्ष</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 6 वर्ष; हर 2 वर्ष में एक-तिहाई सदस्य सेवानिवृत्त</div>
         </article>
@@ -1078,6 +1121,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 10</h3>
           <div class="revision-question-text">गुटनिरपेक्ष आंदोलन (NAM) का पहला शिखर सम्मेलन (1961) कहाँ हुआ?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) बेलग्रेड</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बेलग्रेड (यूगोस्लाविया); नेहरू, नासिर, टीटो संस्थापक</div>
         </article>
@@ -1085,6 +1129,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 11</h3>
           <div class="revision-question-text">पंचशील समझौता (1954) भारत और किस देश के बीच हुआ?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) चीन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चीन के साथ, नेहरू–चाउ एन-लाई</div>
         </article>
@@ -1092,6 +1137,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 12</h3>
           <div class="revision-question-text">मतदान की न्यूनतम आयु 21 से घटाकर 18 वर्ष किस संविधान संशोधन से की गई?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 61वाँ</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 61वाँ संशोधन (1988)</div>
         </article>
@@ -1099,6 +1145,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 13</h3>
           <div class="revision-question-text">अस्पृश्यता का अंत संविधान के किस अनुच्छेद में किया गया है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) अनुच्छेद 17</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 17; अनु. 14 – विधि के समक्ष समानता</div>
         </article>
@@ -1106,6 +1153,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 14</h3>
           <div class="revision-question-text">राज्यपाल पद पर नियुक्ति के लिए न्यूनतम आयु कितनी होनी चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 35 वर्ष</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 157; नियुक्ति राष्ट्रपति करते हैं (जुलाई से जुड़ा: राज्यपाल = राज्य का प्रमुख)</div>
         </article>
@@ -1113,6 +1161,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 15</h3>
           <div class="revision-question-text">निम्नलिखित में से कौन सी स्वतंत्रता अब अनुच्छेद 19 में शामिल नहीं है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) संपत्ति अर्जित करने, रखने और बेचने की स्वतंत्रता</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 44वें संशोधन (1978) से हटा; अब अनु. 300क में कानूनी अधिकार (जुलाई से जुड़ा: अनु. 19(1)(क))</div>
         </article>
@@ -1120,6 +1169,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 16</h3>
           <div class="revision-question-text">'बंदी प्रत्यक्षीकरण' (हेबियस कॉर्पस) रिट मुख्य रूप से किसकी रक्षा करती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) व्यक्तिगत स्वतंत्रता — अवैध हिरासत से मुक्ति</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 'शरीर प्रस्तुत करो' — अवैध हिरासत से मुक्ति (जुलाई से जुड़ा: अनु. 32 संवैधानिक उपचार)</div>
         </article>
@@ -1127,6 +1177,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 17</h3>
           <div class="revision-question-text">भारतीय संविधान में वर्तमान में कितने मौलिक अधिकार हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 6</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> समता, स्वतंत्रता, शोषण के विरुद्ध, धर्म, संस्कृति-शिक्षा, संवैधानिक उपचार (जुलाई से जुड़ा: मौलिक अधिकार)</div>
         </article>
@@ -1134,6 +1185,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 18</h3>
           <div class="revision-question-text">उत्तर प्रदेश की त्रिस्तरीय पंचायती राज व्यवस्था में ब्लॉक (मध्य) स्तर की संस्था को क्या कहते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) क्षेत्र पंचायत</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> क्षेत्र पंचायत (अध्यक्ष: ब्लॉक प्रमुख) (जुलाई से जुड़ा: बलवंत राय मेहता – त्रिस्तरीय; BDO)</div>
         </article>
@@ -1141,6 +1193,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 19</h3>
           <div class="revision-question-text">73वें संविधान संशोधन के अनुसार पंचायतों में महिलाओं के लिए कम से कम कितने स्थान आरक्षित हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) एक-तिहाई</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> एक-तिहाई (कई राज्यों ने 50% किया) (जुलाई से जुड़ा: पंचायती राज)</div>
         </article>
@@ -1148,6 +1201,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 20</h3>
           <div class="revision-question-text">नगर निगम का निर्वाचित प्रमुख कौन होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) महापौर (मेयर)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> महापौर; नगर आयुक्त प्रशासनिक प्रमुख (जुलाई से जुड़ा: स्थानीय प्रशासन)</div>
         </article>
@@ -1155,6 +1209,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 21</h3>
           <div class="revision-question-text">भारत में लोकसभा और विधानसभा के चुनाव कराने की ज़िम्मेदारी अनुच्छेद 324 के अंतर्गत किसकी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) भारत निर्वाचन आयोग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> निर्वाचन आयोग (जुलाई से जुड़ा: चुनाव = प्रतिनिधि चुनने की विधि)</div>
         </article>
@@ -1162,6 +1217,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 22</h3>
           <div class="revision-question-text">मतदाताओं को EVM पर 'नोटा' (उपरोक्त में से कोई नहीं) का विकल्प किस वर्ष से मिला?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 2013</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 2013, सर्वोच्च न्यायालय के निर्णय से (जुलाई से जुड़ा: चुनाव)</div>
         </article>
@@ -1169,6 +1225,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 23</h3>
           <div class="revision-question-text">दक्षिण एशियाई क्षेत्रीय सहयोग संगठन (सार्क) की स्थापना कब और कहाँ हुई?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 1985, ढाका</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 8 दिसंबर 1985, ढाका (जुलाई से जुड़ा: विदेश नीति = राष्ट्रीय हित)</div>
         </article>
@@ -1176,6 +1233,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 24</h3>
           <div class="revision-question-text">भारत की 'एक्ट ईस्ट' नीति मुख्य रूप से किन देशों से संबंध मज़बूत करने पर केंद्रित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) दक्षिण-पूर्व एशिया (आसियान देश)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 2014 से 'एक्ट ईस्ट' (1991 की 'लुक ईस्ट' का विस्तार) (जुलाई से जुड़ा: गुटनिरपेक्षता (दो बार))</div>
         </article>
@@ -1183,6 +1241,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 25</h3>
           <div class="revision-question-text">भारत के सशस्त्र बलों (थल, जल, वायु सेना) का सर्वोच्च कमांडर कौन होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) राष्ट्रपति</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 53 (जुलाई से जुड़ा: NSA अजीत डोभाल – राष्ट्रीय सुरक्षा)</div>
         </article>
@@ -1190,6 +1249,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 26</h3>
           <div class="revision-question-text">संविधान सभा के स्थायी अध्यक्ष कौन थे?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) डॉ. राजेंद्र प्रसाद</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> डॉ. राजेंद्र प्रसाद (11 दिसंबर 1946 से); पहली बैठक (9 दिसंबर 1946) के अस्थायी अध्यक्ष – डॉ. सच्चिदानंद सिन्हा।</div>
         </article>
@@ -1197,6 +1257,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 27</h3>
           <div class="revision-question-text">संविधान सभा की प्रारूप (मसौदा) समिति के अध्यक्ष, जिन्हें 'भारतीय संविधान का मुख्य शिल्पकार' कहा जाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) डॉ. भीमराव अंबेडकर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अंबेडकर (प्रारूप समिति 29 अगस्त 1947); संविधान सभा के संवैधानिक सलाहकार – बी.एन. राव।</div>
         </article>
@@ -1204,6 +1265,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 28</h3>
           <div class="revision-question-text">भारत का संविधान किस दिन अंगीकृत (अपनाया) किया गया, जिसे अब 'संविधान दिवस' के रूप में मनाया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 26 नवंबर 1949</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 26 नवंबर 1949 को अंगीकृत, 26 जनवरी 1950 से पूर्ण रूप से लागू; 2015 से 26 नवंबर 'संविधान दिवस'।</div>
         </article>
@@ -1211,6 +1273,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 29</h3>
           <div class="revision-question-text">42वें संविधान संशोधन (1976) द्वारा प्रस्तावना में जोड़े गए शब्द हैं –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) समाजवादी, पंथनिरपेक्ष, अखंडता</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 42वाँ संशोधन 'लघु संविधान' कहलाता है; इसी से मौलिक कर्तव्य भी जोड़े गए।</div>
         </article>
@@ -1218,6 +1281,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 30</h3>
           <div class="revision-question-text">राज्य के नीति-निदेशक तत्व (भाग-4) किस देश के संविधान से प्रेरित हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) आयरलैंड</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आयरलैंड – नीति-निदेशक तत्व; ब्रिटेन – संसदीय प्रणाली, एकल नागरिकता; कनाडा – सशक्त केंद्र वाला संघ।</div>
         </article>
@@ -1225,6 +1289,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 31</h3>
           <div class="revision-question-text">भारतीय संविधान के मौलिक अधिकार (भाग-3) मुख्य रूप से किस देश के संविधान से प्रेरित हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) संयुक्त राज्य अमेरिका</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अमेरिका – मौलिक अधिकार, न्यायिक पुनरावलोकन, उपराष्ट्रपति पद; सोवियत संघ – मौलिक कर्तव्य।</div>
         </article>
@@ -1232,6 +1297,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 32</h3>
           <div class="revision-question-text">भारत के राष्ट्रपति का चुनाव करने वाले निर्वाचक मंडल में कौन शामिल होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) संसद के दोनों सदनों तथा राज्यों व दिल्ली-पुडुचेरी की विधानसभाओं के निर्वाचित सदस्य</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 54 – केवल निर्वाचित सदस्य; मनोनीत सदस्य व विधान परिषद के सदस्य मतदान नहीं करते।</div>
         </article>
@@ -1239,6 +1305,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 33</h3>
           <div class="revision-question-text">राज्यसभा का पदेन सभापति होता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) उपराष्ट्रपति</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> उपराष्ट्रपति (अनु. 64); लोकसभा की अध्यक्षता – अध्यक्ष (स्पीकर)।</div>
         </article>
@@ -1246,6 +1313,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 34</h3>
           <div class="revision-question-text">धन विधेयक (Money Bill) केवल किस सदन में प्रस्तुत किया जा सकता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) लोकसभा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 110 में परिभाषा; राज्यसभा इसे अधिकतम 14 दिन रोक सकती है; विधेयक धन विधेयक है या नहीं – लोकसभा अध्यक्ष तय करता है।</div>
         </article>
@@ -1253,6 +1321,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 35</h3>
           <div class="revision-question-text">लोकसभा का सदस्य बनने के लिए न्यूनतम आयु है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 25 वर्ष</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लोकसभा – 25, राज्यसभा – 30, राष्ट्रपति व उपराष्ट्रपति – 35 वर्ष।</div>
         </article>
@@ -1260,6 +1329,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 36</h3>
           <div class="revision-question-text">केंद्रीय मंत्रिपरिषद सामूहिक रूप से किसके प्रति उत्तरदायी होती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) लोकसभा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 75(3); अविश्वास प्रस्ताव केवल लोकसभा में लाया जाता है।</div>
         </article>
@@ -1267,6 +1337,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 37</h3>
           <div class="revision-question-text">सर्वोच्च न्यायालय के न्यायाधीश कितनी आयु पूरी करने पर सेवानिवृत्त होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 65 वर्ष</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सर्वोच्च न्यायालय – 65, उच्च न्यायालय – 62 वर्ष।</div>
         </article>
@@ -1274,6 +1345,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 38</h3>
           <div class="revision-question-text">युद्ध, बाहरी आक्रमण या सशस्त्र विद्रोह की स्थिति में 'राष्ट्रीय आपातकाल' किस अनुच्छेद के अंतर्गत घोषित किया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अनुच्छेद 352</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 352 – राष्ट्रीय आपात; 356 – राष्ट्रपति शासन; 360 – वित्तीय आपात (अब तक कभी नहीं लगा)।</div>
         </article>
@@ -1281,6 +1353,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 39</h3>
           <div class="revision-question-text">संसद को संविधान में संशोधन करने की शक्ति किस अनुच्छेद से प्राप्त है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अनुच्छेद 368</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 368 (भाग 20); कुछ संशोधनों के लिए आधे राज्यों का अनुसमर्थन भी आवश्यक।</div>
         </article>
@@ -1288,6 +1361,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 40</h3>
           <div class="revision-question-text">राष्ट्रीय ध्वज के मध्य में बने नीले अशोक चक्र में कितनी तीलियाँ हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 24</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 24 तीलियाँ; ध्वज की लंबाई-चौड़ाई का अनुपात 3:2; ध्वज 22 जुलाई 1947 को अपनाया गया।</div>
         </article>
@@ -1295,6 +1369,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 41</h3>
           <div class="revision-question-text">संविधान सभा ने 'जन-गण-मन' को राष्ट्रगान के रूप में किस तिथि को अपनाया?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 24 जनवरी 1950</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 24 जनवरी 1950; गायन अवधि लगभग 52 सेकंड; रचयिता रवींद्रनाथ टैगोर।</div>
         </article>
@@ -1302,6 +1377,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 42</h3>
           <div class="revision-question-text">स्वतंत्र भारत का पहला आम चुनाव (लोकसभा) किस अवधि में हुआ?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 1951–52</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 25 अक्टूबर 1951 से 21 फ़रवरी 1952; पहले मुख्य चुनाव आयुक्त – सुकुमार सेन।</div>
         </article>
@@ -1309,6 +1385,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 43</h3>
           <div class="revision-question-text">नागरिकों को सरकारी कार्यालयों से सूचना माँगने का कानूनी अधिकार देने वाला 'सूचना का अधिकार अधिनियम' किस वर्ष बना?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 2005</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> RTI अधिनियम 2005 (12 अक्टूबर 2005 से लागू); सामान्यतः 30 दिन में सूचना, जीवन-स्वतंत्रता के मामले में 48 घंटे।</div>
         </article>
@@ -1316,6 +1393,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 44</h3>
           <div class="revision-question-text">आपसी समझौते के आधार पर मुकदमों का शीघ्र और निःशुल्क निपटारा करने वाली व्यवस्था, जिसके निर्णय के विरुद्ध सामान्यतः अपील नहीं होती –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) लोक अदालत</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लोक अदालत (विधिक सेवा प्राधिकरण अधिनियम 1987); कोई कोर्ट-फ़ीस नहीं।</div>
         </article>
@@ -1323,6 +1401,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 45</h3>
           <div class="revision-question-text">भारत में 'जनहित याचिका' (PIL) की अवधारणा आरंभ करने का श्रेय मुख्य रूप से किन न्यायाधीशों को दिया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) न्यायमूर्ति पी.एन. भगवती और वी.आर. कृष्णा अय्यर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 1980 के दशक में; पत्र या पोस्टकार्ड को भी याचिका माना गया।</div>
         </article>
@@ -1330,6 +1409,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 46</h3>
           <div class="revision-question-text">भारत में 'राष्ट्रीय उपभोक्ता दिवस' किस दिन मनाया जाता है (इसी दिन 1986 में उपभोक्ता संरक्षण अधिनियम को स्वीकृति मिली थी)?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) 24 दिसंबर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 24 दिसंबर – राष्ट्रीय उपभोक्ता दिवस; 15 मार्च – विश्व उपभोक्ता अधिकार दिवस; नया उपभोक्ता संरक्षण अधिनियम 2019।</div>
         </article>
@@ -1337,6 +1417,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 47</h3>
           <div class="revision-question-text">ग्रामीण से नगरीय क्षेत्र में बदल रहे (संक्रमणशील) क्षेत्र के लिए गठित स्थानीय निकाय –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) नगर पंचायत</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 243Q (74वाँ संशोधन); बड़े शहर – नगर निगम, छोटे शहर – नगर पालिका परिषद।</div>
         </article>
@@ -1344,6 +1425,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 48</h3>
           <div class="revision-question-text">ग्राम पंचायत का कार्यकाल कितने वर्ष का होता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 5 वर्ष</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 5 वर्ष; भंग होने पर 6 माह के भीतर चुनाव अनिवार्य।</div>
         </article>
@@ -1351,6 +1433,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 49</h3>
           <div class="revision-question-text">उत्तर प्रदेश विधानसभा में निर्वाचित सदस्यों की संख्या है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 403</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 403 निर्वाचित; विधान परिषद – 100 सदस्य; एंग्लो-इंडियन मनोनयन 104वें संशोधन (2020) से समाप्त, इसलिए पहले कुल 404 थे।</div>
         </article>
@@ -1358,6 +1441,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 50</h3>
           <div class="revision-question-text">उत्तर प्रदेश से लोकसभा में कितनी सीटें हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 80</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लोकसभा 80, राज्यसभा 31 – दोनों में सबसे अधिक सीटें उ.प्र. की।</div>
         </article>
@@ -1365,6 +1449,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 51</h3>
           <div class="revision-question-text">संयुक्त राष्ट्र संघ की स्थापना किस तिथि को हुई, जिसे 'संयुक्त राष्ट्र दिवस' के रूप में मनाया जाता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 24 अक्टूबर 1945</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चार्टर पर हस्ताक्षर 26 जून 1945 (सैन फ्रांसिस्को), लागू 24 अक्टूबर 1945; मुख्यालय न्यूयॉर्क; भारत संस्थापक सदस्य।</div>
         </article>
@@ -1372,6 +1457,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 52</h3>
           <div class="revision-question-text">संयुक्त राष्ट्र सुरक्षा परिषद में 'वीटो' शक्ति वाले स्थायी सदस्यों की संख्या –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 5</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अमेरिका, ब्रिटेन, फ़्रांस, रूस, चीन; कुल सदस्य 15 (10 अस्थायी, 2 वर्ष के लिए)।</div>
         </article>
@@ -1379,6 +1465,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 53</h3>
           <div class="revision-question-text">1971 के युद्ध के बाद 1972 में भारत और पाकिस्तान के बीच (इंदिरा गांधी व ज़ुल्फ़िकार अली भुट्टो द्वारा) हस्ताक्षरित समझौता –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शिमला समझौता</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शिमला समझौता (2 जुलाई 1972); ताशकंद समझौता (1966) – लाल बहादुर शास्त्री व अयूब ख़ान।</div>
         </article>
@@ -1386,6 +1473,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 54</h3>
           <div class="revision-question-text">युद्धकाल में शत्रु के सामने सर्वोच्च वीरता के लिए दिया जाने वाला भारत का सर्वोच्च सैन्य सम्मान –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) परमवीर चक्र</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> परमवीर चक्र (पहले प्राप्तकर्ता – मेजर सोमनाथ शर्मा, 1947); शांतिकाल का सर्वोच्च – अशोक चक्र।</div>
         </article>
@@ -1393,6 +1481,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 55</h3>
           <div class="revision-question-text">2022 में आरंभ 'अग्निपथ योजना' के अंतर्गत सशस्त्र सेनाओं में 4 वर्ष के लिए भर्ती युवाओं को कहा जाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अग्निवीर</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अग्निवीर – 4 वर्ष की सेवा; इनमें से अधिकतम 25% को नियमित सेवा में लिया जाता है।</div>
         </article>
@@ -1400,6 +1489,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 56</h3>
           <div class="revision-question-text">संविधान की प्रस्तावना 'हम, भारत के लोग...' से शुरू होती है। इससे स्पष्ट होता है कि संविधान की शक्ति का स्रोत है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) भारत की जनता</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 'हम, भारत के लोग' – जनता संप्रभु; प्रस्तावना को संविधान की 'आत्मा' कहा जाता है।</div>
         </article>
@@ -1407,6 +1497,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 57</h3>
           <div class="revision-question-text">"किसी व्यक्ति को उसके प्राण या दैहिक स्वतंत्रता से विधि द्वारा स्थापित प्रक्रिया के अनुसार ही वंचित किया जाएगा, अन्यथा नहीं" – यह संविधान के किस अनुच्छेद में है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अनुच्छेद 21</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 21; इसी की व्याख्या से निजता व स्वच्छ पर्यावरण के अधिकार निकले; 21A – शिक्षा का अधिकार।</div>
         </article>
@@ -1414,6 +1505,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 58</h3>
           <div class="revision-question-text">लोकसभा अध्यक्ष (स्पीकर) का चुनाव कौन करता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) लोकसभा के सदस्य</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सदस्य अपने में से चुनते हैं; पहले लोकसभा अध्यक्ष – जी.वी. मावलंकर।</div>
         </article>
@@ -1421,6 +1513,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 59</h3>
           <div class="revision-question-text">संसद में प्रश्नकाल के तुरंत बाद का वह समय, जिसमें सदस्य बिना पूर्व सूचना के तात्कालिक महत्त्व के मुद्दे उठाते हैं –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) शून्यकाल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> शून्यकाल (दोपहर 12 बजे से) – भारतीय संसदीय परंपरा की देन, संविधान में उल्लेख नहीं; प्रश्नकाल – पहला घंटा।</div>
         </article>
@@ -1428,6 +1521,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 60</h3>
           <div class="revision-question-text">उत्तर प्रदेश में गाँव की ज़मीन का नाप-जोख और भूमि अभिलेख (खसरा-खतौनी) रखने वाला सरकारी कर्मचारी –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) लेखपाल</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लेखपाल (अन्य राज्यों में पटवारी); ऊपर तहसीलदार और ज़िले में ज़िलाधिकारी भू-राजस्व के प्रमुख।</div>
         </article>
@@ -1435,6 +1529,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 61</h3>
           <div class="revision-question-text">भारत (अरुणाचल प्रदेश) और चीन के बीच की सीमा रेखा कहलाती है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) मैकमोहन रेखा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मैकमोहन रेखा (1914, शिमला सम्मेलन); रेडक्लिफ़ – भारत-पाकिस्तान/बांग्लादेश; डूरंड – पाकिस्तान-अफ़ग़ानिस्तान।</div>
         </article>
@@ -1442,6 +1537,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 62</h3>
           <div class="revision-question-text">वर्तमान में भारतीय संविधान में कुल कितने मौलिक कर्तव्य हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) 11</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 11 (अनु. 51A, भाग IV-A); 42वें संशोधन (1976) से 10 जोड़े गए (स्वर्ण सिंह समिति); 86वें संशोधन (2002) से 11वाँ – 6–14 वर्ष के बच्चे को शिक्षा का अवसर देना माता-पिता/संरक्षक का कर्तव्य।</div>
         </article>
@@ -1449,6 +1545,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 63</h3>
           <div class="revision-question-text">"राज्य, भारत के राज्यक्षेत्र में किसी व्यक्ति को विधि के समक्ष समता से या विधियों के समान संरक्षण से वंचित नहीं करेगा" – यह किस अनुच्छेद में है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अनुच्छेद 14</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अनु. 14; अनु. 15 – धर्म, मूलवंश, जाति, लिंग, जन्मस्थान के आधार पर भेदभाव का निषेध; अनु. 16 – सरकारी नौकरियों में अवसर की समता; अनु. 17 – अस्पृश्यता का अंत।</div>
         </article>
@@ -1456,6 +1553,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 64</h3>
           <div class="revision-question-text">संविधान के उल्लंघन के आधार पर राष्ट्रपति को पद से हटाने की प्रक्रिया कहलाती है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) महाभियोग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> महाभियोग (अनु. 61) – किसी भी सदन में, 14 दिन की पूर्व सूचना व उस सदन के एक-चौथाई सदस्यों के हस्ताक्षर से; दोनों सदनों में कुल सदस्यता के दो-तिहाई बहुमत से पारित; अब तक किसी राष्ट्रपति पर महाभियोग नहीं चला।</div>
         </article>
@@ -1463,6 +1561,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 65</h3>
           <div class="revision-question-text">भारतीय संविधान में 'बजट' शब्द का प्रयोग नहीं हुआ है; अनुच्छेद 112 में इसके लिए प्रयुक्त शब्द है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) वार्षिक वित्तीय विवरण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 'वार्षिक वित्तीय विवरण' (अनु. 112); 2017 से रेल बजट आम बजट में मिला और बजट 1 फ़रवरी को पेश होने लगा; धन विधेयक – अनु. 110।</div>
         </article>
@@ -1470,6 +1569,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 66</h3>
           <div class="revision-question-text">किसी संज्ञेय अपराध (जैसे चोरी, मारपीट) की सूचना मिलने पर पुलिस थाने में सबसे पहले दर्ज की जाने वाली रिपोर्ट –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) प्रथम सूचना रिपोर्ट (FIR)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> FIR – पहले दंड प्रक्रिया संहिता की धारा 154, अब भारतीय नागरिक सुरक्षा संहिता (BNSS) 2023 की धारा 173; 'ज़ीरो FIR' किसी भी थाने में दर्ज हो सकती है; सूचना देने वाले को FIR की प्रति निःशुल्क मिलती है।</div>
         </article>
@@ -1477,6 +1577,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 67</h3>
           <div class="revision-question-text">विश्व स्वास्थ्य संगठन (WHO) का मुख्यालय कहाँ स्थित है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) जिनेवा</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> जिनेवा; स्थापना 7 अप्रैल 1948, इसलिए 7 अप्रैल 'विश्व स्वास्थ्य दिवस'; UNESCO – पेरिस, FAO – रोम, संयुक्त राष्ट्र मुख्यालय – न्यूयॉर्क।</div>
         </article>
@@ -1488,6 +1589,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 68</h3>
           <div class="revision-question-text">भारत में चेतावनी (सावधानी) वाले यातायात संकेत किस आकृति के होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) लाल किनारे वाला त्रिभुज</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> चेतावनी – त्रिभुज; अनिवार्य/निषेध – गोल; सूचनात्मक – आयताकार</div>
         </article>
@@ -1495,6 +1597,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 69</h3>
           <div class="revision-question-text">'STOP' (रुकिए) यातायात संकेत की आकृति कैसी होती है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अष्टभुजाकार</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> STOP – अष्टभुज; 'रास्ता दें' – उलटा त्रिभुज</div>
         </article>
@@ -1502,6 +1605,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 70</h3>
           <div class="revision-question-text">सड़क पार करने के लिए पैदल यात्रियों का सुरक्षित स्थान कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ज़ेब्रा क्रॉसिंग</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ज़ेब्रा क्रॉसिंग (जुलाई से जुड़ा: यातायात संकेत (चार प्रश्न))</div>
         </article>
@@ -1509,6 +1613,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 71</h3>
           <div class="revision-question-text">यातायात बत्ती में पीली (एम्बर) बत्ती का क्या अर्थ है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) रुकने के लिए तैयार रहें</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> लाल = रुकें, हरी = चलें (जुलाई से जुड़ा: चेतावनी/सावधानी संकेत)</div>
         </article>
@@ -1516,6 +1621,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 72</h3>
           <div class="revision-question-text">जहाँ फुटपाथ न हो, वहाँ पैदल चलने वाले को सड़क के किस ओर चलना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) दाईं ओर, सामने से आते वाहनों की ओर मुँह करके</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> भारत में वाहन बाईं ओर चलते हैं, इसलिए पैदल यात्री दाईं ओर चलकर सामने से आता वाहन देख सकता है।</div>
         </article>
@@ -1523,6 +1629,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 73</h3>
           <div class="revision-question-text">पेट्रोल पंप, अस्पताल, पार्किंग जैसी जानकारी देने वाले सूचनात्मक (Informatory) यातायात संकेत प्रायः किस आकार के होते हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) आयताकार</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> आयताकार (नीली पृष्ठभूमि) – सूचनात्मक; वृत्ताकार – अनिवार्य/निषेधात्मक; त्रिभुजाकार – चेतावनी; अष्टभुजाकार – STOP।</div>
         </article>
@@ -1530,6 +1637,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 74</h3>
           <div class="revision-question-text">भारत में 50 सीसी तक की इंजन क्षमता वाले बिना गियर के दोपहिया वाहन का लाइसेंस (अभिभावक की सहमति से) न्यूनतम कितनी आयु में मिल सकता है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) 16 वर्ष</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मोटर वाहन अधिनियम के अनुसार 16 वर्ष (केवल 50 सीसी तक बिना गियर); अन्य निजी वाहन – 18 वर्ष।</div>
         </article>
@@ -1537,6 +1645,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 75</h3>
           <div class="revision-question-text">सड़क दुर्घटना में घायल व्यक्ति को अस्पताल पहुँचाने वाले मददगार को पूछताछ व क़ानूनी परेशानी से संरक्षण देने वाला प्रावधान कहलाता है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) गुड समैरिटन (नेक मददगार) संरक्षण</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> गुड समैरिटन – सर्वोच्च न्यायालय के दिशानिर्देश (2016) व मोटर वाहन अधिनियम 2019; मददगार से नाम-पता बताने का दबाव नहीं डाला जा सकता।</div>
         </article>
@@ -1544,6 +1653,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 76</h3>
           <div class="revision-question-text">भारत में सड़क पर आगे चल रहे वाहन को किस ओर से ओवरटेक करना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) दाईं ओर से</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> भारत में वाहन बाईं ओर चलते हैं, इसलिए ओवरटेक दाईं ओर से; मोड़, पुल व ज़ेब्रा क्रॉसिंग पर ओवरटेक न करें।</div>
         </article>

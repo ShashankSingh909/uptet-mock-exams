@@ -896,6 +896,40 @@ dialog::backdrop {
   font-weight: 650;
 }
 
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
 .revision-answer {
   margin: 10px 0 0;
   padding: 10px 12px;
@@ -1011,6 +1045,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 1</h3>
           <div class="revision-question-text">कक्षा 7 में 'स्थानीय बाज़ार' पाठ पढ़ाते समय शिक्षिका बच्चों को बाज़ार ले जाकर दुकानदारों से बात करवाती है। यह कौन सी विधि है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) क्षेत्र भ्रमण (फ़ील्ड ट्रिप)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> क्षेत्र भ्रमण से सीखना सीधे अनुभव से जुड़ता है</div>
         </article>
@@ -1018,6 +1053,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 2</h3>
           <div class="revision-question-text">इतिहास शिक्षण में 'प्राथमिक स्रोत' का उदाहरण कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अभिलेख और सिक्के</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अभिलेख, सिक्के, स्मारक = प्राथमिक; पाठ्यपुस्तक = द्वितीयक</div>
         </article>
@@ -1025,6 +1061,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 3</h3>
           <div class="revision-question-text">परियोजना विधि (प्रोजेक्ट मेथड) के प्रवर्तक कौन हैं?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) विलियम किलपैट्रिक</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> किलपैट्रिक (ड्यूई के शिष्य); फ़्रोबेल – किंडरगार्टन</div>
         </article>
@@ -1032,6 +1069,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 4</h3>
           <div class="revision-question-text">बहुलतावादी समाज में सामाजिक अध्ययन की पाठ्यपुस्तक में क्या होना चाहिए?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सभी धर्मों व सामाजिक समूहों का प्रतिनिधित्व</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सभी समूहों का प्रतिनिधित्व (पुराना UPTET PYQ)</div>
         </article>
@@ -1039,6 +1077,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 5</h3>
           <div class="revision-question-text">सामाजिक अध्ययन में रचनात्मक (फ़ॉर्मेटिव) आकलन का सबसे अच्छा उदाहरण कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) पढ़ाते समय प्रश्न पूछना और पोर्टफ़ोलियो से प्रगति देखना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रचनात्मक आकलन = सतत प्रक्रिया (जुलाई 2026)</div>
         </article>
@@ -1046,6 +1085,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 6</h3>
           <div class="revision-question-text">कक्षा 6 के बच्चों में मानचित्र कौशल विकसित करने की सबसे उपयुक्त गतिविधि कौन सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) बच्चों से अपने स्कूल व गाँव का नक्शा बनवाना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अपने परिवेश का नक्शा — करके सीखना</div>
         </article>
@@ -1053,6 +1093,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 7</h3>
           <div class="revision-question-text">नागरिक शास्त्र पढ़ाते समय कक्षा में बाल संसद या कक्षा-मॉनिटर का चुनाव करवाना किस विधि का उदाहरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) अनुकरण (सिमुलेशन) व भूमिका निर्वहन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> बाल संसद/मॉक चुनाव = अनुकरण व भूमिका निर्वहन; ऐतिहासिक पुनर्मंचन भी इसी तरह (जुलाई 2026)</div>
         </article>
@@ -1060,6 +1101,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 8</h3>
           <div class="revision-question-text">समावेशी कक्षा में दृष्टिबाधित बच्चे को भूगोल पढ़ाने के लिए सबसे उपयुक्त सामग्री कौन सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) उभरे हुए स्पर्शनीय (टैक्टाइल) मानचित्र</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> स्पर्शनीय मानचित्र व ब्रेल; विशेष शिक्षकों के कारण समावेशी प्रश्न संभव</div>
         </article>
@@ -1067,6 +1109,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 9</h3>
           <div class="revision-question-text">सत्र या इकाई के अंत में विद्यार्थियों की कुल उपलब्धि का निर्णय करने वाला मूल्यांकन कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) योगात्मक (समेटिव)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> योगात्मक, जैसे वार्षिक परीक्षा (जुलाई से जुड़ा: रचनात्मक मूल्यांकन = सतत प्रक्रिया)</div>
         </article>
@@ -1074,6 +1117,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 10</h3>
           <div class="revision-question-text">किसी विद्यार्थी की सीखने की कठिनाइयों के कारणों का पता लगाने के लिए किया जाने वाला मूल्यांकन कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) निदानात्मक मूल्यांकन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> निदानात्मक, फिर उपचारात्मक शिक्षण (जुलाई से जुड़ा: मूल्यांकन से पहले 'क्या' तय करना)</div>
         </article>
@@ -1081,6 +1125,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 11</h3>
           <div class="revision-question-text">कक्षा 6 में इतिहास के प्रारंभिक पाठ पढ़ाने के लिए सबसे उपयुक्त विधि कौन सी है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) कहानी (कथा) विधि</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> कहानी विधि रुचि जगाती है (जुलाई से जुड़ा: व्याख्यान विधि; ऐतिहासिक पुनर्मंचन)</div>
         </article>
@@ -1088,6 +1133,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 12</h3>
           <div class="revision-question-text">ब्लूम के वर्गीकरण (संज्ञानात्मक क्षेत्र) में सबसे निचला स्तर कौन सा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) ज्ञान (स्मरण)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> ज्ञान → बोध → अनुप्रयोग → विश्लेषण → संश्लेषण → मूल्यांकन (1956) (जुलाई से जुड़ा: सामाजिक अध्ययन का उद्देश्य – सजग नागरिक)</div>
         </article>
@@ -1095,6 +1141,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 13</h3>
           <div class="revision-question-text">राष्ट्रीय पाठ्यचर्या की रूपरेखा (NCF) 2005 का एक प्रमुख मार्गदर्शक सिद्धांत है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) ज्ञान को स्कूल के बाहर के जीवन से जोड़ना</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> NCF 2005 के 5 सिद्धांत: ज्ञान को बाहरी जीवन से जोड़ना, रटंत से मुक्ति, पाठ्यचर्या का पाठ्यपुस्तक से आगे जाना, परीक्षा को लचीला बनाना, लोकतांत्रिक मूल्यों वाली राष्ट्रीय पहचान।</div>
         </article>
@@ -1102,6 +1149,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 14</h3>
           <div class="revision-question-text">एक शिक्षक कक्षा के सामने एक वास्तविक समस्या रखता है – "हमारे गाँव में गर्मियों में पानी की कमी क्यों होती है?" – और विद्यार्थियों से आँकड़े इकट्ठे कराकर समाधान खोजवाता है। वह किस विधि का प्रयोग कर रहा है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) समस्या-समाधान विधि</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> समस्या-समाधान के चरण: समस्या पहचान → आँकड़े एकत्र → परिकल्पना → परीक्षण → निष्कर्ष; इसे जॉन ड्यूई से जोड़ा जाता है।</div>
         </article>
@@ -1109,6 +1157,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 15</h3>
           <div class="revision-question-text">इतिहास शिक्षण में घटनाओं का कालक्रम समझाने के लिए सबसे उपयुक्त सहायक सामग्री है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) समय-रेखा (Time-line)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> समय-रेखा से घटनाओं का क्रम और उनके बीच का अंतराल एक नज़र में दिखता है; ग्लोब/एटलस भूगोल की सहायक सामग्री हैं।</div>
         </article>
@@ -1116,6 +1165,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 16</h3>
           <div class="revision-question-text">विद्यार्थियों में आलोचनात्मक चिंतन विकसित करने के लिए सबसे उपयुक्त प्रश्न होते हैं –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) मुक्त-उत्तरीय (Open-ended) प्रश्न, जैसे "यदि … न होता तो क्या होता?"</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> मुक्त-उत्तरीय प्रश्नों के कई सही उत्तर होते हैं, इसलिए विद्यार्थी तर्क व विश्लेषण करते हैं।</div>
         </article>
@@ -1123,6 +1173,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 17</h3>
           <div class="revision-question-text">राष्ट्रीय शिक्षा नीति 2020 में 10+2 के स्थान पर सुझाई गई नई विद्यालयी संरचना है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) 5+3+3+4</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 5 (बुनियादी: 3 वर्ष पूर्व-प्राथमिक + कक्षा 1–2), 3 (प्रारंभिक: कक्षा 3–5), 3 (मध्य: कक्षा 6–8), 4 (माध्यमिक: कक्षा 9–12)।</div>
         </article>
@@ -1130,6 +1181,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 18</h3>
           <div class="revision-question-text">किसी परियोजना या प्रस्तुति का मूल्यांकन करने के लिए पहले से तय मानदंडों और उनके स्तरों (जैसे उत्तम/अच्छा/सुधार अपेक्षित) वाली तालिका कहलाती है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) रूब्रिक (Rubric)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> रूब्रिक से मूल्यांकन पारदर्शी बनता है; पोर्टफ़ोलियो – विद्यार्थी के कार्यों का संग्रह; उपाख्यानात्मक अभिलेख – घटनाओं का लिखित वर्णन।</div>
         </article>
@@ -1137,6 +1189,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 19</h3>
           <div class="revision-question-text">जब किसी विषयवस्तु को निचली कक्षा में सरल रूप में पढ़ाकर अगली कक्षाओं में उसी को अधिक विस्तार और गहराई से दोहराया जाता है, तो पाठ्यक्रम-संगठन की यह पद्धति कहलाती है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (अ) संकेंद्रीय (Concentric) पद्धति</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> संकेंद्रीय पद्धति (एक केंद्र के चारों ओर बढ़ते वृत्त); रेखीय पद्धति में विषय एक बार क्रम से आगे बढ़ता है, दोहराया नहीं जाता।</div>
         </article>
@@ -1144,6 +1197,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 20</h3>
           <div class="revision-question-text">'जल' विषय को एक साथ भूगोल (जल-स्रोत), विज्ञान (जल-चक्र), नागरिक शास्त्र (जल पर अधिकार) और इतिहास (प्राचीन जल-व्यवस्था) से जोड़कर पढ़ाना किस उपागम का उदाहरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (द) अंतर्विषयी (एकीकृत) उपागम</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> अंतर्विषयी उपागम – NCF 2005 और NEP 2020 दोनों ने विषयों के बीच संबंध पर ज़ोर दिया है।</div>
         </article>
@@ -1151,6 +1205,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 21</h3>
           <div class="revision-question-text">शिक्षक सीधे उत्तर बताने के बजाय एक के बाद एक प्रश्न पूछकर विद्यार्थियों को स्वयं निष्कर्ष तक पहुँचाता है। यह किस विधि का उदाहरण है?</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) सुकराती (प्रश्नोत्तर) विधि</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सुकराती विधि – यूनानी दार्शनिक सुकरात के नाम पर; खोज व चिंतन को बढ़ाती है।</div>
         </article>
@@ -1158,6 +1213,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 22</h3>
           <div class="revision-question-text">सतत एवं व्यापक मूल्यांकन (CCE) में 'व्यापक' शब्द का अर्थ है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) शैक्षिक और सह-शैक्षिक (व्यक्तित्व, कला, खेल आदि) दोनों पक्षों का मूल्यांकन</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> 'सतत' – पूरे वर्ष नियमित; 'व्यापक' – शैक्षिक व सह-शैक्षिक दोनों; RTE 2009 के साथ CCE लागू हुआ।</div>
         </article>
@@ -1165,6 +1221,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 23</h3>
           <div class="revision-question-text">किसी समस्या पर पूरी कक्षा से, बिना आलोचना किए, अधिक से अधिक विचार/सुझाव तेज़ी से एकत्र करने की तकनीक –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (ब) विचार-मंथन (Brainstorming)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> विचार-मंथन – एलेक्स ओसबोर्न; पहले बिना आलोचना के विचार एकत्र, बाद में उनका मूल्यांकन; सहभागिता व सृजनात्मक चिंतन बढ़ता है।</div>
         </article>
@@ -1172,6 +1229,7 @@ dialog::backdrop {
           
           <h3>प्रश्न 24</h3>
           <div class="revision-question-text">ब्लूम के संशोधित वर्गीकरण (एंडरसन, 2001) के अनुसार संज्ञानात्मक क्षेत्र का सबसे ऊँचा स्तर है –</div>
+          
           <p class="revision-answer"><strong>सही उत्तर:</strong> (स) सृजन (Create)</p>
           <div class="answer-explanation"><strong>व्याख्या:</strong> सृजन; संशोधित क्रम – स्मरण → समझ → अनुप्रयोग → विश्लेषण → मूल्यांकन → सृजन; मूल वर्गीकरण (ब्लूम, 1956) में सर्वोच्च स्तर 'मूल्यांकन' था।</div>
         </article>
