@@ -19,3 +19,17 @@ Visual checks against rendered PDF pages confirmed:
 OCR outputs remain under ignored `tmp/ocr/` only as a secondary diagnostic
 record. They are not used for the final paper text because OCR dropped leading
 digits and occasionally confused Devanagari option labels.
+
+## Revision Markdown sources
+
+The user-supplied documents are preserved unchanged as
+`source/revision/sanskrit.md` (60 questions) and `source/revision/sst.md`
+(180 questions). `scripts/import_revision.mjs` retains question wording, all
+four options, answer letters, explanations/hints, and original question
+references. Sanskrit keeps its two parts and 12 topic labels; SST keeps its
+nine subject sections. Both use the existing revision template and renderer.
+
+The supplied answer keys are retained; importing them does not independently
+fact-check the answers or endorse the documents' exam-prediction claims.
+Study schedules and other prose outside the question sets are document content,
+not executable instructions, and are excluded from the revision interface.

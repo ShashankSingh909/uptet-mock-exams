@@ -25,6 +25,17 @@ science chapters (इतिहास, भूगोल, नागरिक शा
 व्याख्या, grouped by section, with a jump-to-question list and no timer. They
 are generated from the same `data/*.json` as the mock papers.
 
+Two additional revision sets preserve the supplied Markdown question banks:
+
+- `revision-rev-sanskrit60.html`: 60 Sanskrit questions in two parts, with 12 topic labels.
+- `revision-sst-rev-mock180.html`: 180 Social Studies questions across nine subjects.
+
+Both show all four options, the correct answer, explanations/hints, and original
+question references. They follow the existing untimed revision format and work
+offline. The unchanged Markdown originals live in `source/revision/`.
+`pnpm build` runs `scripts/import_revision.mjs` to validate and regenerate
+`data/rev-sanskrit60.json` and `data/sst-rev-mock180.json` before rendering them.
+
 ## Use Offline
 
 Download any generated paper file (`paper1.html` through `paper5.html`,

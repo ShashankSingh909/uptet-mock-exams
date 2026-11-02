@@ -1,0 +1,2732 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#075f63">
+    <title>सामाजिक अध्ययन — मॉक पेपरों से 180 चुनिंदा प्रश्न — रिवीज़न</title>
+    <style>:root {
+  color-scheme: light;
+  --teal-950: #073b3d;
+  --teal-800: #075f63;
+  --teal-700: #08777a;
+  --blue-700: #0b57d0;
+  --blue-100: #e9f1ff;
+  --amber-700: #b85d00;
+  --amber-100: #fff2dd;
+  --violet-700: #673ab7;
+  --violet-100: #f0eaff;
+  --green-700: #117a45;
+  --green-100: #e8f6ee;
+  --red-700: #b3261e;
+  --red-100: #fce8e6;
+  --ink: #172026;
+  --muted: #5e6b73;
+  --line: #d6dde1;
+  --surface: #ffffff;
+  --canvas: #f4f7f8;
+  --focus: #ffbf47;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(7, 59, 61, 0.09);
+  font-family: "Noto Sans Devanagari", "Nirmala UI", Mangal, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible + span,
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 16px;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: 0 2px 10px rgba(7, 59, 61, 0.2);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 4.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.topbar .paper-label {
+  margin: 2px 0 0;
+  color: #d9f3f1;
+  font-size: 0.78rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar button {
+  padding: 8px 11px;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: transparent;
+  font-size: 0.86rem;
+}
+
+.exam-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.timer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.timer-main {
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-label,
+.stat-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.timer {
+  margin-top: 2px;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.timer.urgent {
+  color: var(--red-700);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.status-item {
+  min-width: 0;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.status-item + .status-item {
+  border-left: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.answered .stat-number {
+  color: var(--green-700);
+}
+
+.remaining .stat-number {
+  color: var(--amber-700);
+}
+
+.reviewed .stat-number {
+  color: var(--violet-700);
+}
+
+.section-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #edf6f5;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nearby-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.nearby-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(38px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.number-button,
+.palette-button {
+  position: relative;
+  min-width: 42px;
+  border-color: #bdc8ce;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+}
+
+.number-button.current {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.number-button.answered:not(.current),
+.palette-button.answered:not(.current) {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.number-button.review:not(.current),
+.palette-button.review:not(.current) {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.number-button.answered.review:not(.current),
+.palette-button.answered.review:not(.current) {
+  box-shadow: inset 0 -5px 0 var(--violet-700);
+}
+
+.nearby-nav > button,
+.open-palette {
+  padding: 7px 10px;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+  font-weight: 700;
+}
+
+.question-area {
+  padding: 18px 16px 120px;
+  background: var(--surface);
+}
+
+.question-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-meta h2 {
+  margin: 0;
+  color: var(--blue-700);
+  font-size: 1.35rem;
+}
+
+.question-meta span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.passage {
+  margin: 18px 0;
+  padding: 14px;
+  border-left: 4px solid var(--teal-700);
+  background: #f6fbfa;
+  white-space: pre-line;
+}
+
+.question-text {
+  margin: 22px 0;
+  font-size: clamp(1.08rem, 4.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1.5px solid #c8d1d6;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--blue-700);
+}
+
+.option-row.selected {
+  border-color: var(--blue-700);
+  background: var(--blue-100);
+  box-shadow: inset 4px 0 0 var(--blue-700);
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.option-label {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #7a8991;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.selected .option-label {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.option-text {
+  line-height: 1.55;
+}
+
+.bottom-actions {
+  position: fixed;
+  z-index: 18;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  gap: 10px;
+  padding: 10px max(14px, calc((100vw - 1090px) / 2));
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -5px 18px rgba(21, 31, 36, 0.08);
+}
+
+.bottom-actions button {
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  background: #fff;
+}
+
+.primary {
+  border-color: var(--blue-700);
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.review-action {
+  border-color: var(--violet-700);
+  color: var(--violet-700);
+  background: var(--violet-100);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 128px;
+  background: var(--surface);
+}
+
+#submit-exam {
+  width: min(100%, 440px);
+  border-color: var(--red-700);
+  color: #fff;
+  background: var(--red-700);
+  font-weight: 800;
+}
+
+.message {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid #e4bb72;
+  border-radius: var(--radius);
+  background: #fff8e8;
+}
+
+dialog {
+  width: min(92vw, 680px);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(4, 29, 31, 0.62);
+}
+
+.dialog-header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dialog-close {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend span::before {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  content: "";
+}
+
+.legend .lg-answered {
+  color: var(--green-700);
+}
+
+.legend .lg-review {
+  color: var(--violet-700);
+}
+
+.legend .lg-current {
+  color: var(--blue-700);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 4px 16px 20px;
+}
+
+.result-view,
+.review-view,
+.storage-error {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 26px 16px 50px;
+}
+
+.result-hero {
+  padding: 24px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--teal-800);
+  text-align: center;
+}
+
+.score {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: clamp(3rem, 16vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.result-stat {
+  padding: 14px 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.result-stat strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.result-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.result-actions button,
+.review-toolbar button {
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.review-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: var(--canvas);
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-tabs {
+  position: sticky;
+  z-index: 9;
+  top: 118px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 8px 0 10px;
+  background: var(--canvas);
+}
+
+.review-tab {
+  padding: 9px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-950);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-tab span {
+  display: inline-flex;
+  min-width: 24px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #eef4f5;
+}
+
+.review-tab.active {
+  border-color: var(--teal-700);
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.review-tab.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.review-card.correct {
+  border-left: 5px solid var(--green-700);
+}
+
+.review-card.incorrect {
+  border-left: 5px solid var(--red-700);
+}
+
+.review-card.unanswered {
+  border-left: 5px solid var(--amber-700);
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-question-text {
+  margin-bottom: 12px;
+}
+
+.review-options {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.review-option.correct-option {
+  border-color: rgba(21, 128, 61, 0.45);
+  background: #f0fdf4;
+}
+
+.review-option.incorrect-option {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: #fef2f2;
+}
+
+.review-option-badges {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-badge {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correct-badge {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.selected-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.empty-review {
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.answer-line {
+  margin: 8px 0;
+}
+
+.answer-line strong {
+  color: var(--teal-950);
+}
+
+.answer-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f1f6f7;
+}
+
+.selector {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 36px 18px 60px;
+}
+
+.selector-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.selector-heading h1,
+.selector-heading h2 {
+  margin-bottom: 8px;
+  color: var(--teal-950);
+}
+
+.paper-grid + .selector-heading {
+  margin-top: 44px;
+}
+
+.paper-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.paper-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.paper-card h2 {
+  margin: 0 0 8px;
+}
+
+.paper-card p {
+  color: var(--muted);
+}
+
+.paper-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--blue-700);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.revision {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+.revision-heading {
+  margin-bottom: 18px;
+}
+
+.revision-heading h2 {
+  margin: 0 0 6px;
+  color: var(--teal-950);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+}
+
+.revision-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.revision-note {
+  font-weight: 700;
+}
+
+.jump-list {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.jump-list summary {
+  min-height: 32px;
+  color: var(--blue-700);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jump-group p {
+  margin: 12px 0 6px;
+  color: var(--teal-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jump-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.jump-numbers a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.revision-section-title {
+  margin: 28px 0 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: #e6f2f1;
+  font-size: 1rem;
+}
+
+.revision-card {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green-700);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.revision-card .passage {
+  margin: 0 0 14px;
+}
+
+.revision-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+}
+
+.revision-question-text {
+  font-weight: 650;
+}
+
+.revision-options {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-options li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.revision-options .option-label {
+  flex: none;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.revision-options li.correct {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-100);
+  font-weight: 700;
+}
+
+.revision-options li.correct .option-label {
+  color: var(--green-700);
+}
+
+.revision-answer {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.revision-answer strong {
+  color: var(--teal-950);
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal-800);
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.warning-note {
+  margin: 0 0 22px;
+  padding: 14px;
+  border-left: 4px solid var(--amber-700);
+  background: var(--amber-100);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .timer-panel {
+    grid-template-columns: minmax(240px, 0.8fr) 1.4fr;
+    align-items: stretch;
+  }
+
+  .status-grid {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .question-area {
+    padding-inline: clamp(28px, 6vw, 74px);
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .nearby-numbers {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-actions {
+    grid-template-columns: 180px 220px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+  </head>
+  <body data-mode="revision" data-question-count="180">
+    <header class="topbar" id="top">
+      <div>
+        <h1>UPTET रिवीज़न</h1>
+        <p class="paper-label">सामाजिक अध्ययन — मॉक पेपरों से 180 चुनिंदा प्रश्न</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">पेपर चुनें</a>
+      </div>
+    </header>
+    <main class="revision">
+      <div class="revision-heading">
+        <h2>सामाजिक अध्ययन — मॉक पेपरों से 180 चुनिंदा प्रश्न</h2>
+        <p>9 विषय • मूल प्रश्नों के संदर्भ सहित</p>
+        <p class="revision-note">180 प्रश्न • चारों विकल्प, सही उत्तर और व्याख्या • कोई समय सीमा नहीं</p>
+      </div>
+      <details class="jump-list" id="jump">
+        <summary>प्रश्न पर जाएँ (1–180)</summary>
+
+        <div class="jump-group">
+          <p>इतिहास</p>
+          <div class="jump-numbers"><a href="#q-1">1</a><a href="#q-2">2</a><a href="#q-3">3</a><a href="#q-4">4</a><a href="#q-5">5</a><a href="#q-6">6</a><a href="#q-7">7</a><a href="#q-8">8</a><a href="#q-9">9</a><a href="#q-10">10</a><a href="#q-11">11</a><a href="#q-12">12</a><a href="#q-13">13</a><a href="#q-14">14</a><a href="#q-15">15</a><a href="#q-16">16</a><a href="#q-17">17</a><a href="#q-18">18</a><a href="#q-19">19</a><a href="#q-20">20</a><a href="#q-21">21</a><a href="#q-22">22</a><a href="#q-23">23</a><a href="#q-24">24</a><a href="#q-25">25</a><a href="#q-26">26</a><a href="#q-27">27</a><a href="#q-28">28</a></div>
+        </div>
+        <div class="jump-group">
+          <p>भूगोल</p>
+          <div class="jump-numbers"><a href="#q-29">29</a><a href="#q-30">30</a><a href="#q-31">31</a><a href="#q-32">32</a><a href="#q-33">33</a><a href="#q-34">34</a><a href="#q-35">35</a><a href="#q-36">36</a><a href="#q-37">37</a><a href="#q-38">38</a><a href="#q-39">39</a><a href="#q-40">40</a><a href="#q-41">41</a><a href="#q-42">42</a><a href="#q-43">43</a><a href="#q-44">44</a><a href="#q-45">45</a><a href="#q-46">46</a><a href="#q-47">47</a><a href="#q-48">48</a><a href="#q-49">49</a><a href="#q-50">50</a><a href="#q-51">51</a><a href="#q-52">52</a><a href="#q-53">53</a><a href="#q-54">54</a><a href="#q-55">55</a><a href="#q-56">56</a></div>
+        </div>
+        <div class="jump-group">
+          <p>पर्यावरण व आपदा प्रबंधन</p>
+          <div class="jump-numbers"><a href="#q-57">57</a><a href="#q-58">58</a><a href="#q-59">59</a><a href="#q-60">60</a><a href="#q-61">61</a><a href="#q-62">62</a><a href="#q-63">63</a><a href="#q-64">64</a><a href="#q-65">65</a><a href="#q-66">66</a><a href="#q-67">67</a><a href="#q-68">68</a><a href="#q-69">69</a><a href="#q-70">70</a><a href="#q-71">71</a><a href="#q-72">72</a><a href="#q-73">73</a></div>
+        </div>
+        <div class="jump-group">
+          <p>नागरिक शास्त्र व समाज</p>
+          <div class="jump-numbers"><a href="#q-74">74</a><a href="#q-75">75</a><a href="#q-76">76</a><a href="#q-77">77</a><a href="#q-78">78</a><a href="#q-79">79</a><a href="#q-80">80</a><a href="#q-81">81</a><a href="#q-82">82</a><a href="#q-83">83</a><a href="#q-84">84</a><a href="#q-85">85</a><a href="#q-86">86</a><a href="#q-87">87</a><a href="#q-88">88</a><a href="#q-89">89</a><a href="#q-90">90</a><a href="#q-91">91</a><a href="#q-92">92</a><a href="#q-93">93</a><a href="#q-94">94</a><a href="#q-95">95</a><a href="#q-96">96</a><a href="#q-97">97</a><a href="#q-98">98</a><a href="#q-99">99</a><a href="#q-100">100</a><a href="#q-101">101</a><a href="#q-102">102</a><a href="#q-103">103</a><a href="#q-104">104</a><a href="#q-105">105</a></div>
+        </div>
+        <div class="jump-group">
+          <p>गृह विज्ञान</p>
+          <div class="jump-numbers"><a href="#q-106">106</a><a href="#q-107">107</a><a href="#q-108">108</a><a href="#q-109">109</a><a href="#q-110">110</a><a href="#q-111">111</a><a href="#q-112">112</a><a href="#q-113">113</a><a href="#q-114">114</a><a href="#q-115">115</a><a href="#q-116">116</a><a href="#q-117">117</a><a href="#q-118">118</a><a href="#q-119">119</a><a href="#q-120">120</a><a href="#q-121">121</a><a href="#q-122">122</a><a href="#q-123">123</a><a href="#q-124">124</a><a href="#q-125">125</a><a href="#q-126">126</a><a href="#q-127">127</a><a href="#q-128">128</a><a href="#q-129">129</a><a href="#q-130">130</a></div>
+        </div>
+        <div class="jump-group">
+          <p>शारीरिक शिक्षा, योग व प्राथमिक चिकित्सा</p>
+          <div class="jump-numbers"><a href="#q-131">131</a><a href="#q-132">132</a><a href="#q-133">133</a><a href="#q-134">134</a><a href="#q-135">135</a><a href="#q-136">136</a><a href="#q-137">137</a><a href="#q-138">138</a><a href="#q-139">139</a><a href="#q-140">140</a><a href="#q-141">141</a><a href="#q-142">142</a></div>
+        </div>
+        <div class="jump-group">
+          <p>संगीत</p>
+          <div class="jump-numbers"><a href="#q-143">143</a><a href="#q-144">144</a><a href="#q-145">145</a><a href="#q-146">146</a><a href="#q-147">147</a><a href="#q-148">148</a><a href="#q-149">149</a><a href="#q-150">150</a><a href="#q-151">151</a><a href="#q-152">152</a></div>
+        </div>
+        <div class="jump-group">
+          <p>कृषि, उद्यान व पशुपालन</p>
+          <div class="jump-numbers"><a href="#q-153">153</a><a href="#q-154">154</a><a href="#q-155">155</a><a href="#q-156">156</a><a href="#q-157">157</a><a href="#q-158">158</a><a href="#q-159">159</a><a href="#q-160">160</a><a href="#q-161">161</a><a href="#q-162">162</a><a href="#q-163">163</a><a href="#q-164">164</a><a href="#q-165">165</a><a href="#q-166">166</a><a href="#q-167">167</a><a href="#q-168">168</a><a href="#q-169">169</a><a href="#q-170">170</a><a href="#q-171">171</a><a href="#q-172">172</a></div>
+        </div>
+        <div class="jump-group">
+          <p>सामाजिक अध्ययन शिक्षणशास्त्र</p>
+          <div class="jump-numbers"><a href="#q-173">173</a><a href="#q-174">174</a><a href="#q-175">175</a><a href="#q-176">176</a><a href="#q-177">177</a><a href="#q-178">178</a><a href="#q-179">179</a><a href="#q-180">180</a></div>
+        </div>
+      </details>
+
+      <section class="revision-section">
+        <h2 class="revision-section-title">इतिहास</h2>
+
+        <article class="revision-card" id="q-1">
+
+          <h3>प्रश्न 1</h3>
+          <div class="revision-question-text">मध्यपाषाण काल का वह स्थल, जहाँ एक ही कब्र में तीन मानव कंकाल (तिहरा शवाधान) मिले हैं और जो उत्तर प्रदेश के प्रतापगढ़ ज़िले में है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>दमदमा</span></li><li class=""><span class="option-label">B</span><span>बागोर</span></li><li class=""><span class="option-label">C</span><span>भीमबेटका</span></li><li class=""><span class="option-label">D</span><span>लंघनाज</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) दमदमा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दमदमा (प्रतापगढ़); इसी ज़िले के सराय नाहर राय और महदहा भी प्रसिद्ध मध्यपाषाणिक स्थल हैं। बागोर – राजस्थान, भीमबेटका – मध्य प्रदेश, लंघनाज – गुजरात।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 241</small></p>
+        </article>
+        <article class="revision-card" id="q-2">
+
+          <h3>प्रश्न 2</h3>
+          <div class="revision-question-text">नवपाषाण काल का वह स्थल, जहाँ गड्ढे वाले घर (गर्त-निवास) और मालिक के साथ पालतू कुत्ते को दफ़नाने के प्रमाण मिले हैं –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मेहरगढ़</span></li><li class="correct"><span class="option-label">B</span><span>बुर्ज़होम</span></li><li class=""><span class="option-label">C</span><span>चिरांद</span></li><li class=""><span class="option-label">D</span><span>कोल्डिहवा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) बुर्ज़होम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बुर्ज़होम (कश्मीर)। कोल्डिहवा (प्रयागराज) – चावल के प्राचीन प्रमाण; चिरांद (बिहार) – हड्डी के औज़ार।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 301</small></p>
+        </article>
+        <article class="revision-card" id="q-3">
+
+          <h3>प्रश्न 3</h3>
+          <div class="revision-question-text">यज्ञों के नियम और विधि-विधान बताने वाला, गद्य और पद्य दोनों में रचित वेद कौन-सा है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>ऋग्वेद</span></li><li class=""><span class="option-label">B</span><span>सामवेद</span></li><li class="correct"><span class="option-label">C</span><span>यजुर्वेद</span></li><li class=""><span class="option-label">D</span><span>अथर्ववेद</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) यजुर्वेद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> यजुर्वेद (शुक्ल और कृष्ण)। सामवेद – गायन; अथर्ववेद – औषधि, जादू-टोना।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 362</small></p>
+        </article>
+        <article class="revision-card" id="q-4">
+
+          <h3>प्रश्न 4</h3>
+          <div class="revision-question-text">प्रसिद्ध &#39;गायत्री मंत्र&#39; ऋग्वेद के किस मंडल में है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पहले</span></li><li class="correct"><span class="option-label">B</span><span>तीसरे</span></li><li class=""><span class="option-label">C</span><span>सातवें</span></li><li class=""><span class="option-label">D</span><span>दसवें</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) तीसरे</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तीसरा मंडल, रचयिता विश्वामित्र, सविता (सूर्य) को समर्पित। दसवें मंडल में पुरुष सूक्त है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 181</small></p>
+        </article>
+        <article class="revision-card" id="q-5">
+
+          <h3>प्रश्न 5</h3>
+          <div class="revision-question-text">ऋग्वैदिक नदी &#39;परुष्णी&#39;, जिसके तट पर दाशराज्ञ युद्ध हुआ, का आधुनिक नाम क्या है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>रावी</span></li><li class=""><span class="option-label">B</span><span>झेलम</span></li><li class=""><span class="option-label">C</span><span>चिनाब</span></li><li class=""><span class="option-label">D</span><span>व्यास</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) रावी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> परुष्णी = रावी, वितस्ता = झेलम, अस्किनी = चिनाब, विपाशा = व्यास, शुतुद्री = सतलुज।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 421</small></p>
+        </article>
+        <article class="revision-card" id="q-6">
+
+          <h3>प्रश्न 6</h3>
+          <div class="revision-question-text">सोलह महाजनपदों में दक्षिण भारत (गोदावरी नदी के तट) पर स्थित एकमात्र महाजनपद कौन-सा था?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अवंति</span></li><li class=""><span class="option-label">B</span><span>चेदि</span></li><li class=""><span class="option-label">C</span><span>वत्स</span></li><li class="correct"><span class="option-label">D</span><span>अश्मक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) अश्मक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अश्मक की राजधानी पोतन (पोटली) थी।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 122</small></p>
+        </article>
+        <article class="revision-card" id="q-7">
+
+          <h3>प्रश्न 7</h3>
+          <div class="revision-question-text">द्वितीय बौद्ध संगीति वैशाली में किस शासक के संरक्षण में हुई थी?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अजातशत्रु</span></li><li class=""><span class="option-label">B</span><span>अशोक</span></li><li class="correct"><span class="option-label">C</span><span>कालाशोक</span></li><li class=""><span class="option-label">D</span><span>कनिष्क</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) कालाशोक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पहली – राजगृह (अजातशत्रु), दूसरी – वैशाली (कालाशोक), तीसरी – पाटलिपुत्र (अशोक), चौथी – कश्मीर (कनिष्क)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 62</small></p>
+        </article>
+        <article class="revision-card" id="q-8">
+
+          <h3>प्रश्न 8</h3>
+          <div class="revision-question-text">बौद्ध ग्रंथों में बुद्ध के शरीर-त्याग (कुशीनगर) की घटना को क्या कहा गया है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>महापरिनिर्वाण</span></li><li class=""><span class="option-label">B</span><span>महाभिनिष्क्रमण</span></li><li class=""><span class="option-label">C</span><span>संबोधि</span></li><li class=""><span class="option-label">D</span><span>धर्मचक्र प्रवर्तन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) महापरिनिर्वाण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गृहत्याग – महाभिनिष्क्रमण; ज्ञान – संबोधि (बोधगया); पहला उपदेश – धर्मचक्र प्रवर्तन (सारनाथ); मृत्यु – महापरिनिर्वाण (कुशीनगर, उ.प्र.)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 482</small></p>
+        </article>
+        <article class="revision-card" id="q-9">
+
+          <h3>प्रश्न 9</h3>
+          <div class="revision-question-text">सौराष्ट्र (गुजरात) की प्रसिद्ध &#39;सुदर्शन झील&#39; का निर्माण मूल रूप से किस शासक के समय हुआ था?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अशोक</span></li><li class="correct"><span class="option-label">B</span><span>चंद्रगुप्त मौर्य</span></li><li class=""><span class="option-label">C</span><span>रुद्रदामन</span></li><li class=""><span class="option-label">D</span><span>स्कंदगुप्त</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) चंद्रगुप्त मौर्य</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> चंद्रगुप्त मौर्य के प्रांतपति पुष्यगुप्त ने बनवाई; बाद में रुद्रदामन (जूनागढ़ अभिलेख) और स्कंदगुप्त ने इसकी मरम्मत कराई।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 44</small></p>
+        </article>
+        <article class="revision-card" id="q-10">
+
+          <h3>प्रश्न 10</h3>
+          <div class="revision-question-text">मौर्य प्रशासन में &#39;सीताध्यक्ष&#39; किस विभाग का अधिकारी था?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>राजस्व संग्रह</span></li><li class=""><span class="option-label">B</span><span>कोषागार</span></li><li class=""><span class="option-label">C</span><span>सेना</span></li><li class="correct"><span class="option-label">D</span><span>राजकीय कृषि</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) राजकीय कृषि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सीताध्यक्ष – राजकीय भूमि पर खेती; समाहर्ता – राजस्व संग्रह; सन्निधाता – कोषाध्यक्ष।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 243</small></p>
+        </article>
+        <article class="revision-card" id="q-11">
+
+          <h3>प्रश्न 11</h3>
+          <div class="revision-question-text">अशोक के किस बृहद् शिलालेख में कलिंग युद्ध और अशोक के हृदय-परिवर्तन का वर्णन है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पहले</span></li><li class=""><span class="option-label">B</span><span>सातवें</span></li><li class=""><span class="option-label">C</span><span>बारहवें</span></li><li class="correct"><span class="option-label">D</span><span>तेरहवें</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) तेरहवें</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तेरहवाँ बृहद् शिलालेख; कलिंग युद्ध लगभग 261 ई.पू. में हुआ।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 123</small></p>
+        </article>
+        <article class="revision-card" id="q-12">
+
+          <h3>प्रश्न 12</h3>
+          <div class="revision-question-text">साँची के महास्तूप (मध्य प्रदेश) का निर्माण मूल रूप से किसने करवाया था?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कनिष्क</span></li><li class="correct"><span class="option-label">B</span><span>अशोक</span></li><li class=""><span class="option-label">C</span><span>पुष्यमित्र शुंग</span></li><li class=""><span class="option-label">D</span><span>हर्षवर्धन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) अशोक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मूल ईंटों का स्तूप अशोक ने बनवाया; शुंग काल में पत्थर से विस्तार हुआ और सातवाहन काल में तोरण बने।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 303</small></p>
+        </article>
+        <article class="revision-card" id="q-13">
+
+          <h3>प्रश्न 13</h3>
+          <div class="revision-question-text">अंतिम मौर्य शासक बृहद्रथ की हत्या कर 185 ई.पू. में शुंग वंश की स्थापना किसने की?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>पुष्यमित्र शुंग</span></li><li class=""><span class="option-label">B</span><span>अग्निमित्र</span></li><li class=""><span class="option-label">C</span><span>वासुदेव कण्व</span></li><li class=""><span class="option-label">D</span><span>सिमुक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) पुष्यमित्र शुंग</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पुष्यमित्र शुंग; पतंजलि उनके पुरोहित थे। कण्व वंश – वासुदेव; सातवाहन वंश – सिमुक।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 483</small></p>
+        </article>
+        <article class="revision-card" id="q-14">
+
+          <h3>प्रश्न 14</h3>
+          <div class="revision-question-text">उदयगिरि (भुवनेश्वर) के &#39;हाथीगुम्फा अभिलेख&#39; से किस शासक की उपलब्धियाँ ज्ञात होती हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>रुद्रदामन</span></li><li class=""><span class="option-label">B</span><span>गौतमीपुत्र शातकर्णि</span></li><li class="correct"><span class="option-label">C</span><span>खारवेल</span></li><li class=""><span class="option-label">D</span><span>समुद्रगुप्त</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) खारवेल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कलिंग के चेदि (महामेघवाहन) वंश के खारवेल, जैन धर्म के संरक्षक। जूनागढ़ अभिलेख – रुद्रदामन; नासिक अभिलेख – गौतमीपुत्र शातकर्णि।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 543</small></p>
+        </article>
+        <article class="revision-card" id="q-15">
+
+          <h3>प्रश्न 15</h3>
+          <div class="revision-question-text">शिखर वाले मंदिर का प्रारंभिक उदाहरण, गुप्तकालीन &#39;दशावतार मंदिर&#39; कहाँ स्थित है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>देवगढ़ (ललितपुर)</span></li><li class=""><span class="option-label">B</span><span>भितरगाँव (कानपुर)</span></li><li class=""><span class="option-label">C</span><span>साँची</span></li><li class=""><span class="option-label">D</span><span>तिगवा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) देवगढ़ (ललितपुर)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> देवगढ़, ललितपुर (उ.प्र.)। भितरगाँव (कानपुर) – ईंटों से बना गुप्तकालीन मंदिर।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 304</small></p>
+        </article>
+        <article class="revision-card" id="q-16">
+
+          <h3>प्रश्न 16</h3>
+          <div class="revision-question-text">हर्षवर्धन के दरबारी कवि बाणभट्ट ने कौन-सा ऐतिहासिक ग्रंथ लिखा?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>रत्नावली</span></li><li class=""><span class="option-label">B</span><span>राजतरंगिणी</span></li><li class=""><span class="option-label">C</span><span>मुद्राराक्षस</span></li><li class="correct"><span class="option-label">D</span><span>हर्षचरित</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) हर्षचरित</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> हर्षचरित और कादंबरी – बाणभट्ट। हर्ष ने स्वयं रत्नावली, प्रियदर्शिका और नागानंद लिखे; राजतरंगिणी – कल्हण।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 305</small></p>
+        </article>
+        <article class="revision-card" id="q-17">
+
+          <h3>प्रश्न 17</h3>
+          <div class="revision-question-text">हर्षवर्धन को नर्मदा नदी के तट पर किस शासक ने पराजित किया था?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>पुलकेशिन द्वितीय</span></li><li class=""><span class="option-label">B</span><span>नरसिंहवर्मन प्रथम</span></li><li class=""><span class="option-label">C</span><span>दंतिदुर्ग</span></li><li class=""><span class="option-label">D</span><span>शशांक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) पुलकेशिन द्वितीय</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बादामी के चालुक्य शासक पुलकेशिन द्वितीय; वर्णन ऐहोल अभिलेख (रविकीर्ति) में।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 64</small></p>
+        </article>
+        <article class="revision-card" id="q-18">
+
+          <h3>प्रश्न 18</h3>
+          <div class="revision-question-text">पल्लव शासकों द्वारा बनवाए गए &#39;रथ मंदिर&#39; और &#39;तटीय मंदिर&#39; कहाँ हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कांचीपुरम</span></li><li class="correct"><span class="option-label">B</span><span>महाबलीपुरम</span></li><li class=""><span class="option-label">C</span><span>तंजावुर</span></li><li class=""><span class="option-label">D</span><span>मदुरै</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) महाबलीपुरम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> महाबलीपुरम (मामल्लपुरम); रथ – नरसिंहवर्मन प्रथम, तटीय मंदिर – राजसिंह।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 365</small></p>
+        </article>
+        <article class="revision-card" id="q-19">
+
+          <h3>प्रश्न 19</h3>
+          <div class="revision-question-text">चोल शासन की वह प्रमुख विशेषता, जिसका वर्णन उत्तरमेरूर अभिलेख में मिलता है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मनसबदारी व्यवस्था</span></li><li class=""><span class="option-label">B</span><span>इक्ता प्रणाली</span></li><li class=""><span class="option-label">C</span><span>दहसाला लगान व्यवस्था</span></li><li class="correct"><span class="option-label">D</span><span>ग्रामीण स्थानीय स्वशासन (उर और सभा)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) ग्रामीण स्थानीय स्वशासन (उर और सभा)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उर – सामान्य गाँव की सभा; सभा/महासभा – ब्राह्मण गाँवों की सभा। तंजावुर का बृहदेश्वर मंदिर राजराज प्रथम ने बनवाया।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 245</small></p>
+        </article>
+        <article class="revision-card" id="q-20">
+
+          <h3>प्रश्न 20</h3>
+          <div class="revision-question-text">दिल्ली सल्तनत का वास्तविक संस्थापक, जिसने इक्ता प्रणाली चलाई और &#39;चालीसा&#39; (तुर्कान-ए-चहलगानी) दल बनाया –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>इल्तुतमिश</span></li><li class=""><span class="option-label">B</span><span>कुतुबुद्दीन ऐबक</span></li><li class=""><span class="option-label">C</span><span>बलबन</span></li><li class=""><span class="option-label">D</span><span>अलाउद्दीन खिलजी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) इल्तुतमिश</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> इल्तुतमिश; चाँदी का टंका और ताँबे का जीतल चलाया। बलबन ने बाद में चालीसा की शक्ति समाप्त की।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 306</small></p>
+        </article>
+        <article class="revision-card" id="q-21">
+
+          <h3>प्रश्न 21</h3>
+          <div class="revision-question-text">सिंचाई के लिए सबसे अधिक नहरें बनवाने और &#39;दीवान-ए-ख़ैरात&#39; (दान विभाग) खोलने वाला सुल्तान –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मुहम्मद बिन तुगलक</span></li><li class=""><span class="option-label">B</span><span>ग़यासुद्दीन तुगलक</span></li><li class=""><span class="option-label">C</span><span>अलाउद्दीन खिलजी</span></li><li class="correct"><span class="option-label">D</span><span>फ़िरोज़शाह तुगलक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) फ़िरोज़शाह तुगलक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ़िरोज़शाह तुगलक; उसने जौनपुर, हिसार और फ़तेहाबाद नगर बसाए।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 426</small></p>
+        </article>
+        <article class="revision-card" id="q-22">
+
+          <h3>प्रश्न 22</h3>
+          <div class="revision-question-text">भारत में चिश्ती सिलसिले की स्थापना किसने की, जिनकी दरगाह अजमेर में है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>ख़्वाजा मोइनुद्दीन चिश्ती</span></li><li class=""><span class="option-label">B</span><span>निज़ामुद्दीन औलिया</span></li><li class=""><span class="option-label">C</span><span>क़ुतुबुद्दीन बख़्तियार काकी</span></li><li class=""><span class="option-label">D</span><span>शेख़ सलीम चिश्ती</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) ख़्वाजा मोइनुद्दीन चिश्ती</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ख़्वाजा मोइनुद्दीन चिश्ती। निज़ामुद्दीन औलिया – दिल्ली; शेख़ सलीम चिश्ती – फ़तेहपुर सीकरी।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 486</small></p>
+        </article>
+        <article class="revision-card" id="q-23">
+
+          <h3>प्रश्न 23</h3>
+          <div class="revision-question-text">मुग़ल काल में &#39;दीन-ए-इलाही&#39; नामक नया धार्मिक मत किसने चलाया?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>बाबर</span></li><li class="correct"><span class="option-label">B</span><span>अकबर</span></li><li class=""><span class="option-label">C</span><span>जहाँगीर</span></li><li class=""><span class="option-label">D</span><span>औरंगज़ेब</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) अकबर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अकबर ने 1582 में; इससे पहले 1575 में फ़तेहपुर सीकरी में इबादतख़ाना बनवाया था। बीरबल इसके प्रमुख अनुयायी थे।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 3</small></p>
+        </article>
+        <article class="revision-card" id="q-24">
+
+          <h3>प्रश्न 24</h3>
+          <div class="revision-question-text">अकबर के समय &#39;दहसाला&#39; (ज़ब्ती) भू-राजस्व व्यवस्था के प्रणेता कौन थे?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>राजा टोडरमल</span></li><li class=""><span class="option-label">B</span><span>बीरबल</span></li><li class=""><span class="option-label">C</span><span>अबुल फ़ज़ल</span></li><li class=""><span class="option-label">D</span><span>राजा मानसिंह</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) राजा टोडरमल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> राजा टोडरमल; पिछले दस वर्षों की उपज और कीमतों के औसत पर लगान तय होता था।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 307</small></p>
+        </article>
+        <article class="revision-card" id="q-25">
+
+          <h3>प्रश्न 25</h3>
+          <div class="revision-question-text">1873 में &#39;सत्यशोधक समाज&#39; की स्थापना किसने की?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>स्वामी दयानंद सरस्वती</span></li><li class="correct"><span class="option-label">B</span><span>ज्योतिबा फुले</span></li><li class=""><span class="option-label">C</span><span>राजा राममोहन राय</span></li><li class=""><span class="option-label">D</span><span>गोपाल गणेश आगरकर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) ज्योतिबा फुले</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ज्योतिबा फुले (महाराष्ट्र); पुस्तक &#39;गुलामगिरी&#39;। 1848 में पुणे में सावित्रीबाई फुले के साथ लड़कियों का विद्यालय खोला।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 128</small></p>
+        </article>
+        <article class="revision-card" id="q-26">
+
+          <h3>प्रश्न 26</h3>
+          <div class="revision-question-text">1905 में बंगाल का विभाजन किस वायसराय ने किया?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>लॉर्ड रिपन</span></li><li class=""><span class="option-label">B</span><span>लॉर्ड मिंटो</span></li><li class="correct"><span class="option-label">C</span><span>लॉर्ड कर्ज़न</span></li><li class=""><span class="option-label">D</span><span>लॉर्ड हार्डिंग</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) लॉर्ड कर्ज़न</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लॉर्ड कर्ज़न; इसके विरोध में स्वदेशी आंदोलन चला। 1911 में विभाजन रद्द हुआ और राजधानी कलकत्ता से दिल्ली ले जाने की घोषणा हुई।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 65</small></p>
+        </article>
+        <article class="revision-card" id="q-27">
+
+          <h3>प्रश्न 27</h3>
+          <div class="revision-question-text">भारतीय राष्ट्रीय कांग्रेस की पहली महिला अध्यक्ष (1917, कलकत्ता अधिवेशन) कौन थीं?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>एनी बेसेंट</span></li><li class=""><span class="option-label">B</span><span>सरोजिनी नायडू</span></li><li class=""><span class="option-label">C</span><span>नेली सेनगुप्ता</span></li><li class=""><span class="option-label">D</span><span>विजयलक्ष्मी पंडित</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) एनी बेसेंट</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एनी बेसेंट। पहली भारतीय महिला अध्यक्ष – सरोजिनी नायडू (1925, कानपुर)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 489</small></p>
+        </article>
+        <article class="revision-card" id="q-28">
+
+          <h3>प्रश्न 28</h3>
+          <div class="revision-question-text">दिसंबर 1929 के लाहौर कांग्रेस अधिवेशन की अध्यक्षता किसने की, जिसमें &#39;पूर्ण स्वराज&#39; का प्रस्ताव पारित हुआ?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>महात्मा गांधी</span></li><li class=""><span class="option-label">B</span><span>सुभाष चंद्र बोस</span></li><li class="correct"><span class="option-label">C</span><span>पं. जवाहरलाल नेहरू</span></li><li class=""><span class="option-label">D</span><span>मोतीलाल नेहरू</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) पं. जवाहरलाल नेहरू</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पं. जवाहरलाल नेहरू। 26 जनवरी 1930 को पहला &#39;स्वतंत्रता दिवस&#39; मनाया गया; इसी की याद में 26 जनवरी 1950 को संविधान लागू किया गया।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 369</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">भूगोल</h2>
+
+        <article class="revision-card" id="q-29">
+
+          <h3>प्रश्न 29</h3>
+          <div class="revision-question-text">पृथ्वी अपने अक्ष पर किस दिशा में घूर्णन करती है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>पश्चिम से पूर्व</span></li><li class=""><span class="option-label">B</span><span>पूर्व से पश्चिम</span></li><li class=""><span class="option-label">C</span><span>उत्तर से दक्षिण</span></li><li class=""><span class="option-label">D</span><span>दक्षिण से उत्तर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) पश्चिम से पूर्व</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> इसी कारण सूर्य पूर्व में उगता दिखाई देता है; घूर्णन से दिन-रात होते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 32</small></p>
+        </article>
+        <article class="revision-card" id="q-30">
+
+          <h3>प्रश्न 30</h3>
+          <div class="revision-question-text">जब पृथ्वी सूर्य से न्यूनतम दूरी पर होती है (लगभग 3 जनवरी), तो वह स्थिति कहलाती है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अपसौर</span></li><li class="correct"><span class="option-label">B</span><span>उपसौर</span></li><li class=""><span class="option-label">C</span><span>विषुव</span></li><li class=""><span class="option-label">D</span><span>अयनांत</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) उपसौर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उपसौर (पेरिहीलियन) – लगभग 3 जनवरी; अपसौर (एफ़ीलियन) – लगभग 4 जुलाई।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 251</small></p>
+        </article>
+        <article class="revision-card" id="q-31">
+
+          <h3>प्रश्न 31</h3>
+          <div class="revision-question-text">सूर्य ग्रहण कब होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>जब पृथ्वी, सूर्य और चंद्रमा के बीच आ जाती है</span></li><li class=""><span class="option-label">B</span><span>जब सूर्य, पृथ्वी और चंद्रमा के बीच आ जाता है</span></li><li class=""><span class="option-label">C</span><span>केवल विषुव के दिन</span></li><li class="correct"><span class="option-label">D</span><span>जब चंद्रमा, सूर्य और पृथ्वी के बीच आ जाता है</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) जब चंद्रमा, सूर्य और पृथ्वी के बीच आ जाता है</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सूर्य ग्रहण केवल अमावस्या को हो सकता है; चंद्र ग्रहण में पृथ्वी बीच में आती है और यह पूर्णिमा को होता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 371</small></p>
+        </article>
+        <article class="revision-card" id="q-32">
+
+          <h3>प्रश्न 32</h3>
+          <div class="revision-question-text">भूपर्पटी (क्रस्ट) और मैंटल को अलग करने वाली असंबद्धता कौन-सी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>गुटेनबर्ग</span></li><li class="correct"><span class="option-label">B</span><span>मोहोरोविसिक (मोहो)</span></li><li class=""><span class="option-label">C</span><span>कोनराड</span></li><li class=""><span class="option-label">D</span><span>लेहमैन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) मोहोरोविसिक (मोहो)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मैंटल और क्रोड के बीच – गुटेनबर्ग; ऊपरी और निचली भूपर्पटी के बीच – कोनराड।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 131</small></p>
+        </article>
+        <article class="revision-card" id="q-33">
+
+          <h3>प्रश्न 33</h3>
+          <div class="revision-question-text">मैंटल के ऊपरी भाग की वह अर्ध-तरल परत, जो ज्वालामुखी के मैग्मा का मुख्य स्रोत है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>स्थलमंडल</span></li><li class=""><span class="option-label">B</span><span>बाह्य क्रोड</span></li><li class=""><span class="option-label">C</span><span>आंतरिक क्रोड</span></li><li class="correct"><span class="option-label">D</span><span>दुर्बलतामंडल (एस्थेनोस्फ़ीयर)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) दुर्बलतामंडल (एस्थेनोस्फ़ीयर)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दुर्बलतामंडल ऊपरी मैंटल में लगभग 400 किमी की गहराई तक माना जाता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 372</small></p>
+        </article>
+        <article class="revision-card" id="q-34">
+
+          <h3>प्रश्न 34</h3>
+          <div class="revision-question-text">स्वेस के वर्गीकरण में पृथ्वी के क्रोड को &#39;निफ़े&#39; कहा गया है, क्योंकि उसमें किसकी प्रधानता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>सिलिका और एल्युमिनियम</span></li><li class=""><span class="option-label">B</span><span>सिलिका और मैग्नीशियम</span></li><li class="correct"><span class="option-label">C</span><span>निकेल और लोहा</span></li><li class=""><span class="option-label">D</span><span>कार्बन और ऑक्सीजन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) निकेल और लोहा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सियाल (Si + Al) – भूपर्पटी; सीमा (Si + Mg) – मैंटल; निफ़े (Ni + Fe) – क्रोड।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 492</small></p>
+        </article>
+        <article class="revision-card" id="q-35">
+
+          <h3>प्रश्न 35</h3>
+          <div class="revision-question-text">दो समानांतर भ्रंशों के बीच का भू-भाग नीचे धँसने से बनी घाटी कहलाती है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>ग्रेबेन (भ्रंश घाटी)</span></li><li class=""><span class="option-label">B</span><span>होर्स्ट</span></li><li class=""><span class="option-label">C</span><span>V-आकार की घाटी</span></li><li class=""><span class="option-label">D</span><span>कैनियन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) ग्रेबेन (भ्रंश घाटी)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ऊपर उठा भाग होर्स्ट (ब्लॉक पर्वत) कहलाता है। नर्मदा और तापी भ्रंश घाटी से बहती हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 72</small></p>
+        </article>
+        <article class="revision-card" id="q-36">
+
+          <h3>प्रश्न 36</h3>
+          <div class="revision-question-text">ज्वालामुखी का क्रेटर धँसाव या भीषण विस्फोट से बहुत विशाल हो जाए, तो उसे क्या कहते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>गीज़र</span></li><li class="correct"><span class="option-label">B</span><span>काल्डेरा</span></li><li class=""><span class="option-label">C</span><span>लावा पठार</span></li><li class=""><span class="option-label">D</span><span>धुआँरा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) काल्डेरा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> काल्डेरा – विशाल ज्वालामुखी कुंड; उसमें पानी भरने से झील बन जाती है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 552</small></p>
+        </article>
+        <article class="revision-card" id="q-37">
+
+          <h3>प्रश्न 37</h3>
+          <div class="revision-question-text">निम्न में से कौन-सी अवसादी चट्टान है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>बलुआ पत्थर</span></li><li class=""><span class="option-label">B</span><span>ग्रेनाइट</span></li><li class=""><span class="option-label">C</span><span>बेसाल्ट</span></li><li class=""><span class="option-label">D</span><span>संगमरमर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) बलुआ पत्थर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अवसादी – बलुआ पत्थर, चूना पत्थर, शेल; आग्नेय – ग्रेनाइट, बेसाल्ट; कायांतरित – संगमरमर।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 71</small></p>
+        </article>
+        <article class="revision-card" id="q-38">
+
+          <h3>प्रश्न 38</h3>
+          <div class="revision-question-text">ऊँचाई बढ़ने पर तापमान घटने के बजाय बढ़ने लगे, तो यह स्थिति कहलाती है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>संघनन</span></li><li class=""><span class="option-label">B</span><span>ऊष्मा द्वीप</span></li><li class=""><span class="option-label">C</span><span>एल नीनो</span></li><li class="correct"><span class="option-label">D</span><span>तापीय व्युत्क्रमण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) तापीय व्युत्क्रमण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सामान्यतः क्षोभमंडल में ऊँचाई के साथ तापमान घटता है (लगभग 6.5°C प्रति किमी); व्युत्क्रमण में उल्टा होता है, जिससे कोहरा और स्मॉग बढ़ते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 74</small></p>
+        </article>
+        <article class="revision-card" id="q-39">
+
+          <h3>प्रश्न 39</h3>
+          <div class="revision-question-text">भूमध्य रेखा के दोनों ओर लगभग 5° अक्षांशों के बीच की विषुवतीय निम्न वायुदाब की शांत पेटी कहलाती है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>डोलड्रम</span></li><li class=""><span class="option-label">B</span><span>अश्व अक्षांश</span></li><li class=""><span class="option-label">C</span><span>गरजता चालीसा</span></li><li class=""><span class="option-label">D</span><span>व्यापारिक पवन पेटी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) डोलड्रम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> डोलड्रम (शांत कटिबंध)। अश्व अक्षांश – 30–35° की उपोष्ण उच्च दाब पेटी; गरजता चालीसा – 40° दक्षिण की पछुआ पवनें।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 494</small></p>
+        </article>
+        <article class="revision-card" id="q-40">
+
+          <h3>प्रश्न 40</h3>
+          <div class="revision-question-text">फ़ेरल के नियम के अनुसार उत्तरी गोलार्ध में पवनें अपनी मूल दिशा से किस ओर मुड़ जाती हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>बाईं ओर</span></li><li class=""><span class="option-label">B</span><span>सीधी चलती हैं</span></li><li class="correct"><span class="option-label">C</span><span>दाईं ओर</span></li><li class=""><span class="option-label">D</span><span>ऊपर की ओर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) दाईं ओर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पृथ्वी के घूर्णन (कोरिऑलिस बल) के कारण; दक्षिणी गोलार्ध में बाईं ओर।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 553</small></p>
+        </article>
+        <article class="revision-card" id="q-41">
+
+          <h3>प्रश्न 41</h3>
+          <div class="revision-question-text">वायु की आर्द्रता मापने का यंत्र कौन-सा है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>एनीमोमीटर</span></li><li class=""><span class="option-label">B</span><span>बैरोमीटर</span></li><li class=""><span class="option-label">C</span><span>सिस्मोग्राफ़</span></li><li class="correct"><span class="option-label">D</span><span>हाइग्रोमीटर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) हाइग्रोमीटर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एनीमोमीटर – पवन वेग; बैरोमीटर – वायुदाब; सिस्मोग्राफ़ – भूकंप।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 554</small></p>
+        </article>
+        <article class="revision-card" id="q-42">
+
+          <h3>प्रश्न 42</h3>
+          <div class="revision-question-text">समुद्री जल की औसत लवणता कितनी होती है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>25 ‰</span></li><li class=""><span class="option-label">B</span><span>30 ‰</span></li><li class="correct"><span class="option-label">C</span><span>35 ‰</span></li><li class=""><span class="option-label">D</span><span>40 ‰</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 35 ‰</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रति 1000 ग्राम जल में लगभग 35 ग्राम लवण। मृत सागर और वान झील (तुर्की) जैसी झीलों में लवणता बहुत अधिक है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 434</small></p>
+        </article>
+        <article class="revision-card" id="q-43">
+
+          <h3>प्रश्न 43</h3>
+          <div class="revision-question-text">निम्न में से गर्म महासागरीय जलधारा कौन-सी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>लैब्राडोर</span></li><li class=""><span class="option-label">B</span><span>कैलिफ़ोर्निया</span></li><li class=""><span class="option-label">C</span><span>कैनरी</span></li><li class="correct"><span class="option-label">D</span><span>क्यूरोशियो</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) क्यूरोशियो</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्यूरोशियो (जापान) और गल्फ़ स्ट्रीम गर्म धाराएँ हैं; लैब्राडोर, कैलिफ़ोर्निया, कैनरी, हम्बोल्ट ठंडी।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 45</small></p>
+        </article>
+        <article class="revision-card" id="q-44">
+
+          <h3>प्रश्न 44</h3>
+          <div class="revision-question-text">भूमध्यसागरीय जलवायु प्रदेश किस प्रकार की खेती के लिए विश्व-प्रसिद्ध है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>चावल</span></li><li class=""><span class="option-label">B</span><span>चाय और कॉफ़ी</span></li><li class="correct"><span class="option-label">C</span><span>रसदार और खट्टे फल (संतरा, अंगूर, जैतून)</span></li><li class=""><span class="option-label">D</span><span>जूट</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) रसदार और खट्टे फल (संतरा, अंगूर, जैतून)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शीत ऋतु में वर्षा और शुष्क ग्रीष्म; इसे &#39;विश्व का फलोद्यान&#39; कहते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 195</small></p>
+        </article>
+        <article class="revision-card" id="q-45">
+
+          <h3>प्रश्न 45</h3>
+          <div class="revision-question-text">अर्जेंटीना के शीतोष्ण घास के मैदान किस नाम से जाने जाते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>प्रेयरी</span></li><li class=""><span class="option-label">B</span><span>स्टेपी</span></li><li class=""><span class="option-label">C</span><span>वेल्ड</span></li><li class="correct"><span class="option-label">D</span><span>पंपास</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) पंपास</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रेयरी – उत्तरी अमेरिका; स्टेपी – यूरेशिया; वेल्ड – दक्षिण अफ़्रीका; डाउन्स – ऑस्ट्रेलिया।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 135</small></p>
+        </article>
+        <article class="revision-card" id="q-46">
+
+          <h3>प्रश्न 46</h3>
+          <div class="revision-question-text">निम्न में से शीत मरुस्थल कौन-सा है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>गोबी</span></li><li class=""><span class="option-label">B</span><span>सहारा</span></li><li class=""><span class="option-label">C</span><span>थार</span></li><li class=""><span class="option-label">D</span><span>कालाहारी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) गोबी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गोबी (मंगोलिया-चीन)। भारत में लद्दाख शीत मरुस्थल है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 73</small></p>
+        </article>
+        <article class="revision-card" id="q-47">
+
+          <h3>प्रश्न 47</h3>
+          <div class="revision-question-text">मानचित्र पर समान वर्षा वाले स्थानों को मिलाने वाली रेखा क्या कहलाती है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>समताप रेखा</span></li><li class=""><span class="option-label">B</span><span>समदाब रेखा</span></li><li class=""><span class="option-label">C</span><span>समोच्च रेखा</span></li><li class="correct"><span class="option-label">D</span><span>समवर्षा रेखा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) समवर्षा रेखा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> समवर्षा रेखा (आइसोहाइट)। समताप – तापमान; समदाब – वायुदाब; समोच्च – समान ऊँचाई।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 177</small></p>
+        </article>
+        <article class="revision-card" id="q-48">
+
+          <h3>प्रश्न 48</h3>
+          <div class="revision-question-text">मानचित्रों में सामान्यतः नीला और हरा रंग क्रमशः किसे दर्शाते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पर्वत और मरुस्थल</span></li><li class=""><span class="option-label">B</span><span>पठार और हिमक्षेत्र</span></li><li class="correct"><span class="option-label">C</span><span>जलाशय और मैदान/वनस्पति</span></li><li class=""><span class="option-label">D</span><span>सड़कें और रेलमार्ग</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) जलाशय और मैदान/वनस्पति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भूरा/पीला – पर्वत और पठार; सफ़ेद – बर्फ़ से ढके क्षेत्र।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 357</small></p>
+        </article>
+        <article class="revision-card" id="q-49">
+
+          <h3>प्रश्न 49</h3>
+          <div class="revision-question-text">क्षेत्रफल की दृष्टि से भारत का विश्व में कौन-सा स्थान है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पाँचवाँ</span></li><li class=""><span class="option-label">B</span><span>छठा</span></li><li class="correct"><span class="option-label">C</span><span>सातवाँ</span></li><li class=""><span class="option-label">D</span><span>आठवाँ</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) सातवाँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सातवाँ; भारत विश्व के कुल स्थलीय क्षेत्रफल का लगभग 2.4% है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 256</small></p>
+        </article>
+        <article class="revision-card" id="q-50">
+
+          <h3>प्रश्न 50</h3>
+          <div class="revision-question-text">भारत की सबसे लंबी स्थलीय अंतरराष्ट्रीय सीमा किस देश के साथ है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>बांग्लादेश</span></li><li class=""><span class="option-label">B</span><span>चीन</span></li><li class=""><span class="option-label">C</span><span>पाकिस्तान</span></li><li class=""><span class="option-label">D</span><span>नेपाल</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) बांग्लादेश</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बांग्लादेश (लगभग 4096 किमी); सबसे छोटी सीमा अफ़गानिस्तान के साथ।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 376</small></p>
+        </article>
+        <article class="revision-card" id="q-51">
+
+          <h3>प्रश्न 51</h3>
+          <div class="revision-question-text">उत्तर प्रदेश की सीमा कितने राज्यों को स्पर्श करती है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>6</span></li><li class=""><span class="option-label">B</span><span>7</span></li><li class="correct"><span class="option-label">C</span><span>8</span></li><li class=""><span class="option-label">D</span><span>9</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 8</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 8 राज्य और 1 केंद्रशासित प्रदेश (दिल्ली); अंतरराष्ट्रीय सीमा केवल नेपाल से।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 318</small></p>
+        </article>
+        <article class="revision-card" id="q-52">
+
+          <h3>प्रश्न 52</h3>
+          <div class="revision-question-text">भारत की सबसे प्राचीन (अवशिष्ट) पर्वत-श्रेणी कौन-सी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>हिमालय</span></li><li class="correct"><span class="option-label">B</span><span>अरावली</span></li><li class=""><span class="option-label">C</span><span>सतपुड़ा</span></li><li class=""><span class="option-label">D</span><span>पश्चिमी घाट</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) अरावली</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अरावली; सर्वोच्च शिखर गुरु शिखर (माउंट आबू)। हिमालय नवीन वलित पर्वत है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 556</small></p>
+        </article>
+        <article class="revision-card" id="q-53">
+
+          <h3>प्रश्न 53</h3>
+          <div class="revision-question-text">कोयला, लौह अयस्क और अभ्रक जैसे खनिजों की प्रचुरता के कारण &#39;भारत का रूर&#39; किसे कहते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मालवा पठार</span></li><li class=""><span class="option-label">B</span><span>दक्कन पठार</span></li><li class=""><span class="option-label">C</span><span>बुंदेलखंड पठार</span></li><li class="correct"><span class="option-label">D</span><span>छोटानागपुर पठार</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) छोटानागपुर पठार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> छोटानागपुर पठार (झारखंड); दामोदर घाटी कोयले के लिए प्रसिद्ध।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 560</small></p>
+        </article>
+        <article class="revision-card" id="q-54">
+
+          <h3>प्रश्न 54</h3>
+          <div class="revision-question-text">भारत के पश्चिमी तट का केरल वाला भाग और पूर्वी तट का तमिलनाडु वाला भाग क्रमशः कहलाते हैं –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>मालाबार और कोरोमंडल</span></li><li class=""><span class="option-label">B</span><span>कोंकण और उत्कल</span></li><li class=""><span class="option-label">C</span><span>कन्नड़ और उत्तरी सरकार</span></li><li class=""><span class="option-label">D</span><span>कोरोमंडल और मालाबार</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) मालाबार और कोरोमंडल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कोंकण – मुंबई से गोवा; उत्तरी सरकार – आंध्र प्रदेश व ओडिशा का तट।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 436</small></p>
+        </article>
+        <article class="revision-card" id="q-55">
+
+          <h3>प्रश्न 55</h3>
+          <div class="revision-question-text">भारत में मीठे पानी की सबसे बड़ी झील कौन-सी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>चिल्का</span></li><li class=""><span class="option-label">B</span><span>डल</span></li><li class="correct"><span class="option-label">C</span><span>वुलर</span></li><li class=""><span class="option-label">D</span><span>लोकटक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) वुलर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वुलर (जम्मू-कश्मीर)। चिल्का (ओडिशा) – खारे पानी की सबसे बड़ी लैगून; लोकटक (मणिपुर) – तैरते द्वीप।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 377</small></p>
+        </article>
+        <article class="revision-card" id="q-56">
+
+          <h3>प्रश्न 56</h3>
+          <div class="revision-question-text">भारत का सबसे लंबा राष्ट्रीय जलमार्ग NW-1 कहाँ से कहाँ तक है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>सदिया से धुबरी</span></li><li class="correct"><span class="option-label">B</span><span>प्रयागराज से हल्दिया</span></li><li class=""><span class="option-label">C</span><span>कोल्लम से कोट्टापुरम</span></li><li class=""><span class="option-label">D</span><span>वाराणसी से पटना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) प्रयागराज से हल्दिया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गंगा-भागीरथी-हुगली नदी तंत्र पर, लगभग 1620 किमी। NW-2 – ब्रह्मपुत्र (सदिया-धुबरी); NW-3 – केरल की पश्चिमी तट नहर।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 260</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">पर्यावरण व आपदा प्रबंधन</h2>
+
+        <article class="revision-card" id="q-57">
+
+          <h3>प्रश्न 57</h3>
+          <div class="revision-question-text">वाहनों के धुएँ की वह विषैली गैस, जो रक्त के हीमोग्लोबिन से ऑक्सीजन की तुलना में लगभग 200–250 गुना अधिक तेज़ी से जुड़कर दम घोंटती है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कार्बन डाइऑक्साइड</span></li><li class=""><span class="option-label">B</span><span>सल्फ़र डाइऑक्साइड</span></li><li class=""><span class="option-label">C</span><span>मीथेन</span></li><li class="correct"><span class="option-label">D</span><span>कार्बन मोनोऑक्साइड</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) कार्बन मोनोऑक्साइड</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ईंधन के अपूर्ण दहन से बनती है और कार्बोक्सीहीमोग्लोबिन बनाकर ऑक्सीजन पहुँचना रोक देती है। बंद कमरे में अँगीठी जलाकर सोना इसी कारण जानलेवा होता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 330</small></p>
+        </article>
+        <article class="revision-card" id="q-58">
+
+          <h3>प्रश्न 58</h3>
+          <div class="revision-question-text">कोयला, पेट्रोल जैसे जीवाश्म ईंधन जलाने से निकलने वाली, भूमंडलीय तापन के लिए सबसे अधिक ज़िम्मेदार ग्रीनहाउस गैस –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>कार्बन डाइऑक्साइड</span></li><li class=""><span class="option-label">B</span><span>मीथेन</span></li><li class=""><span class="option-label">C</span><span>नाइट्रस ऑक्साइड</span></li><li class=""><span class="option-label">D</span><span>ओज़ोन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) कार्बन डाइऑक्साइड</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मानवीय गतिविधियों से बढ़ी ग्रीनहाउस गैसों में CO₂ का योगदान सबसे अधिक है। प्राकृतिक रूप से सबसे अधिक मात्रा वाली ग्रीनहाउस गैस जलवाष्प है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 388</small></p>
+        </article>
+        <article class="revision-card" id="q-59">
+
+          <h3>प्रश्न 59</h3>
+          <div class="revision-question-text">वायु में सल्फ़र डाइऑक्साइड (SO₂) प्रदूषण का सबसे अच्छा जैविक सूचक, जो प्रदूषित हवा में पनप नहीं पाता –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मॉस</span></li><li class=""><span class="option-label">B</span><span>फ़र्न</span></li><li class="correct"><span class="option-label">C</span><span>लाइकेन</span></li><li class=""><span class="option-label">D</span><span>कुकुरमुत्ता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) लाइकेन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लाइकेन शैवाल और कवक के सहजीवन से बनता है और SO₂ बढ़ते ही नष्ट होने लगता है। लिटमस भी लाइकेन से मिलता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 508</small></p>
+        </article>
+        <article class="revision-card" id="q-60">
+
+          <h3>प्रश्न 60</h3>
+          <div class="revision-question-text">जल में पारे (मरकरी) की अधिकता वाली मछलियाँ खाने से होने वाला गंभीर रोग –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>इटाई-इटाई</span></li><li class=""><span class="option-label">B</span><span>ब्लू बेबी सिंड्रोम</span></li><li class=""><span class="option-label">C</span><span>फ़्लोरोसिस</span></li><li class="correct"><span class="option-label">D</span><span>मिनामाता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) मिनामाता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जापान के मिनामाता नगर में पहली बार पहचाना गया। कैडमियम – इटाई-इटाई; नाइट्रेट – ब्लू बेबी सिंड्रोम; फ़्लोराइड – फ़्लोरोसिस।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 210</small></p>
+        </article>
+        <article class="revision-card" id="q-61">
+
+          <h3>प्रश्न 61</h3>
+          <div class="revision-question-text">पीने के पानी में नाइट्रेट की अधिकता से शिशुओं में होने वाला रोग –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>ब्लैक फ़ुट रोग</span></li><li class=""><span class="option-label">B</span><span>मिनामाता रोग</span></li><li class="correct"><span class="option-label">C</span><span>ब्लू बेबी सिंड्रोम</span></li><li class=""><span class="option-label">D</span><span>इटाई-इटाई रोग</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) ब्लू बेबी सिंड्रोम</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रक्त की ऑक्सीजन ले जाने की क्षमता घटती है और शिशु की त्वचा नीली पड़ने लगती है (मेथेमोग्लोबिनीमिया)। आर्सेनिक की अधिकता – ब्लैक फ़ुट रोग।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 509</small></p>
+        </article>
+        <article class="revision-card" id="q-62">
+
+          <h3>प्रश्न 62</h3>
+          <div class="revision-question-text">&#39;पारिस्थितिकी तंत्र&#39; (इकोसिस्टम) शब्द का सर्वप्रथम प्रयोग किसने किया?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>ए.जी. टैन्सले</span></li><li class=""><span class="option-label">B</span><span>अर्नेस्ट हेकेल</span></li><li class=""><span class="option-label">C</span><span>चार्ल्स डार्विन</span></li><li class=""><span class="option-label">D</span><span>रेमंड लिंडेमैन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) ए.जी. टैन्सले</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ए.जी. टैन्सले ने 1935 में। &#39;इकोलॉजी&#39; (पारिस्थितिकी) शब्द अर्नेस्ट हेकेल ने 1866 में दिया; ऊर्जा का 10% नियम लिंडेमैन ने।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 328</small></p>
+        </article>
+        <article class="revision-card" id="q-63">
+
+          <h3>प्रश्न 63</h3>
+          <div class="revision-question-text">निम्नलिखित में से कौन-सा जैव-विविधता के &#39;बाह्य-स्थाने&#39; (एक्स-सीटू) संरक्षण का उदाहरण है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>राष्ट्रीय उद्यान</span></li><li class=""><span class="option-label">B</span><span>वन्यजीव अभयारण्य</span></li><li class=""><span class="option-label">C</span><span>जीवमंडल आरक्षित क्षेत्र (बायोस्फ़ीयर रिज़र्व)</span></li><li class="correct"><span class="option-label">D</span><span>बीज बैंक</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) बीज बैंक</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जीवों को उनके प्राकृतिक आवास से बाहर सुरक्षित रखना – बीज बैंक, जीन बैंक, चिड़ियाघर, वानस्पतिक उद्यान। राष्ट्रीय उद्यान, अभयारण्य और बायोस्फ़ीयर रिज़र्व &#39;स्व-स्थाने&#39; (इन-सीटू) संरक्षण हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 568</small></p>
+        </article>
+        <article class="revision-card" id="q-64">
+
+          <h3>प्रश्न 64</h3>
+          <div class="revision-question-text">अंतरराष्ट्रीय जैव-विविधता दिवस कब मनाया जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>22 मार्च</span></li><li class=""><span class="option-label">B</span><span>22 अप्रैल</span></li><li class="correct"><span class="option-label">C</span><span>22 मई</span></li><li class=""><span class="option-label">D</span><span>5 जून</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 22 मई</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 22 मार्च – विश्व जल दिवस; 22 अप्रैल – पृथ्वी दिवस; 5 जून – विश्व पर्यावरण दिवस; 2 फ़रवरी – विश्व आर्द्रभूमि दिवस।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 211</small></p>
+        </article>
+        <article class="revision-card" id="q-65">
+
+          <h3>प्रश्न 65</h3>
+          <div class="revision-question-text">&#39;सतत विकास&#39; (सस्टेनेबल डेवलपमेंट) की स्पष्ट परिभाषा सर्वप्रथम किस रिपोर्ट में दी गई?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>क्लब ऑफ़ रोम की &#39;लिमिट्स टू ग्रोथ&#39; (1972)</span></li><li class="correct"><span class="option-label">B</span><span>ब्रुंटलैंड आयोग की &#39;अवर कॉमन फ़्यूचर&#39; (1987)</span></li><li class=""><span class="option-label">C</span><span>स्टॉकहोम घोषणा (1972)</span></li><li class=""><span class="option-label">D</span><span>क्योटो प्रोटोकॉल (1997)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) ब्रुंटलैंड आयोग की &#39;अवर कॉमन फ़्यूचर&#39; (1987)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ब्रुंटलैंड आयोग की रिपोर्ट &#39;हमारा साझा भविष्य&#39; (1987): ऐसा विकास, जो आज की ज़रूरतें पूरी करे, पर आने वाली पीढ़ियों की ज़रूरतों से समझौता न करे।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 53</small></p>
+        </article>
+        <article class="revision-card" id="q-66">
+
+          <h3>प्रश्न 66</h3>
+          <div class="revision-question-text">1992 के रियो डी जेनेरियो &#39;पृथ्वी शिखर सम्मेलन&#39; में 21वीं सदी के सतत विकास के लिए अपनाई गई कार्ययोजना –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>क्योटो प्रोटोकॉल</span></li><li class=""><span class="option-label">B</span><span>मॉन्ट्रियल प्रोटोकॉल</span></li><li class=""><span class="option-label">C</span><span>पेरिस समझौता</span></li><li class="correct"><span class="option-label">D</span><span>एजेंडा-21</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) एजेंडा-21</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्योटो प्रोटोकॉल (1997) – ग्रीनहाउस गैसों का उत्सर्जन घटाना; मॉन्ट्रियल प्रोटोकॉल (1987) – ओज़ोन परत की रक्षा; पेरिस समझौता (2015) – जलवायु परिवर्तन।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 389</small></p>
+        </article>
+        <article class="revision-card" id="q-67">
+
+          <h3>प्रश्न 67</h3>
+          <div class="revision-question-text">संयुक्त राष्ट्र पर्यावरण कार्यक्रम (UNEP) का मुख्यालय कहाँ है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>नैरोबी</span></li><li class=""><span class="option-label">B</span><span>जिनेवा</span></li><li class=""><span class="option-label">C</span><span>पेरिस</span></li><li class=""><span class="option-label">D</span><span>न्यूयॉर्क</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) नैरोबी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> नैरोबी (केन्या)। UNEP की स्थापना 1972 के स्टॉकहोम सम्मेलन के बाद हुई।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 569</small></p>
+        </article>
+        <article class="revision-card" id="q-68">
+
+          <h3>प्रश्न 68</h3>
+          <div class="revision-question-text">अंतरराष्ट्रीय ओज़ोन परत संरक्षण दिवस प्रतिवर्ष किस तिथि को मनाया जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>5 जून</span></li><li class=""><span class="option-label">B</span><span>22 अप्रैल</span></li><li class=""><span class="option-label">C</span><span>2 अक्टूबर</span></li><li class="correct"><span class="option-label">D</span><span>16 सितंबर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 16 सितंबर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 16 सितंबर 1987 को ओज़ोन परत की रक्षा के लिए मॉन्ट्रियल प्रोटोकॉल पर हस्ताक्षर हुए थे, उसी की स्मृति में। 5 जून – विश्व पर्यावरण दिवस; 22 अप्रैल – पृथ्वी दिवस।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 150</small></p>
+        </article>
+        <article class="revision-card" id="q-69">
+
+          <h3>प्रश्न 69</h3>
+          <div class="revision-question-text">भारत में &#39;वन (संरक्षण) अधिनियम&#39; किस वर्ष पारित हुआ?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>1972</span></li><li class="correct"><span class="option-label">B</span><span>1980</span></li><li class=""><span class="option-label">C</span><span>1986</span></li><li class=""><span class="option-label">D</span><span>2002</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) 1980</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 1980; 2023 के संशोधन से इसका नाम &#39;वन (संरक्षण एवं संवर्धन) अधिनियम&#39; हो गया। वन्यजीव संरक्षण अधिनियम – 1972; पर्यावरण संरक्षण अधिनियम – 1986; जैव-विविधता अधिनियम – 2002।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 91</small></p>
+        </article>
+        <article class="revision-card" id="q-70">
+
+          <h3>प्रश्न 70</h3>
+          <div class="revision-question-text">पर्यावरण संबंधी मामलों के शीघ्र निपटारे के लिए राष्ट्रीय हरित अधिकरण (NGT) की स्थापना किस वर्ष हुई?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>1986</span></li><li class=""><span class="option-label">B</span><span>2002</span></li><li class=""><span class="option-label">C</span><span>2006</span></li><li class="correct"><span class="option-label">D</span><span>2010</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 2010</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 18 अक्टूबर 2010 को, NGT अधिनियम 2010 के तहत; मुख्यालय नई दिल्ली। पर्यावरण (संरक्षण) अधिनियम – 1986।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 511</small></p>
+        </article>
+        <article class="revision-card" id="q-71">
+
+          <h3>प्रश्न 71</h3>
+          <div class="revision-question-text">राजस्थान के अलवर क्षेत्र में जोहड़ बनाकर सूखी नदियों को फिर से जीवित करने वाले, &#39;भारत के जल-पुरुष&#39; कहे जाने वाले पर्यावरणविद् –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>सुंदरलाल बहुगुणा</span></li><li class=""><span class="option-label">B</span><span>मेधा पाटकर</span></li><li class="correct"><span class="option-label">C</span><span>डॉ. राजेंद्र सिंह</span></li><li class=""><span class="option-label">D</span><span>चंडी प्रसाद भट्ट</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) डॉ. राजेंद्र सिंह</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> संस्था – तरुण भारत संघ; 2015 में स्टॉकहोम जल पुरस्कार मिला। सुंदरलाल बहुगुणा व चंडी प्रसाद भट्ट – चिपको आंदोलन; मेधा पाटकर – नर्मदा बचाओ आंदोलन।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 270</small></p>
+        </article>
+        <article class="revision-card" id="q-72">
+
+          <h3>प्रश्न 72</h3>
+          <div class="revision-question-text">&#39;बर्डमैन ऑफ़ इंडिया&#39; के नाम से प्रसिद्ध पक्षी-विज्ञानी –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>जिम कॉर्बेट</span></li><li class="correct"><span class="option-label">B</span><span>डॉ. सलीम अली</span></li><li class=""><span class="option-label">C</span><span>कैलाश सांखला</span></li><li class=""><span class="option-label">D</span><span>बिली अर्जन सिंह</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) डॉ. सलीम अली</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उनकी आत्मकथा &#39;द फ़ॉल ऑफ़ ए स्पैरो&#39; है; गोवा के चोराओ द्वीप पर उनके नाम पर पक्षी अभयारण्य है। कैलाश सांखला – &#39;टाइगर मैन ऑफ़ इंडिया&#39;।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 331</small></p>
+        </article>
+        <article class="revision-card" id="q-73">
+
+          <h3>प्रश्न 73</h3>
+          <div class="revision-question-text">1986 की चेरनोबिल परमाणु दुर्घटना किस देश में हुई थी?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>रूस</span></li><li class=""><span class="option-label">B</span><span>जापान</span></li><li class=""><span class="option-label">C</span><span>अमेरिका</span></li><li class="correct"><span class="option-label">D</span><span>यूक्रेन (तत्कालीन सोवियत संघ)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) यूक्रेन (तत्कालीन सोवियत संघ)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 26 अप्रैल 1986 को। मार्च 2011 में सुनामी से फ़ुकुशिमा (जापान) परमाणु दुर्घटना हुई; 1984 की भोपाल गैस त्रासदी में मिथाइल आइसोसाइनेट (MIC) गैस रिसी थी।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 570</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">नागरिक शास्त्र व समाज</h2>
+
+        <article class="revision-card" id="q-74">
+
+          <h3>प्रश्न 74</h3>
+          <div class="revision-question-text">9 दिसंबर 1946 को संविधान सभा की पहली बैठक में अस्थायी अध्यक्ष कौन चुने गए?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>डॉ. राजेंद्र प्रसाद</span></li><li class="correct"><span class="option-label">B</span><span>डॉ. सच्चिदानंद सिन्हा</span></li><li class=""><span class="option-label">C</span><span>डॉ. भीमराव अंबेडकर</span></li><li class=""><span class="option-label">D</span><span>पं. जवाहरलाल नेहरू</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) डॉ. सच्चिदानंद सिन्हा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सबसे वरिष्ठ सदस्य डॉ. सच्चिदानंद सिन्हा; 11 दिसंबर 1946 को डॉ. राजेंद्र प्रसाद स्थायी अध्यक्ष चुने गए।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 501</small></p>
+        </article>
+        <article class="revision-card" id="q-75">
+
+          <h3>प्रश्न 75</h3>
+          <div class="revision-question-text">संविधान सभा की प्रारूप समिति (29 अगस्त 1947) में अध्यक्ष डॉ. भीमराव अंबेडकर सहित कुल कितने सदस्य थे?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>7</span></li><li class=""><span class="option-label">B</span><span>9</span></li><li class=""><span class="option-label">C</span><span>11</span></li><li class=""><span class="option-label">D</span><span>13</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) 7</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 7 सदस्य। संविधान बनने में 2 वर्ष 11 महीने 18 दिन लगे।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 261</small></p>
+        </article>
+        <article class="revision-card" id="q-76">
+
+          <h3>प्रश्न 76</h3>
+          <div class="revision-question-text">भारतीय संविधान में &#39;समवर्ती सूची&#39; की व्यवस्था किस देश के संविधान से ली गई है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अमेरिका</span></li><li class=""><span class="option-label">B</span><span>ब्रिटेन</span></li><li class=""><span class="option-label">C</span><span>कनाडा</span></li><li class="correct"><span class="option-label">D</span><span>ऑस्ट्रेलिया</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) ऑस्ट्रेलिया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ऑस्ट्रेलिया से समवर्ती सूची और प्रस्तावना की भाषा ली गई। कनाडा से शक्तिशाली केंद्र वाला संघ और अवशिष्ट शक्तियाँ केंद्र को देने का विचार लिया गया।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 38</small></p>
+        </article>
+        <article class="revision-card" id="q-77">
+
+          <h3>प्रश्न 77</h3>
+          <div class="revision-question-text">संविधान के अनुसार &#39;अवशिष्ट शक्तियाँ&#39; (किसी भी सूची में न दिए गए विषयों पर कानून बनाने का अधिकार) किसके पास हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>राज्य विधानमंडलों के पास</span></li><li class=""><span class="option-label">B</span><span>राष्ट्रपति के पास</span></li><li class="correct"><span class="option-label">C</span><span>संसद (केंद्र) के पास</span></li><li class=""><span class="option-label">D</span><span>सर्वोच्च न्यायालय के पास</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) संसद (केंद्र) के पास</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 248 के अनुसार संसद के पास।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 47</small></p>
+        </article>
+        <article class="revision-card" id="q-78">
+
+          <h3>प्रश्न 78</h3>
+          <div class="revision-question-text">सर्वोच्च न्यायालय ने किस वाद में &#39;संविधान के मूल ढाँचे&#39; का सिद्धांत दिया?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>गोलकनाथ वाद (1967)</span></li><li class="correct"><span class="option-label">B</span><span>केशवानंद भारती वाद (1973)</span></li><li class=""><span class="option-label">C</span><span>मिनर्वा मिल्स वाद (1980)</span></li><li class=""><span class="option-label">D</span><span>मेनका गांधी वाद (1978)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) केशवानंद भारती वाद (1973)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> केशवानंद भारती बनाम केरल राज्य (24 अप्रैल 1973, 13 न्यायाधीशों की पीठ): संसद संविधान में संशोधन कर सकती है, पर उसका मूल ढाँचा नहीं बदल सकती।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 83</small></p>
+        </article>
+        <article class="revision-card" id="q-79">
+
+          <h3>प्रश्न 79</h3>
+          <div class="revision-question-text">संविधान के किस अनुच्छेद से उपाधियों का अंत किया गया है (सेना और विद्या संबंधी सम्मानों को छोड़कर)?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अनुच्छेद 14</span></li><li class=""><span class="option-label">B</span><span>अनुच्छेद 17</span></li><li class="correct"><span class="option-label">C</span><span>अनुच्छेद 18</span></li><li class=""><span class="option-label">D</span><span>अनुच्छेद 21</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) अनुच्छेद 18</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 18; भारत रत्न और पद्म पुरस्कार उपाधि नहीं, राष्ट्रीय सम्मान हैं। अनुच्छेद 17 – अस्पृश्यता का अंत; 19(1)(क) – वाक् एवं अभिव्यक्ति (प्रेस) की स्वतंत्रता।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 502</small></p>
+        </article>
+        <article class="revision-card" id="q-80">
+
+          <h3>प्रश्न 80</h3>
+          <div class="revision-question-text">राज्य के नीति निदेशक तत्व संविधान के किस भाग और किन अनुच्छेदों में हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>भाग-3, अनुच्छेद 12–35</span></li><li class="correct"><span class="option-label">B</span><span>भाग-4, अनुच्छेद 36–51</span></li><li class=""><span class="option-label">C</span><span>भाग-4क, अनुच्छेद 51क</span></li><li class=""><span class="option-label">D</span><span>भाग-5, अनुच्छेद 52–151</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) भाग-4, अनुच्छेद 36–51</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आयरलैंड के संविधान से लिए गए; लोक-कल्याणकारी राज्य बनाना इनका उद्देश्य है, पर न्यायालय इन्हें लागू नहीं करा सकता। भाग-3 – मौलिक अधिकार; भाग-4क – मौलिक कर्तव्य।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 321</small></p>
+        </article>
+        <article class="revision-card" id="q-81">
+
+          <h3>प्रश्न 81</h3>
+          <div class="revision-question-text">संविधान के किस अनुच्छेद में राज्य को ग्राम पंचायतों का गठन करने का निर्देश दिया गया है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अनुच्छेद 38</span></li><li class="correct"><span class="option-label">B</span><span>अनुच्छेद 40</span></li><li class=""><span class="option-label">C</span><span>अनुच्छेद 44</span></li><li class=""><span class="option-label">D</span><span>अनुच्छेद 48</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) अनुच्छेद 40</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 40 – भाग-4 (नीति निदेशक तत्व) में, गांधीवादी विचार पर आधारित।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 143</small></p>
+        </article>
+        <article class="revision-card" id="q-82">
+
+          <h3>प्रश्न 82</h3>
+          <div class="revision-question-text">देश के सभी नागरिकों के लिए &#39;समान नागरिक संहिता&#39; का निर्देश संविधान के किस अनुच्छेद में है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अनुच्छेद 40</span></li><li class="correct"><span class="option-label">B</span><span>अनुच्छेद 44</span></li><li class=""><span class="option-label">C</span><span>अनुच्छेद 45</span></li><li class=""><span class="option-label">D</span><span>अनुच्छेद 48</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) अनुच्छेद 44</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 44 (नीति निदेशक तत्व)। गोवा में पुर्तगाली काल से समान सिविल कोड है; स्वतंत्र भारत में कानून बनाकर इसे लागू करने वाला पहला राज्य उत्तराखंड है (27 जनवरी 2025)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 447</small></p>
+        </article>
+        <article class="revision-card" id="q-83">
+
+          <h3>प्रश्न 83</h3>
+          <div class="revision-question-text">नीति निदेशक तत्वों में &#39;अंतरराष्ट्रीय शांति और सुरक्षा की अभिवृद्धि&#39; किस अनुच्छेद में है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अनुच्छेद 49</span></li><li class=""><span class="option-label">B</span><span>अनुच्छेद 50</span></li><li class="correct"><span class="option-label">C</span><span>अनुच्छेद 51</span></li><li class=""><span class="option-label">D</span><span>अनुच्छेद 52</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) अनुच्छेद 51</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 51 – भारत की विदेश नीति का आधार। अनुच्छेद 49 – स्मारकों का संरक्षण; 50 – न्यायपालिका को कार्यपालिका से अलग करना; 51क – मौलिक कर्तव्य।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 81</small></p>
+        </article>
+        <article class="revision-card" id="q-84">
+
+          <h3>प्रश्न 84</h3>
+          <div class="revision-question-text">संविधान की आठवीं अनुसूची में इस समय कितनी भाषाएँ हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>14</span></li><li class=""><span class="option-label">B</span><span>16</span></li><li class=""><span class="option-label">C</span><span>18</span></li><li class="correct"><span class="option-label">D</span><span>22</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 22</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मूल रूप से 14; 92वें संशोधन (2003) से बोडो, डोगरी, मैथिली और संथाली जुड़ने पर 22। अंग्रेज़ी आठवीं अनुसूची में नहीं है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 441</small></p>
+        </article>
+        <article class="revision-card" id="q-85">
+
+          <h3>प्रश्न 85</h3>
+          <div class="revision-question-text">&#39;दलबदल विरोधी कानून&#39; संविधान की किस अनुसूची में है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>आठवीं</span></li><li class=""><span class="option-label">B</span><span>नौवीं</span></li><li class="correct"><span class="option-label">C</span><span>दसवीं</span></li><li class=""><span class="option-label">D</span><span>ग्यारहवीं</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) दसवीं</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 52वें संविधान संशोधन (1985) से दसवीं अनुसूची जोड़ी गई।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 381</small></p>
+        </article>
+        <article class="revision-card" id="q-86">
+
+          <h3>प्रश्न 86</h3>
+          <div class="revision-question-text">केंद्र और राज्यों के बीच करों के बँटवारे के लिए हर 5 वर्ष पर &#39;वित्त आयोग&#39; का गठन किस अनुच्छेद के तहत होता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>अनुच्छेद 280</span></li><li class=""><span class="option-label">B</span><span>अनुच्छेद 312</span></li><li class=""><span class="option-label">C</span><span>अनुच्छेद 315</span></li><li class=""><span class="option-label">D</span><span>अनुच्छेद 324</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) अनुच्छेद 280</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> राष्ट्रपति अनुच्छेद 280 के तहत गठन करते हैं। 312 – अखिल भारतीय सेवाएँ; 315 – लोक सेवा आयोग; 324 – निर्वाचन आयोग।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 382</small></p>
+        </article>
+        <article class="revision-card" id="q-87">
+
+          <h3>प्रश्न 87</h3>
+          <div class="revision-question-text">संसद के दोनों सदनों की संयुक्त बैठक की अध्यक्षता कौन करता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>राष्ट्रपति</span></li><li class=""><span class="option-label">B</span><span>उपराष्ट्रपति</span></li><li class="correct"><span class="option-label">C</span><span>लोकसभा अध्यक्ष</span></li><li class=""><span class="option-label">D</span><span>प्रधानमंत्री</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) लोकसभा अध्यक्ष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> संयुक्त बैठक राष्ट्रपति बुलाते हैं (अनुच्छेद 108), पर अध्यक्षता लोकसभा अध्यक्ष करते हैं (अनुच्छेद 118(4))।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 144</small></p>
+        </article>
+        <article class="revision-card" id="q-88">
+
+          <h3>प्रश्न 88</h3>
+          <div class="revision-question-text">कोई विधेयक &#39;धन विधेयक&#39; है या नहीं, इसका अंतिम निर्णय कौन करता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>लोकसभा अध्यक्ष</span></li><li class=""><span class="option-label">B</span><span>राष्ट्रपति</span></li><li class=""><span class="option-label">C</span><span>वित्त मंत्री</span></li><li class=""><span class="option-label">D</span><span>राज्यसभा का सभापति</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) लोकसभा अध्यक्ष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 110(3) के अनुसार लोकसभा अध्यक्ष का निर्णय अंतिम होता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 204</small></p>
+        </article>
+        <article class="revision-card" id="q-89">
+
+          <h3>प्रश्न 89</h3>
+          <div class="revision-question-text">संसद का सत्र न चल रहा हो, तब राष्ट्रपति किस अनुच्छेद के तहत अध्यादेश जारी करते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अनुच्छेद 110</span></li><li class="correct"><span class="option-label">B</span><span>अनुच्छेद 123</span></li><li class=""><span class="option-label">C</span><span>अनुच्छेद 213</span></li><li class=""><span class="option-label">D</span><span>अनुच्छेद 352</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) अनुच्छेद 123</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अनुच्छेद 123; राज्यपाल अनुच्छेद 213 के तहत अध्यादेश जारी करते हैं। अनुच्छेद 352 – राष्ट्रीय आपातकाल; 110 – धन विधेयक।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 503</small></p>
+        </article>
+        <article class="revision-card" id="q-90">
+
+          <h3>प्रश्न 90</h3>
+          <div class="revision-question-text">राज्य विधान परिषद के सदस्यों का कार्यकाल कितना होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>4 वर्ष</span></li><li class=""><span class="option-label">B</span><span>5 वर्ष</span></li><li class="correct"><span class="option-label">C</span><span>6 वर्ष</span></li><li class=""><span class="option-label">D</span><span>आजीवन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 6 वर्ष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 6 वर्ष; राज्यसभा की तरह यह स्थायी सदन है, हर 2 वर्ष पर एक-तिहाई सदस्य सेवानिवृत्त होते हैं। कुल सदस्यों के 1/6 भाग को राज्यपाल मनोनीत करते हैं। उत्तर प्रदेश में विधान परिषद है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 383</small></p>
+        </article>
+        <article class="revision-card" id="q-91">
+
+          <h3>प्रश्न 91</h3>
+          <div class="revision-question-text">राज्य सरकार का सर्वोच्च विधि अधिकारी (कानूनी सलाहकार) कौन होता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>महाधिवक्ता</span></li><li class=""><span class="option-label">B</span><span>महान्यायवादी</span></li><li class=""><span class="option-label">C</span><span>सॉलिसिटर जनरल</span></li><li class=""><span class="option-label">D</span><span>ज़िला न्यायाधीश</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) महाधिवक्ता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> महाधिवक्ता (एडवोकेट जनरल) – राज्यपाल अनुच्छेद 165 के तहत नियुक्त करते हैं। केंद्र में महान्यायवादी (अटॉर्नी जनरल) – अनुच्छेद 76।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 505</small></p>
+        </article>
+        <article class="revision-card" id="q-92">
+
+          <h3>प्रश्न 92</h3>
+          <div class="revision-question-text">उच्च न्यायालय के न्यायाधीश कितनी आयु पूरी होने पर सेवानिवृत्त होते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>58 वर्ष</span></li><li class=""><span class="option-label">B</span><span>60 वर्ष</span></li><li class="correct"><span class="option-label">C</span><span>62 वर्ष</span></li><li class=""><span class="option-label">D</span><span>65 वर्ष</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 62 वर्ष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 62 वर्ष; सर्वोच्च न्यायालय के न्यायाधीश 65 वर्ष पर।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 265</small></p>
+        </article>
+        <article class="revision-card" id="q-93">
+
+          <h3>प्रश्न 93</h3>
+          <div class="revision-question-text">ज़िले में फ़ौजदारी (आपराधिक) मुकदमों की सुनवाई करने वाला सबसे बड़ा न्यायाधीश कहलाता है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>ज़िला न्यायाधीश</span></li><li class="correct"><span class="option-label">B</span><span>सत्र न्यायाधीश</span></li><li class=""><span class="option-label">C</span><span>मुंसिफ़</span></li><li class=""><span class="option-label">D</span><span>तहसीलदार</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) सत्र न्यायाधीश</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दीवानी मामलों में वही अधिकारी &#39;ज़िला न्यायाधीश&#39; और फ़ौजदारी मामलों में &#39;सत्र न्यायाधीश&#39; कहलाता है; इसलिए पद का पूरा नाम &#39;ज़िला एवं सत्र न्यायाधीश&#39; है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 507</small></p>
+        </article>
+        <article class="revision-card" id="q-94">
+
+          <h3>प्रश्न 94</h3>
+          <div class="revision-question-text">भारत में &#39;स्थानीय स्वशासन का जनक&#39; किस वायसराय को कहा जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>लॉर्ड कर्ज़न</span></li><li class=""><span class="option-label">B</span><span>लॉर्ड मेयो</span></li><li class="correct"><span class="option-label">C</span><span>लॉर्ड रिपन</span></li><li class=""><span class="option-label">D</span><span>लॉर्ड डलहौज़ी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) लॉर्ड रिपन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लॉर्ड रिपन (1880–84): 1882 में स्थानीय स्वशासन का प्रस्ताव; उन्हीं के समय 1881 में पहली नियमित जनगणना हुई।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 488</small></p>
+        </article>
+        <article class="revision-card" id="q-95">
+
+          <h3>प्रश्न 95</h3>
+          <div class="revision-question-text">भारत में &#39;सामुदायिक विकास कार्यक्रम&#39; कब शुरू हुआ?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>15 अगस्त 1947</span></li><li class=""><span class="option-label">B</span><span>26 जनवरी 1950</span></li><li class="correct"><span class="option-label">C</span><span>2 अक्टूबर 1952</span></li><li class=""><span class="option-label">D</span><span>2 अक्टूबर 1959</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 2 अक्टूबर 1952</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रथम पंचवर्षीय योजना में, ग्रामीण विकास के लिए। इसकी समीक्षा के लिए 1957 में बलवंत राय मेहता समिति बनी, जिसने त्रिस्तरीय पंचायती राज की सिफ़ारिश की।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 89</small></p>
+        </article>
+        <article class="revision-card" id="q-96">
+
+          <h3>प्रश्न 96</h3>
+          <div class="revision-question-text">त्रिस्तरीय पंचायती राज का शुभारंभ सबसे पहले 2 अक्टूबर 1959 को कहाँ हुआ?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>नागौर (राजस्थान)</span></li><li class=""><span class="option-label">B</span><span>अनंतपुर (आंध्र प्रदेश)</span></li><li class=""><span class="option-label">C</span><span>इटावा (उत्तर प्रदेश)</span></li><li class=""><span class="option-label">D</span><span>वडोदरा (गुजरात)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) नागौर (राजस्थान)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> प्रधानमंत्री जवाहरलाल नेहरू ने नागौर से शुरुआत की; उसी वर्ष राजस्थान के बाद आंध्र प्रदेश ने इसे अपनाया।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 18</small></p>
+        </article>
+        <article class="revision-card" id="q-97">
+
+          <h3>प्रश्न 97</h3>
+          <div class="revision-question-text">1977 में गठित किस समिति ने त्रिस्तरीय के स्थान पर &#39;द्विस्तरीय&#39; पंचायती राज (मंडल पंचायत और ज़िला परिषद) की सिफ़ारिश की?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>बलवंत राय मेहता समिति</span></li><li class="correct"><span class="option-label">B</span><span>अशोक मेहता समिति</span></li><li class=""><span class="option-label">C</span><span>एल.एम. सिंघवी समिति</span></li><li class=""><span class="option-label">D</span><span>जी.वी.के. राव समिति</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) अशोक मेहता समिति</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बलवंत राय मेहता (1957) – त्रिस्तरीय व्यवस्था; एल.एम. सिंघवी (1986) – पंचायतों को संवैधानिक दर्जा देने की सिफ़ारिश।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 565</small></p>
+        </article>
+        <article class="revision-card" id="q-98">
+
+          <h3>प्रश्न 98</h3>
+          <div class="revision-question-text">73वें संविधान संशोधन (1992) से जोड़ी गई 11वीं अनुसूची में पंचायतों को कितने विषय सौंपे गए हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>11</span></li><li class=""><span class="option-label">B</span><span>18</span></li><li class=""><span class="option-label">C</span><span>22</span></li><li class="correct"><span class="option-label">D</span><span>29</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 29</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 29 विषय; इसी संशोधन से संविधान में भाग-9 जुड़ा। नगरपालिकाओं की 12वीं अनुसूची में 18 विषय हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 90</small></p>
+        </article>
+        <article class="revision-card" id="q-99">
+
+          <h3>प्रश्न 99</h3>
+          <div class="revision-question-text">नगरपालिकाओं (नगरीय स्थानीय स्वशासन) को संवैधानिक दर्जा किस संविधान संशोधन से मिला?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>42वाँ</span></li><li class=""><span class="option-label">B</span><span>44वाँ</span></li><li class=""><span class="option-label">C</span><span>73वाँ</span></li><li class="correct"><span class="option-label">D</span><span>74वाँ</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 74वाँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 74वाँ संशोधन (1992): भाग 9-क और 12वीं अनुसूची (18 विषय) जुड़े; 1 जून 1993 से लागू।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 145</small></p>
+        </article>
+        <article class="revision-card" id="q-100">
+
+          <h3>प्रश्न 100</h3>
+          <div class="revision-question-text">ग्राम पंचायत का सदस्य या प्रधान चुने जाने के लिए न्यूनतम आयु कितनी होनी चाहिए?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>18 वर्ष</span></li><li class="correct"><span class="option-label">B</span><span>21 वर्ष</span></li><li class=""><span class="option-label">C</span><span>25 वर्ष</span></li><li class=""><span class="option-label">D</span><span>30 वर्ष</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) 21 वर्ष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 21 वर्ष। मतदान – 18 वर्ष; लोकसभा व विधानसभा सदस्य – 25 वर्ष; राज्यसभा व विधान परिषद सदस्य – 30 वर्ष।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 266</small></p>
+        </article>
+        <article class="revision-card" id="q-101">
+
+          <h3>प्रश्न 101</h3>
+          <div class="revision-question-text">राष्ट्रगान &#39;जन-गण-मन&#39; के पूर्ण गायन की निर्धारित अवधि कितनी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>20 सेकंड</span></li><li class="correct"><span class="option-label">B</span><span>52 सेकंड</span></li><li class=""><span class="option-label">C</span><span>65 सेकंड</span></li><li class=""><span class="option-label">D</span><span>90 सेकंड</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) 52 सेकंड</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लगभग 52 सेकंड; संक्षिप्त रूप (पहली और अंतिम पंक्तियाँ) लगभग 20 सेकंड। संविधान सभा ने 24 जनवरी 1950 को इसे राष्ट्रगान के रूप में अपनाया।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 232</small></p>
+        </article>
+        <article class="revision-card" id="q-102">
+
+          <h3>प्रश्न 102</h3>
+          <div class="revision-question-text">युद्ध या हवाई हमले के समय रात में शत्रु के विमानों से बचने के लिए पूरे नगर की रोशनी बुझा देने या ढक देने को क्या कहते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कर्फ़्यू</span></li><li class=""><span class="option-label">B</span><span>मॉक ड्रिल</span></li><li class=""><span class="option-label">C</span><span>निकासी (इवैक्युएशन)</span></li><li class="correct"><span class="option-label">D</span><span>ब्लैक आउट</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) ब्लैक आउट</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ब्लैक आउट (प्रकाश-प्रतिबंध) नागरिक सुरक्षा का उपाय है। हवाई हमले की चेतावनी का सायरन ऊँची-नीची (लहरदार) आवाज़ में और &#39;ख़तरा टल गया&#39; का सायरन एक-सी लगातार आवाज़ में बजता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 233</small></p>
+        </article>
+        <article class="revision-card" id="q-103">
+
+          <h3>प्रश्न 103</h3>
+          <div class="revision-question-text">भारत में गियर वाले निजी मोटर वाहन का ड्राइविंग लाइसेंस पाने की न्यूनतम आयु कितनी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>16 वर्ष</span></li><li class="correct"><span class="option-label">B</span><span>18 वर्ष</span></li><li class=""><span class="option-label">C</span><span>20 वर्ष</span></li><li class=""><span class="option-label">D</span><span>21 वर्ष</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) 18 वर्ष</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 18 वर्ष। 50 सीसी तक के बिना गियर वाले दोपहिया के लिए 16 वर्ष (अभिभावक की सहमति से)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 234</small></p>
+        </article>
+        <article class="revision-card" id="q-104">
+
+          <h3>प्रश्न 104</h3>
+          <div class="revision-question-text">2011 की जनगणना के अनुसार उत्तर प्रदेश का जनसंख्या घनत्व (व्यक्ति प्रति वर्ग किमी) कितना है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>382</span></li><li class=""><span class="option-label">B</span><span>618</span></li><li class="correct"><span class="option-label">C</span><span>829</span></li><li class=""><span class="option-label">D</span><span>1106</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 829</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 829; भारत का औसत 382। सबसे अधिक घनत्व वाला राज्य बिहार (1106) और सबसे कम अरुणाचल प्रदेश (17)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 320</small></p>
+        </article>
+        <article class="revision-card" id="q-105">
+
+          <h3>प्रश्न 105</h3>
+          <div class="revision-question-text">2011 की जनगणना के अनुसार सर्वाधिक लिंगानुपात (प्रति 1000 पुरुषों पर स्त्रियाँ) वाला राज्य –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>तमिलनाडु</span></li><li class="correct"><span class="option-label">B</span><span>केरल</span></li><li class=""><span class="option-label">C</span><span>हिमाचल प्रदेश</span></li><li class=""><span class="option-label">D</span><span>उत्तर प्रदेश</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) केरल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> केरल (1084)। भारत का औसत 943, उत्तर प्रदेश 912; सबसे कम हरियाणा (879)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 440</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">गृह विज्ञान</h2>
+
+        <article class="revision-card" id="q-106">
+
+          <h3>प्रश्न 106</h3>
+          <div class="revision-question-text">लार में पाया जाने वाला कौन-सा एंज़ाइम मंड (स्टार्च) को माल्टोज़ शर्करा में बदलता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पेप्सिन</span></li><li class=""><span class="option-label">B</span><span>ट्रिप्सिन</span></li><li class=""><span class="option-label">C</span><span>लाइपेज़</span></li><li class="correct"><span class="option-label">D</span><span>टायलिन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) टायलिन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> टायलिन (लार एमाइलेज़), इसलिए भोजन का पाचन मुँह से ही शुरू हो जाता है। पेप्सिन व ट्रिप्सिन प्रोटीन पचाते हैं, लाइपेज़ वसा।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 217</small></p>
+        </article>
+        <article class="revision-card" id="q-107">
+
+          <h3>प्रश्न 107</h3>
+          <div class="revision-question-text">बच्चों के आमाशय में बनने वाला वह एंज़ाइम, जो दूध की प्रोटीन (केसीन) को जमाकर पचाने में मदद करता है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पेप्सिन</span></li><li class="correct"><span class="option-label">B</span><span>रेनिन</span></li><li class=""><span class="option-label">C</span><span>एमाइलेज़</span></li><li class=""><span class="option-label">D</span><span>लाइपेज़</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) रेनिन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रेनिन दूध को दही जैसा जमा देता है; पेप्सिन अन्य प्रोटीनों को पेप्टोन में बदलता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 397</small></p>
+        </article>
+        <article class="revision-card" id="q-108">
+
+          <h3>प्रश्न 108</h3>
+          <div class="revision-question-text">पित्त रस का निर्माण शरीर के किस अंग में होता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>यकृत</span></li><li class=""><span class="option-label">B</span><span>पित्ताशय</span></li><li class=""><span class="option-label">C</span><span>अग्न्याशय</span></li><li class=""><span class="option-label">D</span><span>आमाशय</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) यकृत</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> यकृत (लीवर) – शरीर की सबसे बड़ी ग्रंथि – पित्त बनाता है; पित्त पित्ताशय में जमा रहता है और वसा के पाचन में मदद करता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 277</small></p>
+        </article>
+        <article class="revision-card" id="q-109">
+
+          <h3>प्रश्न 109</h3>
+          <div class="revision-question-text">किस ग्रंथि को &#39;मास्टर ग्रंथि&#39; कहा जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>थायरॉइड</span></li><li class="correct"><span class="option-label">B</span><span>पीयूष (पिट्यूटरी)</span></li><li class=""><span class="option-label">C</span><span>अधिवृक्क (एड्रिनल)</span></li><li class=""><span class="option-label">D</span><span>अग्न्याशय</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) पीयूष (पिट्यूटरी)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मस्तिष्क के आधार पर स्थित, मटर के दाने जितनी पीयूष ग्रंथि दूसरी अंतःस्रावी ग्रंथियों को नियंत्रित करती है। सबसे बड़ी अंतःस्रावी ग्रंथि – थायरॉइड।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 459</small></p>
+        </article>
+        <article class="revision-card" id="q-110">
+
+          <h3>प्रश्न 110</h3>
+          <div class="revision-question-text">लाल रक्त कणिकाओं (RBC) का औसत जीवनकाल कितना होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>10 दिन</span></li><li class=""><span class="option-label">B</span><span>60 दिन</span></li><li class="correct"><span class="option-label">C</span><span>120 दिन</span></li><li class=""><span class="option-label">D</span><span>365 दिन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 120 दिन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लगभग 120 दिन; ये अस्थि-मज्जा में बनती हैं और प्लीहा में नष्ट होती हैं, इसलिए प्लीहा को &#39;RBC का क़ब्रिस्तान&#39; कहते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 456</small></p>
+        </article>
+        <article class="revision-card" id="q-111">
+
+          <h3>प्रश्न 111</h3>
+          <div class="revision-question-text">किस रक्त समूह को &#39;सर्वदाता&#39; (यूनिवर्सल डोनर) कहा जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>A</span></li><li class=""><span class="option-label">B</span><span>B</span></li><li class=""><span class="option-label">C</span><span>AB</span></li><li class="correct"><span class="option-label">D</span><span>O</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) O</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> O समूह की लाल कणिकाओं पर A या B एंटीजन नहीं होता। AB – सर्वग्राही। रक्त समूहों की खोज कार्ल लैंडस्टीनर ने की।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 576</small></p>
+        </article>
+        <article class="revision-card" id="q-112">
+
+          <h3>प्रश्न 112</h3>
+          <div class="revision-question-text">रक्तचाप मापने वाला यंत्र –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>स्फ़िग्मोमैनोमीटर</span></li><li class=""><span class="option-label">B</span><span>स्टेथोस्कोप</span></li><li class=""><span class="option-label">C</span><span>थर्मामीटर</span></li><li class=""><span class="option-label">D</span><span>बैरोमीटर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) स्फ़िग्मोमैनोमीटर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्वस्थ वयस्क का सामान्य रक्तचाप लगभग 120/80 mmHg होता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 344</small></p>
+        </article>
+        <article class="revision-card" id="q-113">
+
+          <h3>प्रश्न 113</h3>
+          <div class="revision-question-text">मानव शरीर की सबसे लंबी और मज़बूत हड्डी –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>टिबिया</span></li><li class=""><span class="option-label">B</span><span>ह्यूमरस</span></li><li class="correct"><span class="option-label">C</span><span>फ़ीमर (जाँघ की हड्डी)</span></li><li class=""><span class="option-label">D</span><span>स्टेपीज़</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) फ़ीमर (जाँघ की हड्डी)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वयस्क शरीर में 206 हड्डियाँ होती हैं; सबसे छोटी हड्डी स्टेपीज़ (कान में) है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 224</small></p>
+        </article>
+        <article class="revision-card" id="q-114">
+
+          <h3>प्रश्न 114</h3>
+          <div class="revision-question-text">वृद्धावस्था में कैल्शियम व विटामिन D की कमी से हड्डियों का घनत्व घटकर उनका कमज़ोर और भुरभुरा हो जाना कहलाता है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>ऑस्टियोपोरोसिस</span></li><li class=""><span class="option-label">B</span><span>रिकेट्स</span></li><li class=""><span class="option-label">C</span><span>गठिया</span></li><li class=""><span class="option-label">D</span><span>स्कर्वी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) ऑस्टियोपोरोसिस</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ऑस्टियोपोरोसिस में हड्डियाँ छिद्रयुक्त होकर आसानी से टूटती हैं। बच्चों में विटामिन D की कमी से रिकेट्स होता है; स्कर्वी विटामिन C की कमी से।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 103</small></p>
+        </article>
+        <article class="revision-card" id="q-115">
+
+          <h3>प्रश्न 115</h3>
+          <div class="revision-question-text">शराब के अधिक सेवन से &#39;सिरोसिस&#39; रोग किस अंग में होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>फेफड़े</span></li><li class=""><span class="option-label">B</span><span>गुर्दे</span></li><li class=""><span class="option-label">C</span><span>हृदय</span></li><li class="correct"><span class="option-label">D</span><span>यकृत</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) यकृत</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शराब के विषैले प्रभाव को यकृत ही निष्क्रिय करता है; अधिक सेवन से उसकी कोशिकाएँ नष्ट होकर कठोर हो जाती हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 583</small></p>
+        </article>
+        <article class="revision-card" id="q-116">
+
+          <h3>प्रश्न 116</h3>
+          <div class="revision-question-text">तंबाकू में पाया जाने वाला मुख्य नशीला और हानिकारक पदार्थ –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कैफ़ीन</span></li><li class=""><span class="option-label">B</span><span>मॉर्फ़ीन</span></li><li class="correct"><span class="option-label">C</span><span>निकोटीन</span></li><li class=""><span class="option-label">D</span><span>कोकीन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) निकोटीन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> निकोटीन; तंबाकू मुँह और फेफड़ों के कैंसर का प्रमुख कारण है। चाय-कॉफ़ी में कैफ़ीन, अफ़ीम में मॉर्फ़ीन होता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 284</small></p>
+        </article>
+        <article class="revision-card" id="q-117">
+
+          <h3>प्रश्न 117</h3>
+          <div class="revision-question-text">&#39;टी.ए.बी.&#39; (TAB) का टीका किस रोग से बचाव के लिए लगाया जाता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>टाइफ़ाइड (मियादी बुखार)</span></li><li class=""><span class="option-label">B</span><span>तपेदिक</span></li><li class=""><span class="option-label">C</span><span>पोलियो</span></li><li class=""><span class="option-label">D</span><span>खसरा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) टाइफ़ाइड (मियादी बुखार)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> TAB = टाइफ़ाइड और पैराटाइफ़ाइड A व B। तपेदिक – BCG; खसरा-रूबेला – MR टीका।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 106</small></p>
+        </article>
+        <article class="revision-card" id="q-118">
+
+          <h3>प्रश्न 118</h3>
+          <div class="revision-question-text">डिप्थीरिया (गलघोंटू), काली खाँसी और टिटनेस से बचाव के लिए बच्चों को कौन-सा संयुक्त टीका लगाया जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>BCG</span></li><li class=""><span class="option-label">B</span><span>MR</span></li><li class="correct"><span class="option-label">C</span><span>DPT</span></li><li class=""><span class="option-label">D</span><span>OPV</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) DPT</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> DPT = डिप्थीरिया, पर्टुसिस (काली खाँसी), टिटनेस। BCG – तपेदिक; MR – खसरा व रूबेला; OPV – पोलियो।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 457</small></p>
+        </article>
+        <article class="revision-card" id="q-119">
+
+          <h3>प्रश्न 119</h3>
+          <div class="revision-question-text">कुत्ते, बंदर या सियार के काटने से होने वाला वह विषाणु रोग, जिसमें रोगी को पानी से डर लगने लगता है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>रेबीज़</span></li><li class=""><span class="option-label">B</span><span>टिटनेस</span></li><li class=""><span class="option-label">C</span><span>प्लेग</span></li><li class=""><span class="option-label">D</span><span>डिप्थीरिया</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) रेबीज़</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> रेबीज़ (जलांतक/हाइड्रोफ़ोबिया) तंत्रिका तंत्र को प्रभावित करता है; इसका टीका लुई पाश्चर ने बनाया। काटने पर घाव को तुरंत साबुन और बहते पानी से धोएँ और टीका लगवाएँ।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 338</small></p>
+        </article>
+        <article class="revision-card" id="q-120">
+
+          <h3>प्रश्न 120</h3>
+          <div class="revision-question-text">मलेरिया की दवा &#39;कुनैन&#39; किस वृक्ष की छाल से प्राप्त होती है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>नीम</span></li><li class="correct"><span class="option-label">B</span><span>सिनकोना</span></li><li class=""><span class="option-label">C</span><span>यूकेलिप्टस</span></li><li class=""><span class="option-label">D</span><span>अर्जुन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) सिनकोना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मलेरिया का रोगजनक प्लाज़्मोडियम (प्रोटोज़ोआ) है, जो मादा एनाफ़िलीज़ मच्छर के काटने से फैलता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 398</small></p>
+        </article>
+        <article class="revision-card" id="q-121">
+
+          <h3>प्रश्न 121</h3>
+          <div class="revision-question-text">एड्स (AIDS) की जाँच के लिए कौन-सा परीक्षण किया जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>विडाल परीक्षण</span></li><li class=""><span class="option-label">B</span><span>मैंटू परीक्षण</span></li><li class=""><span class="option-label">C</span><span>शिक परीक्षण</span></li><li class="correct"><span class="option-label">D</span><span>एलिसा (ELISA) परीक्षण</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) एलिसा (ELISA) परीक्षण</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एड्स HIV विषाणु से होता है; 1 दिसंबर – विश्व एड्स दिवस। विडाल – टाइफ़ाइड; मैंटू – तपेदिक; शिक – डिप्थीरिया।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 517</small></p>
+        </article>
+        <article class="revision-card" id="q-122">
+
+          <h3>प्रश्न 122</h3>
+          <div class="revision-question-text">भोजन पकाने की किस विधि में पोषक तत्व सबसे अधिक सुरक्षित रहते हैं?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>भाप से पकाना</span></li><li class=""><span class="option-label">B</span><span>तलना</span></li><li class=""><span class="option-label">C</span><span>अधिक पानी में उबालकर पानी फेंक देना</span></li><li class=""><span class="option-label">D</span><span>भूनना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) भाप से पकाना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> भाप में भोजन सीधे पानी के संपर्क में नहीं आता, इसलिए जल में घुलनशील विटामिन (B, C) और खनिज कम नष्ट होते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 108</small></p>
+        </article>
+        <article class="revision-card" id="q-123">
+
+          <h3>प्रश्न 123</h3>
+          <div class="revision-question-text">गेहूँ के आटे को लचीला (गूँधने योग्य) बनाने वाली प्रोटीन –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>केसीन</span></li><li class=""><span class="option-label">B</span><span>ज़ीन</span></li><li class=""><span class="option-label">C</span><span>एल्ब्यूमिन</span></li><li class="correct"><span class="option-label">D</span><span>ग्लूटेन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) ग्लूटेन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> गेहूँ – ग्लूटेन; मक्का – ज़ीन; दूध – केसीन; अंडे की सफ़ेदी – एल्ब्यूमिन।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 152</small></p>
+        </article>
+        <article class="revision-card" id="q-124">
+
+          <h3>प्रश्न 124</h3>
+          <div class="revision-question-text">आँवले में कसैलापन किस तत्व के कारण होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कैफ़ीन</span></li><li class="correct"><span class="option-label">B</span><span>टैनिन</span></li><li class=""><span class="option-label">C</span><span>लाइकोपीन</span></li><li class=""><span class="option-label">D</span><span>पेक्टिन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) टैनिन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> टैनिन के कारण; आँवला विटामिन C का बहुत अच्छा स्रोत है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 214</small></p>
+        </article>
+        <article class="revision-card" id="q-125">
+
+          <h3>प्रश्न 125</h3>
+          <div class="revision-question-text">टमाटर का लाल रंग किस वर्णक के कारण होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कैरोटीन</span></li><li class=""><span class="option-label">B</span><span>क्लोरोफ़िल</span></li><li class=""><span class="option-label">C</span><span>करक्यूमिन</span></li><li class="correct"><span class="option-label">D</span><span>लाइकोपीन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) लाइकोपीन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लाइकोपीन; गाजर का नारंगी रंग – कैरोटीन; हल्दी का पीला रंग – करक्यूमिन।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 274</small></p>
+        </article>
+        <article class="revision-card" id="q-126">
+
+          <h3>प्रश्न 126</h3>
+          <div class="revision-question-text">जैम, जेली, अचार, स्क्वैश जैसे फल-उत्पादों की गुणवत्ता प्रमाणित करने वाला चिह्न –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>ISI</span></li><li class=""><span class="option-label">B</span><span>एगमार्क</span></li><li class="correct"><span class="option-label">C</span><span>FPO</span></li><li class=""><span class="option-label">D</span><span>हॉलमार्क</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) FPO</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> FPO (फ़्रूट प्रोडक्ट्स ऑर्डर, 1955), अब FSSAI के अंतर्गत। एगमार्क – कृषि उत्पाद (घी, शहद, मसाले); ISI – औद्योगिक वस्तुएँ; हॉलमार्क – सोने-चाँदी के आभूषण।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 575</small></p>
+        </article>
+        <article class="revision-card" id="q-127">
+
+          <h3>प्रश्न 127</h3>
+          <div class="revision-question-text">सूती वस्त्रों में कड़ापन और चमक लाने के लिए किसका कलफ़ लगाया जाता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>अरारोट या चावल के माँड़ का</span></li><li class=""><span class="option-label">B</span><span>गोंद का</span></li><li class=""><span class="option-label">C</span><span>बोरेक्स (सुहागे) का</span></li><li class=""><span class="option-label">D</span><span>नील का</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) अरारोट या चावल के माँड़ का</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सूती वस्त्रों पर अरारोट, मैदा या चावल का माँड़; रेशमी वस्त्रों पर गोंद का कलफ़ लगाया जाता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 158</small></p>
+        </article>
+        <article class="revision-card" id="q-128">
+
+          <h3>प्रश्न 128</h3>
+          <div class="revision-question-text">कपड़े पर लगे चाय या कॉफ़ी के ताज़ा धब्बे छुड़ाने का सबसे सरल उपाय –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मिट्टी का तेल रगड़ना</span></li><li class="correct"><span class="option-label">B</span><span>धब्बे पर ऊँचाई से खौलता पानी डालना</span></li><li class=""><span class="option-label">C</span><span>धब्बे पर गरम इस्त्री करना</span></li><li class=""><span class="option-label">D</span><span>कपड़े को धूप में सुखाना</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) धब्बे पर ऊँचाई से खौलता पानी डालना</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पुराने धब्बे पर ग्लिसरीन या सुहागा (बोरेक्स) लगाकर धोते हैं। ग्रीस-पेंट के धब्बे मिट्टी के तेल या तारपीन से छूटते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 399</small></p>
+        </article>
+        <article class="revision-card" id="q-129">
+
+          <h3>प्रश्न 129</h3>
+          <div class="revision-question-text">कपड़ा काटने से पहले नाप के अनुसार उस पर निशान लगाने के लिए क्या प्रयोग किया जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अंगुश्ताना (थिम्बल)</span></li><li class=""><span class="option-label">B</span><span>बॉबिन</span></li><li class=""><span class="option-label">C</span><span>शटल</span></li><li class="correct"><span class="option-label">D</span><span>मिल्टन चॉक (दर्जी की चॉक)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) मिल्टन चॉक (दर्जी की चॉक)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अंगुश्ताना हाथ की सिलाई में अंगुली को सुई से बचाता है; बॉबिन पर नीचे का धागा लिपटा रहता है, जो शटल में लगती है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 339</small></p>
+        </article>
+        <article class="revision-card" id="q-130">
+
+          <h3>प्रश्न 130</h3>
+          <div class="revision-question-text">सिलाई मशीन में कपड़ा अपने-आप आगे नहीं खिसक रहा और एक ही जगह टाँके इकट्ठे हो रहे हैं; किस पुर्ज़े में खराबी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>प्रेसर फ़ुट</span></li><li class="correct"><span class="option-label">B</span><span>फ़ीड डॉग (दँती)</span></li><li class=""><span class="option-label">C</span><span>बॉबिन केस</span></li><li class=""><span class="option-label">D</span><span>हैंड व्हील</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) फ़ीड डॉग (दँती)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सुई की प्लेट के नीचे का दाँतेदार पुर्ज़ा फ़ीड डॉग हर टाँके के साथ कपड़े को आगे खिसकाता है। मशीन भारी चले, तो प्रायः तेल की कमी या धूल-धागा फँसना कारण होता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 580</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">शारीरिक शिक्षा, योग व प्राथमिक चिकित्सा</h2>
+
+        <article class="revision-card" id="q-131">
+
+          <h3>प्रश्न 131</h3>
+          <div class="revision-question-text">भारत ने ओलंपिक हॉकी में पहला स्वर्ण पदक किस वर्ष जीता?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>1928</span></li><li class=""><span class="option-label">B</span><span>1932</span></li><li class=""><span class="option-label">C</span><span>1936</span></li><li class=""><span class="option-label">D</span><span>1948</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) 1928</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 1928 के एम्स्टर्डम ओलंपिक में। भारत ने 1928 से 1956 तक लगातार 6 और कुल 8 ओलंपिक हॉकी स्वर्ण जीते (अंतिम 1980, मॉस्को)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 401</small></p>
+        </article>
+        <article class="revision-card" id="q-132">
+
+          <h3>प्रश्न 132</h3>
+          <div class="revision-question-text">राष्ट्रमंडल खेल पहली बार कब और कहाँ आयोजित हुए?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>1896, एथेंस</span></li><li class=""><span class="option-label">B</span><span>1951, नई दिल्ली</span></li><li class=""><span class="option-label">C</span><span>1924, पेरिस</span></li><li class="correct"><span class="option-label">D</span><span>1930, हैमिल्टन (कनाडा)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 1930, हैमिल्टन (कनाडा)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तब इनका नाम &#39;ब्रिटिश एम्पायर गेम्स&#39; था। 2010 के राष्ट्रमंडल खेल नई दिल्ली में हुए; 1951 में नई दिल्ली में पहले एशियाई खेल हुए।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 461</small></p>
+        </article>
+        <article class="revision-card" id="q-133">
+
+          <h3>प्रश्न 133</h3>
+          <div class="revision-question-text">हॉकी के जादूगर मेजर ध्यानचंद की आत्मकथा का नाम –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>प्लेइंग इट माय वे</span></li><li class=""><span class="option-label">B</span><span>द रेस ऑफ़ माय लाइफ़</span></li><li class="correct"><span class="option-label">C</span><span>गोल</span></li><li class=""><span class="option-label">D</span><span>अनब्रेकेबल</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) गोल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> &#39;गोल&#39; (1952)। &#39;प्लेइंग इट माय वे&#39; – सचिन तेंदुलकर; &#39;द रेस ऑफ़ माय लाइफ़&#39; – मिल्खा सिंह; &#39;अनब्रेकेबल&#39; – मैरी कॉम।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 164</small></p>
+        </article>
+        <article class="revision-card" id="q-134">
+
+          <h3>प्रश्न 134</h3>
+          <div class="revision-question-text">खो-खो में प्रत्येक टीम के कितने खिलाड़ी मैदान पर खेलते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>6</span></li><li class=""><span class="option-label">B</span><span>7</span></li><li class="correct"><span class="option-label">C</span><span>9</span></li><li class=""><span class="option-label">D</span><span>11</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 9</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> खो-खो में 9; कबड्डी में 7 (दोनों में स्थानापन्न सहित टीम में 12 खिलाड़ी)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 341</small></p>
+        </article>
+        <article class="revision-card" id="q-135">
+
+          <h3>प्रश्न 135</h3>
+          <div class="revision-question-text">अंतरराष्ट्रीय क्रिकेट परिषद (ICC) का मुख्यालय कहाँ है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>दुबई</span></li><li class=""><span class="option-label">B</span><span>लंदन</span></li><li class=""><span class="option-label">C</span><span>मुंबई</span></li><li class=""><span class="option-label">D</span><span>मेलबर्न</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) दुबई</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 2005 से दुबई (संयुक्त अरब अमीरात) में; इससे पहले लंदन में था। BCCI का मुख्यालय मुंबई में है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 464</small></p>
+        </article>
+        <article class="revision-card" id="q-136">
+
+          <h3>प्रश्न 136</h3>
+          <div class="revision-question-text">भारत का पहला राष्ट्रीय खेल विश्वविद्यालय किस राज्य में स्थापित किया गया?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पंजाब</span></li><li class="correct"><span class="option-label">B</span><span>मणिपुर</span></li><li class=""><span class="option-label">C</span><span>गुजरात</span></li><li class=""><span class="option-label">D</span><span>उत्तर प्रदेश</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) मणिपुर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> राष्ट्रीय खेल विश्वविद्यालय, इंफ़ाल (मणिपुर) – राष्ट्रीय खेल विश्वविद्यालय अधिनियम 2018 के तहत।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 110</small></p>
+        </article>
+        <article class="revision-card" id="q-137">
+
+          <h3>प्रश्न 137</h3>
+          <div class="revision-question-text">&#39;गीता पढ़ने की अपेक्षा फ़ुटबॉल खेलकर तुम स्वर्ग के अधिक निकट पहुँच सकोगे&#39; – युवाओं को शारीरिक बल का महत्व बताने वाला यह कथन किसका है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>महात्मा गांधी</span></li><li class=""><span class="option-label">B</span><span>रवींद्रनाथ टैगोर</span></li><li class=""><span class="option-label">C</span><span>मेजर ध्यानचंद</span></li><li class="correct"><span class="option-label">D</span><span>स्वामी विवेकानंद</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) स्वामी विवेकानंद</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> स्वामी विवेकानंद; उनकी जयंती 12 जनवरी राष्ट्रीय युवा दिवस के रूप में मनाई जाती है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 112</small></p>
+        </article>
+        <article class="revision-card" id="q-138">
+
+          <h3>प्रश्न 138</h3>
+          <div class="revision-question-text">एकाग्रता और संतुलन बढ़ाने के लिए एक पैर पर खड़े होकर दूसरे पैर का तलवा जाँघ पर टिकाने और दोनों हाथ सिर के ऊपर जोड़ने वाला आसन –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>ताड़ासन</span></li><li class=""><span class="option-label">B</span><span>गरुड़ासन</span></li><li class="correct"><span class="option-label">C</span><span>वृक्षासन</span></li><li class=""><span class="option-label">D</span><span>वज्रासन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) वृक्षासन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वृक्ष की तरह स्थिर खड़े रहने के कारण इसे वृक्षासन कहते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 522</small></p>
+        </article>
+        <article class="revision-card" id="q-139">
+
+          <h3>प्रश्न 139</h3>
+          <div class="revision-question-text">घुटनों का आपस में टकराना (नॉक-नी) और धनुषाकार टाँगें (बो-लेग्स) किस प्रकार की विकृतियाँ हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मानसिक रोग</span></li><li class=""><span class="option-label">B</span><span>संक्रामक रोग</span></li><li class=""><span class="option-label">C</span><span>आनुवंशिक रक्त विकार</span></li><li class="correct"><span class="option-label">D</span><span>आसन (मुद्रा) संबंधी विकृतियाँ</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) आसन (मुद्रा) संबंधी विकृतियाँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> अन्य आसन-दोष – सपाट पैर, कूबड़ (काइफ़ोसिस), लॉर्डोसिस, स्कोलियोसिस। कारण – गलत मुद्रा, विटामिन D व कैल्शियम की कमी।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 343</small></p>
+        </article>
+        <article class="revision-card" id="q-140">
+
+          <h3>प्रश्न 140</h3>
+          <div class="revision-question-text">दिव्यांगजन अधिकार अधिनियम 2016 में दिव्यांगता की कितनी श्रेणियाँ मानी गई हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>7</span></li><li class=""><span class="option-label">B</span><span>14</span></li><li class=""><span class="option-label">C</span><span>19</span></li><li class="correct"><span class="option-label">D</span><span>21</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 21</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 1995 के अधिनियम की 7 श्रेणियों को बढ़ाकर 21 किया गया; तेज़ाब हमला पीड़ित, बौनापन, थैलेसीमिया आदि जोड़े गए।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 173</small></p>
+        </article>
+        <article class="revision-card" id="q-141">
+
+          <h3>प्रश्न 141</h3>
+          <div class="revision-question-text">&#39;प्राथमिक चिकित्सा का जनक&#39; किसे माना जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>फ़्लोरेंस नाइटिंगेल</span></li><li class="correct"><span class="option-label">B</span><span>फ़्रेडरिक वॉन एस्मार्च</span></li><li class=""><span class="option-label">C</span><span>हेनरी ड्यूनांट</span></li><li class=""><span class="option-label">D</span><span>लुई पाश्चर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) फ़्रेडरिक वॉन एस्मार्च</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जर्मन शल्य-चिकित्सक फ़्रेडरिक वॉन एस्मार्च। हेनरी ड्यूनांट ने रेड क्रॉस की स्थापना की; फ़्लोरेंस नाइटिंगेल आधुनिक नर्सिंग की जननी हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 524</small></p>
+        </article>
+        <article class="revision-card" id="q-142">
+
+          <h3>प्रश्न 142</h3>
+          <div class="revision-question-text">किसी व्यक्ति के कपड़ों में आग लग जाए, तो तुरंत क्या करना चाहिए?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>उसे दौड़कर पानी तक जाने को कहें</span></li><li class=""><span class="option-label">B</span><span>पंखा चलाकर हवा करें</span></li><li class=""><span class="option-label">C</span><span>जले भाग पर तुरंत तेल लगाएँ</span></li><li class="correct"><span class="option-label">D</span><span>उसे कंबल या मोटे कपड़े में लपेटकर ज़मीन पर लुढ़काएँ</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) उसे कंबल या मोटे कपड़े में लपेटकर ज़मीन पर लुढ़काएँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> दौड़ने से ऑक्सीजन मिलती है और आग भड़कती है; लपेटने और लुढ़काने से हवा का संपर्क टूटकर आग बुझ जाती है (&#39;रुको, लेटो, लुढ़को&#39;)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 293</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">संगीत</h2>
+
+        <article class="revision-card" id="q-143">
+
+          <h3>प्रश्न 143</h3>
+          <div class="revision-question-text">हिंदुस्तानी संगीत के किस थाट में सातों स्वर शुद्ध होते हैं?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>बिलावल</span></li><li class=""><span class="option-label">B</span><span>कल्याण</span></li><li class=""><span class="option-label">C</span><span>खमाज</span></li><li class=""><span class="option-label">D</span><span>भैरवी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) बिलावल</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बिलावल को शुद्ध थाट माना जाता है। कल्याण – तीव्र म; खमाज – कोमल नि; भैरवी – रे, ग, ध, नि कोमल। पं. भातखंडे ने 10 थाट माने।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 525</small></p>
+        </article>
+        <article class="revision-card" id="q-144">
+
+          <h3>प्रश्न 144</h3>
+          <div class="revision-question-text">एक मात्रा में चार बोल बोलने की लयकारी कहलाती है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>दुगुन</span></li><li class=""><span class="option-label">B</span><span>तिगुन</span></li><li class=""><span class="option-label">C</span><span>आड़</span></li><li class="correct"><span class="option-label">D</span><span>चौगुन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) चौगुन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> एक मात्रा में एक बोल – ठाह (बराबर लय), दो – दुगुन, तीन – तिगुन, चार – चौगुन। आड़ – डेढ़ गुनी लय।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 406</small></p>
+        </article>
+        <article class="revision-card" id="q-145">
+
+          <h3>प्रश्न 145</h3>
+          <div class="revision-question-text">&#39;पंचम सवारी&#39; ताल में कितनी मात्राएँ होती हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>9</span></li><li class=""><span class="option-label">B</span><span>10</span></li><li class=""><span class="option-label">C</span><span>12</span></li><li class="correct"><span class="option-label">D</span><span>15</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) 15</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 15 मात्राएँ। तीनताल – 16, धमार – 14, एकताल व चौताल – 12, झपताल – 10, कहरवा – 8, रूपक – 7, दादरा – 6।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 114</small></p>
+        </article>
+        <article class="revision-card" id="q-146">
+
+          <h3>प्रश्न 146</h3>
+          <div class="revision-question-text">मंजीरा, झाँझ, घुँघरू, करताल और जलतरंग जैसे आपस में टकराकर या चोट से बजने वाले वाद्य कहलाते हैं –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>तत वाद्य</span></li><li class=""><span class="option-label">B</span><span>सुषिर वाद्य</span></li><li class="correct"><span class="option-label">C</span><span>घन वाद्य</span></li><li class=""><span class="option-label">D</span><span>अवनद्ध वाद्य</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) घन वाद्य</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> तत – तार वाले (सितार, वीणा); सुषिर – फूँक से (बाँसुरी, शहनाई); अवनद्ध – चमड़ा मढ़े (तबला, ढोलक); घन – मंजीरा, झाँझ आदि। यह वर्गीकरण भरतमुनि के नाट्यशास्त्र में है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 586</small></p>
+        </article>
+        <article class="revision-card" id="q-147">
+
+          <h3>प्रश्न 147</h3>
+          <div class="revision-question-text">झंडा गीत &#39;विजयी विश्व तिरंगा प्यारा, झंडा ऊँचा रहे हमारा&#39; के रचयिता –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>श्यामलाल गुप्त &#39;पार्षद&#39;</span></li><li class=""><span class="option-label">B</span><span>मैथिलीशरण गुप्त</span></li><li class=""><span class="option-label">C</span><span>सुभद्राकुमारी चौहान</span></li><li class=""><span class="option-label">D</span><span>माखनलाल चतुर्वेदी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) श्यामलाल गुप्त &#39;पार्षद&#39;</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कानपुर के स्वतंत्रता सेनानी श्यामलाल गुप्त &#39;पार्षद&#39; ने लिखा।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 172</small></p>
+        </article>
+        <article class="revision-card" id="q-148">
+
+          <h3>प्रश्न 148</h3>
+          <div class="revision-question-text">राष्ट्रगान &#39;जन-गण-मन&#39; पहली बार दिसंबर 1911 में कांग्रेस के किस अधिवेशन में गाया गया?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>लखनऊ अधिवेशन</span></li><li class="correct"><span class="option-label">B</span><span>कलकत्ता अधिवेशन</span></li><li class=""><span class="option-label">C</span><span>लाहौर अधिवेशन</span></li><li class=""><span class="option-label">D</span><span>बंबई अधिवेशन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) कलकत्ता अधिवेशन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 27 दिसंबर 1911 को कलकत्ता अधिवेशन में। रचयिता रवींद्रनाथ टैगोर; मूल रूप से बांग्ला में।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 292</small></p>
+        </article>
+        <article class="revision-card" id="q-149">
+
+          <h3>प्रश्न 149</h3>
+          <div class="revision-question-text">गांधीजी का प्रिय भजन &#39;वैष्णव जन तो तेने कहिए, जे पीड़ पराई जाणे रे&#39; किसकी रचना है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>सूरदास</span></li><li class=""><span class="option-label">B</span><span>मीराबाई</span></li><li class=""><span class="option-label">C</span><span>कबीर</span></li><li class="correct"><span class="option-label">D</span><span>नरसी मेहता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) नरसी मेहता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 15वीं शताब्दी के गुजराती भक्त कवि नरसी (नरसिंह) मेहता।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 472</small></p>
+        </article>
+        <article class="revision-card" id="q-150">
+
+          <h3>प्रश्न 150</h3>
+          <div class="revision-question-text">पं. रविशंकर (भारत रत्न 1999) किस वाद्य के विश्वविख्यात वादक थे?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>सरोद</span></li><li class="correct"><span class="option-label">B</span><span>सितार</span></li><li class=""><span class="option-label">C</span><span>शहनाई</span></li><li class=""><span class="option-label">D</span><span>संतूर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) सितार</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उस्ताद विलायत ख़ाँ भी प्रसिद्ध सितार वादक थे। शहनाई – उस्ताद बिस्मिल्लाह ख़ाँ; संतूर – पं. शिवकुमार शर्मा।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 348</small></p>
+        </article>
+        <article class="revision-card" id="q-151">
+
+          <h3>प्रश्न 151</h3>
+          <div class="revision-question-text">प्रसिद्ध सरोद वादक कौन हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पं. शिवकुमार शर्मा</span></li><li class=""><span class="option-label">B</span><span>पं. हरिप्रसाद चौरसिया</span></li><li class="correct"><span class="option-label">C</span><span>उस्ताद अमजद अली ख़ाँ</span></li><li class=""><span class="option-label">D</span><span>उस्ताद ज़ाकिर हुसैन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) उस्ताद अमजद अली ख़ाँ</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उस्ताद अली अकबर ख़ाँ भी प्रसिद्ध सरोद वादक थे। संतूर – शिवकुमार शर्मा; बाँसुरी – हरिप्रसाद चौरसिया; तबला – ज़ाकिर हुसैन।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 468</small></p>
+        </article>
+        <article class="revision-card" id="q-152">
+
+          <h3>प्रश्न 152</h3>
+          <div class="revision-question-text">निम्नलिखित में से कौन तबला वादक नहीं है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>पं. हरिप्रसाद चौरसिया</span></li><li class=""><span class="option-label">B</span><span>उस्ताद ज़ाकिर हुसैन</span></li><li class=""><span class="option-label">C</span><span>पं. किशन महाराज</span></li><li class=""><span class="option-label">D</span><span>उस्ताद अल्ला रक्खा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) पं. हरिप्रसाद चौरसिया</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पं. हरिप्रसाद चौरसिया विश्वप्रसिद्ध बाँसुरी वादक हैं; बाकी तीनों तबला वादक।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 116</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">कृषि, उद्यान व पशुपालन</h2>
+
+        <article class="revision-card" id="q-153">
+
+          <h3>प्रश्न 153</h3>
+          <div class="revision-question-text">प्रजनक बीज (ब्रीडर सीड) के थैले पर किस रंग का टैग लगाया जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>सफ़ेद</span></li><li class=""><span class="option-label">B</span><span>नीला</span></li><li class="correct"><span class="option-label">C</span><span>सुनहरा पीला</span></li><li class=""><span class="option-label">D</span><span>हरा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) सुनहरा पीला</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> क्रम: केंद्रक बीज → प्रजनक बीज (सुनहरा पीला टैग) → आधार बीज (सफ़ेद टैग) → प्रमाणित बीज (नीला टैग)।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 95</small></p>
+        </article>
+        <article class="revision-card" id="q-154">
+
+          <h3>प्रश्न 154</h3>
+          <div class="revision-question-text">पौधों के 17 आवश्यक पोषक तत्वों में से कौन-से तीन तत्व पौधे हवा और पानी से प्राप्त करते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>नाइट्रोजन, फ़ॉस्फ़ोरस, पोटैशियम</span></li><li class="correct"><span class="option-label">B</span><span>कार्बन, हाइड्रोजन, ऑक्सीजन</span></li><li class=""><span class="option-label">C</span><span>कैल्शियम, मैग्नीशियम, सल्फ़र</span></li><li class=""><span class="option-label">D</span><span>लोहा, ज़िंक, ताँबा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) कार्बन, हाइड्रोजन, ऑक्सीजन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> शेष 14 तत्व पौधे मिट्टी से लेते हैं; मुख्य पोषक तत्व N, P, K हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 411</small></p>
+        </article>
+        <article class="revision-card" id="q-155">
+
+          <h3>प्रश्न 155</h3>
+          <div class="revision-question-text">भारतीय मिट्टियों में सामान्यतः किस मुख्य पोषक तत्व की सबसे अधिक कमी पाई जाती है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>फ़ॉस्फ़ोरस</span></li><li class=""><span class="option-label">B</span><span>पोटैशियम</span></li><li class="correct"><span class="option-label">C</span><span>नाइट्रोजन</span></li><li class=""><span class="option-label">D</span><span>कैल्शियम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) नाइट्रोजन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> इसकी पूर्ति के लिए यूरिया (46% नाइट्रोजन) का सबसे अधिक प्रयोग होता है; दलहनी फ़सलें भी मिट्टी में नाइट्रोजन बढ़ाती हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 290</small></p>
+        </article>
+        <article class="revision-card" id="q-156">
+
+          <h3>प्रश्न 156</h3>
+          <div class="revision-question-text">सामान्य उपजाऊ कृषि मिट्टी में कार्बन और नाइट्रोजन का अनुपात (C:N) लगभग कितना होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>1 : 10</span></li><li class="correct"><span class="option-label">B</span><span>10 : 1</span></li><li class=""><span class="option-label">C</span><span>40 : 1</span></li><li class=""><span class="option-label">D</span><span>80 : 1</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) 10 : 1</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> लगभग 10:1 से 12:1। गेहूँ के भूसे में यह अनुपात बहुत अधिक (लगभग 80:1) होता है, इसलिए वह देर से सड़ता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 93</small></p>
+        </article>
+        <article class="revision-card" id="q-157">
+
+          <h3>प्रश्न 157</h3>
+          <div class="revision-question-text">डी.ए.पी. (डाइअमोनियम फ़ॉस्फ़ेट) उर्वरक में नाइट्रोजन और फ़ॉस्फ़ोरस (P₂O₅) की प्रतिशत मात्रा क्रमशः कितनी होती है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>12 : 32</span></li><li class="correct"><span class="option-label">B</span><span>18 : 46</span></li><li class=""><span class="option-label">C</span><span>20 : 20</span></li><li class=""><span class="option-label">D</span><span>46 : 0</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) 18 : 46</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 18% N और 46% P₂O₅; यूरिया में 46% नाइट्रोजन होती है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 531</small></p>
+        </article>
+        <article class="revision-card" id="q-158">
+
+          <h3>प्रश्न 158</h3>
+          <div class="revision-question-text">फूलगोभी के फूल का भूरा और खोखला हो जाना (ब्राउनिंग) किस सूक्ष्म पोषक तत्व की कमी से होता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मॉलिब्डेनम</span></li><li class=""><span class="option-label">B</span><span>ज़िंक</span></li><li class="correct"><span class="option-label">C</span><span>बोरॉन</span></li><li class=""><span class="option-label">D</span><span>लोहा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) बोरॉन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बोरॉन की कमी से; मॉलिब्डेनम की कमी से फूलगोभी में &#39;व्हिपटेल&#39; (पत्तियाँ चाबुक जैसी) और ज़िंक की कमी से धान में &#39;खैरा&#39; रोग होता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 572</small></p>
+        </article>
+        <article class="revision-card" id="q-159">
+
+          <h3>प्रश्न 159</h3>
+          <div class="revision-question-text">मेस्टन हल, पंजाब हल और शाबाश हल देसी हल से किस बात में भिन्न हैं?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>ये मिट्टी को काटकर पलट देते हैं</span></li><li class=""><span class="option-label">B</span><span>ये केवल बीज बोते हैं</span></li><li class=""><span class="option-label">C</span><span>ये पूरी तरह लकड़ी के बने होते हैं</span></li><li class=""><span class="option-label">D</span><span>ये केवल खरपतवार काटते हैं</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) ये मिट्टी को काटकर पलट देते हैं</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ये मिट्टी पलटने वाले लोहे के हल हैं; देसी हल मिट्टी को केवल चीरता है, पलटता नहीं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 351</small></p>
+        </article>
+        <article class="revision-card" id="q-160">
+
+          <h3>प्रश्न 160</h3>
+          <div class="revision-question-text">योजना आयोग ने भारत को कितने कृषि-जलवायु क्षेत्रों में बाँटा है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>9</span></li><li class=""><span class="option-label">B</span><span>12</span></li><li class="correct"><span class="option-label">C</span><span>15</span></li><li class=""><span class="option-label">D</span><span>20</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) 15</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> 15 कृषि-जलवायु क्षेत्र; उत्तर प्रदेश को 9 कृषि-जलवायु क्षेत्रों में बाँटा गया है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 102</small></p>
+        </article>
+        <article class="revision-card" id="q-161">
+
+          <h3>प्रश्न 161</h3>
+          <div class="revision-question-text">आम की कौन-सी संकर किस्म बौनी होती है और गृह-वाटिका व सघन बागवानी के लिए सबसे उपयुक्त है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>दशहरी</span></li><li class="correct"><span class="option-label">B</span><span>आम्रपाली</span></li><li class=""><span class="option-label">C</span><span>लंगड़ा</span></li><li class=""><span class="option-label">D</span><span>चौसा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) आम्रपाली</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> आम्रपाली = दशहरी × नीलम (IARI, नई दिल्ली); यह हर वर्ष फल देती है। मल्लिका = नीलम × दशहरी।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 213</small></p>
+        </article>
+        <article class="revision-card" id="q-162">
+
+          <h3>प्रश्न 162</h3>
+          <div class="revision-question-text">बाग लगाने की वह विधि, जिसमें वर्गाकार विधि के चार पेड़ों के बीच में एक अतिरिक्त (पूरक) पौधा लगाया जाता है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>पंचवृक्षी (क्विनकंक्स) विधि</span></li><li class=""><span class="option-label">B</span><span>आयताकार विधि</span></li><li class=""><span class="option-label">C</span><span>षट्भुजाकार विधि</span></li><li class=""><span class="option-label">D</span><span>कंटूर विधि</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) पंचवृक्षी (क्विनकंक्स) विधि</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बीच का पूरक पौधा (जैसे पपीता, केला, फालसा) जल्दी फल देकर आय बढ़ाता है। षट्भुजाकार विधि में वर्गाकार से लगभग 15% अधिक पेड़ लगते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 453</small></p>
+        </article>
+        <article class="revision-card" id="q-163">
+
+          <h3>प्रश्न 163</h3>
+          <div class="revision-question-text">सेब और नाशपाती का खाने योग्य भाग कौन-सा है, जिसके कारण इन्हें &#39;असत्य (कूट) फल&#39; कहा जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>मध्य फलभित्ति</span></li><li class=""><span class="option-label">B</span><span>बीजपत्र</span></li><li class=""><span class="option-label">C</span><span>भ्रूणपोष</span></li><li class="correct"><span class="option-label">D</span><span>पुष्पासन (थैलेमस)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) पुष्पासन (थैलेमस)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> इनका गूदा अंडाशय से नहीं, पुष्पासन से बनता है। आम – मध्य फलभित्ति; नारियल – भ्रूणपोष।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 590</small></p>
+        </article>
+        <article class="revision-card" id="q-164">
+
+          <h3>प्रश्न 164</h3>
+          <div class="revision-question-text">फूलगोभी, पत्तागोभी, मूली और गाजर किस मौसम की सब्ज़ियाँ हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>खरीफ़ (बरसात की)</span></li><li class=""><span class="option-label">B</span><span>ज़ायद (गर्मी की)</span></li><li class="correct"><span class="option-label">C</span><span>रबी (जाड़े की)</span></li><li class=""><span class="option-label">D</span><span>किसी भी मौसम की</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) रबी (जाड़े की)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> ये ठंडे मौसम की फ़सलें हैं। लौकी, तोरई, भिंडी, करेला, खीरा – ज़ायद और खरीफ़ की सब्ज़ियाँ।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 470</small></p>
+        </article>
+        <article class="revision-card" id="q-165">
+
+          <h3>प्रश्न 165</h3>
+          <div class="revision-question-text">अमरूद के बाग का सबसे भयंकर रोग, जिसमें पूरा पेड़ सूख जाता है –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>टिक्का</span></li><li class=""><span class="option-label">B</span><span>कंडुआ</span></li><li class=""><span class="option-label">C</span><span>लाल सड़न</span></li><li class="correct"><span class="option-label">D</span><span>उकठा (विल्ट)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) उकठा (विल्ट)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> फ़्यूज़ेरियम कवक से। अमरूद की प्रसिद्ध किस्में – इलाहाबादी सफ़ेदा, ललित, लखनऊ-49 (सरदार)। टिक्का – मूँगफली का रोग।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 393</small></p>
+        </article>
+        <article class="revision-card" id="q-166">
+
+          <h3>प्रश्न 166</h3>
+          <div class="revision-question-text">कच्चे पपीते के दूध (लेटेक्स) को सुखाकर प्राप्त होने वाला पाचक एंज़ाइम –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>पेक्टिन</span></li><li class=""><span class="option-label">B</span><span>ब्रोमेलिन</span></li><li class="correct"><span class="option-label">C</span><span>पपेन</span></li><li class=""><span class="option-label">D</span><span>टैनिन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) पपेन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पपेन प्रोटीन को पचाता है और मांस को मुलायम करने में भी काम आता है। ब्रोमेलिन – अनानास से; पेक्टिन – जैम-जेली को जमाने वाला पदार्थ।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 10 – प्र. 573</small></p>
+        </article>
+        <article class="revision-card" id="q-167">
+
+          <h3>प्रश्न 167</h3>
+          <div class="revision-question-text">केसर पौधे के किस भाग से प्राप्त होता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>फूल का वर्तिकाग्र</span></li><li class=""><span class="option-label">B</span><span>पत्ती</span></li><li class=""><span class="option-label">C</span><span>जड़</span></li><li class=""><span class="option-label">D</span><span>बीज</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) फूल का वर्तिकाग्र</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> केसर (क्रोकस सैटाइवस) के फूल के वर्तिकाग्र को सुखाकर; भारत में जम्मू-कश्मीर का पंपोर क्षेत्र प्रसिद्ध है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 99</small></p>
+        </article>
+        <article class="revision-card" id="q-168">
+
+          <h3>प्रश्न 168</h3>
+          <div class="revision-question-text">गन्ने की फ़सल का सबसे भयंकर रोग, जिसे &#39;गन्ने का कैंसर&#39; भी कहते हैं –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>गेरुई</span></li><li class="correct"><span class="option-label">B</span><span>लाल सड़न (रेड रॉट)</span></li><li class=""><span class="option-label">C</span><span>टिक्का</span></li><li class=""><span class="option-label">D</span><span>उकठा</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) लाल सड़न (रेड रॉट)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> कवक से होने वाला रोग; इसमें तने का भीतरी भाग लाल होकर सड़ने लगता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 8 – प्र. 452</small></p>
+        </article>
+        <article class="revision-card" id="q-169">
+
+          <h3>प्रश्न 169</h3>
+          <div class="revision-question-text">सबसे अधिक दूध देने वाली और जलेबी जैसे मुड़े सींगों वाली भैंस की नस्ल –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>मुर्रा</span></li><li class=""><span class="option-label">B</span><span>जाफ़राबादी</span></li><li class=""><span class="option-label">C</span><span>भदावरी</span></li><li class=""><span class="option-label">D</span><span>सूरती</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) मुर्रा</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> मुर्रा – हरियाणा-दिल्ली क्षेत्र की नस्ल। भदावरी (आगरा-इटावा, उ.प्र.) के दूध में सबसे अधिक वसा होती है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 6 – प्र. 333</small></p>
+        </article>
+        <article class="revision-card" id="q-170">
+
+          <h3>प्रश्न 170</h3>
+          <div class="revision-question-text">व्यावसायिक रूप से मछली पालन को क्या कहते हैं?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>एपीकल्चर</span></li><li class=""><span class="option-label">B</span><span>सेरीकल्चर</span></li><li class="correct"><span class="option-label">C</span><span>पीसीकल्चर</span></li><li class=""><span class="option-label">D</span><span>हॉर्टीकल्चर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) पीसीकल्चर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> पीसीकल्चर (मत्स्य पालन); एपीकल्चर – मधुमक्खी पालन; सेरीकल्चर – रेशम कीट पालन; हॉर्टीकल्चर – उद्यान विज्ञान।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 1 – प्र. 31</small></p>
+        </article>
+        <article class="revision-card" id="q-171">
+
+          <h3>प्रश्न 171</h3>
+          <div class="revision-question-text">भारत में &#39;हरित क्रांति का जनक&#39; किसे कहा जाता है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>नॉर्मन बोरलॉग</span></li><li class="correct"><span class="option-label">B</span><span>डॉ. एम.एस. स्वामीनाथन</span></li><li class=""><span class="option-label">C</span><span>डॉ. वर्गीज़ कुरियन</span></li><li class=""><span class="option-label">D</span><span>डॉ. राजेंद्र प्रसाद</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) डॉ. एम.एस. स्वामीनाथन</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> विश्व में हरित क्रांति के जनक नॉर्मन बोरलॉग हैं; श्वेत क्रांति के जनक – वर्गीज़ कुरियन।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 212</small></p>
+        </article>
+        <article class="revision-card" id="q-172">
+
+          <h3>प्रश्न 172</h3>
+          <div class="revision-question-text">भारतीय सब्ज़ी अनुसंधान संस्थान (IIVR) उत्तर प्रदेश के किस शहर में है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>कानपुर</span></li><li class=""><span class="option-label">B</span><span>लखनऊ</span></li><li class=""><span class="option-label">C</span><span>बरेली</span></li><li class="correct"><span class="option-label">D</span><span>वाराणसी</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) वाराणसी</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वाराणसी। भारतीय दलहन अनुसंधान संस्थान – कानपुर; केंद्रीय औषधीय एवं सगंध पौधा संस्थान (CIMAP) – लखनऊ; भारतीय पशु चिकित्सा अनुसंधान संस्थान (IVRI) – इज़्ज़तनगर, बरेली।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 3 – प्र. 155</small></p>
+        </article>
+      </section>
+      <section class="revision-section">
+        <h2 class="revision-section-title">सामाजिक अध्ययन शिक्षणशास्त्र</h2>
+
+        <article class="revision-card" id="q-173">
+
+          <h3>प्रश्न 173</h3>
+          <div class="revision-question-text">दैनिक पाठ-योजना की &#39;पंचपदीय प्रणाली&#39; (प्रस्तावना, प्रस्तुतीकरण, तुलना व साहचर्य, सामान्यीकरण, प्रयोग) किस शिक्षाशास्त्री से जुड़ी है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>किलपैट्रिक</span></li><li class="correct"><span class="option-label">B</span><span>हरबर्ट</span></li><li class=""><span class="option-label">C</span><span>मॉरिसन</span></li><li class=""><span class="option-label">D</span><span>ब्लूम</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) हरबर्ट</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जर्मन शिक्षाशास्त्री जे.एफ़. हरबर्ट (उनके अनुयायियों ने इसे पाँच सोपानों में विकसित किया)। इकाई योजना – मॉरिसन।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 2 – प्र. 120</small></p>
+        </article>
+        <article class="revision-card" id="q-174">
+
+          <h3>प्रश्न 174</h3>
+          <div class="revision-question-text">अक्षांश-देशांतर समझाने के बाद शिक्षक बच्चों से ग्लोब पर अपने ज़िले की स्थिति खोजने को कहता है। यह ब्लूम के वर्गीकरण का कौन-सा स्तर है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>ज्ञान (स्मरण)</span></li><li class=""><span class="option-label">B</span><span>बोध</span></li><li class="correct"><span class="option-label">C</span><span>अनुप्रयोग</span></li><li class=""><span class="option-label">D</span><span>मूल्यांकन</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (C) अनुप्रयोग</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> सीखी गई अवधारणा का नई, व्यावहारिक स्थिति में प्रयोग अनुप्रयोग स्तर है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 236</small></p>
+        </article>
+        <article class="revision-card" id="q-175">
+
+          <h3>प्रश्न 175</h3>
+          <div class="revision-question-text">वर्ष के 12 महीनों में हुई वर्षा की तुलना दिखाने के लिए सबसे उपयुक्त आरेख –</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>वृत्त आरेख (पाई चार्ट)</span></li><li class=""><span class="option-label">B</span><span>प्रवाह चार्ट</span></li><li class=""><span class="option-label">C</span><span>वेन आरेख</span></li><li class="correct"><span class="option-label">D</span><span>दंड आरेख (बार ग्राफ़)</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (D) दंड आरेख (बार ग्राफ़)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> जलवायु आरेख में वर्षा दंडों से और तापमान रेखा से दिखाया जाता है; किसी पूर्ण के भाग (जैसे भूमि उपयोग) दिखाने के लिए वृत्त आरेख उपयुक्त है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 4 – प्र. 238</small></p>
+        </article>
+        <article class="revision-card" id="q-176">
+
+          <h3>प्रश्न 176</h3>
+          <div class="revision-question-text">कक्षा में &#39;संसद की कार्यवाही&#39; को व्यावहारिक रूप से समझाने की सबसे अच्छी विधि –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>युवा संसद (भूमिका निर्वाह)</span></li><li class=""><span class="option-label">B</span><span>व्याख्यान विधि</span></li><li class=""><span class="option-label">C</span><span>पाठ्यपुस्तक वाचन</span></li><li class=""><span class="option-label">D</span><span>श्रुतलेख</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) युवा संसद (भूमिका निर्वाह)</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बच्चे सांसद, अध्यक्ष, मंत्री आदि की भूमिका निभाकर प्रश्नकाल, विधेयक पर बहस और मतदान को स्वयं अनुभव करते हैं।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 295</small></p>
+        </article>
+        <article class="revision-card" id="q-177">
+
+          <h3>प्रश्न 177</h3>
+          <div class="revision-question-text">भूगोल पढ़ाते समय शिक्षक पहले अपने गाँव-ज़िले की जलवायु व फ़सलें बताता है, फिर देश और विश्व की। यह किस शिक्षण सूत्र का पालन है?</div>
+          <ul class="revision-options"><li class=""><span class="option-label">A</span><span>अमूर्त से मूर्त की ओर</span></li><li class="correct"><span class="option-label">B</span><span>ज्ञात से अज्ञात की ओर</span></li><li class=""><span class="option-label">C</span><span>जटिल से सरल की ओर</span></li><li class=""><span class="option-label">D</span><span>सामान्य से विशिष्ट की ओर</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (B) ज्ञात से अज्ञात की ओर</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> बच्चा अपने परिचित परिवेश (ज्ञात, निकट) के सहारे अपरिचित (अज्ञात, दूर) को आसानी से समझता है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 417</small></p>
+        </article>
+        <article class="revision-card" id="q-178">
+
+          <h3>प्रश्न 178</h3>
+          <div class="revision-question-text">परीक्षक बदलने पर भी छात्र के प्राप्तांकों में कोई अंतर न आए – मूल्यांकन का यह गुण कहलाता है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>वस्तुनिष्ठता</span></li><li class=""><span class="option-label">B</span><span>वैधता</span></li><li class=""><span class="option-label">C</span><span>विश्वसनीयता</span></li><li class=""><span class="option-label">D</span><span>व्यापकता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) वस्तुनिष्ठता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> उत्तर निश्चित होने और परीक्षक की निजी राय का प्रभाव न पड़ने पर परीक्षा वस्तुनिष्ठ होती है।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 5 – प्र. 300</small></p>
+        </article>
+        <article class="revision-card" id="q-179">
+
+          <h3>प्रश्न 179</h3>
+          <div class="revision-question-text">परीक्षा ठीक उसी योग्यता को मापे, जिसे मापने के लिए वह बनाई गई है – परीक्षा का यह गुण कहलाता है –</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>वैधता</span></li><li class=""><span class="option-label">B</span><span>वस्तुनिष्ठता</span></li><li class=""><span class="option-label">C</span><span>विश्वसनीयता</span></li><li class=""><span class="option-label">D</span><span>व्यावहारिकता</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) वैधता</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> वैधता (प्रामाणिकता)। विश्वसनीयता – बार-बार जाँचने पर भी परिणाम लगभग समान आना।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 9 – प्र. 540</small></p>
+        </article>
+        <article class="revision-card" id="q-180">
+
+          <h3>प्रश्न 180</h3>
+          <div class="revision-question-text">प्रश्न-पत्र का &#39;ब्लूप्रिंट&#39; (नील-पत्र) कब तैयार किया जाता है?</div>
+          <ul class="revision-options"><li class="correct"><span class="option-label">A</span><span>प्रश्न-पत्र बनाने से पहले</span></li><li class=""><span class="option-label">B</span><span>परीक्षा हो जाने के बाद</span></li><li class=""><span class="option-label">C</span><span>उत्तर-पुस्तिकाएँ जाँचने के बाद</span></li><li class=""><span class="option-label">D</span><span>परिणाम घोषित होने के बाद</span></li></ul>
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (A) प्रश्न-पत्र बनाने से पहले</p>
+          <div class="answer-explanation"><strong>व्याख्या:</strong> यह एक तालिका है, जिसमें उद्देश्यों (ज्ञान, बोध, अनुप्रयोग), प्रकरणों और प्रश्नों के प्रकारों को अंक-भार दिया जाता है, ताकि प्रश्न-पत्र संतुलित बने।</div>
+          <p><small>मूल फ़ाइल का संदर्भ: मॉक 7 – प्र. 420</small></p>
+        </article>
+      </section>
+    </main>
+    <a class="to-top" href="#top" aria-label="ऊपर जाएँ">↑</a>
+  </body>
+</html>

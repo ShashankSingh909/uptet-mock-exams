@@ -40,6 +40,47 @@ async function startServer() {
   return { server, baseUrl: `http://127.0.0.1:${address.port}` };
 }
 
+test("imported revision sheets retain all options, answers, references, and working jumps", async () => {
+  const { server, baseUrl } = await startServer();
+  const browser = await chromium.launch({ executablePath: chromePath, headless: true });
+  const page = await browser.newPage();
+  const errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  try {
+    for (const width of [320, 1280]) {
+      await page.setViewportSize({ width, height: 900 });
+      for (const [id, count, label] of [
+        ["rev-sanskrit60", 60, "संस्कृत रिवीज़न खोलें"],
+        ["sst-rev-mock180", 180, "SST 180 रिवीज़न खोलें"],
+      ]) {
+        await page.goto(baseUrl);
+        await page.getByRole("link", { name: label, exact: true }).click();
+        assert.equal(await page.locator(".revision-card").count(), count);
+        assert.equal(await page.locator(".revision-options li").count(), count * 4);
+        assert.equal(await page.locator(".revision-options li.correct").count(), count);
+        assert.equal(await page.locator(".answer-explanation").count(), count);
+        assert.equal(await page.getByText("मूल फ़ाइल का संदर्भ:", { exact: false }).count(), count);
+        assert.equal(await page.locator("input, script").count(), 0);
+        await page.locator(".jump-list summary").click();
+        await page.locator(`a[href="#q-${count}"]`).click();
+        assert.equal(new URL(page.url()).hash, `#q-${count}`);
+        assert.equal(await page.locator(`#q-${count}`).isVisible(), true);
+        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+        await page.goto(`${baseUrl}/revision-${id}.html`);
+        await mkdir(path.join(root, "tmp", "qa"), { recursive: true });
+        await page.screenshot({ path: path.join(root, "tmp", "qa", `revision-current-${id}-${width}.png`) });
+      }
+    }
+    await page.goto(new URL(`file:///${root.replaceAll("\\", "/")}/revision-rev-sanskrit60.html`).href);
+    assert.equal(await page.locator(".revision-card").count(), 60);
+    assert.match(await page.locator("#q-1 .revision-answer").innerText(), /मृगेन्द्रः/);
+    assert.deepEqual(errors, []);
+  } finally {
+    await browser.close();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
 test("mobile exam persists, navigates, times out, reviews, and resets", async () => {
   const { server, baseUrl } = await startServer();
   const browser = await chromium.launch({

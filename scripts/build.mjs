@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { importRevision } from "./import_revision.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const [
@@ -85,7 +86,14 @@ function fillTemplate(template, values) {
   );
 }
 
-function renderRevision(data, { showOptions = false } = {}) {
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  })[character]);
+}
+
+function renderRevision(data, { showOptions = false, plainText = false } = {}) {
+  const text = plainText ? escapeHtml : (value) => value;
   const groups = [];
   for (const question of data.questions) {
     const section = question.section.replace(/\s*\(प्र(?:\.|श्न)[^)]*\)/, "");
@@ -134,16 +142,16 @@ function renderRevision(data, { showOptions = false } = {}) {
             return `
         <article class="revision-card" id="q-${question.number}">
           ${passage}
-          <h3>प्रश्न ${question.number}</h3>
-          <div class="revision-question-text">${question.text}</div>
+          <h3>प्रश्न ${question.number}</h3>${question.topic ? `\n          <p><small>विषय: ${text(question.topic)}</small></p>` : ""}
+          <div class="revision-question-text">${text(question.text)}</div>
           ${showOptions ? `<ul class="revision-options">${question.options
             .map(
               (option) =>
-                `<li class="${option.id === question.answer ? "correct" : ""}"><span class="option-label">${option.label}</span><span>${option.text}</span></li>`,
+                `<li class="${option.id === question.answer ? "correct" : ""}"><span class="option-label">${option.label}</span><span>${text(option.text)}</span></li>`,
             )
             .join("")}</ul>` : ""}
-          <p class="revision-answer"><strong>सही उत्तर:</strong> (${correct.label}) ${correct.text}</p>
-          ${explanation ? `<div class="answer-explanation"><strong>व्याख्या:</strong> ${explanation}</div>` : ""}
+          <p class="revision-answer"><strong>सही उत्तर:</strong> (${correct.label}) ${text(correct.text)}</p>
+          ${explanation ? `<div class="answer-explanation"><strong>व्याख्या:</strong> ${text(explanation)}</div>` : ""}${question.sourceReference ? `\n          <p><small>मूल फ़ाइल का संदर्भ: ${text(question.sourceReference)}</small></p>` : ""}
         </article>`;
           })
           .join("")}
@@ -155,23 +163,28 @@ function renderRevision(data, { showOptions = false } = {}) {
     typeof data.paperNumber === "number"
       ? `मॉक पेपर ${data.paperNumber}`
       : data.paperNumber;
-  return fillTemplate(revisionTemplate, {
+  const html = fillTemplate(revisionTemplate, {
     TITLE: data.title,
     SHORT_TITLE: shortTitle,
     SUBTITLE: data.subtitle,
     CSS: css,
     COUNT: String(data.questions.length),
+    CONTENT_NOTE: showOptions ? "चारों विकल्प, सही उत्तर और व्याख्या" : "केवल सही उत्तर और व्याख्या",
     JUMP: jump,
     BODY: body,
   });
+  return plainText ? html.replace(/[ \t]+$/gm, "") : html;
 }
 
 // These revision pages also list all four options.
-const revisionWithOptions = new Set(["rev-cdp60", "rev-hindi60"]);
+const importedRevisions = new Set(["rev-sanskrit60", "sst-rev-mock180"]);
+const revisionWithOptions = new Set(["rev-cdp60", "rev-hindi60", ...importedRevisions]);
+await importRevision(root);
 
 for (const paperName of [
   "rev-cdp60",
   "rev-hindi60",
+  ...importedRevisions,
   "cdp1",
   "cdp2",
   "hindi1",
@@ -193,7 +206,10 @@ for (const paperName of [
   );
   await writeFile(
     path.join(root, `revision-${paperName}.html`),
-    renderRevision(data, { showOptions: revisionWithOptions.has(paperName) }),
+    renderRevision(data, {
+      showOptions: revisionWithOptions.has(paperName),
+      plainText: importedRevisions.has(paperName),
+    }),
     "utf8",
   );
 }
