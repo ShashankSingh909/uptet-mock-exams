@@ -259,17 +259,17 @@ test("social science chapter revision sets keep their questions in order", async
   }
 });
 
-test("60-question revision sets keep their questions and answers", async () => {
+test("chosen-question revision sets keep their questions and answers", async () => {
   const expected = {
-    "rev-cdp60": [/श्रेणीकरण/, "b", /16-PF/, "d"],
-    "rev-hindi60": [/मक्खी/, "d", /विनीत/, "a"],
+    "rev-cdp60": [60, /श्रेणीकरण/, "b", /16-PF/, "d"],
+    "rev-hindi60": [76, /मक्खी/, "d", /आठ/, "c"],
   };
-  for (const [paper, [firstCorrect, firstAnswer, lastCorrect, lastAnswer]] of Object.entries(expected)) {
+  for (const [paper, [count, firstCorrect, firstAnswer, lastCorrect, lastAnswer]] of Object.entries(expected)) {
     const data = JSON.parse(
       await readFile(new URL(`../data/${paper}.json`, import.meta.url), "utf8"),
     );
-    assert.equal(data.questions.length, 60, paper);
-    const [first, last] = [data.questions[0], data.questions[59]];
+    assert.equal(data.questions.length, count, paper);
+    const [first, last] = [data.questions[0], data.questions.at(-1)];
     assert.equal(first.answer, firstAnswer);
     assert.match(first.options.find((o) => o.id === first.answer).text, firstCorrect);
     assert.equal(last.answer, lastAnswer);
